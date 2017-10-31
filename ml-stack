@@ -5,8 +5,9 @@ https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07#file-install
 cuda: apt install nvidia-cuda-toolkit (then check nvcc -V)
 cuDNN: https://developer.nvidia.com/rdp/cudnn-download
 
-then update the envvar
+then update the envvars
 
+export PATH=$PATH:/usr/local/cuda/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia-384
 
