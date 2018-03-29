@@ -8,6 +8,7 @@ PROMPT='%{$fg[$UAH]%}%n@%m%{$reset_color%} %{${fg_bold[blue]}%}:: %{$reset_color
 
 # add a horizontal bar and return code
 PROMPT='%(?.%F{green}.%F{red})%U${(l:COLUMNS:: :)?}%u'$PROMPT
+zle_highlight=(default:fg=white)
 
 # RPS1="${return_code}"
 
