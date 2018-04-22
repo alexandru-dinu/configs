@@ -18,20 +18,11 @@ nvidia-driver:
 		glxinfo | head
 
 cuda:
-	`sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb`
-	`sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub`
-	`sudo apt-get update`
-	`sudo apt-get install cuda`
-	sudo apt-get install nvidia-cuda-toolkit
-	
-	verify cuda installation: http://xcat-docs.readthedocs.io/en/stable/advanced/gpu/nvidia/verify_cuda_install.html
+- use runfile	
+- verify: http://xcat-docs.readthedocs.io/en/stable/advanced/gpu/nvidia/verify_cuda_install.html
 
 cudnn: 
-	http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html#installlinux-tar
-
-conda: 
-	install from official site
-	PATH += ~/anaconda2/bin
+- http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html#installlinux-tar
 	
 pytorch
 
