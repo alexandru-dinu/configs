@@ -1,8 +1,11 @@
-linux mint cinnamon
+problems with:
+- xubuntu
+- linux mint xfce
+- cinnamon flickers when using GPU
 
 partitions: 
-	/, ext4, 187296MB
-	swap, 10240MB
+	/, ext4, 181153 MB
+	swap, 16384 MB
 	bootloader location = efi partition
 
 wifi-fix: sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist.conf
