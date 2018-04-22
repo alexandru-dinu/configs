@@ -4,7 +4,7 @@ problems with:
 - cinnamon flickers when using GPU
 
 partitions: 
-	/, ext4, 181153 MB
+	/, ext4, 301852 MB
 	swap, 16384 MB
 	bootloader location = efi partition
 
