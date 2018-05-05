@@ -22,7 +22,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
     "window.zoomLevel": 0,
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "python.linting.pylintArgs": ["--errors-only"],
-    "workbench.colorTheme": "Sunburst"
+    "workbench.colorTheme": "Sunburst",
+    "editor.renderWhitespace": "none",
+    "editor.rulers": [80]
 }
