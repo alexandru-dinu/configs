@@ -7,7 +7,7 @@ NEWLINE=$'\n'
 local return_code="%(?.%{${fg[cyan]}%}».%{$fg[red]%}»%{$reset_color%})"
 
 PROMPT='\
-$fg[white][$fg[white]%*$fg[white]]%{$reset_color%} \
+$fg[cyan][$fg[cyan]%*$fg[cyan]]%{$reset_color%} \
 %{$fg[$UAH]%}%n@%m%{$reset_color%} \
 %{${fg_bold[blue]}%}:: %{$reset_color%}\
 %{${fg[cyan]}%}%3~ \
