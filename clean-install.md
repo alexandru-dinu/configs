@@ -1,4 +1,5 @@
 
+
 ### partitions
 	/ (ext4): 301,852 MB
 	swap: 16,384 MB
@@ -17,10 +18,6 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
 
 ### cudnn
 - http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html#installlinux-tar
-
-sites:
-> https://lenovolinux.blogspot.com/2016/05/bumblebee-on-lenovo-t440p-nvidia-gt.html
-> https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07#file-install-nvidia-driver-and-cuda-md
 
 ### bumblebee
 1. assuming `nvidia-V` driver was installed from additional drivers (replace `V` with current nvidia driver version)
@@ -56,12 +53,12 @@ sites:
 
   4. update alternatives:
 
-        sudo update-alternatives --config i386-linux-gnu_gl_conf
-        # choose mesa
-        sudo update-alternatives --config x86_64-linux-gnu_egl_conf
-        # choose mesa
-        sudo update-alternatives --config x86_64-linux-gnu_gl_conf
-        # choose nvidia-V-prime
+         sudo update-alternatives --config i386-linux-gnu_gl_conf
+         # choose mesa
+         sudo update-alternatives --config x86_64-linux-gnu_egl_conf
+         # choose mesa
+         sudo update-alternatives --config x86_64-linux-gnu_gl_conf
+         # choose nvidia-V-prime
 
 5. update grub: add `GRUB_CMDLINE_LINUX="nogpumanager"` to `/etc/default/grub`, then run `sudo update-grub`
 
@@ -74,4 +71,8 @@ sites:
         # redo step 4
 
 
-if there are problems with input, run `sudo apt install xserver-xorg-input-all`
+**if there are problems with input, run `sudo apt install xserver-xorg-input-all`**
+
+### sites
+> https://lenovolinux.blogspot.com/2016/05/bumblebee-on-lenovo-t440p-nvidia-gt.html
+> https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07#file-install-nvidia-driver-and-cuda-md
