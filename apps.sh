@@ -11,6 +11,11 @@ sudo apt remove --purge xfburn
 sudo apt remove --purge simple-scan
 sudo apt remove --purge hplip
 sudo apt remove --purge gnome-orca
+sudo apt remove --purge evolution
+sudo apt remove --purge fluid
+sudo apt remove --purge gnome-mahjongg
+sudo apt remove --purge gnome-mines
+sudo apt remove --purge gnome-sudoku
 
 sudo apt autoclean
 sudo apt autoremove
