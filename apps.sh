@@ -7,6 +7,7 @@ sudo apt remove --purge "brasero*"
 sudo apt remove --purge "parole*"
 sudo apt remove --purge "catfish*"
 sudo apt remove --purge "ristretto*"
+sudo apt remove --purge "gedit*"
 sudo apt remove --purge pidgin
 sudo apt remove --purge xfburn
 sudo apt remove --purge simple-scan
