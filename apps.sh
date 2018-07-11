@@ -18,6 +18,8 @@ sudo apt remove --purge fluid
 sudo apt remove --purge gnome-mahjongg
 sudo apt remove --purge gnome-mines
 sudo apt remove --purge gnome-sudoku
+sudo apt remove --purge "thunderbird*"
+sudo apt remove --purge "mousepad*"
 
 sudo apt autoclean
 sudo apt autoremove
