@@ -5,6 +5,8 @@
 	swap: 16,384 MB
 	bootloader location = efi partition
 
+fstab: `UUID=... /media/alex/Kingston ntfs-3g defaults 0 0`
+
 ### miscellaneous fixes
 wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist.conf`
 
