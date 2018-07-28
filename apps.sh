@@ -34,7 +34,7 @@ sudo apt update
 sudo apt-get install sublime-text
 
 sudo apt-get install build-essential g++-multilib
-sudo apt-get install chromium-browser htop vim
+sudo apt-get install chromium-browser htop vim git
 
 sudo apt autoclean
 sudo apt autoremove
