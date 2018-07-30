@@ -16,6 +16,7 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
 
 ### cuda
 - use runfile
+- `sudo apt install libcuda1-V`
 - verify: http://xcat-docs.readthedocs.io/en/stable/advanced/gpu/nvidia/verify_cuda_install.html
 
 ### cudnn
