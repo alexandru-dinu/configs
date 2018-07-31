@@ -29,7 +29,7 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
 
  2. add the following lines to `/etc/modprobe.d/bumblebee.conf`:
 
-            blacklist nvidia-V
+        blacklist nvidia-V
 	    blacklist nvidia-V-updates
 	    blacklist nvidia-experimental-V
 
