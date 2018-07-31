@@ -38,18 +38,18 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
         # The Driver used by Bumblebee server. If this value is not set (or empty),
         # auto-detection is performed. The available drivers are nvidia and nouveau
         # (See also the driver-specific sections below)
-        Driver=nvidia
+        **Driver=nvidia**
         ...
         ## Section with nvidia driver specific options, only parsed if Driver=nvidia
         [driver-nvidia]
         # Module name to load, defaults to Driver if empty or unset
-        KernelDriver=nvidia_V
+        **KernelDriver=nvidia_V**
         PMMethod=auto
         # colon-separated path to the nvidia libraries
-        LibraryPath=/usr/lib/nvidia-V:/usr/lib32/nvidia-V
+        **LibraryPath=/usr/lib/nvidia-V:/usr/lib32/nvidia-V**
         # comma-separated path of the directory containing nvidia_drv.so and the
         # default Xorg modules path
-        XorgModulePath=/usr/lib/nvidia-V/xorg,/usr/lib/xorg/modules
+        **XorgModulePath=/usr/lib/nvidia-V/xorg,/usr/lib/xorg/modules**
         XorgConfFile=/etc/bumblebee/xorg.conf.nvidia
 
   4. update alternatives:
