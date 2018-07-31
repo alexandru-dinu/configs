@@ -5,8 +5,6 @@
 	swap: 16,384 MB
 	bootloader location = efi partition
 
-fstab: `UUID=... /media/alex/Kingston ntfs-3g defaults 0 0`
-
 ### miscellaneous fixes
 wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist.conf`
 
@@ -31,7 +29,7 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
 
  2. add the following lines to `/etc/modprobe.d/bumblebee.conf`:
 
-        blacklist nvidia-V
+            blacklist nvidia-V
 	    blacklist nvidia-V-updates
 	    blacklist nvidia-experimental-V
 
@@ -77,5 +75,5 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
 **if there are problems with input, run `sudo apt install xserver-xorg-input-all`**
 
 ### sites
-> https://lenovolinux.blogspot.com/2016/05/bumblebee-on-lenovo-t440p-nvidia-gt.html
-> https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07#file-install-nvidia-driver-and-cuda-md
+- https://lenovolinux.blogspot.com/2016/05/bumblebee-on-lenovo-t440p-nvidia-gt.html
+- https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07#file-install-nvidia-driver-and-cuda-md
