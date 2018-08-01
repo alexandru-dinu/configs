@@ -1,0 +1,8 @@
+[/]
+background-color='rgb(0,0,0)'
+use-theme-colors=false
+palette=['rgb(0,0,0)', 'rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(255,170,0)', 'rgb(0,129,255)', 'rgb(205,0,205)', 'rgb(0,255,255)', 'rgb(255,255,255)', 'rgb(76,76,76)', 'rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(255,255,0)', 'rgb(59,166,255)', 'rgb(255,0,255)', 'rgb(0,255,255)', 'rgb(255,255,255)']
+use-theme-transparency=false
+foreground-color='rgb(255,255,255)'
+use-transparent-background=false
+visible-name='Default'
