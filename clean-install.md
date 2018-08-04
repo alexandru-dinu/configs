@@ -4,6 +4,9 @@
 	/ (ext4): 301,852 MB
 	swap: 16,384 MB
 	bootloader location = efi partition
+	
+### themes
+nanodesu (xfwm4) + arc-dark + papirus-icon-theme
 
 ### miscellaneous fixes
 wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist.conf`
