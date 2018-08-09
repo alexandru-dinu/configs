@@ -75,7 +75,8 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
         # redo step 4
 
 
-**if there are problems with input, run `sudo apt install xserver-xorg-input-all`**
+- **if there are problems with input, run `sudo apt install xserver-xorg-input-all`**
+- also, make sure that `/usr/lib/xorg/Xorg.wrap` doesn't exist
 
 ### sites
 - https://lenovolinux.blogspot.com/2016/05/bumblebee-on-lenovo-t440p-nvidia-gt.html
