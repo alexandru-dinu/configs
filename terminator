@@ -1,0 +1,21 @@
+[global_config]
+  handle_size = 3
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    cursor_color = "#ffffff"
+    cursor_shape = ibeam
+    foreground_color = "#ffffff"
+    palette = "#000000:#ff0000:#00ff00:#ffaa00:#0081ff:#cd00cd:#00ffff:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#3ba6ff:#ff00ff:#00ffff:#ffffff"
+    scrollback_infinite = True
+    show_titlebar = False
