@@ -135,7 +135,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>regular underline</string>
+				<string>italic underline</string>
 				<key>foreground</key>
 				<string>#FD5FF1</string>
 			</dict>
@@ -178,7 +178,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>regular</string>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#9B5C2E</string>
 			</dict>
@@ -307,7 +307,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>regular</string>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#676767</string>
 			</dict>
@@ -465,7 +465,7 @@
 				<key>background</key>
 				<string>#0E2231</string>
 				<key>fontStyle</key>
-				<string>regular</string>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#F8F8F8</string>
 			</dict>
@@ -517,13 +517,13 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Markup: regular</string>
+			<string>Markup: Italic</string>
 			<key>scope</key>
-			<string>markup.regular</string>
+			<string>markup.italic</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>regular</string>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#E9C062</string>
 			</dict>
@@ -564,7 +564,7 @@
 				<key>background</key>
 				<string>#FEE09C12</string>
 				<key>fontStyle</key>
-				<string>regular</string>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#E1D4B9</string>
 			</dict>
@@ -618,7 +618,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>regular</string>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#F67B37</string>
 			</dict>
