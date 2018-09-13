@@ -1,12 +1,10 @@
-(custom-set-variables
- '(custom-enabled-themes (quote (wombat)))
- '(inhibit-startup-screen t))
+(setq inhibit-startup-screen t)
 (set-default-font "CamingoCode-10.5")
-(custom-set-faces
- )
+(global-linum-mode t)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(global-set-key (kbd "C-d") 'kill-whole-line)
+(ido-mode 1)
+(setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
 (defun move-line-up ()
   "Move up the current line."
@@ -25,3 +23,37 @@
 
 (global-set-key (kbd "M-<up>")  'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
+(global-set-key (kbd "C-d") 'kill-whole-line)
+
+(require 'package)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(custom-enabled-themes (quote (wombat)))
+ '(package-archives
+   (quote
+    (("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa-stable" . "http://stable.melpa.org/packages/")))))
+(package-initialize)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+"autocomplete"
+(ac-config-default)
+(ac-linum-workaround)
+
+"smex"
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+"other keys"
+(global-set-key "\C-c\C-d" "\C-a\C- \C-e\M-w\C-o\C-n\C-y")
