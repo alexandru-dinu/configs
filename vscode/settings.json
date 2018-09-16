@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Wombat",
+    "editor.fontFamily": "CamingoCode",
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": false,
+    "editor.multiCursorModifier": "ctrlCmd"
+}
