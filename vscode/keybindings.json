@@ -5,50 +5,6 @@
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
-        "key": "ctrl+f",
-        "command": "-emacs.cursorRight",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+b",
-        "command": "-emacs.cursorLeft",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "-emacs.cursorDown",
-        "when": "editorTextFocus && !suggestWidgetVisible"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "-emacs.cursorUp",
-        "when": "editorTextFocus && !suggestWidgetVisible"
-    },
-    {
-        "key": "ctrl+/",
-        "command": "-emacs.C-/",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+x u",
-        "command": "-emacs.C-x_u",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+space",
-        "command": "-emacs.enterMarkMode",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+w",
-        "command": "-emacs.M-w",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+w",
-        "command": "emacs.M-w"
-    },
-    {
         "key": "alt+g",
         "command": "editor.action.goToDeclaration",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
