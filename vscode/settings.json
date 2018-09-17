@@ -1,6 +1,7 @@
 {
     "workbench.colorTheme": "Wombat",
-    "editor.fontFamily": "Ubuntu Mono",
+    "editor.fontFamily": "CamingoCode",
+    "editor.fontSize": 14,
     "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": false,
