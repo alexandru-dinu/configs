@@ -1,8 +1,9 @@
 {
     "workbench.colorTheme": "Wombat",
-    "editor.fontFamily": "CamingoCode",
+    "editor.fontFamily": "Ubuntu Mono",
     "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": false,
-    "editor.multiCursorModifier": "ctrlCmd"
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.startupEditor": "newUntitledFile"
 }
