@@ -6,5 +6,6 @@
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "telemetry.enableTelemetry": false
 }
