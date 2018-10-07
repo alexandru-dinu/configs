@@ -7,5 +7,7 @@
     "workbench.activityBar.visible": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "python.jediEnabled": false,
+    "python.linting.pylintEnabled": false
 }
