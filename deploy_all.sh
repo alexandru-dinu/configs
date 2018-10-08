@@ -27,6 +27,7 @@ code --install-extension gerane.theme-sunburst
 code --install-extension justusadam.language-haskell
 code --install-extension ms-python.python
 code --install-extension ms-vscode.cpptools
+code --install-extension 13xforever.language-x86-64-assembly
 echo "DONE"
 echo
 
