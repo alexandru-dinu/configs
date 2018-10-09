@@ -47,6 +47,7 @@ alias l="showmarks"
 alias gdb="gdb -quiet"
 alias cudachk="optirun python -c 'import torch; print(torch.cuda.is_available())'"
 alias go="xdg-open"
+alias i="ipython"
 
 cd_and_ls() {
     cd "$1" && ls
