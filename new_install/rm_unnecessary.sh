@@ -23,3 +23,4 @@ sudo apt remove --purge gnome-sudoku
 sudo apt remove --purge "thunderbird*"
 sudo apt remove --purge "mousepad*"
 sudo apt remove --purge "remmina*"
+sudo apt remove --purge libreoffice-gtk
