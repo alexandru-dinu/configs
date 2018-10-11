@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # for app in /usr/share/applications/*.desktop; do echo "${app:24:-8}"; done
 # https://kkovacs.eu/cool-but-obscure-unix-tools
 
@@ -24,3 +26,6 @@ sudo apt remove --purge "thunderbird*"
 sudo apt remove --purge "mousepad*"
 sudo apt remove --purge "remmina*"
 sudo apt remove --purge libreoffice-gtk
+
+sudo apt remove --purge xreader
+sudo apt install qpdfview
