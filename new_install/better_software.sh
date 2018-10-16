@@ -29,3 +29,9 @@ sudo apt remove --purge libreoffice-gtk
 
 sudo apt remove --purge xreader
 sudo apt install qpdfview
+
+# done
+sudo apt update
+sudo apt upgrade
+sudo apt autoclean
+sudo apt autoremove
