@@ -2,15 +2,21 @@
     "workbench.colorTheme": "Solarized Dark",
     "editor.fontFamily": "CamingoCode",
     "editor.fontSize": 14,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+
     "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.visible": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
+
     "telemetry.enableTelemetry": false,
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
     "window.zoomLevel": 0,
+
     "editor.tokenColorCustomizations": {
         "textMateRules": [{ 
             "scope": ["comment"],
