@@ -9,5 +9,12 @@
     "workbench.startupEditor": "newUntitledFile",
     "telemetry.enableTelemetry": false,
     "python.jediEnabled": false,
-    "python.linting.pylintEnabled": false
+    "python.linting.pylintEnabled": false,
+    "window.zoomLevel": 0,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [{ 
+            "scope": ["comment"],
+            "settings": {"fontStyle": "",}
+        }]
+    }
 }
