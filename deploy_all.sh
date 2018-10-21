@@ -1,10 +1,13 @@
-echo "CONFIGURING ZSH..."
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+echo "${green}CONFIGURING ZSH${reset}"
 rm -rf $HOME/.zshrc
 ln -s `realpath zsh/.zshrc` $HOME/.zshrc
 echo
 
 
-echo "CONFIGURING VIM..."
+echo "${green}CONFIGURING VIM${reset}"
 rm -rf $HOME/.vim*
 ln -s `realpath vim/.vimrc` $HOME/.vimrc
 git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
@@ -12,14 +15,14 @@ vim +PluginInstall +qall
 echo
 
 
-echo "CONFIGURING GHCI..."
+echo "${green}CONFIGURING GHCI${reset}"
 rm -f $HOME/.ghci
 ln -s `realpath ghci/.ghci` $HOME/.ghci
 chmod go-w $HOME/.ghci
 echo
 
 
-echo "CONFIGURING GDB..."
+echo "${green}CONFIGURING GDB${reset}"
 rm -rf $HOME/peda
 rm -rf $HOME/.gdbinit
 git clone https://github.com/longld/peda.git $HOME/peda
@@ -27,7 +30,7 @@ ln -s `realpath gdb/.gdbinit` $HOME/.gdbinit
 echo
 
 
-echo "CONFIGURING VSCODE..."
+echo "${green}CONFIGURING VSCODE${reset}"
 VSCODE_CFG_DIR=$HOME/.config/Code/User
 
 rm -rf $HOME/.vscode
@@ -44,9 +47,8 @@ code --install-extension 13xforever.language-x86-64-assembly
 echo
 
 
-echo "CONFIGURING TERMINATOR..."
+echo "${green}CONFIGURING TERMINATOR${reset}"
 rm -rf  $HOME/.config/terminator
 mkdir -p $HOME/.config/terminator
 ln -s `realpath terminals/terminator.settings` $HOME/.config/terminator/config
 echo
-
