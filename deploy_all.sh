@@ -23,7 +23,6 @@ ln -s $(realpath vscode/keybindings.json) $VSCODE_CFG_DIR/keybindings.json
 ln -s $(realpath vscode/settings.json) $VSCODE_CFG_DIR/settings.json
 
 code --install-extension geeebe.duplicate
-code --install-extension gerane.theme-sunburst
 code --install-extension justusadam.language-haskell
 code --install-extension ms-python.python
 code --install-extension ms-vscode.cpptools
