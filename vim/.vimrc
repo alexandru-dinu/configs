@@ -8,12 +8,15 @@ call vundle#begin()
 " Plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
+" Plugins settings
+map <C-b> :NERDTreeFocus<CR>
+let NERDTreeShowHidden=1
 
 " Set how many lines of history VIM has to remember
 set history=500
