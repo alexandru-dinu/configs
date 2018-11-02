@@ -5,7 +5,7 @@ reset=`tput sgr0`
 read -p "${green}CONFIGURE ZSH? [y/n] ${reset}" b
 if [ "$b" = 'y' ]; then
     rm -rf $HOME/.zshrc
-    ln -s `realpath zsh/.zshrc` $HOME/.zshrc
+    cp `realpath zsh/.zshrc` $HOME/.zshrc
     echo
 fi
 
