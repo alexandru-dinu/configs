@@ -1,11 +1,19 @@
+#!/bin/sh
+
 green=`tput setaf 2`
 reset=`tput sgr0`
 
 
-read -p "${green}CONFIGURE ZSH? [y/n] ${reset}" b
+read -p "${green}CONFIGURE Oh My Zsh? [y/n] ${reset}" b
 if [ "$b" = 'y' ]; then
     rm -rf $HOME/.zshrc
-    cp `realpath zsh/.zshrc` $HOME/.zshrc
+    rm -rf $HOME/.oh-my-zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    cp zsh/.zshrc $HOME/.zshrc
+    git clone https://github.com/jocelynmallon/zshmarks.git $HOME/.oh-my-zsh/custom/plugins/zshmarks
+    cp zsh/robbyrussell.zsh-theme $HOME/.oh-my-zsh/themes/
+    mv $HOME/.oh-my-zsh/lib/git.zsh $HOME/.oh-my-zsh/lib/git.zsh.orig
+    cat zsh/git.zsh | cat - $HOME/.oh-my-zsh/lib/git.zsh.orig > $HOME/.oh-my-zsh/lib/git.zsh
     echo
 fi
 
@@ -60,6 +68,7 @@ fi
 
 read -p "${green}CONFIGURE TERMINATOR? [y/n] ${reset}" b
 if [ "$b" = 'y' ]; then
+    cp fonts/* ~/.local/share/fonts/
     rm -rf  $HOME/.config/terminator
     mkdir -p $HOME/.config/terminator
     ln -s `realpath terminals/terminator.settings` $HOME/.config/terminator/config

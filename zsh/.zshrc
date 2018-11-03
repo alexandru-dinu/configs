@@ -5,15 +5,7 @@ export LANG=en_US.UTF-8
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/alex/.oh-my-zsh
-
-# Anaconda
-export PATH="/home/alex/anaconda3/bin:$PATH"
-# Cuda
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-# Stack
-export PATH="/usr/local/bin/stack:$PATH"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -45,7 +37,6 @@ alias l="showmarks"
 
 # aliases
 alias gdb="gdb -quiet"
-alias cudachk="optirun python -c 'import torch; print(torch.cuda.is_available())'"
 alias go="xdg-open"
 alias i="ipython"
 
