@@ -3,8 +3,8 @@
 # for app in /usr/share/applications/*.desktop; do echo "${app:24:-8}"; done
 # https://kkovacs.eu/cool-but-obscure-unix-tools
 
-# remove
 
+# remove
 sudo apt remove --purge "totem*"
 sudo apt remove --purge "rhythmbox*"
 sudo apt remove --purge "brasero*"
@@ -26,12 +26,18 @@ sudo apt remove --purge "thunderbird*"
 sudo apt remove --purge "mousepad*"
 sudo apt remove --purge "remmina*"
 sudo apt remove --purge libreoffice-gtk
-
 sudo apt remove --purge xreader
-sudo apt install qpdfview
 
-# done
+# update
 sudo apt update
 sudo apt upgrade
+
+# install
+sudo apt install ssh zsh vim git terminator
+sudo apt install ghc build-essential
+sudo apt install qpdfview chromium-browser vlc
+sudo apt install geeqie feh tree htop
+
+# clean
 sudo apt autoclean
 sudo apt autoremove
