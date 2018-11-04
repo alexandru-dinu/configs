@@ -74,3 +74,11 @@ if [ "$b" = 'y' ]; then
     ln -s `realpath terminals/terminator.settings` $HOME/.config/terminator/config
     echo
 fi
+
+
+read -p "${green}CONFIGURE i3? [y/n] ${reset}" b
+if [ "$b" = 'y' ]; then
+    ln -s `realpath i3` $HOME/.config/i3
+    echo
+fi
+
