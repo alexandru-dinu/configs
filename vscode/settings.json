@@ -1,7 +1,7 @@
 {
     "workbench.colorTheme": "Solarized Dark",
-    "editor.fontFamily": "CamingoCode",
-    "editor.fontSize": 14,
+    "editor.fontFamily": "Ubuntu Mono",
+    "editor.fontSize": 16,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -20,7 +20,7 @@
     "editor.tokenColorCustomizations": {
         "textMateRules": [{ 
             "scope": ["comment"],
-            "settings": {"fontStyle": "",}
+            "settings": {"fontStyle": ""}
         }]
     }
 }
