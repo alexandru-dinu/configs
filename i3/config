@@ -14,17 +14,15 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:DejaVu Sans Mono 8
-font pango:CamingoCode 10.5
+font pango:Ubuntu Mono 11
 
 # wallpaper
 exec_always feh --bg-fill ~/Pictures/groot.png
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+hide_edge_borders none
+
+# use network manager
+exec --no-startup-id nm-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -77,13 +75,14 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 
-set $workspace1 "1: cli"
+set $workspace1 "1"
+set $workspace2 "2: browser"
 set $workspace3 "3: py"
 set $workspace5 "5: media"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace 2
+bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace $workspace5
@@ -95,7 +94,7 @@ bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace $workspace5
@@ -105,6 +104,7 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+for_window [class="Chromium-browser"] move to workspace $workspace2
 for_window [class="jetbrains-pycharm"] move to workspace $workspace3
 for_window [class="Spotify"] move to workspace $workspace5
 
@@ -115,11 +115,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# lock screen
-bindsym $mod+l exec i3lock-fancy
-# lock and suspend
-# bindsym $mod+Shift+l exec i3lock-fancy && systemctl suspend
-
 # function keys
 # volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
@@ -128,6 +123,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
 # brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+# common apps
+bindsym $mod+n exec nemo
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -151,19 +149,21 @@ bar {
         position top
 }
 
+# set lock / exit / suspend / reboot
+bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
+# autolock
+exec --no-startup-id xautolock -time 10 -locker blurlock
+
 bindsym $mod+Shift+l mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-
-#set $i3exit "~/.config/i3/i3exit"
-
 mode "$mode_system" {
-        bindsym l exec --no-startup-id ~/.config/i3/i3exit lock, mode "default"
-        bindsym s exec --no-startup-id ~/.config/i3/i3exit suspend, mode "default"
-        bindsym u exec --no-startup-id ~/.config/i3/i3exit switch_user, mode "default"
-        bindsym e exec --no-startup-id ~/.config/i3/i3exit logout, mode "default"
-        bindsym h exec --no-startup-id ~/.config/i3/i3exit hibernate, mode "default"
-        bindsym r exec --no-startup-id ~/.config/i3/i3exit reboot, mode "default"
-        bindsym Shift+s exec --no-startup-id ~/.config/i3/i3exit shutdown, mode "default"
+        bindsym l exec --no-startup-id i3exit lock, mode "default"
+        bindsym s exec --no-startup-id i3exit suspend, mode "default"
+        bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+        bindsym e exec --no-startup-id i3exit logout, mode "default"
+        bindsym h exec --no-startup-id /i3exit hibernate, mode "default"
+        bindsym r exec --no-startup-id i3exit reboot, mode "default"
+        bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
