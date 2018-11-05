@@ -68,7 +68,6 @@ fi
 
 read -p "${green}CONFIGURE TERMINATOR? [y/n] ${reset}" b
 if [ "$b" = 'y' ]; then
-    cp fonts/* ~/.local/share/fonts/
     rm -rf  $HOME/.config/terminator
     mkdir -p $HOME/.config/terminator
     ln -s `realpath terminals/terminator.settings` $HOME/.config/terminator/config
@@ -78,7 +77,11 @@ fi
 
 read -p "${green}CONFIGURE i3? [y/n] ${reset}" b
 if [ "$b" = 'y' ]; then
-    ln -s `realpath i3` $HOME/.config/i3
+    rm -rf $HOME/.config/i3
+    mkdir $HOME/.config/i3
+    ln -s `realpath i3/config` $HOME/.config/i3/config
+    ln -s `realpath i3/i3status.conf` $HOME/.config/i3/i3status.conf
+    ln -s `realpath i3/i3blocks.conf` $HOME/.config/i3/i3blocks.conf
     echo
 fi
 
