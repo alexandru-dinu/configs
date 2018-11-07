@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Sunburst",
     "editor.fontFamily": "Ubuntu Mono",
     "editor.fontSize": 16,
     "files.trimTrailingWhitespace": true,
@@ -8,7 +8,7 @@
 
     "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
 
