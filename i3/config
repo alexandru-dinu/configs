@@ -35,6 +35,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 
+# printscreen
+bindsym Print exec xfce4-screenshooter
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
