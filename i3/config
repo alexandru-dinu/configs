@@ -17,7 +17,7 @@ set $mod Mod4
 font pango:Ubuntu Mono 11
 
 # wallpaper
-exec_always feh --bg-fill ~/Pictures/groot.png
+exec --no-startup-id feh --bg-fill ~/Pictures/groot.png
 
 hide_edge_borders none
 
