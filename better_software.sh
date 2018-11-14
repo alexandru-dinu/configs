@@ -35,7 +35,7 @@ sudo apt upgrade
 # install
 sudo apt install ssh zsh vim git terminator
 sudo apt install ghc build-essential
-sudo apt install qpdfview chromium-browser vlc
+sudo apt install chromium-browser vlc
 sudo apt install geeqie feh tree htop
 
 # clean
