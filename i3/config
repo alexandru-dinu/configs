@@ -110,7 +110,6 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 for_window [class="Chromium-browser"] move to workspace $workspace2
-for_window [class="jetbrains-pycharm"] move to workspace $workspace3
 for_window [class="Spotify"] move to workspace $workspace5
 
 # reload the configuration file
