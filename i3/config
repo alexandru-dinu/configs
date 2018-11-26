@@ -20,8 +20,7 @@ font pango:Ubuntu Mono 11
 exec --no-startup-id feh --bg-fill ~/Pictures/groot.png
 
 # keyboard layouts
-exec setxkbmap -layout "us,ro" -variant ",std"
-exec setxkbmap -option "grp:alt_shift_toggle"
+exec --no-startup-id setxkbmap -layout "us,ro" -variant ",std" -option "grp:win_space_toggle"
 
 hide_edge_borders none
 
