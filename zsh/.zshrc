@@ -28,39 +28,4 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git zshmarks)
 
 source $ZSH/oh-my-zsh.sh
-
-# zshmarks
-alias g="jump"
-alias s="bookmark"
-alias d="deletemark"
-alias l="showmarks"
-
-# aliases
-alias gdb="gdb -quiet"
-alias go="xdg-open"
-alias i="ipython"
-
-cd_and_ls() {
-    cd "$1" && ls
-}
-
-alias c="cd_and_ls"
-
-sak() {
-    eval $(ssh-agent -s) && ssh-add ~/.ssh/"$1"
-}
-
-rs() {
-    [ "$1" = "x" ] && redshift -x || redshift -O "$1" -g 0.9
-}
-
-# directly download gdrive links
-function gdrive_download () {
-  CONFIRM=$(
-  	wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies \
-  	--no-check-certificate "https://docs.google.com/uc?export=download&id=$1" \
-    -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p' \
-  )
-  wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$CONFIRM&id=$1" -O $2
-  rm -rf /tmp/cookies.txt
-}
+source $HOME/configs.git/zsh/aliases.sh
