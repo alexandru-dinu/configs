@@ -23,16 +23,16 @@ c () {
     cd "$1" && ls
 }
 
-sak() {
+sak () {
     eval $(ssh-agent -s) && ssh-add ~/.ssh/"$1"
 }
 
-rs() {
+rs () {
     [ "$1" = "x" ] && redshift -x || redshift -O "$1" -g 0.9
 }
 
 # directly download gdrive links
-function gdrive_download () {
+gdrive_download () {
   CONFIRM=$(
   	wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies \
   	--no-check-certificate "https://docs.google.com/uc?export=download&id=$1" \
