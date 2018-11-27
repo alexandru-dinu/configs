@@ -10,10 +10,15 @@ if [ "$b" = 'y' ]; then
     rm -rf $HOME/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     cp zsh/.zshrc $HOME/.zshrc
+
+    # zshmarks
     git clone https://github.com/jocelynmallon/zshmarks.git $HOME/.oh-my-zsh/custom/plugins/zshmarks
+    # theme
     cp zsh/robbyrussell.zsh-theme $HOME/.oh-my-zsh/themes/
+    # custom git show
     mv $HOME/.oh-my-zsh/lib/git.zsh $HOME/.oh-my-zsh/lib/git.zsh.orig
     cat zsh/git.zsh | cat - $HOME/.oh-my-zsh/lib/git.zsh.orig > $HOME/.oh-my-zsh/lib/git.zsh
+
     echo
 fi
 
@@ -57,6 +62,7 @@ if [ "$b" = 'y' ]; then
     ln -s `realpath vscode/keybindings.json` $VSCODE_CFG_DIR/keybindings.json
     ln -s `realpath vscode/settings.json` $VSCODE_CFG_DIR/settings.json
 
+    code --install-extension gerane.theme-sunburst
     code --install-extension geeebe.duplicate
     code --install-extension justusadam.language-haskell
     code --install-extension ms-python.python
@@ -84,4 +90,3 @@ if [ "$b" = 'y' ]; then
     ln -s `realpath i3/i3blocks.conf` $HOME/.config/i3/i3blocks.conf
     echo
 fi
-
