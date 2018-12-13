@@ -8,7 +8,7 @@
 
     "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
 
@@ -22,5 +22,7 @@
             "scope": ["comment"],
             "settings": {"fontStyle": ""}
         }]
-    }
+    },
+    
+    "window.titleBarStyle": "native"
 }
