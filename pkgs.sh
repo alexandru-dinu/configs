@@ -43,7 +43,12 @@ sudo apt install ssh zsh vim git terminator
 sudo apt install ghc build-essential
 sudo apt install chromium-browser vlc
 sudo apt install geeqie feh tree htop
+sudo apt install npm && sudo ln -sf /usr/bin/nodejs /usr/bin/node
 
 # clean
 sudo apt autoclean
 sudo apt autoremove
+
+# install gizmos
+sudo npm install -g imgur-upload-cli
+

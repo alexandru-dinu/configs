@@ -8,12 +8,14 @@ alias l="showmarks"
 
 # user
 alias gdb="gdb -q"
-alias do="xdg-open"
 alias i="ipython"
-
-
+alias cb="xclip -selection clipboard"
 
 ### functions
+
+imgur () {
+    imgur-upload "$1" 2> /dev/null | cb
+}
 
 dis () {
     objdump -d -M intel "$1"
