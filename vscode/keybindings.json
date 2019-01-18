@@ -76,5 +76,9 @@
     {
         "key": "shift+alt+s",
         "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "shift+alt+m",
+        "command": "editor.action.toggleMinimap"
     }
 ]
