@@ -19,6 +19,11 @@ config_zsh () {
     mv $HOME/.oh-my-zsh/lib/git.zsh $HOME/.oh-my-zsh/lib/git.zsh.orig
     cat zsh/git.zsh | cat - $HOME/.oh-my-zsh/lib/git.zsh.orig > $HOME/.oh-my-zsh/lib/git.zsh
 
+    echo "env-vars"
+    ex -s -c '6i|export PATH=$HOME/anaconda3/bin:$PATH' -c x $HOME/.zshrc
+    ex -s -c '7i|export PATH=/usr/local/cuda/bin:$PATH' -c x $HOME/.zshrc
+    ex -s -c '8i|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x $HOME/.zshrc
+
     echo "Done!"
 }
 

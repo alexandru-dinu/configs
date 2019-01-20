@@ -1,5 +1,3 @@
-
-
 ### partitions
 	/ (ext4): 301,852 MB
 	swap: 16,384 MB
