@@ -72,6 +72,14 @@ if [ "$b" = 'y' ]; then
 fi
 
 
+read -p "${green}CONFIGURE JETBRAINS? [y/n] ${reset}" b
+if [ "$b" = 'y' ]; then
+    PYCHARM_CFG_DIR=$(locate .PyCharm -n 1)
+    ln -sf `realpath jetbrains/keymaps` $PYCHARM_CFG_DIR/config/keymaps
+    echo "Keymaps for PyCharm set"
+fi
+
+
 read -p "${green}CONFIGURE TERMINATOR? [y/n] ${reset}" b
 if [ "$b" = 'y' ]; then
     rm -rf  $HOME/.config/terminator
