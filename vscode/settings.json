@@ -1,7 +1,7 @@
 {
     "workbench.colorTheme": "Sunburst",
-    "editor.fontFamily": "Ubuntu Mono",
-    "editor.fontSize": 16,
+    "editor.fontFamily": "Source Code Pro",
+    "editor.fontSize": 14,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
