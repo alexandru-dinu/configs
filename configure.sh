@@ -32,7 +32,9 @@ config_zsh () {
 
     echo "custom git show"
     mv $HOME/.oh-my-zsh/lib/git.zsh $HOME/.oh-my-zsh/lib/git.zsh.orig
-    cat zsh/git.zsh | cat - $HOME/.oh-my-zsh/lib/git.zsh.orig > $HOME/.oh-my-zsh/lib/git.zsh
+    (cat zsh/git.zsh ; echo ""; cat $HOME/.oh-my-zsh/lib/git.zsh.orig) > $HOME/.oh-my-zsh/lib/git.zsh
+    rm $HOME/.oh-my-zsh/lib/git.zsh.orig
+    cd $HOME/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
 
     echo "env-vars"
     ex -s -c '6i|export PATH=$HOME/anaconda3/bin:$PATH' -c x $HOME/.zshrc
