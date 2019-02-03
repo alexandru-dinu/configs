@@ -128,6 +128,14 @@ config_i3 () {
     echo "Done!"
 }
 
+config_ipython () {
+    echo "${green}Configuring IPython...${reset}"
+
+    ln -sf `realpath ipython/ipython_config.py` $HOME/.ipython/profile_default/
+
+    echo "Done!"
+}
+
 get_configs () {
     grep -oE "^config_[a-z0-9]+" $0
 }
