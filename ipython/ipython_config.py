@@ -4,6 +4,7 @@ c.InteractiveShell.colors = "Linux"
 
 c.InteractiveShellApp.exec_lines = [
     'import torch',
+    'import torch.nn as nn',
     'import torch.tensor as tensor',
     'import torch.autograd as autograd',
     'from torch.autograd import Variable',
