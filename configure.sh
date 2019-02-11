@@ -98,10 +98,17 @@ config_vscode () {
 config_jetbrains () {
     echo "${green}Configuring JetBrains...${reset}"
 
-    PYCHARM_CFG_DIR=$(locate .PyCharm -n 1)
-    rm -rf $PYCHARM_CFG_DIR/config/keymaps
-    ln -s `realpath jetbrains/keymaps` $PYCHARM_CFG_DIR/config/keymaps
-    echo "Keymaps for PyCharm set."
+    declare -a cfg_dirs=(
+        # $(locate .PyCharm -n 1)
+        $(locate .CLion -n 1)
+    )
+
+    for d in "${cfg_dirs[@]}"
+    do
+        rm -rf $d/config/keymaps
+        ln -s `realpath jetbrains/keymaps` $d/config/keymaps
+        echo "Keymaps for [$d] set."
+    done
 
     echo "Done!"
 }
