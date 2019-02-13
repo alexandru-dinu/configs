@@ -64,7 +64,7 @@
         "command": "editor.action.goToDeclaration"
     },
     {
-        "key": "shift+alt+s",
+        "key": "alt+f",
         "command": "workbench.action.navigateBack"
     },
     {
@@ -110,5 +110,18 @@
         "key": "ctrl+k f12",
         "command": "-editor.action.revealDefinitionAside",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "alt+e",
+        "command": "revealInExplorer"
+    },
+    {
+        "key": "ctrl+f2",
+        "command": "-editor.action.changeAll",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+f2",
+        "command": "editor.action.changeAll"
     }
 ]
