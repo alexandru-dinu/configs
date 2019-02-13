@@ -37,9 +37,12 @@ config_zsh () {
     cd $HOME/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
 
     echo "env-vars"
-    ex -s -c '6i|export PATH=$HOME/anaconda3/bin:$PATH' -c x $HOME/.zshrc
-    ex -s -c '7i|export PATH=/usr/local/cuda/bin:$PATH' -c x $HOME/.zshrc
-    ex -s -c '8i|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x $HOME/.zshrc
+    
+    echo "anaconda? [y/n]" && read a
+    [ $a == 'y' ] && ex -s -c '5i|export PATH=$HOME/anaconda3/bin:$PATH' -c x $HOME/.zshrc
+    echo "cuda? [y/n]" && read c    
+    [ $c == 'y' ] && ex -s -c '6i|export PATH=/usr/local/cuda/bin:$PATH' -c x $HOME/.zshrc
+    [ $c == 'y' ] && ex -s -c '7i|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x $HOME/.zshrc
 
     echo "Done!"
 }
