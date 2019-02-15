@@ -82,6 +82,10 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# move to monitor
+bindsym $mod+z move workspace to output left
+bindsym $mod+x move workspace to output right
+
 
 set $workspace1 "1: main"
 set $workspace2 "2: browser"
