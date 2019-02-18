@@ -33,6 +33,10 @@ rs () {
     [ "$1" = "x" ] && redshift -x || redshift -O "$1" -g 0.9
 }
 
+gdm () {
+    git diff origin/master "$1"
+}
+
 # directly download gdrive links
 gdrive_download () {
   CONFIRM=$(
