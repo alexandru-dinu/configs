@@ -27,6 +27,7 @@ declare -a gizmos=(
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
     "powertop"
     "silversearcher-ag"
+    "rofi"
 )
 
 declare -a npm_pkgs=(
