@@ -175,7 +175,8 @@ bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
 exec --no-startup-id xautolock -time 10 -locker blurlock
 
 bindsym $mod+Shift+l mode "$mode_system"
-set $mode_system (l)ock | (e)xit | switch_(u)ser | (s)uspend | (h)ibernate | (r)eboot | (Shift+s)hutdown
+# set $mode_system (l)ock | (e)xit | switch_(u)ser | (s)uspend | (h)ibernate | (r)eboot | (Shift+s)hutdown
+set $mode_system l | e | u | s | h | r | S-s
 mode "$mode_system" {
         bindsym l exec --no-startup-id i3exit lock, mode "default"
         bindsym s exec --no-startup-id i3exit suspend, mode "default"
