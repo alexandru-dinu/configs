@@ -37,6 +37,10 @@ gdm () {
     git diff origin/master "$1"
 }
 
+to_pdf () {
+    libreoffice --headless --convert-to pdf "$1"
+}
+
 # directly download gdrive links
 gdrive_download () {
   CONFIRM=$(
