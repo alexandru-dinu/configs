@@ -10,6 +10,7 @@ alias l="showmarks"
 alias gdb="gdb -q"
 alias i="ipython"
 alias cb="xclip -selection clipboard"
+alias todo="vim $HOME/workspace/todo.txt"
 
 ### functions
 
