@@ -3,6 +3,10 @@
 green=`tput setaf 2`
 reset=`tput sgr0`
 
+prompt () {
+    echo -e "${green}$1${reset}"
+}
+
 declare -a vscode_exts=(
     "gerane.theme-sunburst"
     "geeebe.duplicate"
@@ -14,7 +18,7 @@ declare -a vscode_exts=(
 
 
 config_zsh () {
-    echo "${green}Configuring Oh-My-Zsh...${reset}"
+    prompt "Configuring Oh-My-Zsh"
 
     rm -rf $HOME/.zshrc
     rm -rf $HOME/.oh-my-zsh
@@ -37,50 +41,50 @@ config_zsh () {
     cd $HOME/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
 
     echo "env-vars"
-    
+
     echo "anaconda? [y/n]" && read a
     [ $a == 'y' ] && ex -s -c '5i|export PATH=$HOME/anaconda3/bin:$PATH' -c x $HOME/.zshrc
-    echo "cuda? [y/n]" && read c    
+    echo "cuda? [y/n]" && read c
     [ $c == 'y' ] && ex -s -c '6i|export PATH=/usr/local/cuda/bin:$PATH' -c x $HOME/.zshrc
     [ $c == 'y' ] && ex -s -c '7i|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x $HOME/.zshrc
 
-    echo "Done!"
+    prompt "Done"
 }
 
 config_vim () {
-    echo "${green}Configuring vim...${reset}"
+    prompt "Configuring vim"
 
     rm -rf $HOME/.vim*
     ln -s `realpath vim/.vimrc` $HOME/.vimrc
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
-    echo "Done!"
+    prompt "Done"
 }
 
 config_ghci () {
-    echo "${green}Configuring ghci...${reset}"
+    prompt "Configuring ghci"
 
     rm -f $HOME/.ghci
     ln -s `realpath ghci/.ghci` $HOME/.ghci
     chmod go-w $HOME/.ghci
 
-    echo "Done"
+    prompt "Done"
 }
 
 config_gdb () {
-    echo "${green}Configuring gdb...${reset}"
+    prompt "Configuring gdb"
 
     rm -rf $HOME/peda
     rm -rf $HOME/.gdbinit
     git clone https://github.com/longld/peda.git $HOME/peda
     ln -s `realpath gdb/.gdbinit` $HOME/.gdbinit
 
-    echo "Done!"
+    prompt "Done"
 }
 
 config_vscode () {
-    echo "${green}Configuring vscode...${reset}"
+    prompt "Configuring vscode"
 
     VSCODE_CFG_DIR=$HOME/.config/Code/User
 
@@ -95,15 +99,15 @@ config_vscode () {
         code --install-extension $ext
     done
 
-    echo "Done!"
+    prompt "Done"
 }
 
 config_jetbrains () {
-    echo "${green}Configuring JetBrains...${reset}"
+    prompt "Configuring JetBrains"
 
     declare -a cfg_dirs=(
-        # $(locate .PyCharm -n 1)
-        $(locate .CLion -n 1)
+        $(find $HOME -name ".PyCharm")
+        $(find $HOME -name ".CLion")
     )
 
     for d in "${cfg_dirs[@]}"
@@ -113,21 +117,21 @@ config_jetbrains () {
         echo "Keymaps for [$d] set."
     done
 
-    echo "Done!"
+    prompt "Done"
 }
 
 config_terminator () {
-    echo "${green}Configuring terminator...${reset}"
+    prompt "Configuring terminator"
 
     rm -rf  $HOME/.config/terminator
     mkdir -p $HOME/.config/terminator
     ln -s `realpath terminals/terminator.settings` $HOME/.config/terminator/config
 
-    echo "Done!"
+    prompt "Done"
 }
 
 config_i3 () {
-    echo "${green}Configuring i3...${reset}"
+    prompt "Configuring i3"
 
     rm -rf $HOME/.config/i3
     mkdir $HOME/.config/i3
@@ -138,31 +142,43 @@ config_i3 () {
     sudo cp i3/blurlock /usr/bin/ && sudo chown $USER:$USER /usr/bin/blurlock && sudo chmod +x /usr/bin/blurlock
     sudo cp i3/i3exit /usr/bin/ && sudo chown $USER:$USER /usr/bin/i3exit && sudo chmod +x /usr/bin/i3exit
 
-    echo "Done!"
+    prompt "Done"
 }
 
 config_ipython () {
-    echo "${green}Configuring IPython...${reset}"
+    prompt "Configuring IPython"
 
     ln -sf `realpath ipython/ipython_config.py` $HOME/.ipython/profile_default/
 
-    echo "Done!"
+    prompt "Done"
 }
 
+config_git () {
+    prompt "Configuring git"
+
+    git config --global pull.rebase true
+    git config --global core.fileMode false
+
+    prompt "Done"
+}
+
+
 get_configs () {
-    grep -oE "^config_[a-z0-9]+" $0
+    grep -oE "^config_[a-z0-9]+" $0 | cut -d"_" -f2 | sort
 }
 
 help () {
-    echo "Usage: $0 --all OR $0 <pkg_name>\n"
-    echo "Can configure following packages:"
-    get_configs | cut -d"_" -f2
+    echo -e "Usage: $0 --all OR $0 <pkg_name>\n"
+    echo "Can configure following packages:" && get_configs
 }
 
 
 case "$1" in
     ""|--help|-h)
         help
+        ;;
+    --list|-l)
+        get_configs
         ;;
     --all)
         for cfg in $(get_configs); do $cfg; done

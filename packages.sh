@@ -8,19 +8,28 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
+red_prompt () {
+    echo -e "${red}$1${reset}"
+}
+
+green_prompt () {
+    echo -e "${green}$1${reset}"
+}
+
 
 declare -a to_remove=(
     "totem*" "rhythmbox*" "brasero*" "parole*" "catfish*"
     "ristretto*" "gedit*" "pidgin" "xfburn" "simple-scan"
     "hplip" "gnome-orca" "evolution" "fluid" "gnome-mahjongg"
     "gnome-mines" "gnome-sudoku" "thunderbird*" "mousepad*" "remmina*"
-    "libreoffice-gtk" "xreader"
+    "xreader"
 )
 
 declare -a essentials=(
     "build-essential"
     "ssh" "zsh" "vim" "git" "ghc" "geeqie" "feh" "terminator" "npm"
     "chromium-browser" "vlc"
+    "i3*"
 )
 
 declare -a gizmos=(
@@ -30,14 +39,14 @@ declare -a gizmos=(
     "xautolock" "rofi" "lxappearance"
 )
 
-declare -a npm_pkgs=(
+declare -a npm_packages=(
     "imgur-upload-cli"
 )
 
-# remove unneeded pkgs
+# remove unneeded packages
 for p in "${to_remove[@]}"
 do
-    echo "${red}${p}${reset}"
+    red_prompt "$p"
     sudo apt remove --purge "$p"
 done
 
@@ -46,10 +55,10 @@ sudo apt update
 sudo apt upgrade
 
 
-# install essential pkgs
+# install essential packages
 for p in "${essentials[@]}"
 do
-    echo "${green}${p}${reset}"
+    green_prompt "$p"
     sudo apt install "$p"
 done
 
@@ -58,17 +67,17 @@ done
 sudo ln -sf /usr/bin/nodejs /usr/bin/node
 
 
-# install npm pkgs
-for p in "${npm_pkgs[@]}"
+# install npm packages
+for p in "${npm_packages[@]}"
 do
-    echo "${green}${p}${reset}"
+    green_prompt "$p"
     (npm list -g | grep -q ${p}) || sudo npm install -g ${p}
 done
 
 # install gizmos
 for p in "${gizmos[@]}"
 do
-    echo "${green}${p}${reset}"
+    green_prompt "$p"
     sudo apt install "$p"
 done
 
@@ -77,4 +86,4 @@ done
 sudo apt autoclean
 sudo apt autoremove
 
-echo -e "\n${green}Done!${reset}"
+green_prompt "Done"
