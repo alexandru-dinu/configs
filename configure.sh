@@ -14,6 +14,7 @@ declare -a vscode_exts=(
     "ms-python.python"
     "ms-vscode.cpptools"
     "13xforever.language-x86-64-assembly"
+    "gruntfuggly.todo-tree"
 )
 
 
