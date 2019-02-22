@@ -63,6 +63,16 @@ config_vim () {
     prompt "Done"
 }
 
+config_spacemacs () {
+    prompt "Configuring spacemacs"
+
+    rm -rf $HOME/.emacs.d
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    ln -s `realpath spacemacs/.spacemacs` $HOME/.spacemacs
+
+    prompt "Done"
+}
+
 config_ghci () {
     prompt "Configuring ghci"
 

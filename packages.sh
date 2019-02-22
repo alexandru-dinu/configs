@@ -27,7 +27,8 @@ declare -a to_remove=(
 
 declare -a essentials=(
     "build-essential"
-    "ssh" "zsh" "vim" "git" "ghc" "geeqie" "feh" "terminator" "npm"
+    "vim" "emacs"
+    "ssh" "zsh" "git" "ghc" "geeqie" "feh" "terminator" "npm"
     "chromium-browser" "vlc"
     "i3*"
 )
