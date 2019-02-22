@@ -6,23 +6,23 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
 
+    "window.titleBarStyle": "native",
     "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.visible": true,
+    "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
 
     "telemetry.enableTelemetry": false,
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
-    "window.zoomLevel": 0,
 
     "editor.tokenColorCustomizations": {
-        "textMateRules": [{ 
+        "textMateRules": [{
             "scope": ["comment"],
             "settings": {"fontStyle": ""}
         }]
-    },
-    
-    "window.titleBarStyle": "native"
+    }
 }
