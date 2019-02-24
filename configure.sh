@@ -27,10 +27,10 @@ config_zsh () {
     cp zsh/.zshrc $HOME/.zshrc
 
     echo "zshmarks"
-    git clone https://github.com/jocelynmallon/zshmarks.git $HOME/.oh-my-zsh/custom/plugins/zshmarks
+    git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git $HOME/.oh-my-zsh/custom/plugins/zshmarks
 
     echo "zsh-syntax-highlighting"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
     echo "custom theme"
     cp zsh/robbyrussell.zsh-theme $HOME/.oh-my-zsh/themes/
@@ -67,7 +67,7 @@ config_spacemacs () {
     prompt "Configuring spacemacs"
 
     rm -rf $HOME/.emacs.d
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    git clone --depth=1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
     ln -s `realpath spacemacs/.spacemacs` $HOME/.spacemacs
 
     prompt "Done"
@@ -88,7 +88,7 @@ config_gdb () {
 
     rm -rf $HOME/peda
     rm -rf $HOME/.gdbinit
-    git clone https://github.com/longld/peda.git $HOME/peda
+    git clone --depth=1 https://github.com/longld/peda.git $HOME/peda
     ln -s `realpath gdb/.gdbinit` $HOME/.gdbinit
 
     prompt "Done"
