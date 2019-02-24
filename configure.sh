@@ -169,6 +169,7 @@ config_git () {
 
     git config --global pull.rebase true
     git config --global core.fileMode false
+    git config --global core.editor vim
 
     prompt "Done"
 }
