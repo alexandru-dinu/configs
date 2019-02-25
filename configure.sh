@@ -7,53 +7,43 @@ prompt () {
     echo -e "${green}$1${reset}"
 }
 
-declare -a vscode_exts=(
-    "gerane.theme-sunburst"
-    "geeebe.duplicate"
-    "justusadam.language-haskell"
-    "ms-python.python"
-    "ms-vscode.cpptools"
-    "13xforever.language-x86-64-assembly"
-    "gruntfuggly.todo-tree"
-)
-
 
 config_zsh () {
     prompt "Configuring Oh-My-Zsh"
 
-    rm -rf $HOME/.zshrc $HOME/.zshenv $HOME/.oh-my-zsh
+    rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh
     echo "exit" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-    cp zsh/.zshrc $HOME/.zshrc
-    cp zsh/.zshenv $HOME/.zshenv
+    cp zsh/.zshrc ~/.zshrc
+    cp zsh/.zshenv ~/.zshenv
 
     prompt "zshmarks"
-    git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git $HOME/.oh-my-zsh/custom/plugins/zshmarks
+    git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ~/.oh-my-zsh/custom/plugins/zshmarks
 
     prompt "zsh-syntax-highlighting"
     git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
     prompt "custom theme"
-    cp zsh/robbyrussell.zsh-theme $HOME/.oh-my-zsh/themes/
+    cp zsh/robbyrussell.zsh-theme ~/.oh-my-zsh/themes/
 
     prompt "custom git show"
-    mv $HOME/.oh-my-zsh/lib/git.zsh $HOME/.oh-my-zsh/lib/git.zsh.orig
-    (cat zsh/git.zsh ; echo ""; cat $HOME/.oh-my-zsh/lib/git.zsh.orig) > $HOME/.oh-my-zsh/lib/git.zsh
-    rm $HOME/.oh-my-zsh/lib/git.zsh.orig
-    cd $HOME/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
+    mv ~/.oh-my-zsh/lib/git.zsh ~/.oh-my-zsh/lib/git.zsh.orig
+    (cat zsh/git.zsh ; echo ""; cat ~/.oh-my-zsh/lib/git.zsh.orig) > ~/.oh-my-zsh/lib/git.zsh
+    rm ~/.oh-my-zsh/lib/git.zsh.orig
+    cd ~/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
 
     prompt "environment variables"
-    local line=5
+    local l=5
 
     echo "anaconda2? [y/n]" && read a
-    [ $a == 'y' ] && ex -s -c "$line"'a|export PATH=$HOME/anaconda2/bin:$PATH' -c x $HOME/.zshenv && line=$((line+1))
+    [ $a == 'y' ] && ex -s -c "$l"'a|export PATH=~/anaconda2/bin:$PATH' -c x ~/.zshenv && l=$((l+1))
 
     echo "anaconda3? [y/n]" && read a
-    [ $a == 'y' ] && ex -s -c "$line"'a|export PATH=$HOME/anaconda3/bin:$PATH' -c x $HOME/.zshenv && line=$((line+1))
+    [ $a == 'y' ] && ex -s -c "$l"'a|export PATH=~/anaconda3/bin:$PATH' -c x ~/.zshenv && l=$((l+1))
 
     echo "cuda? [y/n]" && read c
-    [ $c == 'y' ] && ex -s -c "$line"'a|export PATH=/usr/local/cuda/bin:$PATH' -c x $HOME/.zshenv && line=$((line+1))
-    [ $c == 'y' ] && ex -s -c "$line"'a|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x $HOME/.zshenv && line=$((line+1))
+    [ $c == 'y' ] && ex -s -c "$l"'a|export PATH=/usr/local/cuda/bin:$PATH' -c x ~/.zshenv && l=$((l+1))
+    [ $c == 'y' ] && ex -s -c "$l"'a|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x ~/.zshenv && l=$((l+1))
 
     prompt "Done"
 }
@@ -61,9 +51,9 @@ config_zsh () {
 config_vim () {
     prompt "Configuring vim"
 
-    rm -rf $HOME/.vim*
-    ln -s `realpath vim/.vimrc` $HOME/.vimrc
-    git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+    rm -rf ~/.vim*
+    ln -s `realpath vim/.vimrc` ~/.vimrc
+    git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
     prompt "Done"
@@ -72,9 +62,9 @@ config_vim () {
 config_spacemacs () {
     prompt "Configuring spacemacs"
 
-    rm -rf $HOME/.emacs.d
+    rm -rf ~/.emacs.d
     git clone --depth=1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
-    ln -s `realpath spacemacs/.spacemacs` $HOME/.spacemacs
+    ln -s `realpath spacemacs/.spacemacs` ~/.spacemacs
 
     prompt "Done"
 }
@@ -82,9 +72,9 @@ config_spacemacs () {
 config_ghci () {
     prompt "Configuring ghci"
 
-    rm -f $HOME/.ghci
-    ln -s `realpath ghci/.ghci` $HOME/.ghci
-    chmod go-w $HOME/.ghci
+    rm -f ~/.ghci
+    ln -s `realpath ghci/.ghci` ~/.ghci
+    chmod go-w ~/.ghci
 
     prompt "Done"
 }
@@ -92,10 +82,9 @@ config_ghci () {
 config_gdb () {
     prompt "Configuring gdb"
 
-    rm -rf $HOME/peda
-    rm -rf $HOME/.gdbinit
-    git clone --depth=1 https://github.com/longld/peda.git $HOME/peda
-    ln -s `realpath gdb/.gdbinit` $HOME/.gdbinit
+    rm -rf ~/peda ~/.gdbinit
+    git clone --depth=1 https://github.com/longld/peda.git ~/peda
+    ln -s `realpath gdb/.gdbinit` ~/.gdbinit
 
     prompt "Done"
 }
@@ -103,13 +92,27 @@ config_gdb () {
 config_vscode () {
     prompt "Configuring vscode"
 
-    VSCODE_CFG_DIR=$HOME/.config/Code/User
+    VSCODE_CFG_DIR=~/.config/Code/User
 
-    rm -rf $HOME/.vscode
-    rm -rf $HOME/.config/Code
+    rm -rf ~/.vscode ~/.config/Code
     mkdir -p $VSCODE_CFG_DIR
-    ln -s `realpath vscode/keybindings.json` $VSCODE_CFG_DIR/keybindings.json
-    ln -s `realpath vscode/settings.json` $VSCODE_CFG_DIR/settings.json
+
+    declare -a configs=("keybindings.json" "settings.json")
+
+    for c in "${configs[@]}"
+    do
+        ln -s `realpath vscode/$c` $VSCODE_CFG_DIR/
+    done
+
+    declare -a vscode_exts=(
+        "gerane.theme-sunburst"
+        "geeebe.duplicate"
+        "justusadam.language-haskell"
+        "ms-python.python"
+        "ms-vscode.cpptools"
+        "13xforever.language-x86-64-assembly"
+        "gruntfuggly.todo-tree"
+    )
 
     for ext in "${vscode_exts[@]}"
     do
@@ -123,8 +126,8 @@ config_jetbrains () {
     prompt "Configuring JetBrains"
 
     declare -a cfg_dirs=(
-        $(find $HOME -name ".PyCharm")
-        $(find $HOME -name ".CLion")
+        $(find ~ -name ".PyCharm")
+        $(find ~ -name ".CLion")
     )
 
     for d in "${cfg_dirs[@]}"
@@ -140,9 +143,9 @@ config_jetbrains () {
 config_terminator () {
     prompt "Configuring terminator"
 
-    rm -rf  $HOME/.config/terminator
-    mkdir -p $HOME/.config/terminator
-    ln -s `realpath terminals/terminator.settings` $HOME/.config/terminator/config
+    rm -rf  ~/.config/terminator
+    mkdir -p ~/.config/terminator
+    ln -s `realpath terminals/terminator.settings` ~/.config/terminator/config
 
     prompt "Done"
 }
@@ -150,18 +153,26 @@ config_terminator () {
 config_i3 () {
     prompt "Configuring i3"
 
-    rm -rf $HOME/.config/i3
-    rm -rf $HOME/.config/rofi
-    mkdir -p $HOME/.config/i3
-    mkdir -p $HOME/.config/rofi
+    rm -rf ~/.config/i3 ~/.config/rofi
+    mkdir -p ~/.config/i3 ~/.config/rofi
 
-    ln -s `realpath i3/config` $HOME/.config/i3/config
-    ln -s `realpath i3/i3status.conf` $HOME/.config/i3/i3status.conf
-    ln -s `realpath i3/i3blocks.conf` $HOME/.config/i3/i3blocks.conf
-    ln -s `realpath i3/rofi.conf` $HOME/.config/rofi/config
+    declare -a configs=("config" "i3status.conf" "i3blocks.conf")
 
-    sudo cp i3/blurlock /usr/bin/ && sudo chown $USER:$USER /usr/bin/blurlock && sudo chmod +x /usr/bin/blurlock
-    sudo cp i3/i3exit /usr/bin/ && sudo chown $USER:$USER /usr/bin/i3exit && sudo chmod +x /usr/bin/i3exit
+    for c in "${configs[@]}"
+    do
+        ln -s `realpath i3/$c` ~/.config/i3/
+    done
+
+    ln -s `realpath i3/rofi.conf` ~/.config/rofi/config
+
+    declare -a extras=("blurlock" "i3exit")
+
+    for e in "${extras[@]}"
+    do
+        sudo cp --remove-destination i3/$e /usr/bin/ &&
+        sudo chown $USER:$USER /usr/bin/$e &&
+        sudo chmod +x /usr/bin/$e
+    done
 
     prompt "Done"
 }
@@ -169,7 +180,7 @@ config_i3 () {
 config_ipython () {
     prompt "Configuring IPython"
 
-    ln -sf `realpath ipython/ipython_config.py` $HOME/.ipython/profile_default/
+    ln -sf `realpath ipython/ipython_config.py` ~/.ipython/profile_default/
 
     prompt "Done"
 }
