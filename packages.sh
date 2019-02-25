@@ -17,6 +17,10 @@ green_prompt () {
 }
 
 
+declare -a problematic=(
+    "xserver-xorg-video-intel"
+)
+
 declare -a to_remove=(
     "totem*" "rhythmbox*" "brasero*" "parole*" "catfish*"
     "ristretto*" "gedit*" "pidgin" "xfburn" "simple-scan"

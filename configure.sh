@@ -64,7 +64,7 @@ config_spacemacs () {
 
     rm -rf ~/.emacs.d
     git clone --depth=1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
-    ln -s `realpath spacemacs/.spacemacs` ~/.spacemacs
+    ln -sf `realpath spacemacs/.spacemacs` ~/.spacemacs
 
     prompt "Done"
 }
@@ -153,8 +153,8 @@ config_terminator () {
 config_i3 () {
     prompt "Configuring i3"
 
-    rm -rf ~/.config/i3 ~/.config/rofi
-    mkdir -p ~/.config/i3 ~/.config/rofi
+    rm -rf ~/.config/i3 ~/.config/rofi ~/.config/compton
+    mkdir -p ~/.config/i3 ~/.config/rofi ~/.config/compton
 
     declare -a configs=("config" "i3status.conf" "i3blocks.conf")
 
@@ -164,6 +164,7 @@ config_i3 () {
     done
 
     ln -s `realpath i3/rofi.conf` ~/.config/rofi/config
+    ln -s `realpath i3/compton.conf` ~/.config/compton/config
 
     declare -a extras=("blurlock" "i3exit")
 
