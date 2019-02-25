@@ -145,10 +145,14 @@ config_i3 () {
     prompt "Configuring i3"
 
     rm -rf $HOME/.config/i3
-    mkdir $HOME/.config/i3
+    rm -rf $HOME/.config/rofi
+    mkdir -p $HOME/.config/i3
+    mkdir -p $HOME/.config/rofi
+
     ln -s `realpath i3/config` $HOME/.config/i3/config
     ln -s `realpath i3/i3status.conf` $HOME/.config/i3/i3status.conf
     ln -s `realpath i3/i3blocks.conf` $HOME/.config/i3/i3blocks.conf
+    ln -s `realpath i3/rofi.conf` $HOME/.config/rofi/config
 
     sudo cp i3/blurlock /usr/bin/ && sudo chown $USER:$USER /usr/bin/blurlock && sudo chmod +x /usr/bin/blurlock
     sudo cp i3/i3exit /usr/bin/ && sudo chown $USER:$USER /usr/bin/i3exit && sudo chmod +x /usr/bin/i3exit
