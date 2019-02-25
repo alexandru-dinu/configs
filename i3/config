@@ -17,7 +17,7 @@ hide_edge_borders none
 
 # colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #3770aa #3770aa #ffffff #2e9ef4   #3770aa
+client.focused          #343d46 #343d46 #ffffff #c0c5ce   #343d46
 
 # use network manager
 exec --no-startup-id nm-applet
