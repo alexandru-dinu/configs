@@ -21,33 +21,39 @@ declare -a vscode_exts=(
 config_zsh () {
     prompt "Configuring Oh-My-Zsh"
 
-    rm -rf $HOME/.zshrc
-    rm -rf $HOME/.oh-my-zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    cp zsh/.zshrc $HOME/.zshrc
+    rm -rf $HOME/.zshrc $HOME/.zshenv $HOME/.oh-my-zsh
+    echo "exit" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-    echo "zshmarks"
+    cp zsh/.zshrc $HOME/.zshrc
+    cp zsh/.zshenv $HOME/.zshenv
+
+    prompt "zshmarks"
     git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git $HOME/.oh-my-zsh/custom/plugins/zshmarks
 
-    echo "zsh-syntax-highlighting"
+    prompt "zsh-syntax-highlighting"
     git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-    echo "custom theme"
+    prompt "custom theme"
     cp zsh/robbyrussell.zsh-theme $HOME/.oh-my-zsh/themes/
 
-    echo "custom git show"
+    prompt "custom git show"
     mv $HOME/.oh-my-zsh/lib/git.zsh $HOME/.oh-my-zsh/lib/git.zsh.orig
     (cat zsh/git.zsh ; echo ""; cat $HOME/.oh-my-zsh/lib/git.zsh.orig) > $HOME/.oh-my-zsh/lib/git.zsh
     rm $HOME/.oh-my-zsh/lib/git.zsh.orig
     cd $HOME/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
 
-    echo "env-vars"
+    prompt "environment variables"
+    local line=5
 
-    echo "anaconda? [y/n]" && read a
-    [ $a == 'y' ] && ex -s -c '5i|export PATH=$HOME/anaconda3/bin:$PATH' -c x $HOME/.zshrc
+    echo "anaconda2? [y/n]" && read a
+    [ $a == 'y' ] && ex -s -c "$line"'a|export PATH=$HOME/anaconda2/bin:$PATH' -c x $HOME/.zshenv && line=$((line+1))
+
+    echo "anaconda3? [y/n]" && read a
+    [ $a == 'y' ] && ex -s -c "$line"'a|export PATH=$HOME/anaconda3/bin:$PATH' -c x $HOME/.zshenv && line=$((line+1))
+
     echo "cuda? [y/n]" && read c
-    [ $c == 'y' ] && ex -s -c '6i|export PATH=/usr/local/cuda/bin:$PATH' -c x $HOME/.zshrc
-    [ $c == 'y' ] && ex -s -c '7i|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x $HOME/.zshrc
+    [ $c == 'y' ] && ex -s -c "$line"'a|export PATH=/usr/local/cuda/bin:$PATH' -c x $HOME/.zshenv && line=$((line+1))
+    [ $c == 'y' ] && ex -s -c "$line"'a|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x $HOME/.zshenv && line=$((line+1))
 
     prompt "Done"
 }
