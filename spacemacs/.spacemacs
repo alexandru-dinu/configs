@@ -91,6 +91,7 @@
         )
         dotspacemacs-themes
         '(
+            smyx
             spacemacs-dark
             spacemacs-light
         )
