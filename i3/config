@@ -1,7 +1,6 @@
+# super-key
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:Source Code Pro 10
 
 # compton
@@ -14,10 +13,6 @@ exec --no-startup-id feh --bg-fill ~/Pictures/groot.png
 exec --no-startup-id setxkbmap -layout "us,ro" -variant ",std" -option "grp:win_space_toggle"
 
 hide_edge_borders none
-
-# colors
-# class                 border  backgr. text    indicator child_border
-client.focused          #343d46 #343d46 #ffffff #c0c5ce   #343d46
 
 # use network manager
 exec --no-startup-id nm-applet
@@ -72,9 +67,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# move to monitor
-bindsym $mod+z move workspace to output left
-bindsym $mod+x move workspace to output right
 
 # workspaces
 set $ws1 "1: main"
@@ -112,6 +104,11 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# move to monitor
+bindsym $mod+z move workspace to output left
+bindsym $mod+x move workspace to output right
+
+
 # function keys
 # volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
@@ -129,63 +126,74 @@ bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 # common apps
 bindsym $mod+n exec nemo
 
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+    # These bindings trigger as soon as you enter the resize mode
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar
-# plus the system information i3status finds out, if available
+
+# client colors
+# class                    border     bg         text       indicator  child_border
+client.focused             #656e77    #656e77    #ffffff    #65737e    #343d46
+client.unfocused           #3c4043    #3c4043    #dddddd    #65737e    #343d46
+client.focused_inactive    #3c4043    #3c4043    #ffffff    #65737e    #343d46
+client.urgent              #d9534f    #900000    #ffffff    #900000    #900000
+client.placeholder         #000000    #0c0c0c    #ffffff    #000000    #0c0c0c
+
+client.background          #ffffff
+
+
 bar {
-        status_command i3status -c ~/.config/i3/i3status.conf
-        # status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position top
+    status_command i3status -c ~/.config/i3/i3status.conf
+    # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position top
 
-        colors {
-                background #1e2124
-                statusline #b6b2b2
-                separator  #65737e
+    colors {
+        background #1e2124
+        statusline #c0c5ce
+        separator  #65737e
 
-                # <colorclass>     <border> <background> <text>
-                focused_workspace  #65737e  #3770aa      #ffffff
-                active_workspace   #65737e  #5f676a      #ffffff
-                inactive_workspace #65737e  #65737e      #ffffff
-                urgent_workspace   #dd505d  #dd505d      #ffffff
-        }
+        # <colorclass>     border   bg      text
+        focused_workspace  #428bca  #428bca #ffffff
+        active_workspace   #65737e  #65737e #ffffff
+        inactive_workspace #3c4043	#3c4043	#ffffff
+        urgent_workspace   #d9534f  #d9534f #ffffff
+    }
 }
 
 
-# set lock / exit / suspend / reboot
+# set lock
 bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
-# autolock
 exec --no-startup-id xautolock -time 10 -locker blurlock
 
 bindsym $mod+Shift+l mode "$mode_system"
 # set $mode_system (l)ock | (e)xit | switch_(u)ser | (s)uspend | (h)ibernate | (r)eboot | (Shift+s)hutdown
 set $mode_system l | e | u | s | h | r | S-s
 mode "$mode_system" {
-        bindsym l exec --no-startup-id i3exit lock, mode "default"
-        bindsym s exec --no-startup-id i3exit suspend, mode "default"
-        bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-        bindsym e exec --no-startup-id i3exit logout, mode "default"
-        bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-        bindsym r exec --no-startup-id i3exit reboot, mode "default"
-        bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
