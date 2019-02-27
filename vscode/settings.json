@@ -7,7 +7,7 @@
     "files.trimFinalNewlines": true,
 
     "window.titleBarStyle": "native",
-    "window.menuBarVisibility": "toggle",
+    "window.menuBarVisibility": "hidden",
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": true,
     "editor.minimap.enabled": false,
