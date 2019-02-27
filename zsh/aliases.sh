@@ -34,13 +34,30 @@ rs () {
     [ "$1" = "x" ] && redshift -x || redshift -O "$1" -g 0.9
 }
 
+to_pdf () {
+    libreoffice --headless --convert-to pdf "$1"
+}
+
+# git 
+
 gdm () {
     git diff origin/master "$1"
 }
 
-to_pdf () {
-    libreoffice --headless --convert-to pdf "$1"
+gdvm () {
+    for f in `git ls-files -m`
+    do
+        git diff origin/master $f
+    done
 }
+
+gdvc () {
+    for f in `git ls-files -m`
+    do
+        git diff origin/"$(git rev-parse --abbrev-ref HEAD)" $f
+    done
+}
+
 
 # directly download gdrive links
 gdrive_download () {
