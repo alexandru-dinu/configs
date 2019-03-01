@@ -7,7 +7,7 @@ font pango:Source Code Pro 10
 exec --no-startup-id compton --config ~/.config/compton/config
 
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/groot.png
+exec --no-startup-id feh --bg-fill ~/configs.git/wallpapers/groot.png
 
 # keyboard layouts
 exec --no-startup-id setxkbmap -layout "us,ro" -variant ",std" -option "grp:win_space_toggle"
