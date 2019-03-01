@@ -111,12 +111,15 @@ bindsym $mod+x move workspace to output right
 
 # function keys
 # volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
+set $volume_i3blocks pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle; exec $volume_i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%; exec $volume_i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%; exec $volume_i3blocks
+
 # brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
 # spotify
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
@@ -155,8 +158,8 @@ client.background          #ffffff
 
 
 bar {
-    status_command i3status -c ~/.config/i3/i3status.conf
-    # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    # status_command i3status -c ~/.config/i3/i3status.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
     position top
 
     colors {
@@ -164,7 +167,7 @@ bar {
         statusline #c0c5ce
         separator  #65737e
 
-        # <colorclass>     border   bg      text
+        # class            border   bg      text
         focused_workspace  #428bca  #428bca #ffffff
         active_workspace   #65737e  #65737e #ffffff
         inactive_workspace #3c4043	#3c4043	#ffffff

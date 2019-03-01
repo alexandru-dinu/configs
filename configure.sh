@@ -175,6 +175,9 @@ config_i3 () {
         sudo chmod +x /usr/bin/$e
     done
 
+    # remove default i3blocks dir
+    sudo rm -rf /usr/share/i3blocks
+
     prompt "Done"
 }
 
