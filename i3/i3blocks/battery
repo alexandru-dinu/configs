@@ -35,12 +35,11 @@ if ($acpi !~ /: (\w+), (\d+)%/) {
 
 $status = $1;
 $percent = $2;
-$full_text = "$percent%";
 
 if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
+	$full_text = '▼ ' . "$percent%";
 } elsif ($status eq 'Charging') {
-	$full_text .= ' CHR';
+	$full_text = '▲ ' . "$percent%";
 }
 
 $short_text = $full_text;
@@ -49,8 +48,7 @@ if ($acpi =~ /(\d\d:\d\d):/) {
 	$full_text .= " ($1)";
 }
 
-# print text
-print "$full_text\n";
+# print "$full_text\n";
 print "$short_text\n";
 
 # consider color and urgent flag only on discharge
