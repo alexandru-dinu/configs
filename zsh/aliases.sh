@@ -38,7 +38,7 @@ to_pdf () {
     libreoffice --headless --convert-to pdf "$1"
 }
 
-# git 
+# git
 
 gdm () {
     git diff origin/master "$1"
@@ -58,6 +58,15 @@ gdvc () {
     done
 }
 
+# display
+
+set_display () {
+    pc="$1"
+    mode="$2"
+
+    [ "$pc" = "eps" ] && [ "$mode" = "single" ] && (xrandr --auto) && return
+    [ "$pc" = "eps" ] && [ "$mode" = "extend" ] && (xrandr --output eDP1 --primary --output HDMI1 --auto --left-of eDP1) && return
+}
 
 # directly download gdrive links
 gdrive_download () {
