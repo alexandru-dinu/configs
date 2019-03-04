@@ -10,7 +10,8 @@ exec --no-startup-id compton --config ~/.config/compton/config
 exec --no-startup-id feh --bg-fill ~/configs.git/wallpapers/groot.png
 
 # keyboard layouts
-exec --no-startup-id setxkbmap -layout "us,ro" -variant ",std" -option "grp:win_space_toggle"
+exec --no-startup-id setxkbmap -layout "us,ro" -variant ",std"
+bindsym Control+space exec kbd_layout_switch && exec pkill -RTMIN+12 i3blocks
 
 hide_edge_borders none
 

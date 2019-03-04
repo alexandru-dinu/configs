@@ -17,8 +17,8 @@ green_prompt () {
 }
 
 
-declare -a problematic=(
-    "xserver-xorg-video-intel"
+declare -a ppas=(
+    "ppa:atareao/atareao"
 )
 
 declare -a to_remove=(
@@ -42,7 +42,7 @@ declare -a gizmos=(
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
     "powertop"
     "silversearcher-ag"
-    "xautolock" "rofi" "lxappearance"
+    "xkb-switch" "xautolock" "rofi" "lxappearance"
 )
 
 declare -a npm_packages=(
@@ -56,10 +56,15 @@ do
     sudo apt remove --purge "$p"
 done
 
+# add ppas
+for p in "${ppas[@]}"
+do
+    green_prompt "$p"
+    sudo add-apt-repository "$p"
+done
 
 sudo apt update
 sudo apt upgrade
-
 
 # install essential packages
 for p in "${essentials[@]}"

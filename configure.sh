@@ -166,11 +166,11 @@ config_i3 () {
     ln -s `realpath i3/rofi.conf` ~/.config/rofi/config
     ln -s `realpath i3/compton.conf` ~/.config/compton/config
 
-    declare -a extras=("blurlock" "i3exit")
+    declare -a extras=("blurlock" "i3exit" "kbd_layout_switch")
 
     for e in "${extras[@]}"
     do
-        sudo cp --remove-destination i3/$e /usr/bin/ &&
+        sudo cp --remove-destination i3/bin/$e /usr/bin/ &&
         sudo chown $USER:$USER /usr/bin/$e &&
         sudo chmod +x /usr/bin/$e
     done

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+case "$(xkb-switch | head -c2)" in
+    "ro") xkb-switch -s "us"      ;;
+    "us") xkb-switch -s "ro(std)" ;;
+    *) ;; 
+esac
