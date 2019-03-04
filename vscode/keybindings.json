@@ -60,11 +60,7 @@
         "command": "-workbench.action.navigateBack"
     },
     {
-        "key": "shift+alt+d",
-        "command": "editor.action.goToDeclaration"
-    },
-    {
-        "key": "alt+f",
+        "key": "shift+alt+s",
         "command": "workbench.action.navigateBack"
     },
     {
@@ -80,11 +76,6 @@
         "key": "ctrl+shift+\\",
         "command": "-editor.action.jumpToBracket",
         "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+g",
-        "command": "editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
         "key": "f12",
@@ -112,7 +103,7 @@
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "alt+e",
+        "key": "shift+alt+e",
         "command": "revealInExplorer"
     },
     {
@@ -123,5 +114,9 @@
     {
         "key": "shift+f2",
         "command": "editor.action.changeAll"
+    },
+    {
+        "key": "shift+alt+d",
+        "command": "editor.action.revealDefinition"
     }
 ]
