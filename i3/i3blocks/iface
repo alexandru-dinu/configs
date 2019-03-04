@@ -24,6 +24,8 @@ else
   IF=$(ip route | awk '/^default/ { print $5 ; exit }')
 fi
 
+IP_AND_MASK=$(ip a s | grep $IF | grep inet | awk '{print $2; exit}')
+
 #------------------------------------------------------------------------
 
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
@@ -57,4 +59,5 @@ esac
 
 #------------------------------------------------------------------------
 
-echo "$IF": "$IPADDR"
+# echo "$IF": "$IPADDR"
+echo "$IF": "$IP_AND_MASK"
