@@ -35,6 +35,7 @@ declare -a essentials=(
     "ssh" "zsh" "git" "ghc" "geeqie" "feh" "terminator" "npm"
     "chromium-browser" "vlc"
     "i3*" "xfce4-screenshooter" "nemo"
+    "gnome-control-center"
 )
 
 declare -a gizmos=(

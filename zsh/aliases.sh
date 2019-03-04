@@ -11,6 +11,7 @@ alias gdb="gdb -q"
 alias i="ipython"
 alias cb="xclip -selection clipboard"
 alias todo="vim $HOME/workspace/todo.txt"
+alias control_center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 
 ### functions
 
