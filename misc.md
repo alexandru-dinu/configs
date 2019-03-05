@@ -6,6 +6,9 @@
 ### miscellaneous fixes
 wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist.conf`
 
+### slack
+`#1e2124,#3c4043,#428bca,#FFFFFF,#3c4043,#FFFFFF,#428bca,#d9534f`
+
 ### nvidia-driver
 - install from additional drivers
 - check: `nvidia-smi`, `lspci | grep -i nvidia`, `glxinfo | head`
