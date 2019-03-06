@@ -150,6 +150,14 @@ config_terminator () {
     prompt "Done"
 }
 
+config_urxvt () {
+    prompt "Configuring urxvt"
+
+    ln -sf `realpath terminals/urxvt/.Xresources` ~/
+
+    prompt "Done"
+}
+
 config_i3 () {
     prompt "Configuring i3"
 

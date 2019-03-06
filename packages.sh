@@ -27,12 +27,13 @@ declare -a to_remove=(
     "hplip" "gnome-orca" "evolution" "fluid" "gnome-mahjongg"
     "gnome-mines" "gnome-sudoku" "thunderbird*" "mousepad*" "remmina*"
     "xreader"
+    "gnome-terminal*"
 )
 
 declare -a essentials=(
     "build-essential"
     "vim" "emacs"
-    "ssh" "zsh" "git" "ghc" "geeqie" "feh" "terminator" "npm"
+    "ssh" "zsh" "git" "ghc" "geeqie" "feh" "terminator" "rxvt*" "npm"
     "chromium-browser" "vlc"
     "i3*" "xfce4-screenshooter" "nemo"
     "gnome-control-center"
