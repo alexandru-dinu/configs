@@ -2,5 +2,5 @@
 
 DIR="$HOME/.local/share/fonts"
 
-mkdir -p $DIR
-cp SourceCodePro/SourceCodePro-* $DIR
+rm -rf $DIR && mkdir -p $DIR
+cp -r SourceCodePro $DIR

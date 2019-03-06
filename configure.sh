@@ -143,9 +143,9 @@ config_jetbrains () {
 config_terminator () {
     prompt "Configuring terminator"
 
-    rm -rf  ~/.config/terminator
-    mkdir -p ~/.config/terminator
-    ln -s `realpath terminals/terminator.settings` ~/.config/terminator/config
+    DIR=~/.config/terminator
+    rm -rf $DIR; mkdir -p $DIR 
+    cp terminals/terminator.settings $DIR/config
 
     prompt "Done"
 }
@@ -154,6 +154,7 @@ config_urxvt () {
     prompt "Configuring urxvt"
 
     ln -sf `realpath terminals/urxvt/.Xresources` ~/
+    xrdb ~/.Xresources
 
     prompt "Done"
 }

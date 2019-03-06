@@ -22,80 +22,49 @@ declare -a ppas=(
 )
 
 declare -a to_remove=(
-    "totem*" "rhythmbox*" "brasero*" "parole*" "catfish*"
-    "ristretto*" "gedit*" "pidgin" "xfburn" "simple-scan"
-    "hplip" "gnome-orca" "evolution" "fluid" "gnome-mahjongg"
-    "gnome-mines" "gnome-sudoku" "thunderbird*" "mousepad*" "remmina*"
-    "xreader"
-    "gnome-terminal*"
+    "totem*"            "rhythmbox*"        "brasero*"
+    "parole*"           "catfish*"          "ristretto*"
+    "gedit*"            "pidgin"            "xfburn"
+    "simple-scan"       "hplip"             "gnome-orca"
+    "evolution"         "fluid"             "gnome-mahjongg"
+    "gnome-mines"       "gnome-sudoku"      "thunderbird*"
+    "mousepad*"         "remmina*"          "xreader"
+    "gnome-terminal*"   "xfce4-terminal*"
 )
 
-declare -a essentials=(
+declare -a to_install=(
     "build-essential"
-    "vim" "emacs"
-    "ssh" "zsh" "git" "ghc" "geeqie" "feh" "terminator" "rxvt*" "npm"
+    "ssh" "zsh" "git" "ghc" "vim" "emacs" "geeqie" "feh" "npm" "bless"
     "chromium-browser" "vlc"
-    "i3*" "xfce4-screenshooter" "nemo"
-    "gnome-control-center"
-)
-
-declare -a gizmos=(
+    "terminator" "rxvt*"
+    "i3*" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
-    "powertop"
-    "silversearcher-ag"
-    "xkb-switch" "xautolock" "rofi" "lxappearance"
+    "xkb-switch" "xautolock" "rofi"
+    "powertop" "silversearcher-ag"
 )
 
 declare -a npm_packages=(
     "imgur-upload-cli"
 )
 
-# remove unneeded packages
-for p in "${to_remove[@]}"
-do
-    red_prompt "$p"
-    sudo apt remove --purge "$p"
-done
+# remove packages
+for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt remove --purge "$p"; done
 
 # add ppas
-for p in "${ppas[@]}"
-do
-    green_prompt "$p"
-    sudo add-apt-repository "$p"
-done
+for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done
 
-sudo apt update
-sudo apt upgrade
+sudo apt update && sudo apt upgrade
 
-# install essential packages
-for p in "${essentials[@]}"
-do
-    green_prompt "$p"
-    sudo apt install "$p"
-done
-
+# install packages
+for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt install "$p"; done
 
 # post-configs
 sudo ln -sf /usr/bin/nodejs /usr/bin/node
 
-
 # install npm packages
-for p in "${npm_packages[@]}"
-do
-    green_prompt "$p"
-    (npm list -g | grep -q ${p}) || sudo npm install -g ${p}
-done
-
-# install gizmos
-for p in "${gizmos[@]}"
-do
-    green_prompt "$p"
-    sudo apt install "$p"
-done
-
+for p in "${npm_packages[@]}"; do green_prompt "$p"; (npm list -g | grep -q ${p}) || sudo npm install -g ${p}; done
 
 # clean
-sudo apt autoclean
-sudo apt autoremove
+sudo apt autoclean && sudo apt autoremove
 
 green_prompt "Done"

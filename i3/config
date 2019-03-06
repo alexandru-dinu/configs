@@ -27,7 +27,7 @@ exec --no-startup-id nm-applet
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator 
+bindsym $mod+Return exec terminator
 
 # printscreen
 bindsym Print exec xfce4-screenshooter
@@ -118,13 +118,13 @@ bindsym $mod+x move workspace to output right
 # function keys
 # volume
 set $volume_i3blocks pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && exec $volume_i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% && exec $volume_i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && exec $volume_i3blocks
+bindsym XF86AudioMute        exec amixer -qD pulse set Master 1+ toggle && exec $volume_i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute      && exec $volume_i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute      && exec $volume_i3blocks
 
 # brightness
 set $backlight_i3blocks pkill -RTMIN+11 i3blocks
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && exec $backlight_i3blocks
+bindsym XF86MonBrightnessUp   exec xbacklight -inc 5 && exec $backlight_i3blocks
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && exec $backlight_i3blocks
 
 # spotify
