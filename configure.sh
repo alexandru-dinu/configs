@@ -140,21 +140,21 @@ config_jetbrains () {
     prompt "Done"
 }
 
-config_terminator () {
-    prompt "Configuring terminator"
-
-    DIR=~/.config/terminator
-    rm -rf $DIR; mkdir -p $DIR 
-    cp terminals/terminator.settings $DIR/config
-
-    prompt "Done"
-}
-
 config_urxvt () {
     prompt "Configuring urxvt"
 
     ln -sf `realpath terminals/urxvt/.Xresources` ~/
     xrdb ~/.Xresources
+
+    prompt "Done"
+}
+
+config_konsole() {
+    prompt "Configuring konsole"
+
+    rm -rf ~/.local/share/konsole
+    ln -sf `realpath terminals/konsole/konsolerc` ~/.config/
+    ln -s  `realpath terminals/konsole/profiles` ~/.local/share/konsole
 
     prompt "Done"
 }

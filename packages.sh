@@ -29,14 +29,14 @@ declare -a to_remove=(
     "evolution"         "fluid"             "gnome-mahjongg"
     "gnome-mines"       "gnome-sudoku"      "thunderbird*"
     "mousepad*"         "remmina*"          "xreader"
-    "gnome-terminal*"   "xfce4-terminal*"
+    "gnome-terminal*"   "xfce4-terminal*"   "terminator"
 )
 
 declare -a to_install=(
     "build-essential"
     "ssh" "zsh" "git" "ghc" "vim" "emacs" "geeqie" "feh" "npm" "bless"
     "chromium-browser" "vlc"
-    "terminator" "rxvt*"
+    "konsole" "rxvt*"
     "i3*" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
     "xkb-switch" "xautolock" "rofi"

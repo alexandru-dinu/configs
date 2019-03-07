@@ -27,7 +27,7 @@ exec --no-startup-id nm-applet
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec konsole 
 
 # printscreen
 bindsym Print exec xfce4-screenshooter
