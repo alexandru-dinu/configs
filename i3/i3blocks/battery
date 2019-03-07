@@ -1,22 +1,26 @@
 #!/bin/bash
 
+case "$BLOCK_INSTANCE" in
+    "laptop")
+        bat=$(upower --enumerate | grep BAT0)  ;;
+    "mouse")
+        bat=$(upower --enumerate | grep mouse) ;;
+    *)
+        bat=""
+esac
+
 info=$(
-	upower -i /org/freedesktop/UPower/devices/battery_BAT0 |
-	awk '{ sub(/^[ \t]+/, ""); print }' |
-	grep -E "state|percentage" | awk '{ print $2 }'
+	upower -i "$bat" | awk '{ sub(/^[ \t]+/, ""); print }' | grep -E "state|percentage" | awk '{ print $2 }'
 )
 
 status=$(echo "$info" | sed -n '1p')
 percentage=$(echo "$info" | sed -n '2p')
-out=""
 
 case "$status" in
-	"charging")
-		out="▲ ""$percentage" ;;
-	"discharging")
-		out="▼ ""$percentage" ;;
-	*)
-		out=""
+	"charging")             pre="▲ " ;;
+	"discharging")          pre="▼ " ;;
+	"full"|"fully-charged") pre="• " ;;
+    *)                      pre=""
 esac
 
-echo "$out"
+echo "$pre""$percentage"
