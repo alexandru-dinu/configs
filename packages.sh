@@ -29,18 +29,18 @@ declare -a to_remove=(
     "evolution"         "fluid"             "gnome-mahjongg"
     "gnome-mines"       "gnome-sudoku"      "thunderbird*"
     "mousepad*"         "remmina*"          "xreader"
+    "tomboy"            "timeshift"   
     "gnome-terminal*"   "xfce4-terminal*"   "terminator"
 )
 
 declare -a to_install=(
     "build-essential"
     "ssh" "zsh" "git" "ghc" "vim" "emacs" "geeqie" "feh" "npm" "bless"
-    "chromium-browser" "vlc"
-    "konsole" "rxvt*"
-    "i3*" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
+    "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
-    "xkb-switch" "xautolock" "rofi"
-    "powertop" "silversearcher-ag"
+    "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
+    "konsole" "rxvt*"
+    "chromium-browser" "vlc"
 )
 
 declare -a npm_packages=(
