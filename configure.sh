@@ -208,6 +208,16 @@ config_git () {
     prompt "Done"
 }
 
+config_fonts () {
+    prompt "Installing fonts"
+
+    DIR="$HOME/.local/share/fonts"
+
+    rm -rf $DIR && mkdir -p $DIR
+    cp fonts/SourceCodePro/* $DIR
+
+    prompt "Done"
+}
 
 get_configs () {
     grep -oE "^config_[a-z0-9]+" $0 | cut -d"_" -f2 | sort
