@@ -19,6 +19,7 @@ green_prompt () {
 
 declare -a ppas=(
     "ppa:atareao/atareao"
+    "ppa:dawidd0811/neofetch"
 )
 
 declare -a to_remove=(
@@ -29,7 +30,7 @@ declare -a to_remove=(
     "evolution"         "fluid"             "gnome-mahjongg"
     "gnome-mines"       "gnome-sudoku"      "thunderbird*"
     "mousepad*"         "remmina*"          "xreader"
-    "tomboy"            "timeshift"   
+    "tomboy"            "timeshift"         "screenfetch"
     "gnome-terminal*"   "xfce4-terminal*"   "terminator"
 )
 
@@ -40,6 +41,7 @@ declare -a to_install=(
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
     "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
     "konsole" "rxvt*"
+    "neofetch"
     "chromium-browser" "vlc"
 )
 
