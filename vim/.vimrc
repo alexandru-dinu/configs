@@ -18,6 +18,13 @@ filetype plugin indent on    " required
 map <C-b> :NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
 
+" vimdiff
+if &diff
+    set cursorline
+    map ] ]c
+    map [ [c
+endif
+
 " Set how many lines of history VIM has to remember
 set history=500
 
@@ -39,8 +46,6 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
-
-
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -115,8 +120,6 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-
-
 " Enable syntax highlighting
 syntax enable
 
@@ -146,14 +149,10 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-
-
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
-
-
 
 " Use spaces instead of tabs
 set expandtab
@@ -173,14 +172,10 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-
-
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
-
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
