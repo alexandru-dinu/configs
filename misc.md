@@ -9,15 +9,21 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
 ### slack
 `#1e2124,#3c4043,#428bca,#FFFFFF,#3c4043,#FFFFFF,#428bca,#d9534f`
 
-### nvidia-driver
+## nvidia
+
+### working setups
+- `mint 18.3 + 4.15.18-041518-generic + nvidia-396(.54) + cuda 9.1`
+
+### driver
+- `sudo add-apt-repository ppa:graphics-drivers/ppa`
 - install from additional drivers
 - check: `nvidia-smi`, `lspci | grep -i nvidia`, `glxinfo | head`
+- `sudo apt install nvidia-modprobe`
 
 ### cuda
 - use runfile
 - `sudo apt install libcuda1-V`
-- `/etc/ld.so.conf` must contain `/usr/local/cuda-9.1/lib64`, then run `sudo ldconfig`
-- make sure `nvidia-modprobe` is installed
+- `/usr/local/cuda/lib64` to `LD_LIBRARY_PATH`
 - verify: http://xcat-docs.readthedocs.io/en/stable/advanced/gpu/nvidia/verify_cuda_install.html
 
 ### cudnn
@@ -26,15 +32,15 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
 ### bumblebee
 1. assuming `nvidia-V` driver was installed from additional drivers (replace `V` with current nvidia driver version)
 
-	    sudo apt update
-	    sudo apt-get remove xserver-xorg-video-nouveau
-	    sudo apt-get install bumblebee-nvidia
+        sudo apt update
+        sudo apt-get remove xserver-xorg-video-nouveau
+        sudo apt-get install bumblebee-nvidia
 
  2. add the following lines to `/etc/modprobe.d/bumblebee.conf`:
 
         blacklist nvidia-V
-	    blacklist nvidia-V-updates
-	    blacklist nvidia-experimental-V
+        blacklist nvidia-V-updates
+        blacklist nvidia-experimental-V
 
 3. modify `/etc/bumblebee/bumblebee.conf`:
 
@@ -57,12 +63,12 @@ wifi (gnome): `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist
 
   4. update alternatives:
 
-         sudo update-alternatives --config i386-linux-gnu_gl_conf
-         # choose mesa
-         sudo update-alternatives --config x86_64-linux-gnu_egl_conf
-         # choose mesa
-         sudo update-alternatives --config x86_64-linux-gnu_gl_conf
-         # choose nvidia-V-prime
+        sudo update-alternatives --config i386-linux-gnu_gl_conf
+        # choose mesa
+        sudo update-alternatives --config x86_64-linux-gnu_egl_conf
+        # choose mesa
+        sudo update-alternatives --config x86_64-linux-gnu_gl_conf
+        # choose nvidia-V-prime
 
 5. update grub: add `GRUB_CMDLINE_LINUX="nogpumanager"` to `/etc/default/grub`, then run `sudo update-grub`
 
