@@ -12,7 +12,7 @@ config_zsh () {
     prompt "Configuring Oh-My-Zsh"
 
     rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh
-    echo "exit" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
     cp zsh/.zshrc ~/.zshrc
     cp zsh/.zshenv ~/.zshenv
