@@ -192,8 +192,10 @@ config_i3 () {
 
 config_ipython () {
     prompt "Configuring IPython"
-
-    ln -sf `realpath ipython/ipython_config.py` ~/.ipython/profile_default/
+    
+    DIR="$HOME/.ipython/profile_default"
+    mkdir -p $DIR
+    ln -sf `realpath ipython/ipython_config.py` $DIR
 
     prompt "Done"
 }
