@@ -13,6 +13,7 @@ plugins=(git zshmarks zsh-syntax-highlighting)
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='none'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=magenta,bold'
