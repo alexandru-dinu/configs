@@ -40,7 +40,7 @@ declare -a to_install=(
     "ssh" "zsh" "ghc" "vim" "emacs" "geeqie" "feh" "npm" "bless"
     "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat" "grub-customizer"
-    "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
+    "xbacklight" "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
     "konsole"
     "neofetch"
     "chromium-browser" "vlc"
