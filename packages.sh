@@ -32,7 +32,7 @@ declare -a to_remove=(
     "gnome-mines"       "gnome-sudoku"      "thunderbird*"
     "mousepad*"         "remmina*"          "xreader"
     "tomboy"            "timeshift"         "screenfetch"
-    "gnome-terminal*"   "xfce4-terminal*"   "terminator"
+    "gnome-terminal*"   "xfce4-terminal*"   "xterm"
 )
 
 declare -a to_install=(
@@ -41,7 +41,7 @@ declare -a to_install=(
     "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat" "grub-customizer"
     "xbacklight" "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
-    "konsole"
+    "terminator"
     "neofetch"
     "chromium-browser" "vlc"
 )

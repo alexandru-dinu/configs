@@ -140,12 +140,12 @@ config_jetbrains () {
     prompt "Done"
 }
 
-config_konsole() {
-    prompt "Configuring konsole"
+config_terminator () {
+    prompt "Configuring terminator"
 
-    rm -rf ~/.local/share/konsole
-    ln -sf `realpath terminals/konsole/konsolerc` ~/.config/
-    ln -s  `realpath terminals/konsole/profiles` ~/.local/share/konsole
+    rm -rf  ~/.config/terminator
+    mkdir -p ~/.config/terminator
+    ln -s `realpath terminals/terminator.settings` ~/.config/terminator/config
 
     prompt "Done"
 }
