@@ -126,8 +126,8 @@ config_jetbrains () {
     prompt "Configuring JetBrains"
 
     declare -a cfg_dirs=(
-        $(find ~ -name ".PyCharm")
-        $(find ~ -name ".CLion")
+        $(find ~ -name ".PyCharm*" 2>/dev/null | head -n 1)
+        $(find ~ -name ".CLion*"   2>/dev/null | head -n 1)
     )
 
     for d in "${cfg_dirs[@]}"
