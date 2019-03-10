@@ -140,15 +140,6 @@ config_jetbrains () {
     prompt "Done"
 }
 
-config_urxvt () {
-    prompt "Configuring urxvt"
-
-    ln -sf `realpath terminals/urxvt/.Xresources` ~/
-    xrdb ~/.Xresources
-
-    prompt "Done"
-}
-
 config_konsole() {
     prompt "Configuring konsole"
 
@@ -192,7 +183,7 @@ config_i3 () {
 
 config_ipython () {
     prompt "Configuring IPython"
-    
+
     DIR="$HOME/.ipython/profile_default"
     mkdir -p $DIR
     ln -sf `realpath ipython/ipython_config.py` $DIR

@@ -41,7 +41,7 @@ declare -a to_install=(
     "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat" "grub-customizer"
     "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
-    "konsole" "rxvt*"
+    "konsole"
     "neofetch"
     "chromium-browser" "vlc"
 )
@@ -51,7 +51,7 @@ declare -a npm_packages=(
 )
 
 # remove packages
-for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt remove --purge "$p"; done
+for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt-get purge -qq "$p"; done
 
 # add ppas
 for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done
@@ -59,7 +59,7 @@ for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done
 sudo apt update && sudo apt upgrade
 
 # install packages
-for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt install "$p"; done
+for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt-get install -qq "$p"; done
 
 # post-configs
 sudo ln -sf /usr/bin/nodejs /usr/bin/node
