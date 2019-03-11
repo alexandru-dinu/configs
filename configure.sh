@@ -194,9 +194,10 @@ config_ipython () {
 config_git () {
     prompt "Configuring git"
 
-    git config --global pull.rebase true
-    git config --global core.fileMode false
-    git config --global core.editor vim
+    git config --global pull.rebase     true
+    git config --global core.fileMode   false
+    git config --global core.editor     vim
+    git config --global core.eol =      lf
 
     prompt "Done"
 }
