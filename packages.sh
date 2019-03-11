@@ -33,6 +33,7 @@ declare -a to_remove=(
     "mousepad*"         "remmina*"          "xreader"
     "tomboy"            "timeshift"         "screenfetch"
     "gnome-terminal*"   "xfce4-terminal*"   "xterm"
+    "google-chrome*"
 )
 
 declare -a to_install=(
