@@ -122,19 +122,21 @@ config_vscode () {
     prompt "Done"
 }
 
-config_jetbrains () {
-    prompt "Configuring JetBrains"
+config_pycharm() {
+    prompt "Configuring PyCharm"
 
-    declare -a cfg_dirs=(
-        $(find ~ -name ".PyCharm*" 2>/dev/null | head -n 1)
-        $(find ~ -name ".CLion*"   2>/dev/null | head -n 1)
-    )
+    pycharm_cfg_dir=$(find ~ -name ".PyCharm*" 2>/dev/null | head -n 1)
 
-    for d in "${cfg_dirs[@]}"
+    for d in `ls jetbrains/pycharm | grep -v options`
     do
-        rm -rf $d/config/keymaps
-        ln -s `realpath jetbrains/keymaps` $d/config/keymaps
-        echo "Keymaps for [$d] set."
+        rm -rf $pycharm_cfg_dir/config/$d
+        ln -s `realpath jetbrains/pycharm/$d` $pycharm_cfg_dir/config/$d
+    done
+
+    for o in `ls jetbrains/pycharm/options`
+    do
+        rm -rf $cfg_dir/config/options/$o
+        ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/config/options/$o
     done
 
     prompt "Done"
