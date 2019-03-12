@@ -57,7 +57,7 @@ for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt-get purge -qq "$p"; don
 # add ppas
 for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done
 
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 # install packages
 for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt-get install -qq "$p"; done
@@ -69,6 +69,6 @@ sudo ln -sf /usr/bin/nodejs /usr/bin/node
 for p in "${npm_packages[@]}"; do green_prompt "$p"; (npm list -g | grep -q ${p}) || sudo npm install -g ${p}; done
 
 # clean
-sudo apt autoclean && sudo apt autoremove
+sudo apt autoclean && sudo apt autoremove -y
 
 green_prompt "Done"

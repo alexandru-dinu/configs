@@ -92,16 +92,16 @@ config_gdb () {
 config_vscode () {
     prompt "Configuring vscode"
 
-    VSCODE_CFG_DIR=~/.config/Code/User
+    cfg_dir=~/.config/Code/User
 
     rm -rf ~/.vscode ~/.config/Code
-    mkdir -p $VSCODE_CFG_DIR
+    mkdir -p $cfg_dir
 
     declare -a configs=("keybindings.json" "settings.json")
 
     for c in "${configs[@]}"
     do
-        ln -s `realpath vscode/$c` $VSCODE_CFG_DIR/
+        ln -s `realpath vscode/$c` $cfg_dir/
     done
 
     declare -a vscode_exts=(
@@ -125,12 +125,12 @@ config_vscode () {
 config_pycharm() {
     prompt "Configuring PyCharm"
 
-    pycharm_cfg_dir=$(find ~ -name ".PyCharm*" 2>/dev/null | head -n 1)
+    cfg_dir=$(find ~ -name ".PyCharm*" 2>/dev/null | head -n 1)
 
     for d in `ls jetbrains/pycharm | grep -v options`
     do
-        rm -rf $pycharm_cfg_dir/config/$d
-        ln -s `realpath jetbrains/pycharm/$d` $pycharm_cfg_dir/config/$d
+        rm -rf $cfg_dir/config/$d
+        ln -s `realpath jetbrains/pycharm/$d` $cfg_dir/config/$d
     done
 
     for o in `ls jetbrains/pycharm/options`
@@ -186,9 +186,9 @@ config_i3 () {
 config_ipython () {
     prompt "Configuring IPython"
 
-    DIR="$HOME/.ipython/profile_default"
+    cfg_dir=~/.ipython/profile_default
     mkdir -p $DIR
-    ln -sf `realpath ipython/ipython_config.py` $DIR
+    ln -sf `realpath ipython/ipython_config.py` $cfg_dir
 
     prompt "Done"
 }
@@ -207,10 +207,10 @@ config_git () {
 config_fonts () {
     prompt "Installing fonts"
 
-    DIR="$HOME/.local/share/fonts"
+    fonts_dir="$HOME/.local/share/fonts"
 
-    rm -rf $DIR && mkdir -p $DIR
-    cp fonts/SourceCodePro/* $DIR
+    rm -rf $fonts_dir && mkdir -p $fonts_dir
+    cp fonts/SourceCodePro/* $fonts_dir
 
     prompt "Done"
 }

@@ -43,6 +43,9 @@ check_cuda () {
     make --quiet -C $DIR
     optirun $DIR/deviceQuery | tail -n 2
     sep
+    
+    optirun python -c 'import torch; print("PyTorch CUDA:", torch.cuda.is_available())'
+    sep
 }
 
 check_cudnn () {

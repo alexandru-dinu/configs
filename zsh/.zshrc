@@ -6,8 +6,8 @@ CASE_SENSITIVE="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-# plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# plugins: ~/.oh-my-zsh/plugins/*
+# custom plugins: ~/.oh-my-zsh/custom/plugins/
 plugins=(git zshmarks zsh-syntax-highlighting)
 
 typeset -A ZSH_HIGHLIGHT_STYLES
