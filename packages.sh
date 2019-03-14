@@ -38,7 +38,8 @@ declare -a to_remove=(
 
 declare -a to_install=(
     "build-essential"
-    "ssh" "zsh" "ghc" "vim" "emacs" "geeqie" "feh" "npm" "bless"
+    "ssh" "zsh" "vim" "emacs" "geeqie" "feh" "npm" "bless"
+    "ghc" "hoogle"
     "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat" "grub-customizer"
     "xbacklight" "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
