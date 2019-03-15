@@ -186,7 +186,7 @@ bar {
 
 # set lock
 bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 10 -locker i3locking
 
 bindsym $mod+Shift+l mode "$mode_system"
 # set $mode_system (l)ock | (e)xit | switch_(u)ser | (s)uspend | (h)ibernate | (r)eboot | (Shift+s)hutdown

@@ -169,13 +169,11 @@ config_i3 () {
     ln -s `realpath i3/rofi.conf` ~/.config/rofi/config
     ln -s `realpath i3/compton.conf` ~/.config/compton/config
 
-    declare -a extras=("blurlock" "i3exit" "kbd_layout_switch")
-
-    for e in "${extras[@]}"
+    for b in $(ls i3/bin)
     do
-        sudo cp --remove-destination i3/bin/$e /usr/bin/ &&
-        sudo chown $USER:$USER /usr/bin/$e &&
-        sudo chmod +x /usr/bin/$e
+        sudo cp --remove-destination i3/bin/$b /usr/bin/ &&
+        sudo chown $USER:$USER /usr/bin/$b &&
+        sudo chmod +x /usr/bin/$b
     done
 
     # remove default i3blocks dir
