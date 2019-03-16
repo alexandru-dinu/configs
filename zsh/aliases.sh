@@ -15,10 +15,6 @@ alias control_center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 
 ### functions
 
-imgur () {
-    imgur-upload "$1" 2> /dev/null | cb
-}
-
 dis () {
     objdump -d -M intel "$1"
 }

@@ -38,7 +38,7 @@ declare -a to_remove=(
 
 declare -a to_install=(
     "build-essential"
-    "ssh" "zsh" "vim" "emacs" "geeqie" "feh" "npm" "bless"
+    "ssh" "zsh" "vim" "emacs" "geeqie" "feh" "bless"
     "ghc" "hoogle"
     "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat" "grub-customizer"
@@ -48,8 +48,8 @@ declare -a to_install=(
     "chromium-browser" "vlc"
 )
 
-declare -a npm_packages=(
-    "imgur-upload-cli"
+declare -a pip3_packages=(
+    "kaggle" "gpustat"
 )
 
 # remove packages
@@ -58,16 +58,13 @@ for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt-get purge -qq "$p"; don
 # add ppas
 for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done
 
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade
 
 # install packages
 for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt-get install -qq "$p"; done
 
-# post-configs
-sudo ln -sf /usr/bin/nodejs /usr/bin/node
-
-# install npm packages
-for p in "${npm_packages[@]}"; do green_prompt "$p"; (npm list -g | grep -q ${p}) || sudo npm install -g ${p}; done
+# install python3 packages
+[[ -e ~/anaconda3/bin/python ]] && for p in "${pip3_packages[@]}"; do green_prompt "$p"; pip install "$p"; done || red_prompt "Check anaconda3 installation"
 
 # clean
 sudo apt autoclean && sudo apt autoremove -y
