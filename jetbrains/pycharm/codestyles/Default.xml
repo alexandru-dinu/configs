@@ -3,6 +3,7 @@
     <option name="DICT_ALIGNMENT" value="2" />
   </Python>
   <codeStyleSettings language="Python">
+    <option name="RIGHT_MARGIN" value="180" />
     <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="false" />
   </codeStyleSettings>
 </code_scheme>
