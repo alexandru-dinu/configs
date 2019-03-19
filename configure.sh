@@ -186,7 +186,7 @@ config_ipython () {
     prompt "Configuring IPython"
 
     cfg_dir=~/.ipython/profile_default
-    mkdir -p $DIR
+    mkdir -p $cfg_dir
     ln -sf `realpath ipython/ipython_config.py` $cfg_dir
 
     prompt "Done"
