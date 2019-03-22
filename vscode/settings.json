@@ -19,6 +19,8 @@
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
 
+    "git.autorefresh": true,
+
     "editor.tokenColorCustomizations": {
         "textMateRules": [{
             "scope": ["comment"],
