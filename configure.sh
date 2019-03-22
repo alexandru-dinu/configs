@@ -48,6 +48,16 @@ config_zsh () {
     prompt "Done"
 }
 
+config_bash () {
+    # need bash for root shell
+    prompt "Configuring bash"
+
+    cp bash/.bashrc ~/.bashrc
+    sudo cp bash/.bashrc.root /root/.bashrc
+
+    prompt "Done"
+}
+
 config_vim () {
     prompt "Configuring vim"
 
