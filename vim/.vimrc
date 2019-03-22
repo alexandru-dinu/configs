@@ -14,7 +14,7 @@ Plugin 'scrooloose/nerdtree'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Plugins settings
+" Plugin settings
 map <C-b> :NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
 
@@ -229,15 +229,11 @@ endtry
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-
-
 " Always show the status line
 set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
@@ -261,10 +257,7 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
-
+autocmd BufWrite * :call DeleteTrailingWS()
 
 " When you press gv you Ag after the selected text
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
