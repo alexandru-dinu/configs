@@ -18,6 +18,7 @@ green_prompt () {
 
 
 declare -a ppas=(
+    "ppa:gnome-terminator/nightly-gtk3"
     "ppa:atareao/atareao"
     "ppa:dawidd0811/neofetch"
     "ppa:danielrichter2007/grub-customizer"
@@ -43,7 +44,6 @@ declare -a to_install=(
     "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat" "grub-customizer"
     "xbacklight" "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
-    "terminator"
     "neofetch"
     "chromium-browser" "vlc"
 )
@@ -62,6 +62,11 @@ sudo apt update && sudo apt upgrade
 
 # install packages
 for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt-get install -qq "$p"; done
+
+# terminator needs special treatment
+echo "---" && sudo apt-cache policy terminator && echo "---"
+echo "Select nightly version" && read ver
+sudo aptitude install terminator=$ver
 
 # install python3 packages
 [[ -e ~/anaconda3/bin/python ]] && for p in "${pip3_packages[@]}"; do green_prompt "$p"; pip install "$p"; done || red_prompt "Check anaconda3 installation"
