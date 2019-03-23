@@ -65,11 +65,11 @@ config_vim () {
     ln -s `realpath vim/.vimrc` ~/.vimrc
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
-    
+
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --clang-completer
     cd -
-    
+
     cp vim/ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 
     prompt "Done"
@@ -165,6 +165,15 @@ config_terminator () {
     rm -rf  ~/.config/terminator
     mkdir -p ~/.config/terminator
     ln -s `realpath terminals/terminator.settings` ~/.config/terminator/config
+
+    prompt "Done"
+}
+
+config_guake () {
+    prompt "Configuring guake"
+
+    rm -rf ~/.gconf/apps/guake
+    cp -r terminals/guake ~/.gconf/apps/guake
 
     prompt "Done"
 }

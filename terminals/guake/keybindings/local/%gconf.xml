@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="decrease_transparency" mtime="1552741312" type="string">
+		<stringvalue>&lt;Primary&gt;F10</stringvalue>
+	</entry>
+	<entry name="increase_transparency" mtime="1552741310" type="string">
+		<stringvalue>&lt;Primary&gt;F9</stringvalue>
+	</entry>
+	<entry name="switch_tab10" mtime="1552741303" type="string">
+		<stringvalue>&lt;Alt&gt;0</stringvalue>
+	</entry>
+	<entry name="switch_tab9" mtime="1552741300" type="string">
+		<stringvalue>&lt;Alt&gt;9</stringvalue>
+	</entry>
+	<entry name="switch_tab8" mtime="1552741299" type="string">
+		<stringvalue>&lt;Alt&gt;8</stringvalue>
+	</entry>
+	<entry name="switch_tab7" mtime="1552741299" type="string">
+		<stringvalue>&lt;Alt&gt;7</stringvalue>
+	</entry>
+	<entry name="switch_tab6" mtime="1552741298" type="string">
+		<stringvalue>&lt;Alt&gt;6</stringvalue>
+	</entry>
+	<entry name="switch_tab5" mtime="1552741298" type="string">
+		<stringvalue>&lt;Alt&gt;5</stringvalue>
+	</entry>
+	<entry name="switch_tab4" mtime="1552741297" type="string">
+		<stringvalue>&lt;Alt&gt;4</stringvalue>
+	</entry>
+	<entry name="switch_tab3" mtime="1552741296" type="string">
+		<stringvalue>&lt;Alt&gt;3</stringvalue>
+	</entry>
+	<entry name="switch_tab2" mtime="1552741295" type="string">
+		<stringvalue>&lt;Alt&gt;2</stringvalue>
+	</entry>
+	<entry name="switch_tab1" mtime="1552741294" type="string">
+		<stringvalue>&lt;Alt&gt;1</stringvalue>
+	</entry>
+</gconf>

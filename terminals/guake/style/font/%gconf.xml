@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="palette_name" mtime="1553368750" type="string">
+		<stringvalue>Custom</stringvalue>
+	</entry>
+	<entry name="palette" mtime="1553368750" type="string">
+		<stringvalue>#000000000000:#ffff00000000:#0000dddd0000:#ffffaaaa0000:#00008181ffff:#cdcd0000cdcd:#0000ffffffff:#fafaebebd7d7:#404040404040:#ffff00000000:#0000ffff0000:#ffffffff0000:#3b3ba6a6ffff:#ffff0000ffff:#0000ffffffff:#ffffffffffff:#ffffffffffff:#000000000000</stringvalue>
+	</entry>
+	<entry name="allow_bold" mtime="1553368604" type="bool" value="true"/>
+</gconf>
