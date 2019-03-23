@@ -18,10 +18,11 @@ green_prompt () {
 
 
 declare -a ppas=(
-    "ppa:gnome-terminator/nightly-gtk3"
-    "ppa:atareao/atareao"
-    "ppa:dawidd0811/neofetch"
-    "ppa:danielrichter2007/grub-customizer"
+    "ppa:jonathonf/vim"                     # vim-8
+    "ppa:gnome-terminator/nightly-gtk3"     # terminator
+    "ppa:atareao/atareao"                   # xkb-switch
+    "ppa:dawidd0811/neofetch"               # neofetch
+    "ppa:danielrichter2007/grub-customizer" # grub customizer
 )
 
 declare -a to_remove=(
@@ -38,12 +39,16 @@ declare -a to_remove=(
 )
 
 declare -a to_install=(
-    "build-essential"
-    "ssh" "zsh" "vim" "emacs" "geeqie" "feh" "bless"
+    "build-essential" "cmake"
+    "ssh" "zsh"
+    "vim" "vim-nox" "vim-runtime" "vim-doc" "vim-scripts" "cscope" "exuberant-ctags"
+    "emacs"
+    "geeqie" "feh" "bless"
     "ghc" "hoogle"
     "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
     "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat" "grub-customizer"
     "xbacklight" "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
+    "gnome-control-center" "xfce4-screenshooter" "nemo"
     "neofetch"
     "chromium-browser" "vlc"
 )
