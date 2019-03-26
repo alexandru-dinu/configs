@@ -169,15 +169,6 @@ config_terminator () {
     prompt "Done"
 }
 
-config_guake () {
-    prompt "Configuring guake"
-
-    rm -rf ~/.gconf/apps/guake
-    cp -r terminals/guake ~/.gconf/apps/guake
-
-    prompt "Done"
-}
-
 config_i3 () {
     prompt "Configuring i3"
 
