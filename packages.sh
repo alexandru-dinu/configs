@@ -35,7 +35,6 @@ declare -a to_remove=(
     "mousepad*"         "remmina*"          "xreader"
     "tomboy"            "timeshift"         "screenfetch"
     "gnome-terminal*"   "xfce4-terminal*"   "xterm"
-    "google-chrome*"
 )
 
 declare -a to_install=(
@@ -58,7 +57,7 @@ declare -a pip3_packages=(
 )
 
 # remove packages
-for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt-get purge -qq "$p"; done
+for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt-get purge "$p"; done
 
 # add ppas
 for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done
@@ -66,7 +65,7 @@ for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done
 sudo apt update && sudo apt upgrade
 
 # install packages
-for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt-get install -qq "$p"; done
+for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt-get install "$p"; done
 
 # terminator needs special treatment
 echo "---" && sudo apt-cache policy terminator && echo "---"
@@ -77,6 +76,6 @@ sudo aptitude install terminator=$ver
 [[ -e ~/anaconda3/bin/python ]] && for p in "${pip3_packages[@]}"; do green_prompt "$p"; pip install "$p"; done || red_prompt "Check anaconda3 installation"
 
 # clean
-sudo apt autoclean && sudo apt autoremove -y
+sudo apt autoclean && sudo apt autoremove
 
 green_prompt "Done"
