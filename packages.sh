@@ -57,7 +57,7 @@ declare -a pip3_packages=(
 )
 
 # remove packages
-for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt-get purge "$p"; done
+for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt-get purge -qq "$p"; done
 
 # add ppas
 for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done

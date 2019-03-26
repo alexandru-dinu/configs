@@ -22,7 +22,6 @@ for_window [class="^(?i)firefox"] border pixel 0
 
 # applets
 exec --no-startup-id nm-applet
-exec --no-startup-id solaar
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
