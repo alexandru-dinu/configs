@@ -3,7 +3,7 @@
 | Select all                        | C-a                    | ggVG      |
 | Go to beginning of the line       | A-left                 | ^         |
 | Go to end of the line             | A-right                | $         |
-| Go to line <n>                    | C-g, <n>               | :<n>      |
+| Go to line <n>                    | C-g, _num_             | :_num_    |
 | Delete line(s)                    | C-S-k                  | dd        |
 | Duplicate line(s)                 | C-d                    | yyp       |
 | Fast selection                    | S                      | v         |
