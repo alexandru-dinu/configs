@@ -15,6 +15,10 @@ alias control_center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 
 ### functions
 
+bgopen () {
+    xdg-open "$1" &> /dev/null &
+}
+
 dis () {
     objdump -d -M intel "$1"
 }
