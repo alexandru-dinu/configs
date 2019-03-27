@@ -129,6 +129,7 @@ config_vscode () {
         "13xforever.language-x86-64-assembly"
         "gruntfuggly.todo-tree"
         "alexeyvax.vscode-open-native-terminal"
+        "tomoki1207.pdf"
     )
 
     for ext in "${vscode_exts[@]}"
