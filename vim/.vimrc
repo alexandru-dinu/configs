@@ -22,11 +22,13 @@ map <C-b> :NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+
+let g:ycm_add_preview_to_completeopt = 0
+set completeopt-=preview
 
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_max_diagnostics_to_display = 1000
+
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra'
 " Plugin settings END
@@ -142,7 +144,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme elflord
+    colorscheme industry
 catch
 endtry
 
