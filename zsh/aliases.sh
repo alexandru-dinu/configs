@@ -28,6 +28,8 @@ c () {
 }
 
 sak () {
+    _pids=( ${(s. .)"$(pidof ssh-agent)"} )
+    for p in "${_pids[@]}"; do kill -15 $p; done
     eval $(ssh-agent -s) && ssh-add ~/.ssh/"$1"
 }
 
