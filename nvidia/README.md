@@ -2,8 +2,8 @@
 
 |   Distro  |         Kernel         |      Driver      | CUDA  |  status  |
 | --------- | ---------------------- | ---------------- | ----- | -------- |
-| mint 18.3 | 4.15.18-041518-generic | nvidia-396(.54)  | 9.1   | working  |
-| mint 19.1 | 5.0                    | nvidia-415       | 10.x  | **TODO** |
+| mint 18.3 | 4.15.18-041518-generic | nvidia-396(.54)  | 9.1   | OK |
+| mint 19.1 | 5.0                    | nvidia-415       | 10.x  | **TODO:** [#10](/../../issues/10) |
 
 ## installation tips
 - CUDA: use runfile
