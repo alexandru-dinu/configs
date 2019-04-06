@@ -78,4 +78,6 @@ sudo aptitude install terminator=$ver
 # clean
 sudo apt autoclean && sudo apt autoremove
 
+sudo updatedb
+
 green_prompt "Done"
