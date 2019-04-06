@@ -121,7 +121,7 @@ config_vscode () {
     done
 
     declare -a vscode_exts=(
-        "gerane.theme-sunburst"
+        "malvery.darcula-pycharm-dimmed"
         "geeebe.duplicate"
         "justusadam.language-haskell"
         "ms-python.python"

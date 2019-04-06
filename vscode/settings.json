@@ -1,5 +1,6 @@
 {
-    "workbench.colorTheme": "Sunburst",
+    "workbench.colorTheme": "Darcula Pycharm Theme (dimmed)",
+
     "editor.fontFamily": "Source Code Pro",
     "editor.fontSize": 14,
     "files.trimTrailingWhitespace": true,
