@@ -145,6 +145,8 @@ config_pycharm() {
 
     cfg_dir=$(find ~ -name ".PyCharm*" 2>/dev/null | head -n 1)
 
+    echo "Found $cfg_dir"
+
     for d in `ls jetbrains/pycharm | grep -v options`
     do
         rm -rf $cfg_dir/config/$d
