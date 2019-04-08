@@ -26,6 +26,9 @@
         "textMateRules": [{
             "scope": ["comment"],
             "settings": {"fontStyle": ""}
-        }]
+        }],
+        "[Darcula Pycharm Theme (dimmed)]": {
+            "comments": "#808080"
+        }
     }
 }
