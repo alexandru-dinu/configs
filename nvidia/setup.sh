@@ -69,24 +69,7 @@ reconf () {
     sudo dpkg-reconfigure nvidia-$1
 }
 
-main () {
-    was_reboot=$1
-    ver=$2
+method=$1
+ver=$2
 
-    if [[ "$was_reboot" == "1" ]]; then
-        reconf $ver
-        sudo rm -f /usr/lib/xorg/Xorg.wrap
-    else
-        init $ver
-        blacklist $ver
-        bumblebee $ver
-        alternatives
-
-        sudo rm -f /usr/lib/xorg/Xorg.wrap
-
-        red_prompt "need to reboot. afterwards, run  continue [y/n]?"; read b
-        [[ "$b" == "y" ]] && reboot || red_prompt "reboot manually later"
-    fi
-}
-
-main $1 $2
+$1 $2
