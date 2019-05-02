@@ -7,7 +7,6 @@ prompt () {
     echo -e "${green}$1${reset}"
 }
 
-
 config_zsh () {
     prompt "Configuring Oh-My-Zsh"
 
@@ -33,17 +32,7 @@ config_zsh () {
     cd ~/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
 
     prompt "environment variables"
-    local l=5
-
-    echo "anaconda2? [y/n]" && read a
-    [ $a == 'y' ] && ex -s -c "$l"'a|export PATH=~/anaconda2/bin:$PATH' -c x ~/.zshenv && l=$((l+1))
-
-    echo "anaconda3? [y/n]" && read a
-    [ $a == 'y' ] && ex -s -c "$l"'a|export PATH=~/anaconda3/bin:$PATH' -c x ~/.zshenv && l=$((l+1))
-
-    echo "cuda? [y/n]" && read c
-    [ $c == 'y' ] && ex -s -c "$l"'a|export PATH=/usr/local/cuda/bin:$PATH' -c x ~/.zshenv && l=$((l+1))
-    [ $c == 'y' ] && ex -s -c "$l"'a|export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' -c x ~/.zshenv && l=$((l+1))
+    python setup_env.py
 
     prompt "Done"
 }
