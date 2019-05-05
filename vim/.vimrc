@@ -10,7 +10,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -20,17 +19,6 @@ filetype plugin indent on    " required
 " Plugin settings START
 map <C-b> :NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
-
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-
-let g:ycm_add_preview_to_completeopt = 0
-set completeopt-=preview
-
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_max_diagnostics_to_display = 1000
-
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra'
 " Plugin settings END
 
 " vimdiff
