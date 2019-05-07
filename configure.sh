@@ -212,7 +212,8 @@ config_fonts () {
     fonts_dir="$HOME/.local/share/fonts"
 
     rm -rf $fonts_dir && mkdir -p $fonts_dir
-    cp fonts/SourceCodePro/* $fonts_dir
+
+    for f in `ls fonts`; do cp fonts/$f/* $fonts_dir; done
 
     prompt "Done"
 }
