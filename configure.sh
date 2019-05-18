@@ -145,6 +145,28 @@ config_pycharm() {
     prompt "Done"
 }
 
+config_idea() {
+    prompt "Configuring IDEA"
+
+    cfg_dir=$(find ~ -name ".Idea*" 2>/dev/null | head -n 1)
+
+    echo "Found $cfg_dir"
+
+    for d in `ls jetbrains/idea | grep -v options`
+    do
+        rm -rf $cfg_dir/config/$d
+        ln -s `realpath jetbrains/pycharm/$d` $cfg_dir/config/$d
+    done
+
+    for o in `ls jetbrains/pycharm/options`
+    do
+        rm -rf $cfg_dir/config/options/$o
+        ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/config/options/$o
+    done
+
+    prompt "Done"
+}
+
 config_terminator () {
     prompt "Configuring terminator"
 

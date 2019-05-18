@@ -1,0 +1,10 @@
+<application>
+  <component name="DefaultFont">
+    <option name="FONT_SIZE" value="14" />
+    <option name="FONT_FAMILY" value="Source Code Pro" />
+  </component>
+  <component name="EditorSettings">
+    <option name="STRIP_TRAILING_SPACES" value="Whole" />
+    <option name="IS_WHEEL_FONTCHANGE_ENABLED" value="true" />
+  </component>
+</application>
