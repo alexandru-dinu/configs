@@ -240,6 +240,17 @@ config_fonts () {
     prompt "Done"
 }
 
+config_cinnamon () {
+    prompt "Configuring cinnamon"
+
+    js_dir="/usr/share/cinnamon/js/ui"
+
+    dconf load /org/cinnamon/ < ./cinnamon/cinnamon.dconf
+
+    sudo vim ${js_dir}/workspacesView.js
+    sudo vim ${js_dir}/windowManager.js
+}
+
 get_configs () {
     grep -oE "^config_[a-z0-9]+" $0 | cut -d"_" -f2 | sort
 }
