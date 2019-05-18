@@ -31,7 +31,7 @@
     cursor_color = "#ffffff"
     font = Source Code Pro 10.5
     foreground_color = "#bababa"
-    palette = "#282828:#c65c5c:#69ae57:#d79921:#5d87a8:#b16286:#2ab2ba:#babdb6:#555753:#dd6767:#75c261:#fabd2f:#6897bb:#d3869b:#2ab2ba:#ebdbb2"
+    palette = "#555753:#c65c5c:#69ae57:#d79921:#5d87a8:#b16286:#2ab2ba:#babdb6:#888a85:#dd6767:#75c261:#fabd2f:#6897bb:#d3869b:#2ab2ba:#ebdbb2"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
