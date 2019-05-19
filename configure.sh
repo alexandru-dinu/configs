@@ -177,6 +177,14 @@ config_terminator () {
     prompt "Done"
 }
 
+config_guake () {
+    prompt "Configuring guake"
+
+    dconf load /apps/guake/ < ./terminals/guake.dconf
+
+    prompt "Done"
+}
+
 config_i3 () {
     prompt "Configuring i3"
 
