@@ -27,11 +27,11 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#212122"
+    background_color = "#262626"
     cursor_color = "#ffffff"
     font = Source Code Pro 10.5
-    foreground_color = "#bababa"
-    palette = "#555753:#c65c5c:#69ae57:#d79921:#5d87a8:#b16286:#2ab2ba:#babdb6:#888a85:#dd6767:#75c261:#fabd2f:#6897bb:#d3869b:#2ab2ba:#ebdbb2"
+    foreground_color = "#dee0df"
+    palette = "#555753:#ff2e3f:#6fd65d:#ff6f23:#3476ff:#9861f8:#00cdb3:#fffcc2:#7c7c7c:#ff6480:#3fc56b:#f9c859:#00b1fe:#b68dff:#b38b7d:#fffee3"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
