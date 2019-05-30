@@ -3,7 +3,7 @@ alttab-switcher-delay=100
 alttab-switcher-show-all-workspaces=true
 alttab-switcher-style='icons+thumbnails'
 applet-cache-updated=1558137828
-command-history=['termite', 'terminator', 'code', 'guake', 'r']
+command-history=['termite', 'terminator', 'code', 'guale', 'guake', 'r']
 desktop-effects-close-effect='traditional'
 desktop-effects-close-time=100
 desktop-effects-close-transition='easeOutQuad'
@@ -23,13 +23,17 @@ desktop-effects-unmaximize-effect='none'
 desktop-effects-unmaximize-time=100
 desktop-effects-unmaximize-transition='easeNone'
 device-aliases=['/org/freedesktop/UPower/devices/mouse_hidpp_battery_0:= Wireless Mouse MX Master']
-enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:3:panel-launchers@cinnamon.org:2', 'panel1:left:5:window-list@cinnamon.org:6', 'panel1:right:2:notifications@cinnamon.org:7', 'panel1:right:3:windows-quick-list@cinnamon.org:9', 'panel1:right:4:systray@cinnamon.org:11', 'panel1:right:5:removable-drives@cinnamon.org:13', 'panel1:right:6:network@cinnamon.org:14', 'panel1:right:7:sound@cinnamon.org:15', 'panel1:right:9:power@cinnamon.org:16', 'panel1:right:10:calendar@cinnamon.org:18', 'panel1:right:0:sysmonitor@orcus:21', 'panel1:left:4:workspace-grid@hernejj:22', 'panel1:right:1:keyboard@cinnamon.org:23']
+enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:3:panel-launchers@cinnamon.org:2', 'panel1:left:5:window-list@cinnamon.org:6', 'panel1:right:3:notifications@cinnamon.org:7', 'panel1:right:4:windows-quick-list@cinnamon.org:9', 'panel1:right:5:systray@cinnamon.org:11', 'panel1:right:6:removable-drives@cinnamon.org:13', 'panel1:right:7:network@cinnamon.org:14', 'panel1:right:8:sound@cinnamon.org:15', 'panel1:right:9:power@cinnamon.org:16', 'panel1:right:10:calendar@cinnamon.org:18', 'panel1:right:1:sysmonitor@orcus:21', 'panel1:right:2:keyboard@cinnamon.org:23', 'panel1:right:11:workspace-switcher@cinnamon.org:32']
 favorite-apps=['chromium.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
-next-applet-id=24
+next-applet-id=33
 panel-edit-mode=false
 panel-launchers=['DEPRECATED']
+panel-zone-icon-sizes='[{"panelId":1,"left":0,"center":0,"right":24}]'
+panels-autohide=['1:false', '2:false']
 panels-enabled=['1:0:top']
-panels-height=['1:26']
+panels-height=['1:26', '2:26']
+panels-hide-delay=['1:0', '2:0']
+panels-show-delay=['1:0', '2:0']
 show-media-keys-osd='medium'
 workspace-osd-duration=400
 workspace-osd-visible=false
@@ -40,7 +44,7 @@ workspace-osd-y=50
 exec='terminator'
 
 [desktop/background]
-picture-options='stretched'
+picture-options='zoom'
 picture-uri='file:///home/alex/configs.git/wallpapers/groot.png'
 
 [desktop/background/slideshow]
@@ -110,7 +114,7 @@ volume-sound-enabled=false
 
 [desktop/wm/preferences]
 min-window-opacity=30
-num-workspaces=6
+num-workspaces=1
 theme='Mint-Y-Dark'
 workspace-names=@as []
 
@@ -131,10 +135,12 @@ motion-threshold=1
 [settings-daemon/peripherals/touchpad]
 motion-threshold=1
 natural-scroll=false
+touchpad-enabled=true
 
 [settings-daemon/plugins/power]
 lid-close-ac-action='suspend'
 lid-close-battery-action='suspend'
+lock-on-suspend=true
 sleep-display-ac=1800
 sleep-display-battery=1800
 sleep-inactive-ac-timeout=0
@@ -152,3 +158,4 @@ unplug-enabled=false
 [theme]
 name='Linux Mint'
 symbolic-relative-size=0.67000000000000004
+theme-cache-updated=1558803389
