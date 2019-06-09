@@ -1,2 +1,4 @@
-:set prompt "\ESC[0;37m%s \ESC[1;96mλ \ESC[m"
+:set prompt "\ESC[0;95m%s \ESC[1;95mλ \ESC[m"
 :set -XUnicodeSyntax
+:set +s
+:set +t
