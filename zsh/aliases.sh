@@ -12,6 +12,7 @@ alias i="ipython"
 alias cb="xclip -selection clipboard"
 alias notes="vim $HOME/workspace/notes.txt"
 alias control_center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
+alias ccat="ccat -G Plaintext=\"reset\" -G Decimal=\"teal\" -G Keyword=\"darkgreen\""
 
 ### functions
 
@@ -66,7 +67,7 @@ gdvc () {
 set_display () {
     mode="$1"
     pos="$2" # left / right
-    
+
     [ "$mode" = "single" ] && (xrandr --auto) && return
     [ "$mode" = "extend" ] && (xrandr --output eDP1 --primary --output HDMI1 --auto --$pos-of eDP1) && return
 }
