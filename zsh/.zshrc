@@ -8,7 +8,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # plugins: ~/.oh-my-zsh/plugins/*
 # custom plugins: ~/.oh-my-zsh/custom/plugins/
-plugins=(git zshmarks zsh-syntax-highlighting)
+plugins=(git zshmarks zsh-syntax-highlighting zsh-autosuggestions)
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='none'
