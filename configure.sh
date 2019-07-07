@@ -81,6 +81,18 @@ config_ghci () {
     prompt "Done"
 }
 
+config_ruby () {
+    prompt "Configuring ruby"
+
+    gem install irbtools
+
+    rm -f ~/.irbrc
+    ln -s `realpath ruby/.irbrc` ~/.irbrc
+    chmod go-w ~/.irbrc
+
+    prompt "Done"
+}
+
 config_gdb () {
     prompt "Configuring gdb"
 
