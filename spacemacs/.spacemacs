@@ -88,12 +88,6 @@
             :width normal
             :powerline-scale 1.1
         )
-        dotspacemacs-themes
-        '(
-            smyx
-            spacemacs-dark
-            spacemacs-light
-        )
         dotspacemacs-colorize-cursor-according-to-state t
 
         dotspacemacs-leader-key "SPC"
