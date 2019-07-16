@@ -4,7 +4,7 @@
     "editor.fontFamily": "Source Code Pro",
     "editor.fontSize": 14,
     "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
+    "files.insertFinalNewline": false,
     "files.trimFinalNewlines": true,
 
     "window.titleBarStyle": "native",
