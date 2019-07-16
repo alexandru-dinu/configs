@@ -27,7 +27,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#262626"
+    background_color = "#1e1e1e"
     cursor_color = "#ffffff"
     font = Source Code Pro 10.5
     foreground_color = "#dee0df"

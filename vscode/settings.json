@@ -7,6 +7,8 @@
     "files.insertFinalNewline": false,
     "files.trimFinalNewlines": true,
 
+    "breadcrumbs.enabled": false,
+
     "window.titleBarStyle": "native",
     "window.menuBarVisibility": "hidden",
     "workbench.statusBar.visible": true,
@@ -26,9 +28,6 @@
         "textMateRules": [{
             "scope": ["comment"],
             "settings": {"fontStyle": ""}
-        }],
-        "[Darcula Pycharm Theme (dimmed)]": {
-            "comments": "#808080"
-        }
+        }]
     }
 }

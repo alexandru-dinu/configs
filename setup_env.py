@@ -15,4 +15,3 @@ if input("> cuda? [y/n] ") == 'y':
 
 
 FP.close()
-

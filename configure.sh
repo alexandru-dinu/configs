@@ -134,6 +134,9 @@ config_vscode () {
         code --install-extension $ext
     done
 
+    prompt "Patching theme"
+    python vscode/patch_theme.py
+
     prompt "Done"
 }
 
