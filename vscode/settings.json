@@ -12,7 +12,7 @@
     "window.titleBarStyle": "native",
     "window.menuBarVisibility": "hidden",
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
