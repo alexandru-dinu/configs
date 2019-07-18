@@ -5,6 +5,7 @@
 | Go to end of the line             | A-right                | $         |
 | Go to line <n>                    | C-g, _num_             | :_num_    |
 | Delete line(s)                    | C-S-k                  | dd        |
+| Delete from cursor to line end    | C-S-d                  | S-d       |
 | Duplicate line(s)                 | C-d                    | yyp       |
 | Fast selection                    | S                      | v         |
 | Go to matching bracket            | C-S-/                  | %         |
