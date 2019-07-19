@@ -1,5 +1,3 @@
-### aliases
-
 # zshmarks
 alias g="jump"
 alias s="bookmark"
@@ -9,60 +7,29 @@ alias l="showmarks"
 # user
 alias gdb="gdb -q"
 alias i="ipython"
-alias cb="xclip -selection clipboard"
 alias notes="vim $HOME/workspace/notes.txt"
-alias control_center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 alias ccat="ccat -G Plaintext=\"reset\" -G Decimal=\"teal\" -G Keyword=\"darkgreen\""
+alias dis="objdump -d -M intel"
 
-### functions
+bgopen () { xdg-open "$1" &> /dev/null & }
 
-bgopen () {
-    xdg-open "$1" &> /dev/null &
-}
+c () { cd "$1" && ls }
 
-dis () {
-    objdump -d -M intel "$1"
-}
-
-c () {
-    cd "$1" && ls
-}
-
+# ssh-add-key
 sak () {
     _pids=( ${(s. .)"$(pidof ssh-agent)"} )
     for p in "${_pids[@]}"; do kill -15 $p; done
     eval $(ssh-agent -s) && ssh-add ~/.ssh/"$1"
 }
 
-rs () {
-    [ "$1" = "x" ] && redshift -x || redshift -O "$1" -g 0.9
-}
+rs () { [ "$1" = "x" ] && redshift -x || redshift -O "$1" -g 0.9 }
 
-to_pdf () {
-    libreoffice --headless --convert-to pdf "$1"
-}
+to_pdf () { libreoffice --headless --convert-to pdf "$1" }
 
 # git
-
-gdm () {
-    git diff origin/master "$1"
-}
-
-gdvm () {
-    for f in `git ls-files -m`
-    do
-        git diff origin/master $f
-    done
-}
-
-gdvc () {
-    for f in `git ls-files -m`
-    do
-        git diff origin/"$(git rev-parse --abbrev-ref HEAD)" $f
-    done
-}
-
-# display
+gdm () { git diff origin/master "$1" }
+gdvm () { for f in `git ls-files -m`; do git diff origin/master $f; done }
+gdvc () { for f in `git ls-files -m`; do git diff origin/"$(git rev-parse --abbrev-ref HEAD)" $f; done }
 
 set_display () {
     mode="$1"
