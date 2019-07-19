@@ -45,11 +45,11 @@ exec='terminator'
 
 [desktop/background]
 picture-options='zoom'
-picture-uri='file:///home/alex/configs.git/wallpapers/groot.png'
+picture-uri='file:///home/alex/gizmos.git/wallpapers/groot.png'
 
 [desktop/background/slideshow]
 delay=15
-image-source='directory:///home/alex/configs.git/wallpapers'
+image-source='directory:///home/alex/gizmos.git/wallpapers'
 
 [desktop/interface]
 cursor-blink-time=1200

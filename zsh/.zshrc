@@ -22,4 +22,4 @@ ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=magenta,bold'
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/configs.git/zsh/aliases.sh
+source $HOME/gizmos.git/zsh/aliases.sh
