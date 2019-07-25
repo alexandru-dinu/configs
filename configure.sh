@@ -256,7 +256,7 @@ config_git () {
 config_npm () {
     prompt "Configuring npm"
 
-    rm -rf /usr/lib/node_modules
+    sudo rm -rf /usr/lib/node_modules
     mkdir -p $HOME/.npm-global
     npm config set prefix "$HOME/.npm-global"
 
