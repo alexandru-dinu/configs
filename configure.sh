@@ -1,5 +1,3 @@
-#!/bin/bash
-
 green=`tput setaf 2`
 reset=`tput sgr0`
 
@@ -256,9 +254,10 @@ config_git () {
 config_npm () {
     prompt "Configuring npm"
 
-    sudo rm -rf /usr/lib/node_modules
     mkdir -p $HOME/.npm-global
     npm config set prefix "$HOME/.npm-global"
+    npm install -g npm
+    sudo rm -rf /usr/lib/node_modules
 
     prompt "Done"
 }
