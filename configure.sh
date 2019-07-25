@@ -107,6 +107,7 @@ config_vscode () {
     prompt "Configuring vscode"
 
     cfg_dir=~/.config/Code/User
+    ext_dir=~/.vscode/extensions
 
     rm -rf ~/.vscode ~/.config/Code
     mkdir -p $cfg_dir
@@ -119,7 +120,6 @@ config_vscode () {
     done
 
     declare -a vscode_exts=(
-        "malvery.darcula-pycharm-dimmed"
         "geeebe.duplicate"
         "justusadam.language-haskell"
         "ms-python.python"
@@ -134,8 +134,7 @@ config_vscode () {
         code --install-extension $ext
     done
 
-    prompt "Patching theme"
-    python vscode/patch_theme.py
+    ln -s `realpath vscode/darcula-minimal` $ext_dir
 
     prompt "Done"
 }
@@ -249,6 +248,16 @@ config_git () {
     git config --global core.fileMode false
     git config --global core.editor vim
     git config --global core.eol = lf
+
+    prompt "Done"
+}
+
+config_npm () {
+    prompt "Configuring npm"
+
+    rm -rf /usr/lib/node_modules
+    mkdir -p $HOME/.npm-global
+    npm config set prefix "$HOME/.npm-global"
 
     prompt "Done"
 }
