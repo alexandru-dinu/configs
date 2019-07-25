@@ -289,6 +289,12 @@
 			}
 		},
 		{
+			"scope"   : "comment.block",
+			"settings": {
+				"foreground": "#808080"
+			}
+		},
+		{
 			"scope"   : "constant.language",
 			"settings": {
 				"foreground": "#CC7832"
