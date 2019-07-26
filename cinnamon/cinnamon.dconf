@@ -5,26 +5,26 @@ alttab-switcher-style='icons+thumbnails'
 applet-cache-updated=1558137828
 command-history=['termite', 'terminator', 'code', 'guale', 'guake', 'r']
 desktop-effects-close-effect='traditional'
-desktop-effects-close-time=100
+desktop-effects-close-time=50
 desktop-effects-close-transition='easeOutQuad'
 desktop-effects-map-effect='traditional'
-desktop-effects-map-time=100
+desktop-effects-map-time=50
 desktop-effects-map-transition='easeOutQuad'
 desktop-effects-maximize-effect='none'
-desktop-effects-maximize-time=100
+desktop-effects-maximize-time=50
 desktop-effects-maximize-transition='easeInExpo'
 desktop-effects-minimize-effect='traditional'
-desktop-effects-minimize-time=100
+desktop-effects-minimize-time=50
 desktop-effects-minimize-transition='easeInQuad'
 desktop-effects-tile-effect='none'
-desktop-effects-tile-time=100
+desktop-effects-tile-time=50
 desktop-effects-tile-transition='easeInQuad'
 desktop-effects-unmaximize-effect='none'
-desktop-effects-unmaximize-time=100
+desktop-effects-unmaximize-time=50
 desktop-effects-unmaximize-transition='easeNone'
 device-aliases=['/org/freedesktop/UPower/devices/mouse_hidpp_battery_0:= Wireless Mouse MX Master']
 enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:3:panel-launchers@cinnamon.org:2', 'panel1:left:5:window-list@cinnamon.org:6', 'panel1:right:3:notifications@cinnamon.org:7', 'panel1:right:4:windows-quick-list@cinnamon.org:9', 'panel1:right:5:systray@cinnamon.org:11', 'panel1:right:6:removable-drives@cinnamon.org:13', 'panel1:right:7:network@cinnamon.org:14', 'panel1:right:8:sound@cinnamon.org:15', 'panel1:right:9:power@cinnamon.org:16', 'panel1:right:10:calendar@cinnamon.org:18', 'panel1:right:1:sysmonitor@orcus:21', 'panel1:right:2:keyboard@cinnamon.org:23', 'panel1:right:11:workspace-switcher@cinnamon.org:32']
-favorite-apps=['chromium.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
+favorite-apps=['firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
 next-applet-id=33
 panel-edit-mode=false
 panel-launchers=['DEPRECATED']
@@ -40,12 +40,23 @@ workspace-osd-visible=false
 workspace-osd-x=50
 workspace-osd-y=50
 
+[desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-reader-enabled=false
+
+[desktop/a11y/mouse]
+dwell-click-enabled=false
+dwell-threshold=10
+dwell-time=1.2
+secondary-click-enabled=false
+secondary-click-time=1.2
+
 [desktop/applications/terminal]
 exec='terminator'
 
 [desktop/background]
 picture-options='zoom'
-picture-uri='file:///home/alex/gizmos.git/wallpapers/groot.png'
+picture-uri='file:///home/alex/gizmos.git/wallpapers/manjaro.png'
 
 [desktop/background/slideshow]
 delay=15
@@ -55,11 +66,13 @@ image-source='directory:///home/alex/gizmos.git/wallpapers'
 cursor-blink-time=1200
 cursor-size=24
 cursor-theme='xcursor-breeze'
+first-day-of-week=1
 gtk-theme='Mint-Y-Dark-Aqua'
 icon-theme='Papirus-Dark'
 keyboard-layout-prefer-variant-names=true
 keyboard-layout-show-flags=false
 text-scaling-factor=1.0
+toolkit-accessibility=false
 
 [desktop/keybindings]
 custom-list=['custom0', 'custom1']
@@ -74,6 +87,11 @@ name='rofi'
 binding=['Print']
 command='gnome-screenshot -a -c'
 name='screenshot'
+
+[desktop/keybindings/custom-keybindings/custom2]
+binding=['<Super>n']
+command='nemo'
+name='nemo'
 
 [desktop/keybindings/media-keys]
 home=['<Super>n', 'XF86Explorer']
@@ -133,6 +151,7 @@ drag-threshold=8
 motion-threshold=1
 
 [settings-daemon/peripherals/touchpad]
+horizontal-scrolling=true
 motion-threshold=1
 natural-scroll=false
 touchpad-enabled=true
