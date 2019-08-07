@@ -38,33 +38,32 @@ declare -a to_remove=(
 )
 
 declare -a to_install=(
-    "build-essential" "cmake"
-    "ssh" "zsh"
+    "build-essential" "cmake" "ssh" "zsh"
     "vim" "vim-nox" "vim-runtime" "vim-doc" "vim-scripts" "cscope" "exuberant-ctags"
     "emacs"
-    "geeqie" "feh" "bless"
+    "geeqie" "feh" "bless" "meld"
     "ghc" "hoogle"
-    "i3*" "compton" "lxappearance" "gnome-control-center" "xfce4-screenshooter" "nemo"
-    "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat" "grub-customizer"
-    "xbacklight" "xkb-switch" "xautolock" "rofi" "powertop" "silversearcher-ag"
-    "gnome-control-center" "xfce4-screenshooter" "nemo"
-    "neofetch"
-    "chromium-browser" "vlc"
+    "nemo" "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
+    "grub-customizer" "powertop" "silversearcher-ag"
+    "xfce4-screenshooter" "nemo"
+    "neofetch" "vlc"
+    # "i3*" "compton" "lxappearance" "gnome-control-center" "xbacklight" "xkb-switch" "xautolock"
+    # "rofi" "gnome-control-center"
 )
 
 declare -a pip3_packages=(
     "kaggle" "gpustat"
 )
 
-# remove packages
+green_prompt "Removing packages"
 for p in "${to_remove[@]}"; do red_prompt "$p"; sudo apt-get purge -qq "$p"; done
 
-# add ppas
+green_prompt "Adding PPAs"
 for p in "${ppas[@]}"; do green_prompt "$p"; sudo add-apt-repository "$p"; done
 
 sudo apt update && sudo apt upgrade
 
-# install packages
+green_prompt "Installing packages"
 for p in "${to_install[@]}"; do green_prompt "$p"; sudo apt-get install "$p"; done
 
 # terminator needs special treatment
@@ -72,10 +71,10 @@ echo "---" && sudo apt-cache policy terminator && echo "---"
 echo "Select nightly version" && read ver
 sudo aptitude install terminator=$ver
 
-# install python3 packages
+green_prompt "Installing Python3 packages"
 [[ -e ~/anaconda3/bin/python ]] && for p in "${pip3_packages[@]}"; do green_prompt "$p"; pip install "$p"; done || red_prompt "Check anaconda3 installation"
 
-# clean
+green_prompt "Cleaning"
 sudo apt autoclean && sudo apt autoremove
 
 sudo updatedb

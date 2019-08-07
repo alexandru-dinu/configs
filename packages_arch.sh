@@ -15,7 +15,7 @@ green_prompt () {
 
 declare -a to_remove=(
     "totem"            "rhythmbox"        "brasero"
-    "parole"           "catfish*"         "ristretto"
+    "parole"           "catfish"          "ristretto"
     "gedit"            "pidgin"           "xfburn"
     "simple-scan"      "hplip"            "gnome-orca"
     "evolution"        "fluid"            "gnome-mahjongg"
@@ -23,12 +23,27 @@ declare -a to_remove=(
     "mousepad"         "remmina"          "xreader"
     "tomboy"           "timeshift"        "screenfetch"
     "gnome-terminal"   "xfce4-terminal"   "xterm"
-    "parcellite"       "xplayer"
+    "parcellite"       "xplayer"          "chromium"
 )
 
-# remove packages
+declare -a to_install=(
+    "build-essential" "cmake" "ssh" "zsh" "yay"
+    "yay" "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
+    "powertop" "silversearcher-ag" "mlocate"
+    "geeqie" "feh" "bless" "meld"
+    "ghc" "hoogle"
+    "neofetch" "vlc"
+)
+
+green_prompt "Removing packages"
 for p in "${to_remove[@]}"; do red_prompt "$p"; sudo pacman -Rcns "$p"; done
 
+green_prompt "Installing packages"
+for p in "${to_install[@]}"; do green_prompt "$p"; sudo pacman -S --needed $p; done
+
+green_prompt "Cleaning"
 sudo pacman -Syu
 sudo pacman -R `pacman -Qdtq`
-sudo pacman -Scc
+yes | sudo pacman -Scc
+
+sudo updatedb
