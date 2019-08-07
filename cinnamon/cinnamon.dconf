@@ -23,9 +23,9 @@ desktop-effects-unmaximize-effect='none'
 desktop-effects-unmaximize-time=50
 desktop-effects-unmaximize-transition='easeNone'
 device-aliases=['/org/freedesktop/UPower/devices/mouse_hidpp_battery_0:= Wireless Mouse MX Master']
-enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:3:panel-launchers@cinnamon.org:2', 'panel1:left:5:window-list@cinnamon.org:6', 'panel1:right:3:notifications@cinnamon.org:7', 'panel1:right:4:windows-quick-list@cinnamon.org:9', 'panel1:right:5:systray@cinnamon.org:11', 'panel1:right:6:removable-drives@cinnamon.org:13', 'panel1:right:7:network@cinnamon.org:14', 'panel1:right:8:sound@cinnamon.org:15', 'panel1:right:9:power@cinnamon.org:16', 'panel1:right:10:calendar@cinnamon.org:18', 'panel1:right:1:sysmonitor@orcus:21', 'panel1:right:2:keyboard@cinnamon.org:23', 'panel1:right:11:workspace-switcher@cinnamon.org:32']
+enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:1:panel-launchers@cinnamon.org:2', 'panel1:right:4:notifications@cinnamon.org:7', 'panel1:right:5:windows-quick-list@cinnamon.org:9', 'panel1:right:6:systray@cinnamon.org:11', 'panel1:right:7:removable-drives@cinnamon.org:13', 'panel1:right:8:network@cinnamon.org:14', 'panel1:right:9:sound@cinnamon.org:15', 'panel1:right:10:power@cinnamon.org:16', 'panel1:right:11:calendar@cinnamon.org:18', 'panel1:right:2:sysmonitor@orcus:21', 'panel1:right:3:keyboard@cinnamon.org:23', 'panel1:right:12:workspace-switcher@cinnamon.org:32', 'panel1:left:2:grouped-window-list@cinnamon.org:33']
 favorite-apps=['firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
-next-applet-id=33
+next-applet-id=34
 panel-edit-mode=false
 panel-launchers=['DEPRECATED']
 panel-zone-icon-sizes='[{"panelId":1,"left":0,"center":0,"right":24}]'
@@ -67,6 +67,7 @@ cursor-blink-time=1200
 cursor-size=24
 cursor-theme='xcursor-breeze'
 first-day-of-week=1
+font-name='Cantarell 10'
 gtk-theme='Mint-Y-Dark-Aqua'
 icon-theme='Papirus-Dark'
 keyboard-layout-prefer-variant-names=true
@@ -77,6 +78,7 @@ toolkit-accessibility=false
 [desktop/keybindings]
 custom-list=['custom0', 'custom1']
 looking-glass-keybinding=@as []
+show-desklets=@as []
 
 [desktop/keybindings/custom-keybindings/custom0]
 binding=['<Super>d']
@@ -122,12 +124,14 @@ autorun-never=false
 [desktop/notifications]
 bottom-notifications=false
 display-notifications=true
+remove-old=true
 
 [desktop/screensaver]
 layout-group=0
 
 [desktop/sound]
 event-sounds=false
+maximum-volume=100
 volume-sound-enabled=false
 
 [desktop/wm/preferences]
@@ -159,6 +163,7 @@ touchpad-enabled=true
 [settings-daemon/plugins/power]
 lid-close-ac-action='suspend'
 lid-close-battery-action='suspend'
+lid-close-suspend-with-external-monitor=true
 lock-on-suspend=true
 sleep-display-ac=1800
 sleep-display-battery=1800
