@@ -203,8 +203,8 @@ config_guake () {
 config_i3 () {
     prompt "Configuring i3"
 
-    rm -rf ~/.config/i3 ~/.config/rofi ~/.config/compton
-    mkdir -p ~/.config/i3 ~/.config/rofi ~/.config/compton
+    rm -rf ~/.config/i3 ~/.config/compton
+    mkdir -p ~/.config/i3 ~/.config/compton
 
     declare -a configs=("config" "i3status.conf" "i3blocks.conf")
 
@@ -213,7 +213,6 @@ config_i3 () {
         ln -s `realpath i3/$c` ~/.config/i3/
     done
 
-    ln -s `realpath i3/rofi.conf` ~/.config/rofi/config
     ln -s `realpath i3/compton.conf` ~/.config/compton/config
 
     for b in $(ls i3/bin)
@@ -225,6 +224,17 @@ config_i3 () {
 
     # remove default i3blocks dir
     sudo rm -rf /usr/share/i3blocks
+
+    prompt "Done"
+}
+
+config_rofi () {
+    prompt "Configuring rofi"
+
+    cfg_dir=~/.config/rofi
+
+    rm -rf ${cfg_dir} && mkdir -p ${cfg_dir}
+    ln -s `realpath rofi/rofi.conf` ${cfg_dir}/config
 
     prompt "Done"
 }
