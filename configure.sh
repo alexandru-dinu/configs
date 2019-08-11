@@ -1,3 +1,5 @@
+#!/bin/bash
+
 green=`tput setaf 2`
 reset=`tput sgr0`
 
@@ -293,6 +295,19 @@ config_cinnamon () {
 
     sudo vim ${js_dir}/workspacesView.js
     sudo vim ${js_dir}/windowManager.js
+}
+
+config_misc () {
+    prompt "Configuring .xbindkeysrc"
+
+    ln -sf `realpath misc/.xbindkeysrc` ~/.xbindkeysrc
+    xbindkeys --poll-rc
+
+    prompt "Configuring headphones-eq"
+    mkdir -p ~/.local/bin
+    ln -sf `realpath headphones-eq.sh` ~/.local/bin/hpeq
+
+    prompt "Done"
 }
 
 get_configs () {

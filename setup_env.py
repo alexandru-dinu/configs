@@ -1,17 +1,32 @@
 import os
+import sys
 
-FP = open(os.environ['HOME'] + '/.zshenv', 'a')
+prompt = input if sys.version_info >= (3, 0) else raw_input
 
+def do(info, instructions):
+    if prompt("> %s [y/n] " % info) == 'y':
+        exec(instructions)
 
-if input("> anaconda2? [y/n] ") == 'y':
-    FP.write('export PATH=~/anaconda2/bin:$PATH\n')
-
-if input("> anaconda3? [y/n] ") == 'y':
-    FP.write('export PATH=~/anaconda3/bin:$PATH\n')
-
-if input("> cuda? [y/n] ") == 'y':
-    FP.write('export PATH=/usr/local/cuda/bin:$PATH\n')
-    FP.write('export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH\n')
+fp = open(os.environ['HOME'] + '/.zshenv', 'a')
 
 
-FP.close()
+do("anaconda2",
+"""
+fp.write(\"export PATH=~/anaconda2/bin:$PATH\\n\")
+"""
+)
+
+do("anaconda3",
+"""
+fp.write(\"export PATH=~/anaconda3/bin:$PATH\\n\")
+"""
+)
+
+do("cuda",
+"""
+fp.write(\"export PATH=/usr/local/cuda/bin:$PATH\\n\")
+fp.write(\"export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH\\n\")
+"""
+)
+
+fp.close()
