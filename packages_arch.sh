@@ -32,7 +32,7 @@ declare -a to_install=(
     "powertop" "silversearcher-ag" "mlocate"
     "geeqie" "feh" "bless" "meld"
     "ghc" "hoogle"
-    "neofetch" "vlc"
+    "neofetch" "vlc" "solaar"
 )
 
 green_prompt "Removing packages"
