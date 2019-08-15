@@ -305,7 +305,7 @@ config_misc () {
 
     prompt "Configuring headphones-eq"
     mkdir -p ~/.local/bin
-    ln -sf `realpath headphones-eq.sh` ~/.local/bin/hpeq
+    ln -sf `realpath misc/headphones-eq.sh` ~/.local/bin/hpeq
 
     prompt "Done"
 }
