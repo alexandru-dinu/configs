@@ -8,18 +8,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # plugins: ~/.oh-my-zsh/plugins/*
 # custom plugins: ~/.oh-my-zsh/custom/plugins/
-plugins=(git zshmarks zsh-syntax-highlighting zsh-autosuggestions)
-
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]='none'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
-ZSH_HIGHLIGHT_STYLES[comment]='fg=cyan,bold'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=magenta,bold'
+plugins=(git zshmarks zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/gizmos.git/zsh/aliases.sh
