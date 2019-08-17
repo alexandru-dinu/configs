@@ -132,7 +132,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme elflord
+    colorscheme peaksea
 catch
 endtry
 

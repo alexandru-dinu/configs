@@ -55,6 +55,8 @@ config_vim () {
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
+    ln -sf `realpath vim/colors` ~/.vim/colors
+
     prompt "Done"
 }
 
