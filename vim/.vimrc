@@ -9,6 +9,7 @@ call vundle#begin()
 " Plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
@@ -17,6 +18,8 @@ filetype plugin indent on    " required
 " Vundle END
 
 " Plugin settings START
+let g:airline_theme='angr'
+
 map <C-b> :NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
 " Plugin settings END
