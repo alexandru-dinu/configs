@@ -1,10 +1,15 @@
 #!/bin/bash
 
 green=`tput setaf 2`
+red=`tput setaf 1`
 reset=`tput sgr0`
 
 prompt () {
-    echo -e "${green}$1${reset}"
+    echo -e "${green}> $1${reset}"
+}
+
+red_prompt () {
+    echo -e "${red}> $1${reset}"
 }
 
 config_zsh () {
@@ -330,6 +335,10 @@ case "$1" in
         for cfg in $(get_configs); do $cfg; done
         ;;
     *)
-        for item in "$@"; do config_$item; done
+        for item in "$@"
+        do
+            echo $(get_configs) | grep -qw $item
+            if [ $? -eq 0 ]; then config_$item; else red_prompt "No config for $item"; fi
+        done
         ;;
 esac
