@@ -32,7 +32,12 @@ window-width=100
 
 [keybindings/local]
 decrease-transparency='<Primary>F10'
+focus-terminal-down='<Primary><Shift>Down'
+focus-terminal-left='<Primary><Shift>Left'
+focus-terminal-right='<Primary><Shift>Right'
+focus-terminal-up='<Primary><Shift>Up'
 increase-transparency='<Primary>F9'
+split-tab-vertical='<Super>backslash'
 switch-tab1='<Alt>1'
 switch-tab10='<Alt>0'
 switch-tab2='<Alt>2'
@@ -49,7 +54,7 @@ toggle-transparency='<Primary>F11'
 cursor-blink-mode=0
 
 [style/background]
-transparency=94
+transparency=90
 
 [style/font]
 allow-bold=true
