@@ -32,10 +32,10 @@ window-width=100
 
 [keybindings/local]
 decrease-transparency='<Primary>F10'
-focus-terminal-down='<Primary><Shift>Down'
-focus-terminal-left='<Primary><Shift>Left'
-focus-terminal-right='<Primary><Shift>Right'
-focus-terminal-up='<Primary><Shift>Up'
+focus-terminal-down='<Super><Shift>Down'
+focus-terminal-left='<Super><Shift>Left'
+focus-terminal-right='<Super><Shift>Right'
+focus-terminal-up='<Super><Shift>Up'
 increase-transparency='<Primary>F9'
 split-tab-vertical='<Super>backslash'
 switch-tab1='<Alt>1'
