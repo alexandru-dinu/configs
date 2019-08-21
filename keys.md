@@ -14,10 +14,10 @@
 | Go to definition                  | S-A-d                  |           |
 | Go back (from definition)         | S-A-s                  |           |
 | Peek definition                   | C-A-g                  |           |
-| Change all occurrences            | S-F2                   |           |
+| Change all occurrences            | S-F2                   | :%s       |
 | Insert cursor up                  | C-S-up                 |           |
 | Insert cursor down                | C-S-down               |           |
-| Reveal (in) explorer              | S-A-e                  | C-b       |
+| Reveal (in) explorer              | S-A-e                  | F2        |
 | Sidebar visibility                | S-A-b                  |           |
 | Open definition to the side       | S-A-g                  |           |
 | Split editor up/down/left/right   | S-A-up/down/left/right |           |

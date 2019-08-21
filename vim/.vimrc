@@ -21,7 +21,7 @@ filetype plugin indent on    " required
 " Plugin settings START
 let g:airline_theme='angr'
 
-map <C-b> :NERDTreeFocus<CR>
+map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 " Plugin settings END
 
