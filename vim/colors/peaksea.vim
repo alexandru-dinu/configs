@@ -494,7 +494,7 @@ elseif &background=='dark'
     hi Normal       ctermfg=252 ctermbg=234 cterm=NONE
     " Comment/Uncomment the following line to disable/enable transparency
     hi Normal      ctermfg=252 ctermbg=NONE    cterm=NONE
-    hi Comment      ctermfg=186 ctermbg=NONE    cterm=NONE
+    hi Comment      ctermfg=243 ctermbg=NONE    cterm=NONE
     hi Constant     ctermfg=110 ctermbg=NONE    cterm=NONE
     hi Number       ctermfg=179 ctermbg=NONE    cterm=NONE
     hi Identifier   ctermfg=219 ctermbg=NONE    cterm=NONE
@@ -510,7 +510,7 @@ elseif &background=='dark'
     " NOTE THIS IS IN THE COOL SECTION
     " hi CursorIM   ctermfg=16  ctermbg=201 cterm=NONE
     hi StatusLine   ctermfg=16  ctermbg=153 cterm=NONE
-    hi LineNr       ctermfg=249 ctermbg=NONE    cterm=NONE
+    hi LineNr       ctermfg=243 ctermbg=NONE    cterm=NONE
     hi Question     ctermfg=16  ctermbg=186 cterm=NONE
     hi ModeMsg      ctermfg=fg  ctermbg=NONE  cterm=bold
     hi VisualNOS    ctermfg=fg  ctermbg=18  cterm=NONE
