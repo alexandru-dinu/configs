@@ -4,10 +4,10 @@
   inactive_color_offset = 1.0
   title_hide_sizetext = True
 [keybindings]
-  go_down = <Shift><Super>Down
-  go_left = <Shift><Super>Left
-  go_right = <Shift><Super>Right
-  go_up = <Shift><Super>Up
+  go_down = <Shift><Alt>Down
+  go_left = <Shift><Alt>Left
+  go_right = <Shift><Alt>Right
+  go_up = <Shift><Alt>Up
   split_horiz = <Super>minus
   split_vert = <Super>backslash
   switch_to_tab_1 = <Alt>1

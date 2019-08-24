@@ -10,7 +10,8 @@ max-tab-name-length=100
 mouse-display=true
 open-tab-cwd=true
 prompt-on-quit=true
-quick-open-command-line='gedit %(file_path)s'
+quick-open-command-line='code -n %(file_path)s'
+quick-open-enable=false
 restore-tabs-notify=true
 restore-tabs-startup=true
 save-tabs-when-changed=true
@@ -24,7 +25,7 @@ use-scrollbar=false
 use-trayicon=false
 use-vte-titles=true
 window-halignment=0
-window-height=54
+window-height=52
 window-losefocus=false
 window-refocus=false
 window-tabbar=true
@@ -32,11 +33,15 @@ window-width=100
 
 [keybindings/local]
 decrease-transparency='<Primary>F10'
-focus-terminal-down='<Super><Shift>Down'
-focus-terminal-left='<Super><Shift>Left'
-focus-terminal-right='<Super><Shift>Right'
-focus-terminal-up='<Super><Shift>Up'
+focus-terminal-down='<Shift><Alt>Down'
+focus-terminal-left='<Shift><Alt>Left'
+focus-terminal-right='<Shift><Alt>Right'
+focus-terminal-up='<Shift><Alt>Up'
 increase-transparency='<Primary>F9'
+move-terminal-split-down='<Primary><Shift>Down'
+move-terminal-split-left='<Primary><Shift>Left'
+move-terminal-split-right='<Primary><Shift>Right'
+move-terminal-split-up='<Primary><Shift>Up'
 split-tab-vertical='<Super>backslash'
 switch-tab1='<Alt>1'
 switch-tab10='<Alt>0'
@@ -54,7 +59,7 @@ toggle-transparency='<Primary>F11'
 cursor-blink-mode=0
 
 [style/background]
-transparency=90
+transparency=98
 
 [style/font]
 allow-bold=true
