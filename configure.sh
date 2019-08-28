@@ -125,7 +125,6 @@ config_vscode () {
 
     declare -a vscode_exts=(
         "geeebe.duplicate"
-        "wwm.better-align"
         "justusadam.language-haskell"
         "ms-python.python"
         "ms-vscode.cpptools"
