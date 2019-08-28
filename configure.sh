@@ -282,6 +282,14 @@ config_npm () {
     prompt "Done"
 }
 
+config_firefox () {
+    prompt "Configuring firefox"
+
+    for p in `ls firefox/*-patch`; do python firefox/patch.py $p; done
+
+    prompt "Done"
+}
+
 config_fonts () {
     prompt "Installing fonts"
 
