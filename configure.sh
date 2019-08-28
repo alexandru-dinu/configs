@@ -289,6 +289,8 @@ config_fonts () {
 
     rm -rf $fonts_dir && mkdir -p $fonts_dir
 
+    echo $(ls fonts | sort)
+
     for f in `ls fonts`; do cp fonts/$f/* $fonts_dir; done
 
     prompt "Done"
