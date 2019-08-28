@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 
+# merges the contents of N files to an out file
+# usage: ./merge.rb out file1 ... fileN
+
 lines = []
 N = ARGV.length
 out_file = ARGV[0]
