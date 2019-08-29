@@ -35,7 +35,7 @@
   [[default]]
     background_color = "#1e1e1e"
     cursor_color = "#ffffff"
-    font = Source Code Pro 10.5
+    font = Hasklig 10
     foreground_color = "#d0d0d0"
     palette = "#555753:#ff2e3f:#6fd65d:#ff6f23:#3476ff:#9861f8:#00cdb3:#fffcc2:#7c7c7c:#ff6480:#3fc56b:#f9c859:#00b1fe:#b68dff:#b38b7d:#fffee3"
     scrollback_infinite = True
