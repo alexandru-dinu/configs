@@ -187,6 +187,23 @@ config_idea() {
     prompt "Done"
 }
 
+config_jupyter () {
+    prompt "Configuring jupyter"
+
+    cfg_dir=~/.jupyter/custom
+
+    mkdir -p $cfg_dir
+
+    for f in `ls jupyter`
+    do
+        rm -rf $cfg_dir/$f
+        ln -s `realpath jupyter/$f` $cfg_dir/$f
+    done
+
+
+    prompt "Done"
+}
+
 config_terminator () {
     prompt "Configuring terminator"
 
