@@ -131,6 +131,7 @@ config_vscode () {
         "13xforever.language-x86-64-assembly"
         "gruntfuggly.todo-tree"
         "tomoki1207.pdf"
+        "shd101wyy.markdown-preview-enhanced"
     )
 
     for ext in "${vscode_exts[@]}"
