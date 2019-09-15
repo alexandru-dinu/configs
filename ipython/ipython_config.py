@@ -19,6 +19,9 @@ c.InteractiveShellApp.exec_lines = [
     'import torch.autograd as autograd',
     'from torch.autograd import Variable',
 
+    'import tensorflow as tf',
+    'import keras',
+
     'import seaborn as sns',
     'import matplotlib.pyplot as plt',
 
