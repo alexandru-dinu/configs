@@ -262,6 +262,16 @@ config_rofi () {
     prompt "Done"
 }
 
+config_solaar () {
+    prompt "Configuring solaar"
+
+    cfg_dir=~/.config/solaar
+    rm -rf $cfg_dir
+    ln -s `realpath solaar` $cfg_dir
+
+    prompt "Done"
+}
+
 config_ipython () {
     prompt "Configuring IPython"
 
