@@ -127,7 +127,7 @@ _prompt_command() {
     local _green='\[\e[0;32m\]'
     local _reset='\[\e[0m\]'
 
-    PS1='\[$(tput setaf 2)\] \u@\h: \W \$ \[$(tput sgr0)\]'
+    PS1='\[$(tput setaf 6)\] \u@\h: \W \$ \[$(tput sgr0)\]'
 
     if [ "$curr_exit" != 0 ]; then
         PS1="[${_red}$curr_exit${_reset}]$PS1"
