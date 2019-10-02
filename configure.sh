@@ -1,8 +1,12 @@
 #!/bin/bash
 
+# vars
+
 green=`tput setaf 2`
 red=`tput setaf 1`
 reset=`tput sgr0`
+
+# utils
 
 prompt () {
     echo -e "${green}> $1${reset}"
@@ -11,6 +15,16 @@ prompt () {
 red_prompt () {
     echo -e "${red}> $1${reset}"
 }
+
+realpath() {
+    if [[ $(uname -s) = 'Darwin' ]]; then
+        [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+    else
+        /usr/bin/realpath "$1"
+    fi
+}
+
+# configs
 
 config_zsh () {
     prompt "Configuring Oh-My-Zsh"
