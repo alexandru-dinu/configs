@@ -42,12 +42,17 @@ config_zsh () {
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
     prompt "custom theme"
-    cp zsh/robbyrussell.zsh-theme ~/.oh-my-zsh/themes/
+    cp zsh/own.zsh-theme ~/.oh-my-zsh/themes/
 
     prompt "custom git show"
     mv ~/.oh-my-zsh/lib/git.zsh ~/.oh-my-zsh/lib/git.zsh.orig
     (cat zsh/git.zsh ; echo ""; cat ~/.oh-my-zsh/lib/git.zsh.orig) > ~/.oh-my-zsh/lib/git.zsh
     rm ~/.oh-my-zsh/lib/git.zsh.orig
+
+    prompt "custom conda show"
+    cp zsh/conda.zsh ~/.oh-my-zsh/lib/
+
+    prompt "commit custom changes"
     cd ~/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
 
     prompt "environment variables"
@@ -73,8 +78,6 @@ config_vim () {
     ln -s `realpath vim/.vimrc` ~/.vimrc
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
-
-    ln -sf `realpath vim/colors` ~/.vim/colors
 
     prompt "Done"
 }
@@ -202,6 +205,14 @@ config_idea() {
     prompt "Done"
 }
 
+config_conda () {
+    prompt "Configuring conda"
+
+    ln -sf `realpath conda/.condarc` ~/.condarc
+
+    prompt "Done"
+}
+
 config_jupyter () {
     prompt "Configuring jupyter"
 
@@ -209,7 +220,9 @@ config_jupyter () {
 
     mkdir -p $cfg_dir
 
-    for f in `ls jupyter`
+    cfgs=("custom.css" "custom.js")
+
+    for f in "${cfgs[@]}"
     do
         rm -rf $cfg_dir/$f
         ln -s `realpath jupyter/$f` $cfg_dir/$f
