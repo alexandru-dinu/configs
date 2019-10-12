@@ -24,7 +24,7 @@ desktop-effects-unmaximize-time=50
 desktop-effects-unmaximize-transition='easeNone'
 device-aliases=['/org/freedesktop/UPower/devices/mouse_hidpp_battery_0:= Wireless Mouse MX Master']
 enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:1:panel-launchers@cinnamon.org:2', 'panel1:right:4:notifications@cinnamon.org:7', 'panel1:right:5:windows-quick-list@cinnamon.org:9', 'panel1:right:6:systray@cinnamon.org:11', 'panel1:right:7:removable-drives@cinnamon.org:13', 'panel1:right:8:network@cinnamon.org:14', 'panel1:right:9:sound@cinnamon.org:15', 'panel1:right:10:power@cinnamon.org:16', 'panel1:right:11:calendar@cinnamon.org:18', 'panel1:right:2:sysmonitor@orcus:21', 'panel1:right:3:keyboard@cinnamon.org:23', 'panel1:right:12:workspace-switcher@cinnamon.org:32', 'panel1:left:2:grouped-window-list@cinnamon.org:33']
-favorite-apps=['firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
+favorite-apps=['chromium.desktop', 'firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
 next-applet-id=34
 panel-edit-mode=false
 panel-launchers=['DEPRECATED']
@@ -155,6 +155,8 @@ drag-threshold=8
 motion-threshold=1
 
 [settings-daemon/peripherals/touchpad]
+custom-acceleration=false
+custom-threshold=false
 horizontal-scrolling=true
 motion-threshold=1
 natural-scroll=false
