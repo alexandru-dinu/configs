@@ -1,9 +1,9 @@
 {
     "workbench.colorTheme": "darcula-minimal",
 
-    "editor.fontFamily": "Hasklig",
+    "editor.fontFamily": "IBM Plex Mono",
     "editor.fontSize": 14,
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": false,
     "files.trimFinalNewlines": true,

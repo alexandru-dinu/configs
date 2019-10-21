@@ -10,6 +10,6 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 .CodeMirror pre, .CodeMirror-dialog, .CodeMirror-dialog .CodeMirror-search-field, .terminal-app .terminal {
-    font-family: "Hasklig", "Courier";
+    font-family: "IBM Plex Mono", "Courier";
     font-size: 10.5pt;
 }
