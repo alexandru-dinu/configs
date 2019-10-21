@@ -1,7 +1,7 @@
 <application>
   <component name="DefaultFont">
     <option name="FONT_SIZE" value="14" />
-    <option name="FONT_FAMILY" value="IBM Plex Mono" />
+    <option name="FONT_FAMILY" value="Source Code Pro" />
     <option name="USE_LIGATURES" value="false" />
   </component>
   <component name="EditorSettings">

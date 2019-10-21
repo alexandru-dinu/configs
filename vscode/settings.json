@@ -1,7 +1,7 @@
 {
     "workbench.colorTheme": "darcula-minimal",
 
-    "editor.fontFamily": "IBM Plex Mono",
+    "editor.fontFamily": "Source Code Pro",
     "editor.fontSize": 14,
     "editor.fontLigatures": false,
     "files.trimTrailingWhitespace": true,
