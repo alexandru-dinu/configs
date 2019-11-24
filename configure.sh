@@ -124,6 +124,15 @@ config_gdb () {
     prompt "Done"
 }
 
+config_tmux () {
+    prompt "Configuring tmux"
+
+    rm -f ~/.tmux.conf
+    ln -s `realpath tmux/.tmux.conf` ~/.tmux.conf
+
+    prompt "Done"
+}
+
 config_vscode () {
     prompt "Configuring vscode"
 
