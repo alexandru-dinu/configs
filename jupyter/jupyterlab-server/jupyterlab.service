@@ -1,0 +1,10 @@
+[Unit]
+Description=JupyterLab
+
+[Service]
+User=alex
+Type=simple
+ExecStart=/usr/local/bin/start_jupyterlab
+
+[Install]
+WantedBy=default.target

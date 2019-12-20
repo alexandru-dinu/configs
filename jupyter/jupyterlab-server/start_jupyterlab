@@ -1,0 +1,6 @@
+#!/bin/bash
+
+JUPYTER="/home/alex/anaconda3/bin/jupyter"
+
+$JUPYTER lab
+
