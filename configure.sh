@@ -334,17 +334,6 @@ config_git () {
     prompt "Done"
 }
 
-config_npm () {
-    prompt "Configuring npm"
-
-    mkdir -p $HOME/.npm-global
-    npm config set prefix "$HOME/.npm-global"
-    npm install -g npm
-    sudo rm -rf /usr/lib/node_modules
-
-    prompt "Done"
-}
-
 config_firefox () {
     prompt "Configuring firefox"
 
