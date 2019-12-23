@@ -2,8 +2,8 @@ Forked from [caesarnine/data-science-docker-vscode-template](https://github.com/
 
 ## Usage
 
-- rename the folder to be your project name.
-- modify the `environment.yml` file to include all the Python packages you need.
+- rename dir to your project's name
+- modify the `environment.yml` file to include all the needed Python packages
 - run:
 
 ```bash
@@ -14,7 +14,7 @@ docker run -p $PORT:$PORT -v $(pwd)/data:/data -v $(pwd)/code:/code --rm -it pro
 ```
 This will start the container, with vscode running on http://localhost:$PORT.
 
-### vscode Extensions and Configuration
+## Extensions and Configuration
 
 - you can install any extension and modify configuration like you would locally
 - any extensions you install and global configuration you update will persist in the `./data` folder so you don't have to redo it every time you restart the container
