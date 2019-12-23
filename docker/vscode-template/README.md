@@ -1,4 +1,4 @@
-Forked from [caesarnine/data-science-docker-vscode-template](https://github.com/caesarnine/data-science-docker-vscode-template) ([blog post](https://binal.pub/2019/04/running-vscode-in-docker) / [code-server repo](https://github.com/codercom/code-server)).
+Forked from [caesarnine/data-science-docker-vscode-template](https://github.com/caesarnine/data-science-docker-vscode-template) ([blog post](https://binal.pub/2019/04/running-vscode-in-docker) / [code-server repo](https://github.com/cdr/code-server)).
 
 ## Usage
 
