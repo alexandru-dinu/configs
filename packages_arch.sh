@@ -23,16 +23,15 @@ declare -a to_remove=(
     "mousepad"         "remmina"          "xreader"
     "tomboy"           "timeshift"        "screenfetch"
     "gnome-terminal"   "xfce4-terminal"   "xterm"
-    "parcellite"       "xplayer"          "chromium"
+    "parcellite"       "xplayer"          "hexchat"
 )
 
 declare -a to_install=(
-    "build-essential" "cmake" "ssh" "zsh" "yay"
+    "build-essential" "cmake" "ssh" "zsh"
     "yay" "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
     "powertop" "silversearcher-ag" "mlocate"
     "geeqie" "feh" "bless" "meld"
-    "ghc" "hoogle"
-    "neofetch" "vlc" "solaar"
+    "ghc" "hoogle" "neofetch" "vlc" "solaar"
 )
 
 green_prompt "Removing packages"
@@ -46,4 +45,5 @@ sudo pacman -Syu
 sudo pacman -R `pacman -Qdtq`
 yes | sudo pacman -Scc
 
+green_prompt "Updatedb..."
 sudo updatedb
