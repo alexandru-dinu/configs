@@ -56,7 +56,7 @@ config_zsh () {
     cd ~/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
 
     prompt "environment variables"
-    python ~/gizmos.git/setup_env.py
+    python ~/gizmos.git/setup_zshenv.py
 
     prompt "Done"
 }
