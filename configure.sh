@@ -138,15 +138,18 @@ config_vscode () {
 
     cfg_dir=~/.config/Code/User
     ext_dir=~/.vscode/extensions
+    server_cfg_dir=~/.local/share/code-server/User
 
-    rm -rf ~/.vscode ~/.config/Code
+    rm -rf ~/.vscode ~/.config/Code ~/.local/share/code-server/User
     mkdir -p $cfg_dir
+    mkdir -p $server_cfg_dir
 
     declare -a configs=("keybindings.json" "settings.json")
 
     for c in "${configs[@]}"
     do
         ln -s `realpath vscode/$c` $cfg_dir/
+        ln -s `realpath vscode/$c` $server_cfg_dir/
     done
 
     declare -a vscode_exts=(
@@ -155,7 +158,6 @@ config_vscode () {
         "ms-python.python"
         "ms-vscode.cpptools"
         "13xforever.language-x86-64-assembly"
-        "gruntfuggly.todo-tree"
         "tomoki1207.pdf"
         "shd101wyy.markdown-preview-enhanced"
     )

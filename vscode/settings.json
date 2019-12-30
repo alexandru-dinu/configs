@@ -2,7 +2,7 @@
     "workbench.colorTheme": "darcula-minimal",
 
     "editor.fontFamily": "Source Code Pro",
-    "editor.fontSize": 14,
+    "editor.fontSize": 13,
     "editor.fontLigatures": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": false,
@@ -13,7 +13,7 @@
     "window.titleBarStyle": "native",
     "window.menuBarVisibility": "hidden",
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.visible": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",

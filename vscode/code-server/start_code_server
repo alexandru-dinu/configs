@@ -1,0 +1,6 @@
+#!/bin/bash
+
+CERT=~/.local/share/code-server/cert.pem
+EXT=~/.vscode/extensions
+
+code-server --auth password --cert $CERT --cert-key $CERT --host 0.0.0.0 --port 7007 --extensions-dir $EXT
