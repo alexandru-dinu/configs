@@ -14,7 +14,7 @@ do_clean () {
 do_update () {
     for f in `ls -d -t $1/*.git | grep -v linux`
     do
-        echo ">>> $f"
+        echo -e "\033[1;32m>>> $f\033[0m"
         cd $f
 
         case "$2" in
