@@ -13,7 +13,8 @@ c.InteractiveShellApp.exec_lines = [
 
     'import numpy as np',
 
-    'import torch',
+    'import torch as T',
+    'import torch.nn.functional as F',
     'import torch.nn as nn',
 
     'import seaborn as sns',
