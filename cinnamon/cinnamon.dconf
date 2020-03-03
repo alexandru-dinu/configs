@@ -63,6 +63,7 @@ delay=15
 image-source='directory:///home/alex/gizmos.git/wallpapers'
 
 [desktop/interface]
+clock-show-date=false
 cursor-blink-time=1200
 cursor-size=24
 cursor-theme='xcursor-breeze'
@@ -115,6 +116,8 @@ switch-to-workspace-6=['<Super>6']
 switch-to-workspace-7=['<Super>7']
 switch-to-workspace-8=['<Super>8']
 switch-to-workspace-9=['<Super>9']
+switch-to-workspace-down=['<Super>w', '<Primary><Alt>Down']
+switch-to-workspace-up=['<Super>e', '<Primary><Alt>Up']
 toggle-fullscreen=['<Shift><Super>f']
 toggle-maximized=['<Super>f']
 
@@ -153,18 +156,21 @@ repeat-interval=uint32 30
 double-click=400
 drag-threshold=8
 motion-threshold=1
+natural-scroll=true
 
 [settings-daemon/peripherals/touchpad]
+clickpad-click=3
 custom-acceleration=false
-custom-threshold=false
 horizontal-scrolling=true
+motion-acceleration=1.0
 motion-threshold=1
 natural-scroll=false
+scrolling-method=1
 touchpad-enabled=true
 
 [settings-daemon/plugins/power]
-lid-close-ac-action='suspend'
-lid-close-battery-action='suspend'
+lid-close-ac-action='nothing'
+lid-close-battery-action='nothing'
 lid-close-suspend-with-external-monitor=true
 lock-on-suspend=true
 sleep-display-ac=1800
