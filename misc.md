@@ -8,4 +8,4 @@ wireless card not recognized:
 `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist.conf`
 
 ### slack
-`#1e2124,#3c4043,#428bca,#FFFFFF,#3c4043,#FFFFFF,#428bca,#d9534f`
+`#1A1D21,#3E3E3E,#579C8E,#FFFFFF,#3E3E3E,#FFFFFF,#579C8E,#D9534F`
