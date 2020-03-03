@@ -22,7 +22,7 @@ sak () {
     eval $(ssh-agent -s) && ssh-add ~/.ssh/"$1"
 }
 
-rs () { [ "$1" = "x" ] && redshift -x || redshift -O "$1" -g 0.9 }
+rs () { (redshift -x && ([ "$1" = "x" ] && return || redshift -O "$1" -g 0.9)) &> /dev/null}
 
 to_pdf () { libreoffice --headless --convert-to pdf "$1" }
 
