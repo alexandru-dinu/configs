@@ -300,12 +300,10 @@ config_rofi () {
     prompt "Done"
 }
 
-config_solaar () {
-    prompt "Configuring solaar"
+config_mxmaster () {
+    prompt "Configuring MX Master"
 
-    cfg_dir=~/.config/solaar
-    rm -rf $cfg_dir
-    ln -s `realpath solaar` $cfg_dir
+    sudo ln -sf `realpath mx-master/logid.cfg` /etc/
 
     prompt "Done"
 }
