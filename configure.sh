@@ -133,6 +133,15 @@ config_tmux () {
     prompt "Done"
 }
 
+config_zathura () {
+    prompt "Configuring zathura"
+
+    rm -rf ~/.config/zathura
+    ln -s `realpath zathura` ~/.config/
+
+    prompt "Done"
+}
+
 config_vscode () {
     prompt "Configuring vscode"
 
