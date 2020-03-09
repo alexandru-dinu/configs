@@ -158,8 +158,8 @@ config_vscode () {
         "ms-python.python"
         "ms-vscode.cpptools"
         "13xforever.language-x86-64-assembly"
-        "tomoki1207.pdf"
         "shd101wyy.markdown-preview-enhanced"
+        "torn4dom4n.latex-support"
     )
 
     for ext in "${vscode_exts[@]}"
