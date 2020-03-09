@@ -2,7 +2,7 @@
     "workbench.colorTheme": "darcula-minimal",
 
     "editor.fontFamily": "Source Code Pro",
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
     "editor.fontLigatures": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": false,
