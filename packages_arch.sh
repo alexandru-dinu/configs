@@ -31,7 +31,7 @@ declare -a to_install=(
     "yay" "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
     "powertop" "silversearcher-ag" "mlocate"
     "geeqie" "feh" "bless" "meld"
-    "ghc" "hoogle" "neofetch" "vlc" "solaar"
+    "ghc" "hoogle" "neofetch" "vlc"
 )
 
 green_prompt "Removing packages"
