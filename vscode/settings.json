@@ -30,5 +30,8 @@
             "scope": ["comment"],
             "settings": {"fontStyle": ""}
         }]
+    },
+    "files.associations": {
+        "*.wppl": "javascript"
     }
 }
