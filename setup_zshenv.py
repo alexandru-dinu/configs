@@ -2,6 +2,7 @@ import os
 
 def set_anaconda3(fp):
     fp.write('export PATH=~/anaconda3/bin:$PATH\n')
+    fp.write('export NODE_PATH=$HOME/anaconda3/lib/node_modules\n')
 
 def set_cuda(fp):
     fp.write('export PATH=/usr/local/cuda/bin:$PATH\n')
