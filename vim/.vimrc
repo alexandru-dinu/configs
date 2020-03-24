@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -22,6 +23,9 @@ let g:airline_theme='angr'
 
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
 " Plugin settings END
 
 " vimdiff
