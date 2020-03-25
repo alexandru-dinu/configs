@@ -28,6 +28,9 @@ let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
 " Plugin settings END
 
+" custom syntax
+autocmd BufNewFile,BufRead *.wppl set syntax=javascript
+
 " vimdiff
 if &diff
     set cursorline
