@@ -38,6 +38,11 @@ config_zsh () {
     prompt "zshmarks"
     git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ~/.oh-my-zsh/custom/plugins/zshmarks
 
+    cd ~/.oh-my-zsh/custom/plugins/zshmarks
+    git apply ~/gizmos.git/zsh/showmarks.patch
+    git add . && git commit -m "Custom."
+    cd -
+
     prompt "zsh-autosuggestions"
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -45,9 +50,9 @@ config_zsh () {
     cp zsh/own.zsh-theme ~/.oh-my-zsh/themes/
 
     prompt "custom git show"
-    mv ~/.oh-my-zsh/lib/git.zsh ~/.oh-my-zsh/lib/git.zsh.orig
-    (cat zsh/git.zsh ; echo ""; cat ~/.oh-my-zsh/lib/git.zsh.orig) > ~/.oh-my-zsh/lib/git.zsh
-    rm ~/.oh-my-zsh/lib/git.zsh.orig
+    cd ~/.oh-my-zsh/lib
+    git apply ~/gizmos.git/zsh/git.zsh.patch
+    cd -
 
     prompt "custom conda show"
     cp zsh/conda.zsh ~/.oh-my-zsh/lib/
