@@ -84,11 +84,9 @@ config_vim () {
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
-    declare -a vimdirs=("colors" "ftplugin" "UltiSnips")
-
-    for d in "${vimdirs[@]}"
+    for d in `ls -d vim/*`
     do
-        ln -s `realpath vim/$d` ~/.vim
+        ln -s `realpath $d` ~/.vim
     done
 
     prompt "Done"
