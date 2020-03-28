@@ -12,8 +12,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'lervag/vimtex'
+Plugin 'sirver/ultisnips'
+Plugin 'honza/vim-snippets'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Vundle END
@@ -24,12 +25,31 @@ let g:airline_theme='angr'
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-let g:tex_flavor = 'latex'
-let g:vimtex_view_method = 'zathura'
+" vimtex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " Plugin settings END
 
-" custom syntax
-autocmd BufNewFile,BufRead *.wppl set syntax=javascript
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set how many lines of history VIM has to remember
+set history=1000
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" separate configs for specific extensions
+autocmd BufNewFile,BufRead *.wppl setfiletype javascript
 
 " vimdiff
 if &diff
@@ -37,16 +57,6 @@ if &diff
     map ] ]c
     map [ [c
 endif
-
-" Set how many lines of history VIM has to remember
-set history=1000
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
-
-" Set to auto read when a file is changed from the outside
-set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -87,7 +97,7 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
