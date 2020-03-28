@@ -246,18 +246,8 @@ config_conda () {
 config_jupyter () {
     prompt "Configuring jupyter"
 
-    cfg_dir=~/.jupyter/custom
-
-    mkdir -p $cfg_dir
-
-    cfgs=("custom.css" "custom.js")
-
-    for f in "${cfgs[@]}"
-    do
-        rm -rf $cfg_dir/$f
-        ln -s `realpath jupyter/$f` $cfg_dir/$f
-    done
-
+    ln -sf `realpath jupyter/custom` ~/.jupyter
+    ln -sf `realpath jupyter/lab/user-settings` ~/.jupyter/lab
 
     prompt "Done"
 }

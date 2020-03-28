@@ -1,0 +1,22 @@
+{
+    "codeCellConfig": {
+        "fontFamily": "Source Code Pro",
+        "fontSize": 14,
+        "codeFolding": true,
+        "lineNumbers": true
+    },
+        
+    "markdownCellConfig": {
+        "fontFamily": "Source Code Pro",
+        "fontSize": 14,
+        "codeFolding": true,
+        "lineNumbers": true
+    },
+        
+    "rawCellConfig": {
+        "fontFamily": "Source Code Pro",
+        "fontSize": 14,
+        "codeFolding": true,
+        "lineNumbers": true
+    }
+}
