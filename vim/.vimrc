@@ -12,6 +12,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'lervag/vimtex'
+Plugin 'keitanakamura/tex-conceal.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 
@@ -24,18 +25,6 @@ let g:airline_theme='distinguished'
 
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-
-" vimtex
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " Plugin settings END
 
 " Enable filetype plugins
@@ -49,6 +38,7 @@ set history=1000
 set autoread
 
 " separate configs for specific extensions
+autocmd BufNewFile,BufRead *.tex  setfiletype tex
 autocmd BufNewFile,BufRead *.wppl setfiletype javascript
 
 " vimdiff
