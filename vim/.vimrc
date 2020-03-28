@@ -20,7 +20,7 @@ filetype plugin indent on    " required
 " Vundle END
 
 " Plugin settings START
-let g:airline_theme='angr'
+let g:airline_theme='distinguished'
 
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -152,11 +152,12 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme elflord
+    colorscheme sierra
 catch
 endtry
 
 set background=dark
+set cursorline
 
 " Set extra options when running in GUI mode
 if has("gui_running")
