@@ -127,8 +127,8 @@ config_ruby () {
 config_gdb () {
     prompt "Configuring gdb"
 
-    rm -rf ~/peda ~/.gdbinit
-    git clone --depth=1 https://github.com/longld/peda.git ~/peda
+    rm -rf ~/peda.git ~/.gdbinit
+    git clone --depth=1 https://github.com/longld/peda.git ~/peda.git
     ln -s `realpath gdb/.gdbinit` ~/.gdbinit
 
     prompt "Done"
