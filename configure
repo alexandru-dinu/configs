@@ -376,15 +376,21 @@ config_cinnamon () {
     sudo vim ${js_dir}/windowManager.js
 }
 
-config_misc () {
-    prompt "Configuring .xbindkeysrc"
+config_symlinks () {
+    mkdir -p ~/.local/bin
 
-    ln -sf `realpath misc/.xbindkeysrc` ~/.xbindkeysrc
+    prompt "Adding symlink: .xbindkeysrc"
+    ln -sf `realpath tools/.xbindkeysrc` ~/
     xbindkeys --poll-rc
 
-    prompt "Configuring headphones-eq"
-    mkdir -p ~/.local/bin
-    ln -sf `realpath misc/headphones-eq.sh` ~/.local/bin/hpeq
+    prompt "Adding symlink: headphones-eq"
+    ln -sf `realpath tools/headphones-eq` ~/.local/bin/
+
+    prompt "Adding symlink: imgur"
+    ln -sf `realpath tools/imgur` ~/.local/bin/
+
+    prompt "Adding symlink: maintenance"
+    ln -sf `realpath tools/maintenance` ~/workspace/
 
     prompt "Done"
 }
