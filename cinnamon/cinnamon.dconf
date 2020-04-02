@@ -202,6 +202,9 @@ sleep-display-battery=900
 sleep-inactive-ac-timeout=0
 sleep-inactive-battery-timeout=1800
 
+[settings-daemon/plugins/xsettings]
+hinting='full'
+
 [sounds]
 login-enabled=false
 logout-enabled=false
