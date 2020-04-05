@@ -122,6 +122,10 @@ window-screenshot-clip=@as []
 
 [desktop/keybindings/wm]
 close=['<Alt>F4', '<Shift><Super>q']
+maximize=['<Shift><Super>Up']
+minimize=['<Shift><Super>Down']
+move-to-monitor-down=@as []
+move-to-monitor-up=@as []
 show-desktop=@as []
 switch-to-workspace-1=['<Super>1']
 switch-to-workspace-10=['<Super>0']
@@ -148,13 +152,13 @@ display-notifications=true
 remove-old=true
 
 [desktop/screensaver]
-time-format='%H:%M'
 date-format='%A, %B %d'
 default-message=''
-font-time='Source Code Pro 64'
 font-date='Source Code Pro 20'
 font-message='Source Code Pro 12'
+font-time='Source Code Pro 64'
 layout-group=0
+time-format='%H:%M'
 
 [desktop/sound]
 event-sounds=false
