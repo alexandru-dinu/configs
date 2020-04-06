@@ -60,6 +60,9 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
+" Copy last yanked text to clipboard
+nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
