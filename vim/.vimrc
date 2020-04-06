@@ -63,6 +63,12 @@ command W w !sudo tee % > /dev/null
 " Copy last yanked text to clipboard
 nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
 
+" Bracket matching
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
