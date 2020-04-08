@@ -11,6 +11,10 @@ c.InteractiveShellApp.exec_lines = [
     'import time',
     'import math',
 
+    'from functools import reduce',
+    'import operator',
+    'import itertools',
+
     'import numpy as np',
 
     'import torch as T',
