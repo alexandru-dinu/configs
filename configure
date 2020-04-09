@@ -350,20 +350,6 @@ config_firefox () {
     prompt "Done"
 }
 
-config_fonts () {
-    prompt "Installing fonts"
-
-    fonts_dir="$HOME/.local/share/fonts"
-
-    rm -rf $fonts_dir && mkdir -p $fonts_dir
-
-    echo $(ls fonts | sort)
-
-    for f in `ls fonts`; do cp fonts/$f/* $fonts_dir; done
-
-    prompt "Done"
-}
-
 config_cinnamon () {
     prompt "Configuring cinnamon"
 
