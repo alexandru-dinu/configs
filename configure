@@ -39,7 +39,7 @@ config_zsh () {
     git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ~/.oh-my-zsh/custom/plugins/zshmarks
 
     cd ~/.oh-my-zsh/custom/plugins/zshmarks
-    git apply ~/gizmos.git/zsh/showmarks.patch
+    git apply ~/gizmos.git/zsh/patches/showmarks.patch
     git add . && git commit -m "Custom."
     cd -
 
@@ -51,7 +51,7 @@ config_zsh () {
 
     prompt "custom git show"
     cd ~/.oh-my-zsh/lib
-    git apply ~/gizmos.git/zsh/git.zsh.patch
+    git apply ~/gizmos.git/zsh/patches/git.zsh.patch
     cd -
 
     prompt "custom conda show"
