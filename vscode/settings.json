@@ -4,22 +4,26 @@
     "editor.fontFamily": "Source Code Pro",
     "editor.fontSize": 14,
     "editor.fontLigatures": false,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": false,
     "files.trimFinalNewlines": true,
 
     "breadcrumbs.enabled": false,
 
-    "window.titleBarStyle": "native",
-    "window.menuBarVisibility": "hidden",
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": true,
-    "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.enablePreview": false,
+
     "window.zoomLevel": 0,
+    "window.titleBarStyle": "native",
+    "window.menuBarVisibility": "hidden",
 
     "telemetry.enableTelemetry": false,
+
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
 
@@ -31,6 +35,7 @@
             "settings": {"fontStyle": ""}
         }]
     },
+
     "files.associations": {
         "*.wppl": "javascript"
     }
