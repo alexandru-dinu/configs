@@ -1,20 +1,20 @@
 {
     "codeCellConfig": {
-        "fontFamily": "Fira Code Retina",
+        "fontFamily": "Source Code Pro",
         "fontSize": 14,
         "codeFolding": true,
         "lineNumbers": true
     },
         
     "markdownCellConfig": {
-        "fontFamily": "Fira Code Retina",
+        "fontFamily": "Source Code Pro",
         "fontSize": 14,
         "codeFolding": true,
         "lineNumbers": true
     },
         
     "rawCellConfig": {
-        "fontFamily": "Fira Code Retina",
+        "fontFamily": "Source Code Pro",
         "fontSize": 14,
         "codeFolding": true,
         "lineNumbers": true

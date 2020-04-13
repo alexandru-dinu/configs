@@ -7,7 +7,5 @@
     // Overrides
     // Overrides for where to show sidebar items
     // e.g., {"tab-manager": "right"}
-    "overrides": {
-        "jp-Tensorboards": "left"
-    }
+    "overrides": {}
 }

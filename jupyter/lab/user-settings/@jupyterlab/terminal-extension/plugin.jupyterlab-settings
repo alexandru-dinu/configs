@@ -3,10 +3,10 @@
     // @jupyterlab/terminal-extension:plugin
     // Terminal settings.
     // *************************************
-    
+
     "fontSize": 14,
-    "fontFamily": "Fira Code Retina",
+    "fontFamily": "Source Code Pro",
     "theme": "dark",
-        
+
     "scrollback": 1000000,
 }
