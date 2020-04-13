@@ -79,7 +79,7 @@
 
         dotspacemacs-default-font
         '(
-            "Source Code Pro"
+            "Fira Code"
             :size 14
             :weight normal
             :width normal

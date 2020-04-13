@@ -1,4 +1,5 @@
 [/]
+active-display-scale=1
 alttab-switcher-delay=100
 alttab-switcher-show-all-workspaces=true
 alttab-switcher-style='icons+thumbnails'
@@ -154,9 +155,9 @@ remove-old=true
 [desktop/screensaver]
 date-format='%A, %B %d'
 default-message=''
-font-date='Source Code Pro 20'
-font-message='Source Code Pro 12'
-font-time='Source Code Pro 64'
+font-date='Fira Code weight=453 20'
+font-message='Fira Code weight=453 12'
+font-time='Fira Code weight=453 64'
 layout-group=0
 time-format='%H:%M'
 
@@ -178,7 +179,7 @@ tile-hud-threshold=25
 
 [settings-daemon/peripherals/keyboard]
 delay=uint32 500
-numlock-state='off'
+numlock-state='on'
 repeat-interval=uint32 30
 
 [settings-daemon/peripherals/mouse]
@@ -214,6 +215,7 @@ sleep-inactive-battery-timeout=1800
 
 [settings-daemon/plugins/xsettings]
 hinting='full'
+rgba-order='rgb'
 
 [sounds]
 login-enabled=false

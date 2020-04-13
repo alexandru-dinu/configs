@@ -5,7 +5,7 @@
     // *************************************
     
     "fontSize": 14,
-    "fontFamily": "Source Code Pro",
+    "fontFamily": "Fira Code Retina",
     "theme": "dark",
         
     "scrollback": 1000000,

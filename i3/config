@@ -1,7 +1,7 @@
 # super-key
 set $mod Mod4
 
-font pango:Source Code Pro 10
+font pango:Fira Code 10
 
 # compton
 exec --no-startup-id compton --config ~/.config/compton/config
