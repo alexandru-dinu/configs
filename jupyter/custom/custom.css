@@ -18,3 +18,11 @@ div.output_area pre {
     font-size: 10pt;
     font-variant-ligatures: none;
 }
+
+.container {
+    width: 100%;
+}
+
+div#notebook {
+    padding-top: 0px;
+}
