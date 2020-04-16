@@ -1,6 +1,7 @@
 c = get_config()
 
 c.InteractiveShell.colors = "Linux"
+c.InteractiveShell.editor = "vim"
 c.TerminalIPythonApp.display_banner = False
 c.TerminalInteractiveShell.highlight_matching_brackets = True
 c.TerminalInteractiveShell.term_title = True
