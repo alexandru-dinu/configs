@@ -369,13 +369,16 @@ config_symlinks () {
     xbindkeys --poll-rc
 
     prompt "Adding symlink: headphones-eq"
-    ln -sf `realpath tools/headphones-eq` ~/.local/bin/
+    ln -sf `realpath tools/headphones-eq` ~/.local/bin
 
     prompt "Adding symlink: imgur"
-    ln -sf `realpath tools/imgur` ~/.local/bin/
+    ln -sf `realpath tools/imgur` ~/.local/bin
 
     prompt "Adding symlink: maintenance"
-    ln -sf `realpath tools/maintenance` ~/workspace/
+    ln -sf `realpath tools/maintenance` ~/.local/bin
+
+    prompt "Adding symlink: pacman-history"
+    ln -sf `realpath tools/pacman-history` ~/.local/bin
 
     prompt "Done"
 }

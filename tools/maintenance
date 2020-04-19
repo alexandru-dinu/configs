@@ -1,6 +1,8 @@
 #!/bin/bash
 
 root_dir=$(pwd)
+echo "root dir: ${root_dir}"
+
 to_delete=('__pycache__' '*.ipynb_checkpoints' '*.pyc' '*~' '*DS_Store')
 
 do_clean () {
