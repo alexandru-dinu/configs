@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep --text -E '(installed|reinstalled|removed)' /var/log/pacman.log | sort -u
