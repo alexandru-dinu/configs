@@ -23,6 +23,7 @@
 
     "telemetry.enableTelemetry": false,
 
+    "python.pythonPath": "~/anaconda3/bin/python",
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
 
