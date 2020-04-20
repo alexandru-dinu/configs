@@ -2,7 +2,7 @@
     "workbench.colorTheme": "darcula-minimal",
 
     "editor.fontFamily": "Fira Code Retina",
-    "editor.fontLigatures": false,
+    "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
 
