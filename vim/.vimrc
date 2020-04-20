@@ -1,6 +1,7 @@
 set nocompatible " be iMproved, required
 filetype off     " required
 set shortmess+=I " disable startup message
+set noshowmode   " disable mode show (as airline shows the mode)
 
 " Vundle START
 " set the runtime path to include Vundle and initialize
