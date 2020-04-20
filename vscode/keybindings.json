@@ -19,20 +19,20 @@
         "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
     {
-        "key": "shift+alt+down",
+        "key": "meta+-",
+        "command": "workbench.action.splitEditorUp"
+    },
+    {
+        "key": "shift+meta+-",
         "command": "workbench.action.splitEditorDown"
     },
     {
-        "key": "shift+alt+left",
+        "key": "meta+\\",
         "command": "workbench.action.splitEditorLeft"
     },
     {
-        "key": "shift+alt+right",
+        "key": "shift+meta+\\",
         "command": "workbench.action.splitEditorRight"
-    },
-    {
-        "key": "shift+alt+up",
-        "command": "workbench.action.splitEditorUp"
     },
     {
         "key": "alt+left",
@@ -126,5 +126,47 @@
     {
         "key": "ctrl+shift+d",
         "command": "-workbench.view.debug"
+    },
+    {
+        "key": "ctrl+k ctrl+up",
+        "command": "-workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+down",
+        "command": "-workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+left",
+        "command": "-workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "shift+alt+left",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "-workbench.action.focusRightGroup"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "workbench.action.focusRightGroup"
     }
 ]
