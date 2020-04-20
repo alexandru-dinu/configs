@@ -63,6 +63,9 @@ command W w !sudo tee % > /dev/null
 " Copy last yanked text to clipboard
 nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
 
+" Substitute all occurrences of the word under the cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
 " Bracket matching
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
