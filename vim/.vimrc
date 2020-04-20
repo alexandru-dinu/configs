@@ -1,5 +1,6 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible " be iMproved, required
+filetype off     " required
+set shortmess+=I " disable startup message
 
 " Vundle START
 " set the runtime path to include Vundle and initialize
@@ -22,6 +23,17 @@ filetype plugin indent on    " required
 
 " Plugin settings START
 let g:airline_theme='distinguished'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#tabs_label = ''
+let g:airline#extensions#tabline#buffers_label = ''
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_tab_count = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 1
 
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -65,6 +77,21 @@ nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
 
 " Substitute all occurrences of the word under the cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+" Change tabs
+noremap ,, gT
+noremap .. gt
+noremap ,1 1gt
+noremap ,2 2gt
+noremap ,3 3gt
+noremap ,4 4gt
+noremap ,5 5gt
+noremap ,6 6gt
+noremap ,7 7gt
+noremap ,8 8gt
+noremap ,9 9gt
+noremap ,0 :tablast<cr>
+
 
 " Bracket matching
 inoremap {      {}<Left>
