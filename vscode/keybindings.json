@@ -4,6 +4,10 @@
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
+        "key": "shift+alt+n",
+        "command": "workbench.action.toggleStatusbarVisibility"
+    },
+    {
         "key": "f12",
         "command": "-editor.action.goToDeclaration",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
@@ -170,3 +174,4 @@
         "command": "workbench.action.focusRightGroup"
     }
 ]
+
