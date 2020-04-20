@@ -302,9 +302,14 @@ config_rofi () {
     prompt "Configuring rofi"
 
     cfg_dir=~/.config/rofi
+    local_dir=~/.local/share/rofi/
 
     rm -rf ${cfg_dir} && mkdir -p ${cfg_dir}
     ln -s `realpath rofi/rofi.conf` ${cfg_dir}/config
+
+    sudo rm -rf /usr/share/rofi
+    sudo rm -rf ${local_dir} && mkdir -p ${local_dir}
+    ln -s `realpath rofi/themes` ${local_dir}
 
     prompt "Done"
 }
