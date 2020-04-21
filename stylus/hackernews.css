@@ -5,6 +5,7 @@
 @description    Dark HackerNews
 @author         Alexandru Dinu
 ==/UserStyle== */
+
 @-moz-document url-prefix("https://news.ycombinator.com") {
     body {
         background-color: #1e1e1e;
@@ -48,56 +49,13 @@
     #hnmain img:first-child {
         filter: grayscale(100%);
     }
-}
 
-@-moz-document url-prefix("https://hn.algolia.com") {
-    body {
-        background-color: #292929;
-    }
-
-    .search-results {
-        background-color: #292929;
-    }
-
-    .page-header a {
-        color: #9a9a9a;
-    }
-
-
-    .main .search-results .item .item-main .item-title-and-infos h2 a {
-        color: #9a9a9a;
-    }
-
-    #main > div > section > header {
-        background-color: #292929;
-        color: #9a9a9a;
-    }
-
-    #main > div > header {
-        background-color: #292929;
-        color: #9a9a9a;
-    }
-
-    .main .search-results em {
-        background-color: #dadada !important;
-        /* net net net :D */
-    }
-
-    .search-pagination li.active button {
-        border-color: #dadada;
-        color: #dadada;
-    }
-
-    footer {
-        background-color: #292929;
-    }
-
-    footer a {
-        color: #9a9a9a;
-    }
-
-    #main > div > section > section > section > div.item.ng-scope > div.item-main > div.item-content-wrapper p {
-        color: #dadada;
+    textarea {
+        font-family: monospace;
+        font-size: 10pt;
+        background-color: #1e1e1e;
+        color: #828282;
+        border-color: #3e3e3e;
     }
 }
 
