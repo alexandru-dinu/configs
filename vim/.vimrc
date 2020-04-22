@@ -112,8 +112,9 @@ source $VIMRUNTIME/menu.vim
 " Turn on the WiLd menu
 set wildmenu
 
-" Turn on line numbers
+" Line numbers
 set number
+set relativenumber
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
