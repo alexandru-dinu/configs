@@ -92,12 +92,11 @@ config_vim () {
     prompt "Done"
 }
 
-config_spacemacs () {
-    prompt "Configuring spacemacs"
+config_emacs () {
+    prompt "Configuring emacs"
 
     rm -rf ~/.emacs.d
-    git clone --depth=1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
-    ln -sf `realpath spacemacs/.spacemacs` ~/.spacemacs
+    ln -sf `realpath emacs/.emacs` ~/
 
     prompt "Done"
 }
