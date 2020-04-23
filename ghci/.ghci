@@ -1,5 +1,4 @@
 :set prompt "\n\ESC[0;95m[%l] %s \ESC[1;95mλ\ESC[m\ESC[0;95m> \ESC[m"
 :set prompt-cont "\ESC[0;95m > \ESC[m"
 :set -XUnicodeSyntax
-:set +s
 :set +t
