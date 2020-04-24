@@ -193,20 +193,20 @@ config_vscode () {
 config_pycharm() {
     prompt "Configuring PyCharm"
 
-    cfg_dir=$(find ~ -name ".PyCharm*" 2>/dev/null | head -n 1)
+    cfg_dir=$(find ~/.config/JetBrains -name "PyCharm*" 2>/dev/null | head -n 1)
 
     echo "Found $cfg_dir"
 
     for d in `ls jetbrains/pycharm | grep -v options`
     do
-        rm -rf $cfg_dir/config/$d
-        ln -s `realpath jetbrains/pycharm/$d` $cfg_dir/config/$d
+        rm -rf $cfg_dir/$d
+        ln -s `realpath jetbrains/pycharm/$d` $cfg_dir/$d
     done
 
     for o in `ls jetbrains/pycharm/options`
     do
-        rm -rf $cfg_dir/config/options/$o
-        ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/config/options/$o
+        rm -rf $cfg_dir/options/$o
+        ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/options/$o
     done
 
     prompt "Done"
