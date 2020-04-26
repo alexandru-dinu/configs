@@ -254,9 +254,10 @@ config_jupyter () {
 config_terminator () {
     prompt "Configuring terminator"
 
-    rm -rf  ~/.config/terminator
-    mkdir -p ~/.config/terminator
-    ln -s `realpath terminals/terminator.settings` ~/.config/terminator/config
+    cfg_dir=~/.config/terminator
+
+    rm -rf $cfg_dir && mkdir -p $cfg_dir
+    ln -s `realpath terminals/terminator.settings` $cfg_dir/config
 
     prompt "Done"
 }
