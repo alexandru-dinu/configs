@@ -34,6 +34,8 @@ do_update () {
 
         cd $root_dir
         perl -e 'print "-"x64 . "\n"'
+
+        read -n 1 -s -p ""
     done
 }
 
