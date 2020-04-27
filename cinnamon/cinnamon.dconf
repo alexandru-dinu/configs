@@ -158,7 +158,7 @@ default-message=''
 font-date='Fira Code weight=453 20'
 font-message='Fira Code weight=453 12'
 font-time='Fira Code weight=453 64'
-layout-group=0
+layout-group=1
 time-format='%H:%M'
 
 [desktop/sound]
@@ -179,7 +179,7 @@ tile-hud-threshold=25
 
 [settings-daemon/peripherals/keyboard]
 delay=uint32 500
-numlock-state='on'
+numlock-state='off'
 repeat-interval=uint32 30
 
 [settings-daemon/peripherals/mouse]
@@ -229,4 +229,4 @@ unplug-enabled=false
 [theme]
 name='Linux Mint'
 symbolic-relative-size=0.67000000000000004
-theme-cache-updated=1558803389
+theme-cache-updated=1587926086
