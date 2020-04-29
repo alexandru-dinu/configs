@@ -132,16 +132,16 @@ minimize=['<Shift><Super>Down']
 move-to-monitor-down=@as []
 move-to-monitor-up=@as []
 show-desktop=@as []
-switch-to-workspace-1=['<Super>1']
-switch-to-workspace-10=['<Super>0']
-switch-to-workspace-2=['<Super>2']
-switch-to-workspace-3=['<Super>3']
-switch-to-workspace-4=['<Super>4']
-switch-to-workspace-5=['<Super>5']
-switch-to-workspace-6=['<Super>6']
-switch-to-workspace-7=['<Super>7']
-switch-to-workspace-8=['<Super>8']
-switch-to-workspace-9=['<Super>9']
+switch-to-workspace-1=['<Primary><Alt>1', '<Primary><Alt>KP_1']
+switch-to-workspace-10=['<Primary><Alt>0', '<Primary><Alt>KP_0']
+switch-to-workspace-2=['<Primary><Alt>2', '<Primary><Alt>KP_2']
+switch-to-workspace-3=['<Primary><Alt>3', '<Primary><Alt>KP_3']
+switch-to-workspace-4=['<Primary><Alt>4', '<Primary><Alt>KP_4']
+switch-to-workspace-5=['<Primary><Alt>5', '<Primary><Alt>KP_5']
+switch-to-workspace-6=['<Primary><Alt>6', '<Primary><Alt>KP_6']
+switch-to-workspace-7=['<Primary><Alt>7', '<Primary><Alt>KP_7']
+switch-to-workspace-8=['<Primary><Alt>8', '<Primary><Alt>KP_8']
+switch-to-workspace-9=['<Primary><Alt>9', '<Primary><Alt>KP_9']
 switch-to-workspace-down=['<Super>w', '<Primary><Alt>Down']
 switch-to-workspace-up=['<Super>e', '<Primary><Alt>Up']
 toggle-fullscreen=['<Shift><Super>f']
@@ -184,7 +184,7 @@ tile-hud-threshold=25
 
 [settings-daemon/peripherals/keyboard]
 delay=uint32 500
-numlock-state='off'
+numlock-state='on'
 repeat-interval=uint32 30
 
 [settings-daemon/peripherals/mouse]
