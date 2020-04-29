@@ -93,12 +93,19 @@ noremap ,8 8gt
 noremap ,9 9gt
 noremap ,0 :tablast<cr>
 
-
 " Bracket matching
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+
+" Remap go to beginning/end of line
+map  <C-a> <ESC>^
+map  <C-e> <ESC>$
+imap <C-a> <ESC>I
+imap <C-e> <ESC>A
+xmap <C-a> g^
+xmap <C-e> g$
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
