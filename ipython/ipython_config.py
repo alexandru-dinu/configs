@@ -11,6 +11,7 @@ c.InteractiveShellApp.exec_lines = [
     'import sys',
     'import time',
     'import math',
+    'import re',
 
     'from functools import reduce',
     'import operator',
