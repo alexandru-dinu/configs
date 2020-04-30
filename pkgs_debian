@@ -40,7 +40,6 @@ declare -a to_remove=(
 declare -a to_install=(
     "build-essential" "cmake" "ssh" "zsh"
     "vim" "vim-nox" "vim-runtime" "vim-doc" "vim-scripts" "cscope" "exuberant-ctags"
-    "emacs"
     "geeqie" "feh" "bless" "meld"
     "ghc" "hoogle"
     "nemo" "htop" "glances" "tree" "aria2" "tig" "cloc" "xclip" "mtr" "tmux" "dstat"
