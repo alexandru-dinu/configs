@@ -162,7 +162,7 @@ default-message=''
 font-date='Fira Code weight=453 20'
 font-message='Fira Code weight=453 12'
 font-time='Fira Code weight=453 64'
-layout-group=1
+layout-group=0
 time-format='%H:%M'
 
 [desktop/sound]
@@ -173,7 +173,7 @@ volume-sound-enabled=false
 [desktop/wm/preferences]
 button-layout=':minimize,maximize,close'
 min-window-opacity=30
-num-workspaces=3
+num-workspaces=4
 theme='Mint-Y-Dark'
 workspace-names=@as []
 
