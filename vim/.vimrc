@@ -44,6 +44,12 @@ let NERDTreeShowHidden=1
 filetype plugin on
 filetype indent on
 
+" Listchars
+set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
+noremap  <F5> :set list!<CR>
+inoremap <F5> <C-o>:set list!<CR>
+cnoremap <F5> <C-c>:set list!<CR>
+
 " Set how many lines of history VIM has to remember
 set history=1000
 
