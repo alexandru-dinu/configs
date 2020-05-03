@@ -21,3 +21,5 @@
 | Sidebar visibility                | S-A-b                  |           |
 | Open definition to the side       | S-A-g                  |           |
 | Split editor up/down/left/right   | S-A-up/down/left/right |           |
+
+- https://stackoverflow.com/a/2559262/3142472
