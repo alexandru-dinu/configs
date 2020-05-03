@@ -319,7 +319,7 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+" Delete trailing whitespace on save
 func! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
@@ -434,6 +434,11 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+
+" Common regex replace
+function! ToGraph() range
+    execute a:firstline . "," . a:lastline . 's/\(\d\)\+\( \)\{1\}\(\d\)\+\(\n\)\{1\}/\1 -> \3\, /g'
+endfunction
 
 
 if has("cscope")
