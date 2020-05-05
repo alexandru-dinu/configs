@@ -1,16 +1,18 @@
 /* ==UserStyle==
-@name           Dark scrollbar
+@name           scrollbar-dark
 @namespace      github.com/openstyles/stylus
 @version        1.0.0
 @description    Dark scrollbar
 @author         Alexandru Dinu
 ==/UserStyle== */
+
 @-moz-document
 domain("github.com"),
 domain("stackoverflow.com"),
 domain("reddit.com"),
 domain("youtube.com"),
-domain("facebook.com") {
+domain("facebook.com"),
+domain("cppreference.com") {
     ::-webkit-scrollbar {
         width: 10px;
         height: 10px;
