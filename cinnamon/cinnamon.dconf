@@ -100,7 +100,7 @@ show-desklets=@as []
 
 [desktop/keybindings/custom-keybindings/custom0]
 binding=['<Super>d']
-command='rofi -show run'
+command='rofi -show combi'
 name='rofi'
 
 [desktop/keybindings/custom-keybindings/custom1]
