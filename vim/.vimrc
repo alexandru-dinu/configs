@@ -17,6 +17,7 @@ Plugin 'lervag/vimtex'
 Plugin 'keitanakamura/tex-conceal.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'junegunn/vim-easy-align'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -45,6 +46,9 @@ let g:airline#extensions#tabline#show_tab_type = 1
 
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
+" start interactive EasyAlign in visual mode (e.g. vipea)
+xmap ea <Plug>(EasyAlign)
 """ --- PLUGIN SETTINGS
 
 " enable filetype plugins
