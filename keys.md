@@ -1,4 +1,4 @@
-# 1. zsh
+## 1. zsh
 
 - beginning / end of line: `C-a` / `C-e`
 - forward / backwards one word: `A-f` / `A-b`
@@ -6,48 +6,45 @@
 - clear text after cursor: `C-k`
 - delete word before / after cursor: `C-w` / `A-d`
 
-# 2. Editors
+
+## 2. vim + vscode
 
 ### 2.1. Common motions
 
 - prepend on multiple lines: `C-v -> S-i -> <text> -> ESC`
 - append on multiple lines: `C-v -> $ -> S-A -> <text> -> ESC`
 - (replace) copy current word under cursor: `C-r-w`
-- recording a macro: `qq -> <actions> -> q (in normal mode)` then `@q` to apply
+- record a macro: `q<letter> -> <actions> -> q (in normal mode)` then `@<letter>` to apply
 
-### 2.2. `<leader>` shortcuts
+### 2.2. Keybindings
 
-- toggle spell checking: `ss`
+| Behaviour                         | vscode                     | vim                |
+| :-------------------------------: | :------------------------: | :----------------: |
+| select all                        | `C-a`                      | `ggVG`             |
+| go to beginning of the line       | `A-left`                   | `^`                |
+| go to end of the line             | `A-right`                  | `$`                |
+| go to line <n>                    | `C-g, _num_`               | `:_num_`           |
+| delete line(s)                    | `C-S-k`                    | `dd`               |
+| delete from cursor to line end    | `C-S-d`                    | `S-d`              |
+| duplicate line(s)                 | `C-d`                      | `yyp`              |
+| fast selection                    | `S`                        | `v`                |
+| go to matching bracket            | `C-S-/`                    | `%`                |
+| move line(s) up                   | `A-up`                     | `ddkP` or `:m<-N>` |
+| move line(s) down                 | `A-down`                   | `ddp` or `:m<+N>`  |
+| go to definition                  | `S-A-d`                    |                    |
+| go back (from definition)         | `S-A-s`                    |                    |
+| peek definition                   | `C-A-g`                    |                    |
+| change all occurrences            | `S-F2`                     | `:%s`              |
+| insert cursor up                  | `C-S-up`                   | visual mode        |
+| insert cursor down                | `C-S-down`                 | visual mode        |
+| reveal (in) explorer              | `S-A-e`                    | `F2`               |
+| sidebar visibility                | `S-A-b`                    |                    |
+| open definition to the side       | `S-A-g`                    |                    |
+| split editor up/down/left/right   | `S-A-up/down/left/right`   |                    |
+| toggle show whitespace            |                            | `F5`               |
+| toggle spell check                |                            | `<leader>ss`       |
 
-### 2.3. Keybindings
-
-|           Behaviour               |         vscode            |         vim        |
-| --------------------------------- |-------------------------- | ------------------ |
-| Select all                        | `C-a`                     | `ggVG`             |
-| Go to beginning of the line       | `A-left`                  | `^`                |
-| Go to end of the line             | `A-right`                 | `$`                |
-| Go to line <n>                    | `C-g, _num_`              | `:_num_`           |
-| Delete line(s)                    | `C-S-k`                   | `dd`               |
-| Delete from cursor to line end    | `C-S-d`                   | `S-d`              |
-| Duplicate line(s)                 | `C-d`                     | `yyp`              |
-| Fast selection                    | `S`                       | `v`                |
-| Go to matching bracket            | `C-S-/`                   | `%`                |
-| Move line(s) up                   | `A-up`                    | `ddkP` or `:m<-N>` |
-| Move line(s) down                 | `A-down`                  | `ddp` or `:m<+N>`  |
-| Go to definition                  | `S-A-d`                   |                    |
-| Go back (from definition)         | `S-A-s`                   |                    |
-| Peek definition                   | `C-A-g`                   |                    |
-| Change all occurrences            | `S-F2`                    | `:%s`              |
-| Insert cursor up                  | `C-S-up`                  | visual mode        |
-| Insert cursor down                | `C-S-down`                | visual mode        |
-| Reveal (in) explorer              | `S-A-e`                   | `F2`               |
-| Sidebar visibility                | `S-A-b`                   |                    |
-| Open definition to the side       | `S-A-g`                   |                    |
-| Split editor up/down/left/right   | `S-A-up/down/left/right`  |                    |
-| Toggle show whitespace            |                           | `F5`               |
-
-
-### 2.4. Resources
+### 2.3. Resources
 
 - https://www.youtube.com/watch?v=MAHC9eZbx4o
 - https://stackoverflow.com/a/2559262/3142472
