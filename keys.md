@@ -1,15 +1,25 @@
-### Common motions
+# 1. zsh
+
+- beginning / end of line: `C-a` / `C-e`
+- forward / backwards one word: `A-f` / `A-b`
+- clear line: `C-u`
+- clear text after cursor: `C-k`
+- delete word before / after cursor: `C-w` / `A-d`
+
+# 2. Editors
+
+### 2.1. Common motions
 
 - prepend on multiple lines: `C-v -> S-i -> <text> -> ESC`
 - append on multiple lines: `C-v -> $ -> S-A -> <text> -> ESC`
 - (replace) copy current word under cursor: `C-r-w`
 - recording a macro: `qq -> <actions> -> q (in normal mode)` then `@q` to apply
 
-### `<leader>` shortcuts
+### 2.2. `<leader>` shortcuts
 
 - toggle spell checking: `ss`
 
-### Keybindings
+### 2.3. Keybindings
 
 |           Behaviour               |         vscode            |         vim        |
 | --------------------------------- |-------------------------- | ------------------ |
@@ -37,7 +47,7 @@
 | Toggle show whitespace            |                           | `F5`               |
 
 
-### Resources
+### 2.4. Resources
 
 - https://www.youtube.com/watch?v=MAHC9eZbx4o
 - https://stackoverflow.com/a/2559262/3142472
