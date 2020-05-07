@@ -1,8 +1,3 @@
-### partitions
-	/ (ext4): 302,707 MB
-	swap: 16,384 MB
-	bootloader location = efi partition
-
 ### miscellaneous fixes
 wireless card not recognized:
 `sudo echo "blacklist ideapad_laptop" >> /etc/modprobe.d/blacklist.conf`
