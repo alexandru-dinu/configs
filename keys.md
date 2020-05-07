@@ -5,6 +5,10 @@
 - (replace) copy current word under cursor: `C-r-w`
 - recording a macro: `qq -> <actions> -> q (in normal mode)` then `@q` to apply
 
+### `<leader>` shortcuts
+
+- toggle spell checking: `ss`
+
 ### Keybindings
 
 |           Behaviour               |         vscode            |         vim        |
@@ -35,5 +39,6 @@
 
 ### Resources
 
+- https://www.youtube.com/watch?v=MAHC9eZbx4o
 - https://stackoverflow.com/a/2559262/3142472
 - https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
