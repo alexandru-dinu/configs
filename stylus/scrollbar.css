@@ -33,7 +33,7 @@ domain("cppreference.com") {
         background: #1e1e1e;
     }
     ::-webkit-scrollbar-thumb:active {
-        background: transparent;
+        background: #3e3e3e;
     }
     ::-webkit-scrollbar-track:active {
         background: #1e1e1e;
