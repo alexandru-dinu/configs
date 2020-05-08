@@ -127,8 +127,8 @@ window-screenshot-clip=@as []
 
 [desktop/keybindings/wm]
 close=['<Alt>F4', '<Shift><Super>q']
-maximize=['<Shift><Super>Up']
-minimize=['<Shift><Super>Down']
+maximize=@as []
+minimize=['<Alt><Super>f']
 move-to-monitor-down=@as []
 move-to-monitor-up=@as []
 show-desktop=@as []
@@ -147,6 +147,7 @@ switch-to-workspace-up=['<Super>e', '<Primary><Alt>Up']
 toggle-fullscreen=['<Shift><Super>f']
 toggle-maximized=['<Super>f']
 toggle-recording=@as []
+unmaximize=@as []
 
 [desktop/media-handling]
 autorun-never=false
