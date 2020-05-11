@@ -15,6 +15,10 @@
 - append on multiple lines: `C-v -> $ -> S-A -> <text> -> ESC`
 - (replace) copy current word under cursor: `C-r-w`
 - record a macro: `q<letter> -> <actions> -> q (in normal mode)` then `@<letter>` to apply
+- **splits**
+  - current window:   `:b <N/bufname>`
+  - vertical split:   `:vsp | b <N/bufname>`
+  - horizontal split: `:sp | b <N/bufname>`
 
 ### 2.2. Language specific
 
