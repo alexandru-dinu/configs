@@ -79,15 +79,16 @@ config_bash () {
 config_vim () {
     prompt "Configuring vim"
 
-    rm -rf ~/.vim*
-    ln -s `realpath vim/.vimrc` ~/.vimrc
-    git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+    rm -rf ~/.vim* && mkdir -p ~/.vim
 
+    ln -s `realpath vim/.vimrc` ~/.vimrc
     for d in `ls -d vim/*`
     do
         ln -s `realpath $d` ~/.vim
     done
+
+    git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
 
     prompt "Done"
 }
