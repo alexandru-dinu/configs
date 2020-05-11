@@ -1,12 +1,12 @@
 snippet for "for loop"
 for $1 in range($2):
-	$0
+    $0
 endsnippet
 
 
 snippet fore "for each loop"
 for $1 in $2:
-	$0
+    $0
 endsnippet
 
 
@@ -22,4 +22,10 @@ endsnippet
 
 snippet ps "print string"
 print(f"$1") $0
+endsnippet
+
+
+snippet main "main"
+if __name__ == "__main__":
+    ${0:pass}
 endsnippet
