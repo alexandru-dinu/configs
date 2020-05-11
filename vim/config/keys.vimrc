@@ -7,10 +7,14 @@ map 0 ^
 
 nmap <leader>w :w!<CR>
 
-map <F2> :NERDTreeToggle<CR>
-
 " start interactive EasyAlign in visual mode (e.g. vipea)
 xmap ea <Plug>(EasyAlign)
+
+" toggle NERDTree
+map <F2> :NERDTreeToggle<CR>
+
+" run shell cmd in a new window
+map <F3> :Shell #
 
 " toggle whitespace listing
 noremap  <F5> :set list!<CR>
