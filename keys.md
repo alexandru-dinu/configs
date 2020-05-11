@@ -16,7 +16,12 @@
 - (replace) copy current word under cursor: `C-r-w`
 - record a macro: `q<letter> -> <actions> -> q (in normal mode)` then `@<letter>` to apply
 
-### 2.2. Keybindings
+### 2.2. Language specific
+
+- [Python] run selection in interpreter:  `<visual><leader>py`
+- [Haskell] run selection in interpreter: `<visual><leader>hs`
+
+### 2.3. Keybindings
 
 | Behaviour                         | vscode                     | vim                |
 | :-------------------------------: | :------------------------: | :----------------: |
@@ -44,7 +49,7 @@
 | toggle show whitespace            |                            | `F5`               |
 | toggle spell check                |                            | `<leader>ss`       |
 
-### 2.3. Resources
+### 2.4. Resources
 
 - https://www.youtube.com/watch?v=MAHC9eZbx4o
 - https://stackoverflow.com/a/2559262/3142472
