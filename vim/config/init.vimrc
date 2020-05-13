@@ -2,6 +2,7 @@ set nocompatible     " be iMproved, required
 filetype off         " required
 set encoding=utf8
 set shortmess+=I     " disable startup message
+set shortmess-=S     " show search count
 set noshowmode       " disable mode show (as airline shows the mode)
 set autoread         " when file is read from outside
 set ffs=unix,dos,mac " use Unix as the standard file type
