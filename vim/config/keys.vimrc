@@ -41,8 +41,8 @@ map  <C-a> <ESC>^
 map  <C-e> <ESC>$
 imap <C-a> <ESC>I
 imap <C-e> <ESC>A
-xmap <C-a> g^
-xmap <C-e> g$
+xmap <C-a> ^
+xmap <C-e> $
 
 " disable highlight
 map <silent> <leader><CR> :noh<CR>
