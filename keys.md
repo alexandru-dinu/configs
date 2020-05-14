@@ -46,10 +46,12 @@
 | change all occurrences            | `S-F2`                     | `:%s`              |
 | insert cursor up                  | `C-S-up`                   | visual mode        |
 | insert cursor down                | `C-S-down`                 | visual mode        |
-| reveal (in) explorer              | `S-A-e`                    | `F2`               |
 | sidebar visibility                | `S-A-b`                    |                    |
 | open definition to the side       | `S-A-g`                    |                    |
 | split editor up/down/left/right   | `S-A-up/down/left/right`   |                    |
+| reveal (in) explorer              | `S-A-e`                    | `F2`               |
+| run shell cmd prompt              |                            | `F3`               |
+| toggle cursorline                 |                            | `F4`               |
 | toggle show whitespace            |                            | `F5`               |
 | toggle spell check                |                            | `<leader>ss`       |
 

@@ -16,6 +16,9 @@ map <F2> :NERDTreeToggle<CR>
 " run shell cmd in a new window
 map <F3> :Shell #
 
+" toggle cursorline
+map <F4> :set cursorline!<CR>
+
 " toggle whitespace listing
 noremap  <F5> :set list!<CR>
 inoremap <F5> <C-o>:set list!<CR>
