@@ -11,18 +11,18 @@ nmap <leader>w :w!<CR>
 xmap ea <Plug>(EasyAlign)
 
 " toggle NERDTree
-map <F2> :NERDTreeToggle<CR>
+map <silent> <F2> :NERDTreeToggle<CR>
 
 " run shell cmd in a new window
 map <F3> :Shell #
 
 " toggle cursorline
-map <F4> :set cursorline!<CR>
+map <silent> <F4> :set cursorline!<CR>
 
 " toggle whitespace listing
-noremap  <F5> :set list!<CR>
-inoremap <F5> <C-o>:set list!<CR>
-cnoremap <F5> <C-c>:set list!<CR>
+noremap  <silent> <F5> :set list!<CR>
+inoremap <silent> <F5> <C-o>:set list!<CR>
+cnoremap <silent> <F5> <C-c>:set list!<CR>
 
 " copy last yanked text to clipboard
 nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
