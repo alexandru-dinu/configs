@@ -7,7 +7,7 @@ alias l="showmarks"
 # user
 alias gdb="gdb -q"
 alias i="ipython"
-alias notes="vim $HOME/workspace/notes.txt"
+alias scribble="vim $HOME/workspace/tmp/scribble.txt"
 alias ccat="ccat -G Plaintext=\"reset\" -G Decimal=\"teal\" -G Keyword=\"darkgreen\""
 alias dis="objdump -d -M intel"
 
