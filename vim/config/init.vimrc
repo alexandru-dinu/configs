@@ -6,6 +6,7 @@ set shortmess-=S     " show search count
 set noshowmode       " disable mode show (as airline shows the mode)
 set autoread         " when file is read from outside
 set ffs=unix,dos,mac " use Unix as the standard file type
+set virtualedit=all  " cursor can also be positioned where there is no actual character
 
 set history=1000     " history size
 set so=7             " lines to the cursor when moving vertically using j/k
