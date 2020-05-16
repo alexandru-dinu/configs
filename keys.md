@@ -57,6 +57,7 @@
 | toggle spell check                |                            | `<leader>ss`       |
 | preview git changes               |                            | `<leader>gs`       |
 | close git changes                 |                            | `<leader>gc`       |
+| jump to next/prev method          |                            | `]m` / `[m`        |
 
 ### 2.4. Resources
 
