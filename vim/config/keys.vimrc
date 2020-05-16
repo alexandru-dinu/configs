@@ -99,5 +99,5 @@ map <leader>cd :cd %:p:h<CR>:pwd<CR>
 map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
 
 " show/close git hunk
-nmap <leader>gs <Plug>(GitGutterPreviewHunk)
-nmap <leader>gc :bdelete gitgutter://hunk-preview<CR>
+nmap <silent> <leader>gs <Plug>(GitGutterPreviewHunk)
+nmap <silent> <leader>gc :bdelete gitgutter://hunk-preview<CR>
