@@ -29,6 +29,8 @@ realpath() {
 config_zsh () {
     prompt "Configuring Oh-My-Zsh"
 
+    plugin_dir=~/.oh-my-zsh/custom/plugins
+
     rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -36,15 +38,15 @@ config_zsh () {
     cp zsh/.zshenv ~/.zshenv
 
     prompt "zshmarks"
-    git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ~/.oh-my-zsh/custom/plugins/zshmarks
+    git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${plugin_dir}/zshmarks
 
-    cd ~/.oh-my-zsh/custom/plugins/zshmarks
+    cd ${plugin_dir}/zshmarks
     git apply ~/gizmos.git/zsh/patches/showmarks.patch
     git add . && git commit -m "Custom."
     cd -
 
     prompt "zsh-autosuggestions"
-    git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${plugin_dir}/zsh-autosuggestions
 
     prompt "custom theme"
     cp zsh/own.zsh-theme ~/.oh-my-zsh/themes/
