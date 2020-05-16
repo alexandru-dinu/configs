@@ -45,3 +45,9 @@ let NERDTreeShowHidden = 1
 
 " gitgutter
 let g:gitgutter_map_keys = 0
+" only enable in repositories
+let g:gitgutter_enabled = 0
+silent! !git rev-parse --is-inside-work-tree &> /dev/null
+if v:shell_error == 0
+    let g:gitgutter_enabled = 1
+endif
