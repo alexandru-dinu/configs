@@ -97,3 +97,7 @@ map <leader>cd :cd %:p:h<CR>:pwd<CR>
 " opens a new tab with the current buffer's path
 " useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
+
+" show/close git hunk
+nmap <leader>gs <Plug>(GitGutterPreviewHunk)
+nmap <leader>gc :bdelete gitgutter://hunk-preview<CR>

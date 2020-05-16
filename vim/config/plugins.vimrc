@@ -13,6 +13,7 @@ Plugin 'keitanakamura/tex-conceal.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -37,6 +38,10 @@ let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 1
+let g:airline#extensions#hunks#enabled = 1
 
 " nerdtree
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
+
+" gitgutter
+let g:gitgutter_map_keys = 0

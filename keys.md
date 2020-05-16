@@ -54,6 +54,8 @@
 | toggle cursorline                 |                            | `F4`               |
 | toggle show whitespace            |                            | `F5`               |
 | toggle spell check                |                            | `<leader>ss`       |
+| preview git changes               |                            | `<leader>gs`       |
+| close git changes                 |                            | `<leader>gc`       |
 
 ### 2.4. Resources
 

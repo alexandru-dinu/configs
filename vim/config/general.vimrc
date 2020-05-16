@@ -38,3 +38,6 @@ try
     set stal=2
 catch
 endtry
+
+" for gitgutter
+set updatetime=10
