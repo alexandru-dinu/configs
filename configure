@@ -1,12 +1,8 @@
 #!/bin/bash
 
-# vars
-
 green=`tput setaf 2`
 red=`tput setaf 1`
 reset=`tput sgr0`
-
-# utils
 
 prompt () {
     echo -e "${green}> $1${reset}"
@@ -24,7 +20,6 @@ realpath() {
     fi
 }
 
-# configs
 
 config_zsh () {
     prompt "Configuring Oh-My-Zsh"
@@ -69,7 +64,6 @@ config_zsh () {
 }
 
 config_bash () {
-    # need bash for root shell
     prompt "Configuring bash"
 
     cp bash/.bashrc ~/.bashrc
