@@ -35,6 +35,7 @@
 | go to line <n>                    | `C-g, _num_`               | `:_num_`           |
 | delete line(s)                    | `C-S-k`                    | `dd`               |
 | delete from cursor to line end    | `C-S-d`                    | `S-d`              |
+| delete till x                     |                            | `dtx`              |
 | duplicate line(s)                 | `C-d`                      | `yyp`              |
 | fast selection                    | `S`                        | `v`                |
 | go to matching bracket            | `C-S-/`                    | `%`                |
