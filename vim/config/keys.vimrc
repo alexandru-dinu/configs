@@ -29,6 +29,7 @@ nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
 
 " substitute all occurrences of the word under the cursor
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/
+vnoremap <leader>s <Esc>:%s/<c-r>=GetVisual()<CR>/
 
 " bracket matching
 inoremap {      {}<Left>
