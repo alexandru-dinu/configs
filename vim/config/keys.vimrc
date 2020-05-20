@@ -66,8 +66,9 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " buffers
-map <leader>b  :ls<CR>
-map <leader>f  :b<Space>
+map <leader>f  :find<Space>
+map <leader>b  :b<Space>
+map <leader>bl :ls<CR>
 map <leader>bd :Bclose<CR>
 map <leader>ba :bufdo bd<CR>
 map <leader>l  :bnext<CR>
