@@ -14,7 +14,7 @@ xmap ea <Plug>(EasyAlign)
 map <silent> <F2> :NERDTreeToggle<CR>
 
 " run shell cmd in a new window
-map <F3> :Shell #
+map <F3> :Shell<Space>
 
 " toggle cursorline
 map <silent> <F4> :set cursorline!<CR>
@@ -67,6 +67,7 @@ map <C-l> <C-W>l
 
 " buffers
 map <leader>b  :ls<CR>
+map <leader>f  :b<Space>
 map <leader>bd :Bclose<CR>
 map <leader>ba :bufdo bd<CR>
 map <leader>l  :bnext<CR>
