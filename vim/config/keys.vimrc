@@ -53,12 +53,6 @@ map <silent> <leader><CR> :noh<CR>
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
-" search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
-" ag after the selected text
-vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
-
 " better way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
