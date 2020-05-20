@@ -33,11 +33,11 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#1e1e1e"
-    cursor_color = "#ffffff"
-    font = Fira Code weight=453 10
+    palette = "#3e3e3e:#d75f5f:#84b95b:#d18959:#5d87aa:#ad86ba:#45aba8:#1e1e1e:#7e7e7e:#d75f5f:#84b95b:#d18959:#5d87aa:#ad86ba:#45aba8:#1e1e1e"
     foreground_color = "#d0d0d0"
-    palette = "#555753:#ff2e3f:#6fd65d:#ff6f23:#3476ff:#9861f8:#00cdb3:#fffcc2:#7c7c7c:#ff6480:#3fc56b:#f9c859:#00b1fe:#b68dff:#b38b7d:#fffee3"
+    background_color = "#1e1e1e"
+    cursor_color = "#d0d0d0"
+    font = Fira Code weight=453 10
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False

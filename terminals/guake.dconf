@@ -62,11 +62,13 @@ toggle-transparency='<Primary>F11'
 cursor-blink-mode=0
 
 [style/background]
+color='#1e1e1e1e1e1e'
 transparency=96
 
 [style/font]
 allow-bold=true
 bold-is-bright=false
-palette='#555557575353:#ffff2e2e3f3f:#6f6fd6d65d5d:#ffff6f6f2323:#34347676ffff:#98986161f8f8:#0000cdcdb3b3:#fffffcfcc2c2:#7c7c7c7c7c7c:#ffff64648080:#3f3fc5c56b6b:#f9f9c8c85959:#0000b1b1fefe:#b6b68d8dffff:#b3b38b8b7d7d:#fffffefee3e3:#dedee0e0dfdf:#1e1e1e1e1e1e'
+color='#d0d0d0d0d0d0'
+palette='#3e3e3e3e3e3e:#d7d75f5f5f5f:#8484b9b95b5b:#d1d189895959:#5d5d8787aaaa:#adad8686baba:#4545ababa8a8:#1e1e1e1e1e1e:#7e7e7e7e7e7e:#d7d75f5f5f5f:#8484b9b95b5b:#d1d189895959:#5d5d8787aaaa:#adad8686baba:#4545ababa8a8:#1e1e1e1e1e1e:#d0d0d0d0d0d0:#1e1e1e1e1e1e'
 palette-name='Custom'
 style='Fira Code weight=453 10'
