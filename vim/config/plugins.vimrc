@@ -11,9 +11,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'lervag/vimtex'
 Plugin 'keitanakamura/tex-conceal.vim'
 Plugin 'sirver/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -31,12 +31,6 @@ nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/
 vnoremap <leader>s <Esc>:%s/<c-r>=GetVisual()<CR>/
 
-" bracket matching
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-
 " go to beginning/end of line
 map  <C-a> <ESC>^
 map  <C-e> <ESC>$
@@ -50,8 +44,8 @@ map <silent> <leader><CR> :noh<CR>
 
 " visual mode pressing * or # searches for the current selection
 " from Michael Naumann
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
 " better way to move between windows
 map <C-j> <C-W>j
@@ -85,7 +79,7 @@ map <leader>ss :setlocal spell!<CR>
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
-map <leader>s? z=
+map <leader>sc z=
 
 " switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<CR>:pwd<CR>

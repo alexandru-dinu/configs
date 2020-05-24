@@ -35,24 +35,12 @@ function! HasPaste()
 endfunction
 
 
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
-
-function! VisualSelection(direction, extra_filter) range
+function! VisualSelection() range
     let l:saved_reg = @"
     execute "normal! vgvy"
 
     let l:pattern = escape(@", "\\/.*'$^~[]")
     let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'gv'
-        call CmdLine("Ag '" . l:pattern . "' " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
 
     let @/ = l:pattern
     let @" = l:saved_reg
@@ -112,10 +100,4 @@ function! GetVisual() range
     let escaped_selection = EscapeString(selection)
 
     return escaped_selection
-endfunction
-
-
-" common regex replace
-function! ToGraph() range
-    execute a:firstline . "," . a:lastline . 's/\(\d\)\+\( \)\{1\}\(\d\)\+\(\n\)\{1\}/\1 -> \3\, /g'
 endfunction

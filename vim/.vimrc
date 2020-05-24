@@ -1,4 +1,4 @@
-" essential config
+" essential configs
 source ~/.vim/config/init.vimrc
 
 " plugin definition
@@ -15,3 +15,6 @@ source ~/.vim/config/keys.vimrc
 
 " language-specific configs
 source ~/.vim/config/lang.vimrc
+
+" config for special cases
+source ~/.vim/config/special.vimrc

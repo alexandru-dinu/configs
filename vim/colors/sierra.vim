@@ -111,10 +111,10 @@ highlight CursorLine   guifg=NONE    guibg=NONE    gui=NONE ctermfg=NONE ctermbg
 highlight CursorColumn guifg=NONE    guibg=#303030 gui=NONE ctermfg=NONE ctermbg=236  cterm=NONE
 highlight ColorColumn  guifg=NONE    guibg=#303030 gui=NONE ctermfg=NONE ctermbg=236  cterm=NONE
 highlight Folded       guifg=#6c6c6c guibg=NONE    gui=NONE ctermfg=242  ctermbg=NONE cterm=NONE
-highlight VertSplit    guifg=#3a3a3a guibg=#262626 gui=NONE ctermfg=237  ctermbg=235  cterm=NONE
+highlight VertSplit    guifg=#3a3a3a guibg=#262626 gui=NONE ctermfg=242  ctermbg=235  cterm=NONE
 highlight LineNr       guifg=#4e4e4e guibg=#1c1c1c gui=NONE ctermfg=102  ctermbg=NONE cterm=NONE
-highlight NonText      guifg=#3a3a3a guibg=NONE    gui=NONE ctermfg=237  ctermbg=NONE cterm=NONE
-highlight SpecialKey   guifg=#3a3a3a guibg=NONE    gui=NONE ctermfg=237  ctermbg=NONE cterm=NONE
+highlight NonText      guifg=#3a3a3a guibg=NONE    gui=NONE ctermfg=247  ctermbg=NONE cterm=NONE
+highlight SpecialKey   guifg=#3a3a3a guibg=NONE    gui=NONE ctermfg=247  ctermbg=NONE cterm=NONE
 
 "make bg transparent
 hi Normal guibg=NONE ctermbg=NONE
