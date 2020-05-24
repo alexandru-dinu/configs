@@ -74,6 +74,12 @@ let g:lasttab = 1
 nmap <leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
+" resize splits
+nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 11/10)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 10/11)<CR>
+nnoremap <silent> <Leader>0 :exe "vertical resize " . (winwidth(0) * 11/10)<CR>
+nnoremap <silent> <Leader>9 :exe "vertical resize " . (winwidth(0) * 10/11)<CR>
+
 " toggle spell checking
 map <leader>ss :setlocal spell!<CR>
 map <leader>sn ]s
