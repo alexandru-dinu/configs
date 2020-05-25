@@ -11,8 +11,8 @@ domain("github.com"),
 domain("stackoverflow.com"),
 domain("reddit.com"),
 domain("youtube.com"),
-domain("facebook.com"),
-domain("cppreference.com") {
+domain("cppreference.com"),
+domain("duckduckgo.com") {
     ::-webkit-scrollbar {
         width: 10px;
         height: 10px;
