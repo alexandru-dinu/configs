@@ -1,3 +1,5 @@
+set font "Fira Code Retina 10"
+
 set default-bg         "#1e1e1e"
 set default-fg         "#d0d0d0"
 set statusbar-bg       "#1e1e1e"
