@@ -1,0 +1,43 @@
+/* ==UserStyle==
+@name           Jupyter
+@namespace      github.com/alexandru-dinu/gizmos
+@version        1.0.0
+@description    Unified Jupyter style
+@author         Alexandru Dinu
+==/UserStyle== */
+
+@-moz-document domain("zeta") {
+    #ipython-main-app {
+        position: relative !important;
+    }
+    #jupyter-main-app {
+        position: relative !important;
+    }
+
+    .CodeMirror pre,
+    .CodeMirror pre.CodeMirror-line,
+    .CodeMirror pre.CodeMirror-line-like,
+    .CodeMirror-dialog,
+    .CodeMirror-dialog
+    .CodeMirror-search-field,
+    .terminal-app
+    .terminal {
+        font-family: "Fira Code Retina" !important;
+        font-size: 10pt !important;
+        font-variant-ligatures: none !important;
+    }
+
+    div.output_area pre {
+        font-family: "Fira Code Retina" !important;
+        font-size: 10pt !important;
+        font-variant-ligatures: none !important;
+    }
+
+    .container {
+        width: 100% !important;
+    }
+
+    div#notebook {
+        padding-top: 0px !important;
+    }
+}

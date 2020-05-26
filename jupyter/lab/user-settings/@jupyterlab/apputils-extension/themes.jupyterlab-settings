@@ -8,7 +8,7 @@
     // Override theme CSS variables by setting key-value pairs here
     "overrides": {
         "ui-font-size1": "13px",
-        "code-font-size": "13px",
+        "code-font-size": "14px",
         "content-font-size1": "14px"
     },
 
@@ -18,5 +18,5 @@
 
     // Scrollbar Theming
     // Enable/disable styling of the application scrollbars
-    "theme-scrollbars": false
+    "theme-scrollbars": true
 }
