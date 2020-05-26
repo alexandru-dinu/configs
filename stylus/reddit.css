@@ -1,0 +1,15 @@
+/* ==UserStyle==
+@name           Reddit
+@namespace      github.com/alexandru-dinu/gizmos
+@version        1.0.0
+@description    Reddit style
+@author         Alexandru Dinu
+==/UserStyle== */
+
+@-moz-document domain("reddit.com") {
+    html,
+    body,
+    #sr-more-link {
+        background-color: rgba(0, 0, 0, 1) !important;
+    }
+}
