@@ -2,6 +2,8 @@ nnoremap <Space> <Nop>
 let mapleader   = " "
 let g:mapleader = " "
 
+nnoremap ; :
+
 " remap vim 0 to first non-blank character
 map 0 ^
 
