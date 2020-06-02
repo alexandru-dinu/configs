@@ -11,6 +11,10 @@ alias scribble="vim $HOME/workspace/tmp/scribble.txt"
 alias ccat="ccat -G Plaintext=\"reset\" -G Decimal=\"teal\" -G Keyword=\"darkgreen\""
 alias dis="objdump -d -M intel"
 
+# vim-like
+alias :q="exit"
+alias :e="vim"
+
 c () { cd "$1" && ls }
 
 bgopen () { xdg-open "$1" &> /dev/null & disown }
