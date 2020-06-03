@@ -5,7 +5,6 @@
 @description    Unified Jupyter style
 @author         Alexandru Dinu
 ==/UserStyle== */
-
 @-moz-document domain("zeta") {
     #ipython-main-app {
         position: relative !important;
@@ -18,13 +17,15 @@
     .CodeMirror pre.CodeMirror-line,
     .CodeMirror pre.CodeMirror-line-like,
     .CodeMirror-dialog,
-    .CodeMirror-dialog
     .CodeMirror-search-field,
-    .terminal-app
-    .terminal {
+    .terminal-app .terminal {
         font-family: "Fira Code Retina" !important;
         font-size: 10pt !important;
         font-variant-ligatures: none !important;
+    }
+
+    .jp-InputPrompt {
+        font-family: "Fira Code Retina" !important;
     }
 
     div.output_area pre {
