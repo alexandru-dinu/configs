@@ -24,7 +24,8 @@
         font-variant-ligatures: none !important;
     }
 
-    .jp-InputPrompt {
+    .jp-InputPrompt,
+    .jp-OutputPrompt {
         font-family: "Fira Code Retina" !important;
     }
 
