@@ -29,8 +29,9 @@ config_zsh () {
     rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-    cp zsh/.zshrc ~/.zshrc
-    cp zsh/.zshenv ~/.zshenv
+    cp zsh/.zshrc ~/
+    cp zsh/.zshenv ~/
+    cp zsh/.profile ~/
 
     prompt "zshmarks"
     git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${plugin_dir}/zshmarks
