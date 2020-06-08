@@ -69,6 +69,6 @@ transparency=96
 allow-bold=true
 bold-is-bright=false
 color='#d0d0d0d0d0d0'
-palette='#3e3e3e3e3e3e:#d7d75f5f5f5f:#8484b9b95b5b:#d1d189895959:#5d5d8787aaaa:#adad8686baba:#4545ababa8a8:#1e1e1e1e1e1e:#7e7e7e7e7e7e:#d7d75f5f5f5f:#8484b9b95b5b:#d1d189895959:#5d5d8787aaaa:#adad8686baba:#4545ababa8a8:#1e1e1e1e1e1e:#d0d0d0d0d0d0:#1e1e1e1e1e1e'
+palette='#3e3e3e3e3e3e:#d7d75f5f5f5f:#8484b9b95b5b:#d1d189895959:#5d5d8787aaaa:#adad8686baba:#4545ababa8a8:#e0e0e0e0e0e0:#7e7e7e7e7e7e:#d7d75f5f5f5f:#8484b9b95b5b:#d1d189895959:#5d5d8787aaaa:#adad8686baba:#4545ababa8a8:#1e1e1e1e1e1e:#d0d0d0d0d0d0:#1e1e1e1e1e1e'
 palette-name='Custom'
 style='Fira Code weight=453 10'

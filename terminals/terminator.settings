@@ -33,7 +33,7 @@
 [plugins]
 [profiles]
   [[default]]
-    palette = "#3e3e3e:#d75f5f:#84b95b:#d18959:#5d87aa:#ad86ba:#45aba8:#1e1e1e:#7e7e7e:#d75f5f:#84b95b:#d18959:#5d87aa:#ad86ba:#45aba8:#1e1e1e"
+    palette = "#3e3e3e:#d75f5f:#84b95b:#d18959:#5d87aa:#ad86ba:#45aba8:#e0e0e0:#7e7e7e:#d75f5f:#84b95b:#d18959:#5d87aa:#ad86ba:#45aba8:#1e1e1e"
     foreground_color = "#d0d0d0"
     background_color = "#1e1e1e"
     cursor_color = "#d0d0d0"
