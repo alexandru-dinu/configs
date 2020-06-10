@@ -13,7 +13,6 @@ Plugin 'keitanakamura/tex-conceal.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -40,6 +39,22 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#hunks#enabled = 1
+
+" abbreviate modes
+let g:airline_mode_map = {
+      \ '__': '-',
+      \ 'n' : 'N',
+      \ 'i' : 'I',
+      \ 'R' : 'R',
+      \ 'c' : 'C',
+      \ 'v' : 'V',
+      \ 'V' : 'VL',
+      \ '': 'VB',
+      \ 's' : 'S',
+      \ 'S' : 'S',
+      \ '': 'S',
+      \ }
+let g:airline#extensions#wordcount#formatter#default#fmt = 'w: %d'
 
 " nerdtree
 let NERDTreeShowHidden = 1
