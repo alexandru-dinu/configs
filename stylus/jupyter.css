@@ -6,6 +6,11 @@
 @author         Alexandru Dinu
 ==/UserStyle== */
 @-moz-document domain("zeta") {
+    :root {
+        --jp-widgets-font-size: 10pt !important;
+        --jp-ui-font-family: "DejaVu Sans" !important;
+    }
+
     #ipython-main-app {
         position: relative !important;
     }
