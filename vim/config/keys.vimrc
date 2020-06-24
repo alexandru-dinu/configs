@@ -15,11 +15,14 @@ xmap ea <Plug>(EasyAlign)
 " toggle NERDTree
 map <silent> <F2> :NERDTreeToggle<CR>
 
+" run make
+map <F3> :!make<CR>
+
 " run shell cmd in a new window
-map <F3> :Shell<Space>
+map <F4> :Shell<Space>
 
 " toggle cursorline
-map <silent> <F4> :set cursorline!<CR>
+map <silent> <F6> :set cursorline!<CR>
 
 " toggle whitespace listing
 noremap  <silent> <F5> :set list!<CR>
