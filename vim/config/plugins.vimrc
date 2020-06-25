@@ -54,7 +54,7 @@ let g:airline_mode_map = {
       \ 'S' : 'S',
       \ '': 'S',
       \ }
-let g:airline#extensions#wordcount#formatter#default#fmt = 'w: %d'
+let g:airline#extensions#wordcount#formatter#default#fmt = '%s W'
 
 " nerdtree
 let NERDTreeShowHidden = 1
