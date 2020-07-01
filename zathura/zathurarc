@@ -18,3 +18,5 @@ set statusbar-basename      true
 set selection-clipboard     clipboard
 
 map <C-i> recolor
+map j navigate next
+map k navigate previous
