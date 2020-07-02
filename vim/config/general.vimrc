@@ -35,4 +35,4 @@ catch
 endtry
 
 " for gitgutter
-set updatetime=10
+set updatetime=750
