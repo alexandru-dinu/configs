@@ -315,6 +315,7 @@ config_mxmaster () {
     prompt "Configuring MX Master"
 
     sudo ln -sf `realpath mx-master/logid.cfg` /etc/
+    sudo systemctl restart logid.service
 
     prompt "Done"
 }
