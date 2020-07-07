@@ -1,15 +1,18 @@
 set font "Fira Code Retina 10"
 
-set default-bg         "#1e1e1e"
-set default-fg         "#d0d0d0"
-set statusbar-bg       "#1e1e1e"
-set statusbar-fg       "#d0d0d0"
-set inputbar-bg        "#1e1e1e"
-set inputbar-fg        "#d0d0d0"
-set notification-bg    "#3e3e3e"
-set notification-fg    "#d0d0d0"
-set recolor-lightcolor "#1e1e1e"
-set recolor-darkcolor  "#d0d0d0"
+set default-bg              "#1e1e1e"
+set default-fg              "#d0d0d0"
+set statusbar-bg            "#1e1e1e"
+set statusbar-fg            "#d0d0d0"
+set inputbar-bg             "#1e1e1e"
+set inputbar-fg             "#d0d0d0"
+set notification-bg         "#3e3e3e"
+set notification-fg         "#d0d0d0"
+set recolor-lightcolor      "#1e1e1e"
+set recolor-darkcolor       "#d0d0d0"
+set highlight-color         "#16a085"
+set highlight-active-color  "#a01631"
+set completion-highlight-bg "#16a085"
 
 set recolor                 true
 set recolor-keephue         true
