@@ -1,74 +1,38 @@
 /* ==UserStyle==
-@name           hackernews-dark
+@name           HackerNews Solarized Dark
 @namespace      github.com/openstyles/stylus
-@version        2.0.0
-@description    Dark HackerNews
-@author         Alexandru Dinu
+@version        1.0.0
+@author         https://github.com/UserStyles/hacker-news-solarized-dark
 ==/UserStyle== */
-
-@-moz-document url-prefix("https://news.ycombinator.com") {
-    body {
-        background-color: #1e1e1e;
+@-moz-document domain("news.ycombinator.com") {
+    * {
+        color: #93A1A1 !important;
+        background-color: #002b36 !important;
     }
-
-    #hnmain {
-        background-color: #1e1e1e;
+    body > center > table > tbody > tr:first-child * {
+        background-color: #073642 !important;
     }
-
-    .athing .title a,
-    .yclinks a {
-        color: #828282;
+    body > center > table > tbody > tr:first-child * a:hover {
+        background: #002b36 !important;
     }
-
-    .itemlist .title a:visited,
-    .yclinks a {
-        color: #5c5c5c;
-    }
-
-    #hnmain > tbody > tr:first-of-type table {
-        background-color: #ff6600;
-    }
-
-    #hnmain > tbody > tr:first-of-type table img {
-        box-sizing: border-box;
-        border: 1px black solid !important;
-    }
-
-    .comment * {
-        color: #828282;
-    }
-
-    .comment a {
-        color: #828282 !important;
-    }
-
-    .comment a:visited {
-        color: #5c5c5c !important;
-    }
-
-    #hnmain img:first-child {
-        filter: grayscale(100%);
-    }
-
+    code,
+    pre,
+    input,
     textarea {
-        font-family: monospace;
-        font-size: 10pt;
-        background-color: #1e1e1e;
-        color: #828282;
-        border-color: #3e3e3e;
+        background: #073642 !important;
     }
-}
-
-@-moz-document url-prefix("https://news.ycombinator.com/login") {
-    body {
-        color: #828282;
-    }
-
     a {
-        color: #828282;
+        color: #2aa198 !important;
     }
-
-    a:visited {
-        color: #5c5c5c;
+    .subtext a {
+        color: #93A1A1 !important;
+    }
+    a:visited,
+    a:visited span {
+        color: #b58900 !important;
+    }
+    a:hover,
+    a:hover span {
+        background: #073642 !important;
     }
 }
