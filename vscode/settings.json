@@ -5,7 +5,6 @@
     "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.scrollbar.verticalScrollbarSize": 5,
 
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": false,
@@ -39,5 +38,7 @@
 
     "files.associations": {
         "*.wppl": "javascript"
-    }
+    },
+    "python.languageServer": "Microsoft",
+    "editor.wordWrap": "on"
 }
