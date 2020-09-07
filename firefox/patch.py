@@ -4,7 +4,7 @@ about:config patch (prefs.js)
 
 import os
 import re
-import sys
+import shutil
 import configparser
 
 home_dir = os.environ['HOME']
@@ -16,11 +16,18 @@ config.read(f"{firefox_dir}/profiles.ini")
 profile = config['Profile0']['Path']
 profile_dir = f"{firefox_dir}/{profile}"
 
+patch = './prefs.js.patch'
+cfg_file = f"{profile_dir}/prefs.js"
+
 fmt = "user_pref(%s, %s);"
 
-def do_patch(patch):
-    cfg_file = f"{profile_dir}/{patch.split('/')[-1].split('-')[0]}"
+def add_user_content():
+    chrome_dir = f'{profile_dir}/chrome'
+    os.makedirs(chrome_dir, exist_ok=True)
+    shutil.copy('userContent.css', chrome_dir)
+    print('+ added chrome/userContent.css')
 
+def do_patch():
     print(f"+ patching {cfg_file}")
 
     p_def = open(cfg_file).read()
@@ -41,4 +48,7 @@ def do_patch(patch):
         fp.write(p_def)
     print(f"+ done patching {cfg_file}")
 
-do_patch(sys.argv[1])
+
+if __name__ == '__main__':
+    add_user_content()
+    do_patch()
