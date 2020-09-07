@@ -18,6 +18,9 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " Vundle END
 
+" vimtex
+let g:tex_flavor='latex'
+let g:tex_conceal='abdmg'
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = "<tab>"
