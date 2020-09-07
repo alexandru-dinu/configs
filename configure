@@ -380,7 +380,7 @@ get_configs () {
 
 help () {
     echo -e "Usage: $0 --all OR $0 <pkg_name>\n"
-    echo "Can configure following packages:" && get_configs
+    echo "Can configure the following packages:" && get_configs
 }
 
 
