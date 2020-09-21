@@ -23,8 +23,8 @@ fmt = "user_pref(%s, %s);"
 
 def add_user_content():
     chrome_dir = f'{profile_dir}/chrome'
-    os.makedirs(chrome_dir, exist_ok=True)
-    shutil.copy('userContent.css', chrome_dir)
+    os.system(f'mkdir -p {chrome_dir}')
+    os.system(f'cp -f userContent.css {chrome_dir}')
     print('+ added chrome/userContent.css')
 
 def do_patch():
