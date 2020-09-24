@@ -35,4 +35,7 @@
     a:hover span {
         background: #073642 !important;
     }
+    .comment {
+        max-width: 768px;
+    }
 }
