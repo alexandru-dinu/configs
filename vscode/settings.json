@@ -22,8 +22,6 @@
     "window.menuBarVisibility": "hidden",
 
     "telemetry.enableTelemetry": false,
-
-    "python.pythonPath": "~/anaconda3/bin/python",
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
 
@@ -40,5 +38,6 @@
         "*.wppl": "javascript"
     },
     "python.languageServer": "Microsoft",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "python.defaultInterpreterPath": "~/anaconda3/bin/python"
 }
