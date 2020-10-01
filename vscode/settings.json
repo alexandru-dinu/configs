@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "darcula-minimal",
+    "workbench.colorTheme": "GitHub Dark",
 
     "editor.fontFamily": "Fira Code Retina",
     "editor.fontLigatures": true,
@@ -38,6 +38,5 @@
         "*.wppl": "javascript"
     },
     "python.languageServer": "Microsoft",
-    "editor.wordWrap": "on",
-    "python.defaultInterpreterPath": "~/anaconda3/bin/python"
+    "editor.wordWrap": "on"
 }
