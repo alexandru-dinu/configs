@@ -15,6 +15,9 @@ alias dis="objdump -d -M intel"
 alias :q="exit"
 alias :e="vim"
 
+# overwrite
+alias tmux="tmux source-file ~/.tmux.conf"
+
 c () { cd "$1" && ls }
 
 bgopen () { xdg-open "$1" &> /dev/null & disown }
