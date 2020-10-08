@@ -5,6 +5,7 @@ alttab-switcher-show-all-workspaces=true
 alttab-switcher-style='icons+thumbnails'
 applet-cache-updated=1558137828
 command-history=['termite', 'terminator', 'code', 'guale', 'guake', 'r']
+desklet-snap-interval=25
 desktop-effects-close-effect='traditional'
 desktop-effects-close-time=0
 desktop-effects-close-transition='easeOutQuad'
@@ -28,7 +29,8 @@ desktop-effects-unmaximize-transition='easeNone'
 device-aliases=['/org/freedesktop/UPower/devices/mouse_hidpp_battery_0:= Wireless Mouse MX Master']
 enable-vfade=false
 enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:left:1:panel-launchers@cinnamon.org:2', 'panel1:right:4:notifications@cinnamon.org:7', 'panel1:right:5:windows-quick-list@cinnamon.org:9', 'panel1:right:6:systray@cinnamon.org:11', 'panel1:right:7:removable-drives@cinnamon.org:13', 'panel1:right:8:network@cinnamon.org:14', 'panel1:right:9:sound@cinnamon.org:15', 'panel1:right:10:power@cinnamon.org:16', 'panel1:right:11:calendar@cinnamon.org:18', 'panel1:right:2:sysmonitor@orcus:21', 'panel1:right:3:keyboard@cinnamon.org:23', 'panel1:right:12:workspace-switcher@cinnamon.org:32', 'panel1:left:2:grouped-window-list@cinnamon.org:33']
-favorite-apps=['chromium.desktop', 'firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
+enabled-desklets=@as []
+favorite-apps=['firefox.desktop', 'chromium.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
 next-applet-id=34
 panel-edit-mode=false
 panel-launchers=['DEPRECATED']
@@ -89,7 +91,7 @@ gtk-theme='Mint-Y-Dark-Teal'
 icon-theme='Papirus-Adapta-Nokto-Maia'
 keyboard-layout-prefer-variant-names=true
 keyboard-layout-show-flags=false
-scaling-factor=uint32 0
+scaling-factor=uint32 1
 text-scaling-factor=1.0
 toolkit-accessibility=false
 
@@ -150,7 +152,7 @@ toggle-recording=@as []
 unmaximize=@as []
 
 [desktop/media-handling]
-autorun-never=false
+autorun-never=true
 
 [desktop/notifications]
 bottom-notifications=false
@@ -174,7 +176,7 @@ volume-sound-enabled=false
 [desktop/wm/preferences]
 button-layout=':minimize,maximize,close'
 min-window-opacity=30
-num-workspaces=4
+num-workspaces=3
 theme='Mint-Y-Dark'
 workspace-names=@as []
 
