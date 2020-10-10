@@ -52,8 +52,8 @@ config_zsh () {
     git apply ~/gizmos.git/zsh/patches/git.zsh.patch
     cd -
 
-    prompt "custom conda show"
-    cp zsh/conda.zsh ~/.oh-my-zsh/lib/
+    prompt "add own_extras.zsh"
+    cp zsh/own_extras.zsh ~/.oh-my-zsh/lib/
 
     prompt "commit custom changes"
     cd ~/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
