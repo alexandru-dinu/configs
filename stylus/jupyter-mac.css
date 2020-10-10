@@ -1,0 +1,51 @@
+/* ==UserStyle==
+@name           Jupyter Mac
+@namespace      github.com/alexandru-dinu/gizmos
+@version        1.0.0
+@description    Unified Jupyter style for Mac
+@author         Alexandru Dinu
+==/UserStyle== */
+@-moz-document url-prefix("https://zetajupyter.hopto.org") {
+    :root {
+        --jp-widgets-font-size: 10pt !important;
+        --jp-code-font-size: 10pt !important;
+        --jp-code-font-family: "Fira Code" !important;
+    }
+
+    #ipython-main-app {
+        position: relative !important;
+    }
+    #jupyter-main-app {
+        position: relative !important;
+    }
+
+    .CodeMirror pre,
+    .CodeMirror pre.CodeMirror-line,
+    .CodeMirror pre.CodeMirror-line-like,
+    .CodeMirror-dialog,
+    .CodeMirror-search-field,
+    .terminal-app .terminal {
+        font-family: "Fira Code" !important;
+        font-size: 10pt !important;
+        font-variant-ligatures: none !important;
+    }
+
+    .jp-InputPrompt,
+    .jp-OutputPrompt {
+        font-family: "Fira Code" !important;
+    }
+
+    div.output_area pre {
+        font-family: "Fira Code" !important;
+        font-size: 10pt !important;
+        font-variant-ligatures: none !important;
+    }
+
+    .container {
+        width: 100% !important;
+    }
+
+    div#notebook {
+        padding-top: 0px !important;
+    }
+}
