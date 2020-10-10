@@ -166,6 +166,7 @@ config_vscode () {
         "jeffersonqin.latex-snippets-jeff"
         "shd101wyy.markdown-preview-enhanced"
         "github.github-vscode-theme"
+        "ms-vscode-remote.remote-ssh"
     )
 
     for ext in "${vscode_exts[@]}"
