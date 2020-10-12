@@ -6,6 +6,6 @@ function conda_current_env () {
 
 function is_ssh () {
     if [[ -n $SSH_CONNECTION ]]; then
-        echo "${ZSH_THEME_SSH_PROMPT_PREFIX}${ZSH_THEME_SSH_PROMPT_CUSTOM}ssh${ZSH_THEME_SSH_PROMPT_SUFFIX}"
+        echo "${ZSH_THEME_SSH_PROMPT_PREFIX}${ZSH_THEME_SSH_PROMPT_CUSTOM}${HOST}${ZSH_THEME_SSH_PROMPT_SUFFIX}"
     fi
 }
