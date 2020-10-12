@@ -1,1 +1,13 @@
-{}
+{
+    "codeCellConfig": {
+        "lineNumbers": true
+    },
+
+    "markdownCellConfig": {
+        "lineNumbers": true
+    },
+
+    "rawCellConfig": {
+        "lineNumbers": true
+    }
+}
