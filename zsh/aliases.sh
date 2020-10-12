@@ -10,6 +10,7 @@ alias i="ipython"
 alias scribble="vim $HOME/workspace/tmp/scribble.txt"
 alias ccat="ccat -G Plaintext=\"reset\" -G Decimal=\"teal\" -G Keyword=\"darkgreen\""
 alias dis="objdump -d -M intel"
+alias estab="ss -ta | grep -i estab | grep -v '127.0.0.1' | sort -k4"
 
 # vim-like
 alias :q="exit"
