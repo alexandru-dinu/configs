@@ -16,9 +16,6 @@ alias estab="ss -ta | grep -i estab | grep -v '127.0.0.1' | sort -k4"
 alias :q="exit"
 alias :e="vim"
 
-# overwrite
-alias tmux="tmux source-file ~/.tmux.conf"
-
 c () { cd "$1" && ls }
 
 bgopen () { xdg-open "$1" &> /dev/null & disown }
