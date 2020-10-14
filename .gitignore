@@ -1,6 +1,7 @@
-.vscode
-.ipynb_checkpoints
+.vscode/
+.ipynb_checkpoints/
+
+.gdb_history
 
 *.py[cod]
-.gdb_history
 *~
