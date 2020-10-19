@@ -1,0 +1,25 @@
+{
+    "shortcuts": [
+        {
+            "command": "kernelmenu:restart-and-clear",
+            "keys": [
+                "Alt R"
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+        {
+            "command": "notebook:move-cell-up",
+            "keys": [
+                "Alt ArrowUp"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:move-cell-down",
+            "keys": [
+                "Alt ArrowDown"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+    ]
+}
