@@ -1,3 +1,0 @@
-#!/bin/bash
-
-grep --text -E "\[ALPM\] (installed|reinstalled|removed)" /var/log/pacman.log | sort -u
