@@ -1,46 +1,28 @@
-import cv2
 import os
 import json
 import argparse
-import requests
 import shutil
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-gpu', action='store_true')
-parser.add_argument('-py', type=str, required=True)
-parser.add_argument('-name', type=str, required=True)
-parser.add_argument('-logo', type=str, required=False)
-parser.add_argument('-dir', type=str, required=True)
-A = parser.parse_args()
-
-argv = (["optirun"] if A.gpu else []) + [A.py] + ["-m", "ipykernel_launcher", "-f", "{connection_file}"]
+parser.add_argument('--py',   type=str, required=True)
+parser.add_argument('--name', type=str, required=True)
+parser.add_argument('--dir',  type=str, required=True)
+args = parser.parse_args()
 
 kernel = json.dumps({
- "argv": argv,
- "display_name": A.name,
- "language": "python"
+    "argv"        : [args.py, "-m", "ipykernel_launcher", "-f", "{connection_file}"],
+    "display_name": args.name,
+    "language"    : "python"
 })
 
-root_dir = f'{os.environ["HOME"]}/anaconda3/share/jupyter/kernels/{A.dir}'
+root_dir = f'{os.environ["HOME"]}/anaconda3/share/jupyter/kernels/{args.dir}'
 os.makedirs(root_dir, exist_ok=False)
 
 with open(f'{root_dir}/kernel.json', 'wt') as f:
     f.write(kernel)
 
-if A.logo is not None:
-    r = requests.get(A.logo, stream=True, headers={'User-agent': 'Mozilla/5.0'})
-    if r.status_code == 200:
-        with open("./logo.png", 'wb') as f:
-            r.raw.decode_content = True
-            shutil.copyfileobj(r.raw, f)
+for f in ['logo-32x32.png', 'logo-64x64.png']:
+    shutil.copyfile(f, f'{root_dir}/{f}')
 
-    im = cv2.imread('./logo.png')
-
-    cv2.imwrite(f'{root_dir}/logo-32x32.png', cv2.resize(im, (32,32)))
-    cv2.imwrite(f'{root_dir}/logo-64x64.png', cv2.resize(im, (64,64)))
-
-    os.remove('./logo.png')
-
-else:
-    for f in ['logo-32x32.png', 'logo-64x64.png']:
-        shutil.copyfile(f, f'{root_dir}/{f}')
+print('Kernel installed.')
+print('Do not forget to run `pip install --upgrade ipykernel` in the new environment.')
