@@ -37,7 +37,6 @@ config_zsh () {
     git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${plugin_dir}/zshmarks
 
     cd ${plugin_dir}/zshmarks
-    git apply ~/gizmos.git/zsh/patches/showmarks.patch
     git add . && git commit -m "Custom."
     cd -
 

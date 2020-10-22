@@ -2,7 +2,7 @@
 alias g="jump"
 alias s="bookmark"
 alias d="deletemark"
-alias l="showmarks"
+alias l="showmarks | sort -k1 | sed 's/\t\t/: /g' | column -t -s':'"
 
 # user
 alias gdb="gdb -q"
