@@ -29,12 +29,12 @@ config_zsh () {
     rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-    cp zsh/.zshrc ~/
-    cp zsh/.zshenv ~/
+    cp zsh/.zshrc   ~/
+    cp zsh/.zshenv  ~/
     cp zsh/.profile ~/
 
     prompt "zshmarks"
-    git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${plugin_dir}/zshmarks
+    git clone --depth=1 https://github.com/jocelynmallon/zshmarks ${plugin_dir}/zshmarks
 
     prompt "zsh-autosuggestions"
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${plugin_dir}/zsh-autosuggestions
@@ -42,16 +42,11 @@ config_zsh () {
     prompt "custom theme"
     cp zsh/own.zsh-theme ~/.oh-my-zsh/themes/
 
-    prompt "custom git show"
-    cd ~/.oh-my-zsh/lib
-    git apply ~/gizmos.git/zsh/patches/git.zsh.patch
-    cd -
-
     prompt "add own_extras.zsh"
     cp zsh/own_extras.zsh ~/.oh-my-zsh/lib/
 
-    prompt "commit custom changes"
-    cd ~/.oh-my-zsh && git add . && git commit -m "Custom." && cd -
+    prompt "commit changes"
+    cd ~/.oh-my-zsh && git add . && git commit -m "[own]" && cd -
 
     prompt "environment variables"
     python ./zsh/setup_zshenv.py
