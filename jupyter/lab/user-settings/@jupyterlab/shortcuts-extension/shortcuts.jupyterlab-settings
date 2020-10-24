@@ -8,6 +8,13 @@
             "selector": "[data-jp-kernel-user]:focus"
         },
         {
+            "command": "runmenu:restart-and-run-all",
+            "keys": [
+                "Ctrl Alt R"
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+        {
             "command": "notebook:move-cell-up",
             "keys": [
                 "Alt ArrowUp"
