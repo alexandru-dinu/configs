@@ -6,7 +6,7 @@ local s2="%{$fg[cyan]%}╰─%{$reset_color%}"
 
 local full_path="%{$fg[cyan]%}%3~%{$reset_color%}"
 
-PROMPT='${s1} ${ret_code} ${full_path}$(custom_git_info)$(conda_current_env)$(is_ssh)
+PROMPT='${s1} ${ret_code} ${full_path}$(git_branch_info)$(conda_current_env)$(ssh_show_host)
 ${s2} ${ret_status}'
 
 local left_indicator="‹"

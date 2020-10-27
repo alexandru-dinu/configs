@@ -1,4 +1,4 @@
-function custom_git_info() {
+function git_branch_info() {
     local ref
     if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
         ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
@@ -13,7 +13,7 @@ function conda_current_env () {
     fi
 }
 
-function is_ssh () {
+function ssh_show_host () {
     if [[ -n $SSH_CONNECTION ]]; then
         echo "${ZSH_THEME_SSH_PROMPT_PREFIX}${ZSH_THEME_SSH_PROMPT_CUSTOM}${HOST}${ZSH_THEME_SSH_PROMPT_SUFFIX}"
     fi
