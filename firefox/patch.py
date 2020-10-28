@@ -6,49 +6,40 @@ import os
 import re
 import shutil
 import configparser
+from pathlib import Path
 
-home_dir = os.environ['HOME']
-firefox_dir = f"{home_dir}/.mozilla/firefox"
+home = Path(os.environ['HOME'])
+firefox_dir = home / '.mozilla/firefox'
 
 config = configparser.ConfigParser()
-config.read(f"{firefox_dir}/profiles.ini")
+config.read(firefox_dir / 'profiles.ini')
 
-profile = config['Profile0']['Path']
-profile_dir = f"{firefox_dir}/{profile}"
+profile_dir = firefox_dir / config['Profile0']['Path']
+cfg_file    = profile_dir / 'prefs.js'
+patch       = './prefs.js.patch'
 
-patch = './prefs.js.patch'
-cfg_file = f"{profile_dir}/prefs.js"
+# userContent.css
+chrome_dir = profile_dir / 'chrome'
+os.system(f'mkdir -p {chrome_dir} && cp -f userContent.css {chrome_dir}')
+print('+ added chrome/userContent.css')
 
-fmt = "user_pref(%s, %s);"
+# patching
+print(f"> patching {cfg_file}")
 
-def add_user_content():
-    chrome_dir = f'{profile_dir}/chrome'
-    os.system(f'mkdir -p {chrome_dir}')
-    os.system(f'cp -f userContent.css {chrome_dir}')
-    print('+ added chrome/userContent.css')
+p_def = open(cfg_file).read()
+p_own = [x.strip().split(":") for x in open(patch).readlines()]
 
-def do_patch():
-    print(f"+ patching {cfg_file}")
+for pk, pv in p_own:
+    r = f'user_pref({pk}, {pv});'
 
-    p_def = open(cfg_file).read()
-    p_own = dict([x.strip().split(":") for x in open(patch).readlines()])
+    try:
+        m = re.findall(f"user_pref\({pk}, .*\);", p_def)[0]
+        print(f"* replaced: {m} -> {r}")
+    except IndexError:
+        p_def += r + "\n"
+        print(f"+ appended: {r}")
 
-    for pk, pv in p_own.items():
-        r = fmt % (pk, pv)
+with open(cfg_file, "wt") as fp:
+    fp.write(p_def)
 
-        try:
-            m = re.findall(f"user_pref\({pk}, .*\);", p_def)[0]
-            print(f"+ replaced: {m} -> {r}")
-        except IndexError:
-            p_def += r + "\n"
-            print(f"+ appended: {r}")
-
-
-    with open(cfg_file, "wt") as fp:
-        fp.write(p_def)
-    print(f"+ done patching {cfg_file}")
-
-
-if __name__ == '__main__':
-    add_user_content()
-    do_patch()
+print(f"> done patching {cfg_file}")
