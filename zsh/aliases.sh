@@ -15,7 +15,7 @@ alias td="tmux detach"
 c      () { cd "$1" && ls }
 bgopen () { xdg-open "$1" &> /dev/null & disown }
 tvim   () { terminator -x zsh -c "vim $1" &> /dev/null & disown }
-rs     () { (redshift -x && ([ "$1" = "x" ] && return || redshift -O "$1" -g 0.9)) &> /dev/null}
+rs     () { (redshift -x && ([ "$1" = "x" ] && return || redshift -O "$1" -g 0.8)) &> /dev/null}
 
 # ssh-add-key
 sak () {
