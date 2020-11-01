@@ -345,6 +345,17 @@ config_cinnamon () {
     sudo vim ${js_dir}/windowManager.js
 }
 
+config_gestures () {
+    prompt "Configuring gestures"
+
+    conf="libinput-gestures.conf"
+
+    sudo ln -s `realpath gestures/${conf}` /etc/${conf}
+    ln -s `realpath gestures/${conf}.home` ~/.config/${conf}
+
+    prompt "Done"
+}
+
 config_symlinks () {
     mkdir -p ~/.local/bin
 
