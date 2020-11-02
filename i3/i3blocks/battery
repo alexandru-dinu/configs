@@ -9,17 +9,15 @@ case "$BLOCK_INSTANCE" in
         bat=""
 esac
 
-info=$(
-	upower -i "$bat" | awk '{ sub(/^[ \t]+/, ""); print }' | grep -E "state|percentage" | awk '{ print $2 }'
-)
+info=$(upower -i "$bat" | awk '{ sub(/^[ \t]+/, ""); print }' | grep -E "state|percentage" | awk '{ print $2 }')
 
 status=$(echo "$info" | sed -n '1p')
 percentage=$(echo "$info" | sed -n '2p')
 
 case "$status" in
-	"charging")             pre="▲ " ;;
-	"discharging")          pre="▼ " ;;
-	"full"|"fully-charged") pre="• " ;;
+    "charging")             pre="▲ " ;;
+    "discharging")          pre="▼ " ;;
+    "full"|"fully-charged") pre="• " ;;
     *)                      pre=""
 esac
 
