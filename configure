@@ -20,9 +20,12 @@ realpath() {
     fi
 }
 
+func_name() {
+    echo ${FUNCNAME[1]} | cut -d'_' -f2
+}
 
 config_zsh () {
-    prompt "Configuring Oh-My-Zsh"
+    prompt $(func_name)
 
     plugin_dir=~/.oh-my-zsh/custom/plugins
 
@@ -50,21 +53,17 @@ config_zsh () {
 
     prompt "environment variables"
     python ./zsh/setup_zshenv.py
-
-    prompt "Done"
 }
 
 config_bash () {
-    prompt "Configuring bash"
+    prompt $(func_name)
 
     cp bash/.bashrc ~/.bashrc
     sudo cp bash/.bashrc.root /root/.bashrc
-
-    prompt "Done"
 }
 
 config_vim () {
-    prompt "Configuring vim"
+    prompt $(func_name)
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
 
@@ -76,62 +75,50 @@ config_vim () {
 
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
-
-    prompt "Done"
 }
 
 config_ghci () {
-    prompt "Configuring ghci"
+    prompt $(func_name)
 
     rm -f ~/.ghci
     ln -s `realpath ghci/.ghci` ~/.ghci
     chmod go-w ~/.ghci
-
-    prompt "Done"
 }
 
 config_ruby () {
-    prompt "Configuring ruby"
+    prompt $(func_name)
 
     gem install irbtools
 
     rm -f ~/.irbrc
     ln -s `realpath ruby/.irbrc` ~/.irbrc
     chmod go-w ~/.irbrc
-
-    prompt "Done"
 }
 
 config_gdb () {
-    prompt "Configuring gdb"
+    prompt $(func_name)
 
     rm -rf ~/peda.git ~/.gdbinit
     git clone --depth=1 https://github.com/longld/peda.git ~/peda.git
     ln -s `realpath gdb/.gdbinit` ~/.gdbinit
-
-    prompt "Done"
 }
 
 config_tmux () {
-    prompt "Configuring tmux"
+    prompt $(func_name)
 
     rm -f ~/.tmux.conf
     ln -s `realpath tmux/.tmux.conf` ~/.tmux.conf
-
-    prompt "Done"
 }
 
 config_zathura () {
-    prompt "Configuring zathura"
+    prompt $(func_name)
 
     rm -rf ~/.config/zathura
     ln -s `realpath zathura` ~/.config/
-
-    prompt "Done"
 }
 
 config_vscode () {
-    prompt "Configuring vscode"
+    prompt $(func_name)
 
     cfg_dir=~/.config/Code/User
     ext_dir=~/.vscode/extensions
@@ -163,12 +150,10 @@ config_vscode () {
     do
         code --install-extension $ext
     done
-
-    prompt "Done"
 }
 
 config_pycharm() {
-    prompt "Configuring PyCharm"
+    prompt $(func_name)
 
     cfg_dir=$(find ~/.config/JetBrains -name "PyCharm*" 2>/dev/null | head -n 1)
 
@@ -185,12 +170,10 @@ config_pycharm() {
         rm -rf $cfg_dir/options/$o
         ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/options/$o
     done
-
-    prompt "Done"
 }
 
 config_idea() {
-    prompt "Configuring IDEA"
+    prompt $(func_name)
 
     cfg_dir=$(find ~ -name ".Idea*" 2>/dev/null | head -n 1)
 
@@ -207,48 +190,38 @@ config_idea() {
         rm -rf $cfg_dir/config/options/$o
         ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/config/options/$o
     done
-
-    prompt "Done"
 }
 
 config_conda () {
-    prompt "Configuring conda"
+    prompt $(func_name)
 
     ln -sf `realpath conda/.condarc` ~/.condarc
-
-    prompt "Done"
 }
 
 config_jupyter () {
-    prompt "Configuring jupyter"
+    prompt $(func_name)
 
     ln -sf `realpath jupyter/custom` ~/.jupyter
     ln -sf `realpath jupyter/lab/user-settings` ~/.jupyter/lab
-
-    prompt "Done"
 }
 
 config_guake () {
-    prompt "Configuring guake"
+    prompt $(func_name)
 
     dconf load /apps/guake/ < terminals/guake.dconf
-
-    prompt "Done"
 }
 
 config_terminator () {
-    prompt "Configuring terminator"
+    prompt $(func_name)
 
     cfg_dir=~/.config/terminator
 
     rm -rf $cfg_dir && mkdir -p $cfg_dir
     ln -s `realpath terminals/terminator.settings` $cfg_dir/config
-
-    prompt "Done"
 }
 
 config_i3 () {
-    prompt "Configuring i3"
+    prompt $(func_name)
 
     rm -rf ~/.config/i3 ~/.config/compton
     mkdir -p ~/.config/i3 ~/.config/compton
@@ -271,12 +244,10 @@ config_i3 () {
 
     # remove default i3blocks dir
     sudo rm -rf /usr/share/i3blocks
-
-    prompt "Done"
 }
 
 config_rofi () {
-    prompt "Configuring rofi"
+    prompt $(func_name)
 
     cfg_dir=~/.config/rofi
     local_dir=~/.local/share/rofi/
@@ -287,31 +258,25 @@ config_rofi () {
     sudo rm -rf /usr/share/rofi
     sudo rm -rf ${local_dir} && mkdir -p ${local_dir}
     ln -s `realpath rofi/themes` ${local_dir}
-
-    prompt "Done"
 }
 
 config_mxmaster () {
-    prompt "Configuring MX Master"
+    prompt $(func_name)
 
     sudo ln -sf `realpath mx-master/logid.cfg` /etc/
     sudo systemctl restart logid.service
-
-    prompt "Done"
 }
 
 config_ipython () {
-    prompt "Configuring IPython"
+    prompt $(func_name)
 
     cfg_dir=~/.ipython/profile_default
     mkdir -p $cfg_dir
     ln -sf `realpath ipython/ipython_config.py` $cfg_dir
-
-    prompt "Done"
 }
 
 config_git () {
-    prompt "Configuring git"
+    prompt $(func_name)
 
     set -x
 
@@ -322,20 +287,16 @@ config_git () {
     git config --global core.eol = lf
 
     set +x
-
-    prompt "Done"
 }
 
 config_firefox () {
-    prompt "Configuring firefox"
+    prompt $(func_name)
 
     cd firefox && python patch.py && cd -
-
-    prompt "Done"
 }
 
 config_cinnamon () {
-    prompt "Configuring cinnamon"
+    prompt $(func_name)
 
     js_dir="/usr/share/cinnamon/js/ui"
 
@@ -346,17 +307,17 @@ config_cinnamon () {
 }
 
 config_gestures () {
-    prompt "Configuring gestures"
+    prompt $(func_name)
 
     conf="libinput-gestures.conf"
 
     sudo ln -s `realpath gestures/${conf}` /etc/${conf}
     ln -s `realpath gestures/${conf}.home` ~/.config/${conf}
-
-    prompt "Done"
 }
 
 config_symlinks () {
+    prompt $(func_name)
+
     mkdir -p ~/.local/bin
 
     for f in `ls tools/bin/*`;
@@ -368,17 +329,15 @@ config_symlinks () {
     prompt "Adding symlink to ~/: .xbindkeysrc"
     ln -sf `realpath tools/.xbindkeysrc` ~/
     xbindkeys --poll-rc
-
-    prompt "Done"
 }
 
 get_configs () {
-    grep -oE "^config_[a-z0-9]+" $0 | cut -d"_" -f2 | sort
+    grep -oE "^config_[a-z0-9]+" $0 | cut -d'_' -f2 | sort
 }
 
 help () {
-    echo -e "Usage: $0 --all OR $0 <pkg_name>\n"
-    echo "Can configure the following packages:" && get_configs
+    echo -e "Usage: $0 --all OR $0 <name>\n"
+    echo "Can configure the following:" && get_configs
 }
 
 
@@ -388,9 +347,6 @@ case "$1" in
         ;;
     --list|-l)
         get_configs
-        ;;
-    --all)
-        for cfg in $(get_configs); do $cfg; done
         ;;
     *)
         for item in "$@"
