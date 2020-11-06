@@ -27,7 +27,7 @@ func_name() {
 config_zsh () {
     prompt $(func_name)
 
-    plugin_dir=~/.oh-my-zsh/custom/plugins
+    local plugin_dir=~/.oh-my-zsh/custom/plugins
 
     rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -42,17 +42,20 @@ config_zsh () {
     prompt "zsh-autosuggestions"
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${plugin_dir}/zsh-autosuggestions
 
-    prompt "custom theme"
-    cp zsh/own.zsh-theme ~/.oh-my-zsh/themes/
 
-    prompt "add own_extras.zsh"
-    cp zsh/own_extras.zsh ~/.oh-my-zsh/lib/
+    prompt "own .oh-my.zsh extras"
+    cd ~/.oh-my-zsh
+    local z=~/gizmos.git/zsh
 
-    prompt "commit changes"
-    cd ~/.oh-my-zsh && git add . && git commit -m "[own]" && cd -
+    cp $z/own.zsh-theme ./themes/
+    cp $z/own_extras.zsh ./lib/
+    git apply $z/patches/directories.zsh.patch
+    git add . && git commit -m "[own]"
+
+    cd -
 
     prompt "environment variables"
-    python ./zsh/setup_zshenv.py
+    python zsh/setup_zshenv.py
 }
 
 config_bash () {
