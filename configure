@@ -278,6 +278,13 @@ config_ipython () {
     ln -sf `realpath ipython/ipython_config.py` $cfg_dir
 }
 
+config_htop () {
+    prompt $(func_name)
+
+    cfg_dir=~/.config/htop
+    rm -rf $cfg_dir && ln -s `realpath htop` $cfg_dir
+}
+
 config_git () {
     prompt $(func_name)
 
