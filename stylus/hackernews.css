@@ -35,7 +35,8 @@
     a:hover span {
         background: #073642 !important;
     }
-    .comment {
+    .comment, .fatitem {
         max-width: 768px;
+        font-size: 10pt;
     }
 }
