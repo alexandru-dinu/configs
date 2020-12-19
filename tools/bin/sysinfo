@@ -7,13 +7,13 @@ case "$1" in
         echo $(whoami) @ $(hostname)
         ;;
     --ram)
-        echo ram: $(free -mh | awk '(NR==2){print $7}' | tr -d 'i')
+        echo $(free -mh | awk '(NR==2){print $7}' | tr -d 'i')
         ;;
     --ssd)
-        echo ssd: $(df | awk '(NR>1){t+=$4} END {printf "%dG", t/1024/1024}')
+        echo $(df | awk '(NR>1){t+=$4} END {printf "%dG", t/1024/1024}')
         ;;
     --load)
-        echo load: $(cut -d' ' -f1-3 /proc/loadavg)
+        echo $(cut -d' ' -f1-3 /proc/loadavg)
         ;;
     *)
         ;;
