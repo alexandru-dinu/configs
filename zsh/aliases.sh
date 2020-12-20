@@ -19,9 +19,9 @@ rs     () { (redshift -x && ([ "$1" = "x" ] && return || redshift -O "$1" -g 0.8
 
 # ssh-add-key
 sak () {
-    _pids=( ${(s. .)"$(pidof ssh-agent)"} )
-    for p in "${_pids[@]}"; do kill -15 $p; done
-    eval $(ssh-agent -s) && ssh-add ~/.ssh/"$1"
+    killall ssh-agent
+    eval $(ssh-agent -s)
+    ssh-add ~/.ssh/"$1"
 }
 
 # git
