@@ -12,6 +12,10 @@ nmap <leader>w :w!<CR>
 " start interactive EasyAlign in visual mode (e.g. vipea)
 xmap ea <Plug>(EasyAlign)
 
+
+" toggle paste mode
+set pastetoggle=<F1>
+
 " toggle NERDTree
 map <silent> <F2> :NERDTreeToggle<CR>
 
@@ -21,13 +25,14 @@ map <F3> :!make<CR>
 " run shell cmd in a new window
 map <F4> :Shell<Space>
 
-" toggle cursorline
-map <silent> <F6> :set cursorline!<CR>
-
 " toggle whitespace listing
 noremap  <silent> <F5> :set list!<CR>
 inoremap <silent> <F5> <C-o>:set list!<CR>
 cnoremap <silent> <F5> <C-c>:set list!<CR>
+
+" toggle cursorline
+map <silent> <F6> :set cursorline!<CR>
+
 
 " copy last yanked text to clipboard
 nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
