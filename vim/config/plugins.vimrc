@@ -42,6 +42,7 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#searchcount#enabled = 0
 
 " abbreviate modes
 let g:airline_mode_map = {

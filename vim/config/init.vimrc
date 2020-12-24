@@ -36,7 +36,6 @@ set si               " smart indent
 set wrap             " wrap lines
 
 set laststatus=2     " always show the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 " linebreak on 500 characters
 set lbr
