@@ -57,8 +57,8 @@ config_zsh () {
     prompt "environment variables"
     python zsh/setup_zshenv.py
 
-    prompt "conda init zsh"
-    conda init zsh
+    #prompt "conda init zsh"
+    #conda init zsh
 }
 
 config_bash () {

@@ -8,7 +8,7 @@ function git_branch_info() {
 }
 
 function conda_current_env () {
-    if [[ $CONDA_DEFAULT_ENV != base ]]; then
+    if [[ -v CONDA_DEFAULT_ENV && $CONDA_DEFAULT_ENV != base ]]; then
         echo "${ZSH_THEME_CONDA_PROMPT_PREFIX}${ZSH_THEME_CONDA_PROMPT_CUSTOM}conda:${CONDA_DEFAULT_ENV}${ZSH_THEME_CONDA_PROMPT_SUFFIX}"
     fi
 }
