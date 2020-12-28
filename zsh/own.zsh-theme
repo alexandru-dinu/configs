@@ -15,5 +15,6 @@ ZSH_THEME_CONDA_PROMPT_PREFIX=" "
 ZSH_THEME_CONDA_PROMPT_CUSTOM="%{$fg[magenta]%}"
 ZSH_THEME_CONDA_PROMPT_SUFFIX="%{$reset_color%}"
 
-PROMPT='${s1} ${ret_code} ${current_path}$(git_branch_info)$(conda_current_env)
+PROMPT='
+${s1} ${ret_code} ${current_path}$(git_branch_info)$(conda_current_env)
 ${s2} ${ret_status}'
