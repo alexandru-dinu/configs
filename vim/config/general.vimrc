@@ -9,9 +9,6 @@ set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 " delete trailing whitespace on save
 autocmd BufWrite * :call DeleteTrailingWS()
 
-" :W sudo saves the file
-command W w !sudo tee % > /dev/null
-
 " vimdiff
 if &diff
     set cursorline

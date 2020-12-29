@@ -9,7 +9,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'lervag/vimtex'
-Plugin 'keitanakamura/tex-conceal.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'airblade/vim-gitgutter'
@@ -20,7 +19,6 @@ filetype plugin indent on    " required
 
 " vimtex
 let g:tex_flavor='latex'
-let g:tex_conceal='abdmg'
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = "<tab>"

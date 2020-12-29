@@ -58,26 +58,30 @@ vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
 " better way to move between windows
+map <C-h> <C-W>h
 map <C-j> <C-W>j
 map <C-k> <C-W>k
-map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " buffers
 map <leader>f  :find<Space>
 map <leader>b  :b<Space>
 map <leader>bl :ls<CR>
-map <leader>bd :Bclose<CR>
+map <leader>bk :Bclose<CR>
 map <leader>ba :bufdo bd<CR>
-map <leader>l  :bnext<CR>
-map <leader>h  :bprevious<CR>
+map <leader>bn :bnext<CR>
+map <leader>bp :bprevious<CR>
 
 " tabs
-map <leader>tn :tabnew<CR>
-map <leader>to :tabonly<CR>
-map <leader>tc :tabclose<CR>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
+map <silent> <leader>tn :tabnew<CR>
+map <silent> <leader>to :tabonly<CR>
+map <silent> <leader>tk :tabclose<CR>
+map <silent> <leader>tm :tabmove<CR>
+map <silent> <leader>t<leader> :tabnext<CR>
+
+" opens a new tab with the current buffer's path
+" useful when editing files in the same directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
 
 " toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -100,11 +104,7 @@ map <leader>sc z=
 " switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<CR>:pwd<CR>
 
-" opens a new tab with the current buffer's path
-" useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
-
 " show/close git hunk
 nmap <silent> <leader>gg :GitGutterToggle<CR>
 nmap <silent> <leader>gs <Plug>(GitGutterPreviewHunk)
-nmap <silent> <leader>gc :bdelete gitgutter://hunk-preview<CR>
+nmap <silent> <leader>gk :bdelete gitgutter://hunk-preview<CR>

@@ -15,6 +15,3 @@ source ~/.vim/config/keys.vimrc
 
 " language-specific configs
 source ~/.vim/config/lang.vimrc
-
-" config for special cases
-source ~/.vim/config/special.vimrc

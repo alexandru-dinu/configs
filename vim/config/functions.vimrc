@@ -26,15 +26,6 @@ func! DeleteTrailingWS()
 endfunc
 
 
-" returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
-endfunction
-
-
 function! VisualSelection() range
     let l:saved_reg = @"
     execute "normal! vgvy"
