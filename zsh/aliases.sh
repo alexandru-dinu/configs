@@ -7,7 +7,6 @@ alias l="showmarks | sort -k1 | sed 's/\t\t/: /g' | column -t -s':'"
 # user
 alias gdb="gdb -q"
 alias i="ipython"
-alias ccat="ccat -G Plaintext=\"reset\" -G Decimal=\"teal\" -G Keyword=\"darkgreen\""
 alias estab="ss -ta | grep -i estab | grep -v '127.0.0.1' | sort -k4"
 alias ta="tmux attach"
 alias td="tmux detach"
