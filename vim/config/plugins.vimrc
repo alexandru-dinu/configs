@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'lervag/vimtex'
 Plugin 'sirver/ultisnips'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/fzf.vim'
 Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required

@@ -64,8 +64,8 @@ map <C-k> <C-W>k
 map <C-l> <C-W>l
 
 " buffers
-map <leader>f  :find<Space>
-map <leader>b  :b<Space>
+map <leader>f  :Files<CR>
+map <leader>b  :Buffers<CR>
 map <leader>bl :ls<CR>
 map <leader>bk :Bclose<CR>
 map <leader>ba :bufdo bd<CR>
