@@ -41,14 +41,6 @@ nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/
 vnoremap <leader>s <Esc>:%s/<c-r>=GetVisual()<CR>/
 
-" go to beginning/end of line
-map  <C-a> <ESC>^
-map  <C-e> <ESC>$
-imap <C-a> <ESC>I
-imap <C-e> <ESC>A
-xmap <C-a> ^
-xmap <C-e> $
-
 " disable highlight
 map <silent> <leader><CR> :noh<CR>
 
