@@ -34,6 +34,10 @@ cnoremap <silent> <F5> <C-c>:set list!<CR>
 map <silent> <F6> :set cursorline!<CR>
 
 
+" select line from first to last non-ws
+vnoremap <silent> il :<C-U>normal ^vg_<CR>
+omap     <silent> il :normal      vil<CR>
+
 " copy last yanked text to clipboard
 nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
 
