@@ -13,6 +13,7 @@ Plugin 'sirver/ultisnips'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'junegunn/fzf.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
