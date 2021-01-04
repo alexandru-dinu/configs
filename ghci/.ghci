@@ -2,3 +2,5 @@
 :set prompt-cont "\ESC[0;95m > \ESC[m"
 :set -XUnicodeSyntax
 :set +t
+
+:def hoogle \s -> return $ ":! hoogle --count=15 \"" ++ s ++ "\""
