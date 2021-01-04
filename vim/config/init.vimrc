@@ -53,7 +53,7 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" for gitgutter
+set ttimeoutlen=0
 set updatetime=750
 
 " vimdiff
