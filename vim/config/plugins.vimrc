@@ -15,8 +15,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
+filetype plugin indent on
 " Vundle END
 
 " vimtex
@@ -63,10 +63,9 @@ let g:airline#extensions#wordcount#formatter#default#fmt = '%s W'
 " nerdtree
 let NERDTreeShowHidden = 1
 
-" gitgutter
-let g:gitgutter_map_keys = 0
-" only enable in repositories
+" gitgutter (only enable in repositories)
 let g:gitgutter_enabled = 0
+let g:gitgutter_map_keys = 0
 let is_git = system("git ls-files --error-unmatch " . expand('%:p'))
 if v:shell_error == 0
     let g:gitgutter_enabled = 1

@@ -1,5 +1,6 @@
-set nocompatible     " be iMproved, required
-filetype off         " required
+set nocompatible
+filetype off
+
 set encoding=utf8
 set shortmess+=I     " disable startup message
 set shortmess-=S     " show search count
@@ -13,7 +14,6 @@ set so=7             " lines to the cursor when moving vertically using j/k
 
 set number           " line numbers...
 set relativenumber   " ...are relative to the current one
-set ruler
 
 set foldcolumn=1     " add a bit extra margin to the left
 set cmdheight=1      " height of command bar
@@ -53,6 +53,15 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" for gitgutter
+set updatetime=750
+
+" vimdiff
+if &diff
+    map ] ]c
+    map [ [c
+endif
+
 " turn backup off
 set nobackup
 set nowb
@@ -62,15 +71,34 @@ set noswapfile
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" set whitespace type
+set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
+
 " enable filetype plugins
 filetype plugin on
 filetype indent on
 
-" avoid garbled characters in Chinese language windows OS
-let $LANG='en'
-set langmenu=en
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+" return to last edit position when opening files
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" delete trailing whitespace on save
+autocmd BufWrite * :call DeleteTrailingWS()
+
+" better searching
+set path+=**
+set hidden
+set wildmenu
+
+set wildignore=*.o,*~,*.pyc
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+
+" specify the behavior when switching between buffers
+try
+    set switchbuf=useopen,usetab,newtab
+    set stal=2
+catch
+endtry
+
 
 " enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -95,3 +123,6 @@ endtry
 
 set background=dark
 set cursorline
+
+
+runtime! ftplugin/man.vim

@@ -12,7 +12,6 @@ nmap <leader>w :w!<CR>
 " start interactive EasyAlign in visual mode (e.g. vipea)
 xmap ea <Plug>(EasyAlign)
 
-
 " toggle paste mode
 set pastetoggle=<F1>
 
@@ -29,10 +28,6 @@ map <F4> :Shell<Space>
 noremap  <silent> <F5> :set list!<CR>
 inoremap <silent> <F5> <C-o>:set list!<CR>
 cnoremap <silent> <F5> <C-c>:set list!<CR>
-
-" toggle cursorline
-map <silent> <F6> :set cursorline!<CR>
-
 
 " select line from first to last non-ws
 vnoremap <silent> il :<C-U>normal ^vg_<CR>
@@ -53,18 +48,11 @@ map <silent> <leader><CR> :noh<CR>
 vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
-" better way to move between windows
-map <C-h> <C-W>h
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-l> <C-W>l
-
 " buffers
 map <leader>f  :Files<CR>
 map <leader>b  :Buffers<CR>
 map <leader>bl :ls<CR>
 map <leader>bk :Bclose<CR>
-map <leader>ba :bufdo bd<CR>
 map <leader>bn :bnext<CR>
 map <leader>bp :bprevious<CR>
 
@@ -96,9 +84,6 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>sc z=
-
-" switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " show/close git hunk
 nmap <silent> <leader>gg :GitGutterToggle<CR>
