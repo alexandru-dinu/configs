@@ -64,8 +64,7 @@ config_zsh () {
 config_bash () {
     prompt $(func_name)
 
-    cp bash/.bashrc ~/.bashrc
-    sudo cp bash/.bashrc.root /root/.bashrc
+    cp bash/.bashrc ~/
 }
 
 config_vim () {

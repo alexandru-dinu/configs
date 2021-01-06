@@ -40,11 +40,6 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -84,21 +79,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -117,20 +100,46 @@ fi
 
 ### OWN ###
 
-PROMPT_COMMAND=_prompt_command
+c_red='\[\e[0;91m\]'
+c_green='\[\e[0;32m\]'
+c_yellow='\[\e[0;33m\]'
+c_cyan='\[\e[0;36m\]'
+c_reset='\[\e[0m\]'
+
+git_info() {
+    if git rev-parse --git-dir >/dev/null 2>&1
+    then
+        color=""
+        if git status | grep "nothing to commit" >/dev/null 2>&1
+        then
+            color="${c_green}"
+        else
+            color=${c_yellow}
+        fi
+    else
+        return 0
+    fi
+
+    if git rev-parse --git-dir >/dev/null 2>&1
+    then
+        gitver=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
+    else
+        return 0
+    fi
+
+    echo -ne "${color}${gitver}${c_reset}"
+}
 
 _prompt_command() {
-    local curr_exit="$?"
+    local c_status=''
 
-    local _red='\[\e[0;91m\]'
-    local _green='\[\e[0;32m\]'
-    local _reset='\[\e[0m\]'
-
-    PS1='$(tput setaf 6) \u@\h: \w\n\\$ \[$(tput sgr0)\]'
-
-    if [ "$curr_exit" != 0 ]; then
-        PS1="${_red}$curr_exit${_reset}$PS1"
+    if [ "$?" != 0 ]; then
+        c_status=${c_red}
     else
-        PS1="${_green}$curr_exit${_reset}$PS1"
+        c_status=${c_green}
     fi
+
+    PS1="\n${c_cyan}\w${c_reset} ${git_info}\n${c_status}\$${c_reset} "
 }
+
+PROMPT_COMMAND=_prompt_command
