@@ -21,13 +21,10 @@ map <silent> <F2> :NERDTreeToggle<CR>
 " run make
 map <F3> :!make<CR>
 
-" run shell cmd in a new window
-map <F4> :Shell<Space>
-
 " toggle whitespace listing
-noremap  <silent> <F5> :set list!<CR>
-inoremap <silent> <F5> <C-o>:set list!<CR>
-cnoremap <silent> <F5> <C-c>:set list!<CR>
+noremap  <silent> <F4> :set list!<CR>
+inoremap <silent> <F4> <C-o>:set list!<CR>
+cnoremap <silent> <F4> <C-c>:set list!<CR>
 
 " select line from first to last non-ws
 vnoremap <silent> il :<C-U>normal ^vg_<CR>
