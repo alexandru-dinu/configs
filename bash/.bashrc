@@ -107,39 +107,22 @@ c_cyan='\[\e[0;36m\]'
 c_reset='\[\e[0m\]'
 
 git_info() {
-    if git rev-parse --git-dir >/dev/null 2>&1
-    then
-        color=""
-        if git status | grep "nothing to commit" >/dev/null 2>&1
-        then
-            color="${c_green}"
-        else
-            color=${c_yellow}
-        fi
+    if git rev-parse --git-dir >/dev/null 2>&1; then
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        dirty=$(git status --porcelain)
+        [ -z "$dirty" ] && color=${c_green} || color=${c_yellow}
+        echo -ne "${color}${branch}${c_reset}"
     else
         return 0
     fi
-
-    if git rev-parse --git-dir >/dev/null 2>&1
-    then
-        gitver=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
-    else
-        return 0
-    fi
-
-    echo -ne "${color}${gitver}${c_reset}"
 }
 
 _prompt_command() {
-    local c_status=''
+    local last="$?"
 
-    if [ "$?" != 0 ]; then
-        c_status=${c_red}
-    else
-        c_status=${c_green}
-    fi
+    [ "${last}" -ne 0 ] && c_status=${c_red} || c_status=${c_green}
 
-    PS1="\n${c_cyan}\w${c_reset} ${git_info}\n${c_status}\$${c_reset} "
+    PS1="\n${c_cyan}\w${c_reset} $(git_info)\n${c_status}\$${c_reset} "
 }
 
 PROMPT_COMMAND=_prompt_command
