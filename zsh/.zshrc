@@ -8,7 +8,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # plugins: ~/.oh-my-zsh/plugins/*
 # custom plugins: ~/.oh-my-zsh/custom/plugins/
-plugins=(fzf git zshmarks zsh-autosuggestions)
+plugins=(fzf zshmarks zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/gizmos.git/zsh/aliases.sh
