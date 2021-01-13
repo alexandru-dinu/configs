@@ -2,11 +2,10 @@ nnoremap <Space> <Nop>
 let mapleader   = " "
 let g:mapleader = " "
 
-nnoremap ; :
-
 " remap vim 0 to first non-blank character
 map 0 ^
 
+" save file
 nmap <leader>w :w!<CR>
 
 " start interactive EasyAlign in visual mode (e.g. vipea)
@@ -61,7 +60,6 @@ map <silent> <leader>tm :tabmove<CR>
 map <silent> <leader>t<leader> :tabnext<CR>
 
 " opens a new tab with the current buffer's path
-" useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
 
 " toggle between this and the last accessed tab
@@ -75,14 +73,14 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 10/11)<CR>
 nnoremap <silent> <Leader>0 :exe "vertical resize " . (winwidth(0) * 11/10)<CR>
 nnoremap <silent> <Leader>9 :exe "vertical resize " . (winwidth(0) * 10/11)<CR>
 
-" toggle spell checking
+" spell checking
 map <leader>ss :setlocal spell!<CR>
 map <leader>sn ]s
 map <leader>sp [s
-map <leader>sa zg
 map <leader>sc z=
 
-" show/close git hunk
+" GitGutter
 nmap <silent> <leader>gg :GitGutterToggle<CR>
 nmap <silent> <leader>gs <Plug>(GitGutterPreviewHunk)
 nmap <silent> <leader>gk :bdelete gitgutter://hunk-preview<CR>
+nmap <silent> <leader>gu <Plug>(GitGutterUndoHunk)

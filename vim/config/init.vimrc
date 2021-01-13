@@ -10,10 +10,10 @@ set ffs=unix,dos,mac " use Unix as the standard file type
 set virtualedit=all  " cursor can also be positioned where there is no actual character
 
 set history=1000     " history size
-set so=7             " lines to the cursor when moving vertically using j/k
+set scrolloff=10     " context lines relative to the cursor
 
-set number           " line numbers...
-set relativenumber   " ...are relative to the current one
+set number           " line numbers
+set relativenumber
 
 set foldcolumn=1     " add a bit extra margin to the left
 set cmdheight=1      " height of command bar
@@ -75,8 +75,7 @@ set whichwrap+=<,>,h,l
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -95,34 +94,22 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 " specify the behavior when switching between buffers
 try
     set switchbuf=useopen,usetab,newtab
-    set stal=2
+    set showtabline=2
 catch
 endtry
 
-
-" enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
-" set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
-
 " colorscheme
+set t_Co=256
 syntax enable
 
 try
     colorscheme sierra
 catch
+    colorscheme elflord
 endtry
 
 set background=dark
 set cursorline
 
-
+" enable built-in manpage viewer
 runtime! ftplugin/man.vim
