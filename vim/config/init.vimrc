@@ -100,6 +100,8 @@ endtry
 
 " colorscheme
 set t_Co=256
+set background=dark
+set cursorline
 syntax enable
 
 try
@@ -107,9 +109,6 @@ try
 catch
     colorscheme elflord
 endtry
-
-set background=dark
-set cursorline
 
 " enable built-in manpage viewer
 runtime! ftplugin/man.vim

@@ -14,9 +14,9 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'junegunn/fzf.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()
-filetype plugin indent on
 " Vundle END
 
 " vimtex
