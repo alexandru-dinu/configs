@@ -15,7 +15,6 @@ set scrolloff=10     " context lines relative to the cursor
 set number           " line numbers
 set relativenumber
 
-set foldcolumn=1     " add a bit extra margin to the left
 set cmdheight=1      " height of command bar
 set hid              " a buffer becomes hidden when it is abandoned
 
