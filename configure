@@ -24,6 +24,7 @@ func_name() {
     echo ${FUNCNAME[1]} | cut -d'_' -f2
 }
 
+
 config_zsh () {
     prompt $(func_name)
 
@@ -60,14 +61,16 @@ config_zsh () {
     # conda init zsh
 }
 
+
 config_bash () {
     prompt $(func_name)
 
     cp bash/.bashrc ~/
 }
 
+
 _do_vim () {
-    srcdir="$1"
+    [ "$1" = "normal" ] && srcdir="vim" || srcdir="vim-minimal";
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
 
@@ -82,14 +85,15 @@ _do_vim () {
 }
 
 config_vim () {
-    prompt $(func_name)
-    _do_vim vim
+    if [[ "$1" != "minimal" && "$1" != "normal" ]]; then
+        red_prompt "specify 'minimal' or 'normal'"
+        exit 1
+    fi
+
+    prompt "$(func_name): $1"
+    _do_vim "$1"
 }
 
-config_vim_minimal () {
-    prompt $(func_name)
-    _do_vim vim-minimal
-}
 
 config_ghci () {
     prompt $(func_name)
@@ -98,6 +102,7 @@ config_ghci () {
     ln -s `realpath ghci/.ghci` ~/.ghci
     chmod go-w ~/.ghci
 }
+
 
 config_ruby () {
     prompt $(func_name)
@@ -109,6 +114,7 @@ config_ruby () {
     chmod go-w ~/.irbrc
 }
 
+
 config_rlang () {
     prompt $(func_name)
 
@@ -119,6 +125,7 @@ config_rlang () {
     done
 }
 
+
 config_gdb () {
     prompt $(func_name)
 
@@ -127,6 +134,7 @@ config_gdb () {
     ln -s `realpath gdb/.gdbinit` ~/.gdbinit
 }
 
+
 config_tmux () {
     prompt $(func_name)
 
@@ -134,12 +142,14 @@ config_tmux () {
     ln -s `realpath tmux/.tmux.conf` ~/.tmux.conf
 }
 
+
 config_zathura () {
     prompt $(func_name)
 
     rm -rf ~/.config/zathura
     ln -s `realpath zathura` ~/.config/
 }
+
 
 config_vscode () {
     prompt $(func_name)
@@ -176,6 +186,7 @@ config_vscode () {
     done
 }
 
+
 config_pycharm() {
     prompt $(func_name)
 
@@ -195,6 +206,7 @@ config_pycharm() {
         ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/options/$o
     done
 }
+
 
 config_idea() {
     prompt $(func_name)
@@ -216,11 +228,13 @@ config_idea() {
     done
 }
 
+
 config_conda () {
     prompt $(func_name)
 
     ln -sf `realpath conda/.condarc` ~/.condarc
 }
+
 
 config_jupyter () {
     prompt $(func_name)
@@ -229,11 +243,13 @@ config_jupyter () {
     ln -sf `realpath jupyter/lab/user-settings` ~/.jupyter/lab
 }
 
+
 config_guake () {
     prompt $(func_name)
 
     dconf load /apps/guake/ < terminals/guake.dconf
 }
+
 
 config_terminator () {
     prompt $(func_name)
@@ -243,6 +259,7 @@ config_terminator () {
     rm -rf $cfg_dir && mkdir -p $cfg_dir
     ln -s `realpath terminals/terminator.settings` $cfg_dir/config
 }
+
 
 config_i3 () {
     prompt $(func_name)
@@ -270,6 +287,7 @@ config_i3 () {
     sudo rm -rf /usr/share/i3blocks
 }
 
+
 config_rofi () {
     prompt $(func_name)
 
@@ -284,12 +302,14 @@ config_rofi () {
     ln -s `realpath rofi/themes` ${local_dir}
 }
 
+
 config_mxmaster () {
     prompt $(func_name)
 
     sudo ln -sf `realpath mx-master/logid.cfg` /etc/
     sudo systemctl restart logid.service
 }
+
 
 config_ipython () {
     prompt $(func_name)
@@ -299,12 +319,14 @@ config_ipython () {
     ln -sf `realpath ipython/ipython_config.py` $cfg_dir
 }
 
+
 config_htop () {
     prompt $(func_name)
 
     cfg_dir=~/.config/htop
     rm -rf $cfg_dir && ln -s `realpath htop` $cfg_dir
 }
+
 
 config_git () {
     prompt $(func_name)
@@ -320,11 +342,13 @@ config_git () {
     set +x
 }
 
+
 config_firefox () {
     prompt $(func_name)
 
     cd firefox && python patch.py && cd -
 }
+
 
 config_cinnamon () {
     prompt $(func_name)
@@ -337,6 +361,7 @@ config_cinnamon () {
     sudo vim ${js_dir}/windowManager.js
 }
 
+
 config_gestures () {
     prompt $(func_name)
 
@@ -345,6 +370,7 @@ config_gestures () {
     sudo ln -s `realpath gestures/${conf}` /etc/${conf}
     ln -s `realpath gestures/${conf}.home` ~/.config/${conf}
 }
+
 
 config_symlinks () {
     prompt $(func_name)
@@ -362,15 +388,15 @@ config_symlinks () {
     xbindkeys --poll-rc
 }
 
+
 get_configs () {
     grep -oE "^config_[a-z0-9_]+" $0 | sed 's/config_//g' | sort
 }
 
 help () {
-    echo -e "Usage: $0 --all OR $0 <name>\n"
+    echo -e "Usage: $0 <foo> <foo-args>\n"
     echo "Can configure the following:" && get_configs
 }
-
 
 case "$1" in
     ""|--help|-h)
@@ -380,10 +406,7 @@ case "$1" in
         get_configs
         ;;
     *)
-        for item in "$@"
-        do
-            echo $(get_configs) | grep -qw $item
-            if [ $? -eq 0 ]; then config_$item; else red_prompt "No config for $item"; fi
-        done
+        echo $(get_configs) | grep -qw $1;
+        [ $? -eq 0 ] && config_$1 ${@:2} || red_prompt "No config for $1";
         ;;
 esac
