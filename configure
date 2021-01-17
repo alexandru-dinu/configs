@@ -66,19 +66,29 @@ config_bash () {
     cp bash/.bashrc ~/
 }
 
-config_vim () {
-    prompt $(func_name)
+_do_vim () {
+    srcdir="$1"
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
 
-    ln -s `realpath vim/.vimrc` ~/.vimrc
-    for d in `ls -d vim/*`
+    ln -s `realpath $srcdir/.vimrc` ~/.vimrc
+    for d in `ls -d $srcdir/*`
     do
         ln -s `realpath $d` ~/.vim
     done
 
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
+}
+
+config_vim () {
+    prompt $(func_name)
+    _do_vim vim
+}
+
+config_vim_minimal () {
+    prompt $(func_name)
+    _do_vim vim-minimal
 }
 
 config_ghci () {
@@ -353,7 +363,7 @@ config_symlinks () {
 }
 
 get_configs () {
-    grep -oE "^config_[a-z0-9]+" $0 | cut -d'_' -f2 | sort
+    grep -oE "^config_[a-z0-9_]+" $0 | sed 's/config_//g' | sort
 }
 
 help () {
