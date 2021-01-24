@@ -53,7 +53,7 @@ set t_vb=
 set tm=500
 
 set ttimeoutlen=0
-set updatetime=750
+set updatetime=500
 
 " vimdiff
 if &diff

@@ -19,6 +19,9 @@ Plugin 'tpope/vim-commentary'
 call vundle#end()
 " Vundle END
 
+" nerdtree
+let NERDTreeShowHidden = 1
+
 " vimtex
 let g:tex_flavor='latex'
 
@@ -26,6 +29,14 @@ let g:tex_flavor='latex'
 let g:UltiSnipsExpandTrigger       = "<tab>"
 let g:UltiSnipsJumpForwardTrigger  = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" gitgutter (only enable in repositories)
+let g:gitgutter_enabled = 0
+let g:gitgutter_map_keys = 0
+let is_git = system("cd $(dirname " . expand("%:p") . ") && git ls-files --error-unmatch " . expand("%:p") . " && cd -")
+if v:shell_error == 0
+    let g:gitgutter_enabled = 1
+endif
 
 " airline
 let g:airline_theme                                      = 'distinguished'
@@ -45,26 +56,15 @@ let g:airline#extensions#hunks#enabled                   = 1
 let g:airline#extensions#searchcount#enabled             = 0
 let g:airline#extensions#wordcount#formatter#default#fmt = '%s W'
 let g:airline_mode_map = {
-      \ '__': '-',
-      \ 'n' : 'N',
-      \ 'i' : 'I',
-      \ 'R' : 'R',
-      \ 'c' : 'C',
-      \ 'v' : 'V',
-      \ 'V' : 'VL',
-      \ '': 'VB',
-      \ 's' : 'S',
-      \ 'S' : 'S',
-      \ '': 'S',
-      \ }
-
-" nerdtree
-let NERDTreeShowHidden = 1
-
-" gitgutter (only enable in repositories)
-let g:gitgutter_enabled = 0
-let g:gitgutter_map_keys = 0
-let is_git = system("git ls-files --error-unmatch " . expand('%:p'))
-if v:shell_error == 0
-    let g:gitgutter_enabled = 1
-endif
+            \ '__': '-',
+            \ 'n' : 'N',
+            \ 'i' : 'I',
+            \ 'R' : 'R',
+            \ 'c' : 'C',
+            \ 'v' : 'V',
+            \ 'V' : 'VL',
+            \ '': 'VB',
+            \ 's' : 'S',
+            \ 'S' : 'S',
+            \ '': 'S',
+            \ }
