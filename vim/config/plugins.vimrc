@@ -1,4 +1,3 @@
-" Vundle START
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,13 +16,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 
 call vundle#end()
-" Vundle END
 
 " nerdtree
 let NERDTreeShowHidden = 1
 
 " vimtex
-let g:tex_flavor='latex'
+let g:tex_flavor = 'latex'
 
 " ultisnips
 let g:UltiSnipsExpandTrigger       = "<tab>"
@@ -31,7 +29,7 @@ let g:UltiSnipsJumpForwardTrigger  = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " gitgutter (only enable in repositories)
-let g:gitgutter_enabled = 0
+let g:gitgutter_enabled  = 0
 let g:gitgutter_map_keys = 0
 let is_git = system("cd $(dirname " . expand("%:p") . ") && git ls-files --error-unmatch " . expand("%:p") . " && cd -")
 if v:shell_error == 0
