@@ -69,29 +69,19 @@ config_bash () {
 }
 
 
-_do_vim () {
-    [ "$1" = "normal" ] && srcdir="vim" || srcdir="vim-minimal";
+config_vim () {
+    prompt $(func_name)
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
+    ln -s `realpath vim/.vimrc` ~/
 
-    ln -s `realpath $srcdir/.vimrc` ~/.vimrc
-    for d in `ls -d $srcdir/*`
+    for d in `ls -d vim/*`
     do
-        ln -s `realpath $d` ~/.vim
+        ln -s `realpath $d` ~/.vim/
     done
 
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
-}
-
-config_vim () {
-    if [[ "$1" != "minimal" && "$1" != "normal" ]]; then
-        red_prompt "specify 'minimal' or 'normal'"
-        exit 1
-    fi
-
-    prompt "$(func_name): $1"
-    _do_vim "$1"
 }
 
 
