@@ -1,6 +1,4 @@
 set nocompatible
-filetype off
-
 set encoding=utf8
 set shortmess+=I     " disable startup message
 set shortmess-=S     " show search count
