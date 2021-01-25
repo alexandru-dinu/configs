@@ -30,7 +30,8 @@ vnoremap <silent> il :<C-U>normal ^vg_<CR>
 omap     <silent> il :normal      vil<CR>
 
 " copy last yanked text to clipboard
-nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
+"nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
+vmap <C-c> y:Oscyank<CR>
 
 " substitute all occurrences of the word under the cursor
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/

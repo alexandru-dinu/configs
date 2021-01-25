@@ -4,6 +4,7 @@ call vundle#begin()
 
 " Plugins
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'fcpg/vim-osc52'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
