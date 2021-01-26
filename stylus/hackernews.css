@@ -8,6 +8,7 @@
     * {
         color: #93A1A1 !important;
         background-color: #002b36 !important;
+        font-family: "Fira Code" !important;
     }
     body > center > table > tbody > tr:first-child * {
         background-color: #073642 !important;
@@ -35,7 +36,8 @@
     a:hover span {
         background: #073642 !important;
     }
-    .comment, .fatitem {
+    .comment,
+    .fatitem {
         max-width: 768px;
         font-size: 10pt;
     }
