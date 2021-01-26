@@ -1,0 +1,26 @@
+/* ==UserStyle==
+@name           Wikipedia
+@namespace      github.com/alexandru-dinu/gizmos
+@version        1.0.0
+@description    Wikipedia style
+@author         Alexandru Dinu
+==/UserStyle== */
+@-moz-document domain("wikipedia.org") {
+    :root {
+        --width: 60%;
+    }
+    body {
+        max-width: var(--width);
+        margin: 0 auto;
+    }
+    #mw-head {
+        max-width: var(--width);
+        right: inherit;
+    }
+    #mw-panel {
+        left: inherit;
+    }
+    #mw-content-text p {
+        text-align: justify;
+    }
+}
