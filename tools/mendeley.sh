@@ -8,12 +8,12 @@ DESKTOP_FILE="$DESKTOP_PATH/mendeleydesktop.desktop"
 MENDELEYDESKTOP_BIN="$HOME/.local/share/mendeleydesktop"
 
 if [ ! -d "$DESKTOP_PATH" ]; then
-	mkdir -p "$DESKTOP_PATH"
+    mkdir -p "$DESKTOP_PATH"
 fi
 
 if [ ! -f "$1" ]; then
-	echo "Mendeley Desktop binary '$1' does not exist"
-	exit 1
+    echo "Mendeley Desktop binary '$1' does not exist"
+    exit 1
 fi
 
 # create symlink from fixed location to last-used Mendeley Desktop
