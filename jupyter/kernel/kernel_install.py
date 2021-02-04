@@ -1,31 +1,36 @@
-import os
+import argparse
 import json
 import shutil
-import argparse
 from pathlib import Path
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--python_path',  type=str, required=True)
-parser.add_argument('--display_name', type=str, required=True)
-parser.add_argument('--kernel_dir',   type=str, required=True)
+parser.add_argument("--python_path", type=str, required=True)
+parser.add_argument("--display_name", type=str, required=True)
+parser.add_argument("--kernel_dir", type=str, required=True)
 args = parser.parse_args()
 
-home = Path(os.environ['HOME'])
+kernel_dir = Path.home() / "anaconda3/share/jupyter/kernels" / args.kernel_dir
+kernel_dir.mkdir(exist_ok=False)
 
-kernel_dir = home / 'anaconda3/share/jupyter/kernels' / args.kernel_dir
-os.makedirs(kernel_dir, exist_ok=False)
+kernel = json.dumps(
+    {
+        "argv": [
+            args.python_path,
+            "-m",
+            "ipykernel_launcher",
+            "-f",
+            "{connection_file}",
+        ],
+        "display_name": args.display_name,
+        "language": "python",
+    }
+)
 
-kernel = json.dumps({
-    "argv"        : [args.python_path, "-m", "ipykernel_launcher", "-f", "{connection_file}"],
-    "display_name": args.display_name,
-    "language"    : "python"
-})
-
-with open(kernel_dir / 'kernel.json', 'wt') as fp:
+with open(kernel_dir / "kernel.json", "wt") as fp:
     fp.write(kernel)
 
-for logo in ['logo-32x32.png', 'logo-64x64.png']:
+for logo in ["logo-32x32.png", "logo-64x64.png"]:
     shutil.copyfile(logo, kernel_dir / logo)
 
-print('Kernel installed.')
-print('Do not forget to run `pip install --upgrade ipykernel` in the new environment.')
+print("Kernel installed.")
+print("Do not forget to run `pip install --upgrade ipykernel` in the new environment.")
