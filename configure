@@ -346,7 +346,7 @@ get_configs()  {
 }
 
 help()  {
-    echo -e "Usage: $0 <foo> <foo-args>\n"
+    echo -e "Usage: $0 <foo>\n"
     echo "Can configure the following:" && get_configs
 }
 
