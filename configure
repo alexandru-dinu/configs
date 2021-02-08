@@ -1,20 +1,20 @@
 #!/bin/bash
 
-green=`tput setaf 2`
-red=`tput setaf 1`
-reset=`tput sgr0`
+green=$(tput setaf 2)
+red=$(tput setaf 1)
+reset=$(tput sgr0)
 
-prompt () {
+prompt()  {
     echo -e "${green}> $1${reset}"
 }
 
-red_prompt () {
+red_prompt()  {
     echo -e "${red}> $1${reset}"
 }
 
 realpath() {
-    if [[ $(uname -s) = 'Darwin' ]]; then
-        [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+    if [[ $(uname -s) == 'Darwin' ]]; then
+        [[ $1 == /* ]] && echo "$1" || echo "$PWD/${1#./}"
     else
         /usr/bin/realpath "$1"
     fi
@@ -24,8 +24,7 @@ func_name() {
     echo ${FUNCNAME[1]} | cut -d'_' -f2
 }
 
-
-config_zsh () {
+config_zsh()  {
     prompt $(func_name)
 
     local plugin_dir=~/.oh-my-zsh/custom/plugins
@@ -61,87 +60,76 @@ config_zsh () {
     # conda init zsh
 }
 
-
-config_bash () {
+config_bash()  {
     prompt $(func_name)
 
     cp bash/.bashrc ~/
 }
 
-
-config_vim () {
+config_vim()  {
     prompt $(func_name)
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
-    ln -s `realpath vim/.vimrc` ~/
+    ln -s $(realpath vim/.vimrc) ~/
 
-    for d in `ls -d vim/*`
-    do
-        ln -s `realpath $d` ~/.vim/
+    for d in $(ls -d vim/*); do
+        ln -s $(realpath $d) ~/.vim/
     done
 
     git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 }
 
-
-config_ghci () {
+config_ghci()  {
     prompt $(func_name)
 
     rm -f ~/.ghci
-    ln -s `realpath ghci/.ghci` ~/.ghci
+    ln -s $(realpath ghci/.ghci) ~/.ghci
     chmod go-w ~/.ghci
 }
 
-
-config_ruby () {
+config_ruby()  {
     prompt $(func_name)
 
     gem install irbtools
 
     rm -f ~/.irbrc
-    ln -s `realpath ruby/.irbrc` ~/.irbrc
+    ln -s $(realpath ruby/.irbrc) ~/.irbrc
     chmod go-w ~/.irbrc
 }
 
-
-config_rlang () {
+config_rlang()  {
     prompt $(func_name)
 
     declare -a configs=(".Renviron" ".Rprofile")
-    for f in "${configs[@]}";
-    do
-        rm -f ~/$f && ln -s `realpath r-lang/$f` ~/
+    for f in "${configs[@]}"; do
+        rm -f ~/$f && ln -s $(realpath r-lang/$f) ~/
     done
 }
 
-
-config_gdb () {
+config_gdb()  {
     prompt $(func_name)
 
     rm -rf ~/peda.git ~/.gdbinit
     git clone --depth=1 https://github.com/longld/peda.git ~/peda.git
-    ln -s `realpath gdb/.gdbinit` ~/.gdbinit
+    ln -s $(realpath gdb/.gdbinit) ~/.gdbinit
 }
 
-
-config_tmux () {
+config_tmux()  {
     prompt $(func_name)
 
     rm -f ~/.tmux.conf
-    ln -s `realpath tmux/.tmux.conf` ~/.tmux.conf
+    ln -s $(realpath tmux/.tmux.conf) ~/.tmux.conf
 }
 
-
-config_zathura () {
+config_zathura()  {
     prompt $(func_name)
 
     rm -rf ~/.config/zathura
-    ln -s `realpath zathura` ~/.config/
+    ln -s $(realpath zathura) ~/.config/
 }
 
-
-config_vscode () {
+config_vscode()  {
     prompt $(func_name)
 
     cfg_dir=~/.config/Code/User
@@ -152,9 +140,8 @@ config_vscode () {
 
     declare -a configs=("keybindings.json" "settings.json")
 
-    for c in "${configs[@]}"
-    do
-        ln -s `realpath vscode/$c` $cfg_dir/
+    for c in "${configs[@]}"; do
+        ln -s $(realpath vscode/$c) $cfg_dir/
     done
 
     declare -a vscode_exts=(
@@ -170,12 +157,10 @@ config_vscode () {
         "ms-vscode-remote.remote-ssh"
     )
 
-    for ext in "${vscode_exts[@]}"
-    do
+    for ext in "${vscode_exts[@]}"; do
         code --install-extension $ext
     done
 }
-
 
 config_pycharm() {
     prompt $(func_name)
@@ -184,19 +169,16 @@ config_pycharm() {
 
     echo "Found $cfg_dir"
 
-    for d in `ls jetbrains/pycharm | grep -v options`
-    do
+    for d in $(ls jetbrains/pycharm | grep -v options); do
         rm -rf $cfg_dir/$d
-        ln -s `realpath jetbrains/pycharm/$d` $cfg_dir/$d
+        ln -s $(realpath jetbrains/pycharm/$d) $cfg_dir/$d
     done
 
-    for o in `ls jetbrains/pycharm/options`
-    do
+    for o in $(ls jetbrains/pycharm/options); do
         rm -rf $cfg_dir/options/$o
-        ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/options/$o
+        ln -s $(realpath jetbrains/pycharm/options/$o) $cfg_dir/options/$o
     done
 }
-
 
 config_idea() {
     prompt $(func_name)
@@ -205,53 +187,46 @@ config_idea() {
 
     echo "Found $cfg_dir"
 
-    for d in `ls jetbrains/idea | grep -v options`
-    do
+    for d in $(ls jetbrains/idea | grep -v options); do
         rm -rf $cfg_dir/config/$d
-        ln -s `realpath jetbrains/pycharm/$d` $cfg_dir/config/$d
+        ln -s $(realpath jetbrains/pycharm/$d) $cfg_dir/config/$d
     done
 
-    for o in `ls jetbrains/pycharm/options`
-    do
+    for o in $(ls jetbrains/pycharm/options); do
         rm -rf $cfg_dir/config/options/$o
-        ln -s `realpath jetbrains/pycharm/options/$o` $cfg_dir/config/options/$o
+        ln -s $(realpath jetbrains/pycharm/options/$o) $cfg_dir/config/options/$o
     done
 }
 
-
-config_conda () {
+config_conda()  {
     prompt $(func_name)
 
-    ln -sf `realpath conda/.condarc` ~/.condarc
+    ln -sf $(realpath conda/.condarc) ~/.condarc
 }
 
-
-config_jupyter () {
+config_jupyter()  {
     prompt $(func_name)
 
-    ln -sf `realpath jupyter/custom` ~/.jupyter
-    ln -sf `realpath jupyter/lab/user-settings` ~/.jupyter/lab
+    ln -sf $(realpath jupyter/custom) ~/.jupyter
+    ln -sf $(realpath jupyter/lab/user-settings) ~/.jupyter/lab
 }
 
-
-config_guake () {
+config_guake()  {
     prompt $(func_name)
 
-    dconf load /apps/guake/ < terminals/guake.dconf
+    dconf load /apps/guake/ <terminals/guake.dconf
 }
 
-
-config_terminator () {
+config_terminator()  {
     prompt $(func_name)
 
     cfg_dir=~/.config/terminator
 
     rm -rf $cfg_dir && mkdir -p $cfg_dir
-    ln -s `realpath terminals/terminator.settings` $cfg_dir/config
+    ln -s $(realpath terminals/terminator.settings) $cfg_dir/config
 }
 
-
-config_i3 () {
+config_i3()  {
     prompt $(func_name)
 
     rm -rf ~/.config/i3 ~/.config/compton
@@ -259,66 +234,59 @@ config_i3 () {
 
     declare -a configs=("config" "i3status.conf" "i3blocks.conf")
 
-    for c in "${configs[@]}"
-    do
-        ln -s `realpath i3/$c` ~/.config/i3/
+    for c in "${configs[@]}"; do
+        ln -s $(realpath i3/$c) ~/.config/i3/
     done
 
-    ln -s `realpath i3/compton.conf` ~/.config/compton/config
+    ln -s $(realpath i3/compton.conf) ~/.config/compton/config
 
-    for b in $(ls i3/bin)
-    do
-        sudo cp --remove-destination i3/bin/$b /usr/bin/ &&
-        sudo chown $USER:$USER /usr/bin/$b &&
-        sudo chmod +x /usr/bin/$b
+    for b in $(ls i3/bin); do
+        sudo cp --remove-destination i3/bin/$b /usr/bin/ \
+                                                         && sudo chown $USER:$USER /usr/bin/$b \
+                                           && sudo chmod +x /usr/bin/$b
     done
 
     # remove default i3blocks dir
     sudo rm -rf /usr/share/i3blocks
 }
 
-
-config_rofi () {
+config_rofi()  {
     prompt $(func_name)
 
     cfg_dir=~/.config/rofi
     local_dir=~/.local/share/rofi/
 
     rm -rf ${cfg_dir} && mkdir -p ${cfg_dir}
-    ln -s `realpath rofi/rofi.conf` ${cfg_dir}/config
+    ln -s $(realpath rofi/rofi.conf) ${cfg_dir}/config
 
     sudo rm -rf /usr/share/rofi
     sudo rm -rf ${local_dir} && mkdir -p ${local_dir}
-    ln -s `realpath rofi/themes` ${local_dir}
+    ln -s $(realpath rofi/themes) ${local_dir}
 }
 
-
-config_mxmaster () {
+config_mxmaster()  {
     prompt $(func_name)
 
-    sudo ln -sf `realpath mx-master/logid.cfg` /etc/
+    sudo ln -sf $(realpath mx-master/logid.cfg) /etc/
     sudo systemctl restart logid.service
 }
 
-
-config_ipython () {
+config_ipython()  {
     prompt $(func_name)
 
     cfg_dir=~/.ipython/profile_default
     mkdir -p $cfg_dir
-    ln -sf `realpath ipython/ipython_config.py` $cfg_dir
+    ln -sf $(realpath ipython/ipython_config.py) $cfg_dir
 }
 
-
-config_htop () {
+config_htop()  {
     prompt $(func_name)
 
     cfg_dir=~/.config/htop
-    rm -rf $cfg_dir && ln -s `realpath htop` $cfg_dir
+    rm -rf $cfg_dir && ln -s $(realpath htop) $cfg_dir
 }
 
-
-config_git () {
+config_git()  {
     prompt $(func_name)
 
     set -x
@@ -332,71 +300,65 @@ config_git () {
     set +x
 }
 
-
-config_firefox () {
+config_firefox()  {
     prompt $(func_name)
 
     cd firefox && python patch.py && cd -
 }
 
-
-config_cinnamon () {
+config_cinnamon()  {
     prompt $(func_name)
 
     js_dir="/usr/share/cinnamon/js/ui"
 
-    dconf load /org/cinnamon/ < ./cinnamon/cinnamon.dconf
+    dconf load /org/cinnamon/ <./cinnamon/cinnamon.dconf
 
     sudo vim ${js_dir}/workspacesView.js
     sudo vim ${js_dir}/windowManager.js
 }
 
-
-config_gestures () {
+config_gestures()  {
     prompt $(func_name)
 
     conf="libinput-gestures.conf"
 
-    sudo ln -s `realpath gestures/${conf}` /etc/${conf}
-    ln -s `realpath gestures/${conf}.home` ~/.config/${conf}
+    sudo ln -s $(realpath gestures/${conf}) /etc/${conf}
+    ln -s $(realpath gestures/${conf}.home) ~/.config/${conf}
 }
 
-
-config_symlinks () {
+config_symlinks()  {
     prompt $(func_name)
 
     mkdir -p ~/.local/bin
 
-    for f in `ls tools/bin/*`;
-    do
+    for f in $(ls tools/bin/*); do
         prompt "Adding symlink to ~/.local/bin/: $f"
-        ln -sf `realpath ${f}` ~/.local/bin
-    done;
+        ln -sf $(realpath ${f}) ~/.local/bin
+    done
 
     prompt "Adding symlink to ~/: .xbindkeysrc"
-    ln -sf `realpath tools/.xbindkeysrc` ~/
+    ln -sf $(realpath tools/.xbindkeysrc) ~/
     xbindkeys --poll-rc
 }
 
-
-get_configs () {
+get_configs()  {
     grep -oE "^config_[a-z0-9_]+" $0 | sed 's/config_//g' | sort
 }
 
-help () {
+help()  {
     echo -e "Usage: $0 <foo> <foo-args>\n"
     echo "Can configure the following:" && get_configs
 }
 
 case "$1" in
-    ""|--help|-h)
+    "" | --help | -h)
         help
         ;;
-    --list|-l)
+    --list | -l)
         get_configs
         ;;
     *)
-        echo $(get_configs) | grep -qw $1;
-        [ $? -eq 0 ] && config_$1 ${@:2} || red_prompt "No config for $1";
+        echo $(get_configs) | grep -qw $1
+        [ $? -eq 0 ] && config_$1 ${@:2} || red_prompt "No config for $1"
         ;;
 esac
