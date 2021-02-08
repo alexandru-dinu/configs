@@ -3,18 +3,19 @@
 # mostly used for the status-bar in tmux
 
 case "$1" in
-    --host)
-        echo $(whoami) @ $(hostname)
-        ;;
-    --ram)
-        echo $(free -mh | awk '(NR==2){print $7}' | tr -d 'i')
-        ;;
-    --ssd)
-        echo $(df | awk '(NR>1){t+=$4} END {printf "%dG", t/1024/1024}')
-        ;;
-    --load)
-        echo $(cut -d' ' -f1-3 /proc/loadavg)
-        ;;
-    *)
-        ;;
+--host)
+	echo $(whoami) @ $(hostname)
+	;;
+--ram)
+	echo $(free -mh | awk '(NR==2){print $7}' | tr -d 'i')
+	;;
+--ssd)
+	echo $(df /dev/nvme0n1p4 /dev/sda1 --output=avail |
+		awk '(NR>1){t+=$1} END {printf "%dG", t/1024/1024}')
+	;;
+--load)
+	echo $(cut -d' ' -f1-3 /proc/loadavg)
+	;;
+*) ;;
+
 esac
