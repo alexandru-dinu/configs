@@ -1,4 +1,4 @@
-import os
+from pathlib import Path
 
 
 class Setup:
@@ -13,7 +13,7 @@ class Setup:
         fp.write("export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH\n")
 
 
-with open(os.path.join(os.environ["HOME"], ".zshenv"), "at") as fp:
+with open(Path.home() / ".zshenv", "at") as fp:
     opts = [x for x in dir(Setup) if x.startswith("set_")]
 
     for opt in opts:
