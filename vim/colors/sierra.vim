@@ -118,7 +118,3 @@ hi SpecialKey   guifg=#3a3a3a guibg=NONE    gui=NONE ctermfg=247  ctermbg=NONE c
 
 "make bg transparent
 hi Normal guibg=NONE ctermbg=NONE
-
-"darker cursorline in insert mode
-au InsertEnter * hi CursorLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
-au InsertLeave * hi CursorLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
