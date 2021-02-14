@@ -38,25 +38,29 @@ endif
 
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'powerlineish',
+    \ 'colorscheme': 'srcery_drk',
     \ 'active': {
           \   'right': [ [ 'whitespace' ],
           \              [ 'lineinfo', 'percent' ],
           \              [ 'filetype', 'fileformat', 'fileencoding'  ] ]
     \ },
-    \ 'component_expand': {'whitespace': 'lightline#whitespace#check'},
-    \ 'component_type': {'whitespace': 'warning'},
+    \ 'component_expand': {
+    \     'whitespace': 'lightline#whitespace#check',
+    \ },
+    \ 'component_type': {
+    \     'whitespace': 'error',
+    \ },
     \ 'mode_map': {
         \ 'n' : 'N',
         \ 'i' : 'I',
         \ 'R' : 'R',
         \ 'v' : 'V',
         \ 'V' : 'VL',
-        \ "": 'VB',
+        \ '': 'VB',
         \ 'c' : 'C',
         \ 's' : 'S',
         \ 'S' : 'SL',
-        \ "": 'SB',
+        \ '': 'SB',
         \ 't': 'T',
         \ },
     \ }
