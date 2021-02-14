@@ -1,14 +1,14 @@
 set nocompatible
-set encoding=utf8
-
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 set shortmess+=I
 set shortmess-=S
 set laststatus=2
 set noshowmode
+
+set encoding=utf8
 set fileformats=unix,dos,mac
 set virtualedit=all
 set history=1000
@@ -63,7 +63,7 @@ if &diff
     map [ [c
 endif
 
-" configure backspace so it acts as it should act
+" configure backspace so it acts as it should
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
