@@ -40,27 +40,44 @@ endif
 let g:lightline = {
     \ 'colorscheme': 'srcery_drk',
     \ 'active': {
-          \   'right': [ [ 'whitespace' ],
-          \              [ 'lineinfo', 'percent' ],
-          \              [ 'filetype', 'fileformat', 'fileencoding'  ] ]
+    \ 	'left': [ [ 'mode', 'paste', 'spell' ],
+    \             [ 'readonly', 'filename', 'modified' ] ],
+    \   'right': [ [ 'whitespace' ],
+    \              [ 'lineinfo' ],
+    \              [ 'filetype', 'fileformat', 'fileencoding'  ] ],
+    \ },
+    \ 'component_function': {
+    \   'fileencoding': "SimpleFileencoding",
+    \   'lineinfo': "SimpleLineinfo",
     \ },
     \ 'component_expand': {
-    \     'whitespace': 'lightline#whitespace#check',
+    \   'whitespace': 'lightline#whitespace#check',
     \ },
     \ 'component_type': {
-    \     'whitespace': 'error',
+    \   'whitespace': 'error',
     \ },
     \ 'mode_map': {
-        \ 'n' : 'N',
-        \ 'i' : 'I',
-        \ 'R' : 'R',
-        \ 'v' : 'V',
-        \ 'V' : 'VL',
-        \ '': 'VB',
-        \ 'c' : 'C',
-        \ 's' : 'S',
-        \ 'S' : 'SL',
-        \ '': 'SB',
-        \ 't': 'T',
-        \ },
+    \     'n' : 'N',
+    \     'i' : 'I',
+    \     'R' : 'R',
+    \     'v' : 'V',
+    \     'V' : 'VL',
+    \     '': 'VB',
+    \     'c' : 'C',
+    \     's' : 'S',
+    \     'S' : 'SL',
+    \     '': 'SB',
+    \     't': 'T',
+    \   },
     \ }
+
+function! SimpleFileencoding() abort
+    let l:enc = (&fenc !=# '' ? &fenc : &enc)
+    return (enc == 'utf-8' ? '' : enc)
+endfunction
+
+function! SimpleLineinfo() abort
+    let l:li = line('.') . ':' . col('.') . '/' . line('$')
+    let l:pc = string(100 * line('.') / line('$'))
+    return li . ' (' . pc . '%)'
+endfunction
