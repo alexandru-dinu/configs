@@ -91,7 +91,3 @@ hi VertSplit        guifg=#3a3a3a guibg=#262626 gui=NONE    ctermfg=242  ctermbg
 hi LineNr           guifg=#4e4e4e guibg=#1c1c1c gui=NONE    ctermfg=102  ctermbg=NONE cterm=NONE
 hi NonText          guifg=#3a3a3a guibg=NONE    gui=NONE    ctermfg=247  ctermbg=NONE cterm=NONE
 hi SpecialKey       guifg=#3a3a3a guibg=NONE    gui=NONE    ctermfg=247  ctermbg=NONE cterm=NONE
-
-"darker cursorline in insert mode
-au InsertEnter * hi CursorLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
-au InsertLeave * hi CursorLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE

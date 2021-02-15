@@ -38,7 +38,7 @@ endif
 
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'srcery_drk',
+    \ 'colorscheme': 'powerline',
     \ 'active': {
     \ 	'left': [ [ 'mode', 'paste', 'spell' ],
     \             [ 'readonly', 'filename', 'modified' ] ],
@@ -54,7 +54,7 @@ let g:lightline = {
     \   'whitespace': 'lightline#whitespace#check',
     \ },
     \ 'component_type': {
-    \   'whitespace': 'error',
+    \   'whitespace': 'warning',
     \ },
     \ 'mode_map': {
     \     'n' : 'N',
