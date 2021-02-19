@@ -4,8 +4,12 @@ from pathlib import Path
 class Setup:
     @staticmethod
     def set_anaconda3(fp):
-        fp.write("export PATH=~/anaconda3/bin:$PATH\n")
-        fp.write("export NODE_PATH=$HOME/anaconda3/lib/node_modules\n")
+        fp.write("export PATH=$HOME/anaconda3/bin:$PATH\n")
+
+    @staticmethod
+    def set_nodejs(fp):
+        fp.write("export PATH=$HOME/.node_modules/bin:$PATH\n")
+        fp.write("export npm_config_prefix=$HOME/.node_modules\n")
 
     @staticmethod
     def set_cuda(fp):
