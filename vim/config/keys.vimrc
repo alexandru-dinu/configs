@@ -5,9 +5,6 @@ let g:mapleader = " "
 " remap vim 0 to first non-blank character
 map 0 ^
 
-" save file
-nmap <leader>w :w!<CR>
-
 " start interactive EasyAlign in visual mode (e.g. vipea)
 xmap ea <Plug>(EasyAlign)
 
