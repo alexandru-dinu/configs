@@ -1,92 +1,55 @@
 set nocompatible
-set nobackup
-set nowritebackup
-set noswapfile
+set encoding=utf-8
+set fileformats=unix,dos
+set history=10000
 
 set shortmess+=I
 set shortmess-=S
-set laststatus=2
-set noshowmode
-
-set encoding=utf8
-set fileformats=unix,dos,mac
-set virtualedit=all
-set history=1000
-set scrolloff=10
-set cmdheight=1
 
 set number
 set relativenumber
+set scrolloff=10
+
+set laststatus=2
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smarttab
 
 set autoread
-set hidden
-set showmatch
-set mat=2
 
-" use case if any caps are used
 set ignorecase
 set smartcase
-
-" use spaces instead of tabs
-set expandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
-
-set magic
-set hlsearch
-set incsearch
-set lazyredraw
-
 set autoindent
 set smartindent
-set wrap
 
-" linebreak on 500 characters
-set linebreak
-set textwidth=500
+set hlsearch
+set incsearch
 
-" no annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
+set hidden
+set lazyredraw
 set ttimeoutlen=0
 set updatetime=500
 
-filetype plugin indent on
-
-" vimdiff
-if &diff
-    map ] ]c
-    map [ [c
-endif
-
-" configure backspace so it acts as it should
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
-
-" set whitespace type
-set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
-
-" return to last edit position when opening files
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" delete trailing whitespace on save
-autocmd BufWrite * :call DeleteTrailingWS()
+set noshowmode
+set virtualedit=all
 
 " better searching
 set path+=**
-set hidden
 set wildmenu
 set wildignore=*.o,*~,*.pyc
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 
-" specify the behavior when switching between buffers
-set switchbuf=useopen,usetab,newtab
+set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
-" colorscheme
+filetype plugin indent on
+
+autocmd BufWrite * :call DeleteTrailingWS()
+
+" return to last edit position when opening files
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 set t_Co=256
 set background=dark
 set cursorline
@@ -98,5 +61,4 @@ catch
     colorscheme elflord
 endtry
 
-" enable built-in manpage viewer
 runtime! ftplugin/man.vim
