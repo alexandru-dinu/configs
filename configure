@@ -4,11 +4,11 @@ green=$(tput setaf 2)
 red=$(tput setaf 1)
 reset=$(tput sgr0)
 
-prompt()  {
+prompt() {
     echo -e "${green}> $1${reset}"
 }
 
-red_prompt()  {
+red_prompt() {
     echo -e "${red}> $1${reset}"
 }
 
@@ -24,7 +24,7 @@ func_name() {
     echo ${FUNCNAME[1]} | cut -d'_' -f2
 }
 
-config_zsh()  {
+config_zsh() {
     prompt $(func_name)
 
     local plugin_dir=~/.oh-my-zsh/custom/plugins
@@ -32,8 +32,8 @@ config_zsh()  {
     rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-    cp zsh/.zshrc   ~/
-    cp zsh/.zshenv  ~/
+    cp zsh/.zshrc ~/
+    cp zsh/.zshenv ~/
     cp zsh/.profile ~/
 
     prompt "zshmarks"
@@ -60,13 +60,13 @@ config_zsh()  {
     # conda init zsh
 }
 
-config_bash()  {
+config_bash() {
     prompt $(func_name)
 
     cp bash/.bashrc ~/
 }
 
-config_vim()  {
+config_vim() {
     prompt $(func_name)
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
@@ -91,8 +91,8 @@ config_nvim() {
     rm -rf $cfg_dir $data_dir
     mkdir -p $cfg_dir $data_dir
 
-    ln -s `realpath vim/.vimrc` ~/.config/nvim/init.vim
-    ln -s `realpath vim/colors` $cfg_dir/
+    ln -s $(realpath vim/.vimrc) ~/.config/nvim/init.vim
+    ln -s $(realpath vim/colors) $cfg_dir/
 
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -100,7 +100,7 @@ config_nvim() {
     nvim +PlugInstall +qall
 }
 
-config_ghci()  {
+config_ghci() {
     prompt $(func_name)
 
     rm -f ~/.ghci
@@ -108,7 +108,7 @@ config_ghci()  {
     chmod go-w ~/.ghci
 }
 
-config_ruby()  {
+config_ruby() {
     prompt $(func_name)
 
     gem install irbtools
@@ -118,7 +118,7 @@ config_ruby()  {
     chmod go-w ~/.irbrc
 }
 
-config_rlang()  {
+config_rlang() {
     prompt $(func_name)
 
     declare -a configs=(".Renviron" ".Rprofile")
@@ -127,7 +127,7 @@ config_rlang()  {
     done
 }
 
-config_gdb()  {
+config_gdb() {
     prompt $(func_name)
 
     rm -rf ~/peda.git ~/.gdbinit
@@ -135,21 +135,21 @@ config_gdb()  {
     ln -s $(realpath gdb/.gdbinit) ~/.gdbinit
 }
 
-config_tmux()  {
+config_tmux() {
     prompt $(func_name)
 
     rm -f ~/.tmux.conf
     ln -s $(realpath tmux/.tmux.conf) ~/.tmux.conf
 }
 
-config_zathura()  {
+config_zathura() {
     prompt $(func_name)
 
     rm -rf ~/.config/zathura
     ln -s $(realpath zathura) ~/.config/
 }
 
-config_vscode()  {
+config_vscode() {
     prompt $(func_name)
 
     cfg_dir=~/.config/Code/User
@@ -218,26 +218,26 @@ config_idea() {
     done
 }
 
-config_conda()  {
+config_conda() {
     prompt $(func_name)
 
     ln -sf $(realpath conda/.condarc) ~/.condarc
 }
 
-config_jupyter()  {
+config_jupyter() {
     prompt $(func_name)
 
     ln -sf $(realpath jupyter/custom) ~/.jupyter
     ln -sf $(realpath jupyter/lab/user-settings) ~/.jupyter/lab
 }
 
-config_guake()  {
+config_guake() {
     prompt $(func_name)
 
     dconf load /apps/guake/ <terminals/guake.dconf
 }
 
-config_terminator()  {
+config_terminator() {
     prompt $(func_name)
 
     cfg_dir=~/.config/terminator
@@ -246,7 +246,7 @@ config_terminator()  {
     ln -s $(realpath terminals/terminator.settings) $cfg_dir/config
 }
 
-config_i3()  {
+config_i3() {
     prompt $(func_name)
 
     rm -rf ~/.config/i3 ~/.config/compton
@@ -261,16 +261,16 @@ config_i3()  {
     ln -s $(realpath i3/compton.conf) ~/.config/compton/config
 
     for b in $(ls i3/bin); do
-        sudo cp --remove-destination i3/bin/$b /usr/bin/ \
-                                                         && sudo chown $USER:$USER /usr/bin/$b \
-                                           && sudo chmod +x /usr/bin/$b
+        sudo cp --remove-destination i3/bin/$b /usr/bin/ &&
+            sudo chown $USER:$USER /usr/bin/$b &&
+            sudo chmod +x /usr/bin/$b
     done
 
     # remove default i3blocks dir
     sudo rm -rf /usr/share/i3blocks
 }
 
-config_rofi()  {
+config_rofi() {
     prompt $(func_name)
 
     cfg_dir=~/.config/rofi
@@ -284,14 +284,14 @@ config_rofi()  {
     ln -s $(realpath rofi/themes) ${local_dir}
 }
 
-config_mxmaster()  {
+config_mxmaster() {
     prompt $(func_name)
 
     sudo ln -sf $(realpath mx-master/logid.cfg) /etc/
     sudo systemctl restart logid.service
 }
 
-config_ipython()  {
+config_ipython() {
     prompt $(func_name)
 
     cfg_dir=~/.ipython/profile_default
@@ -299,14 +299,14 @@ config_ipython()  {
     ln -sf $(realpath ipython/ipython_config.py) $cfg_dir
 }
 
-config_htop()  {
+config_htop() {
     prompt $(func_name)
 
     cfg_dir=~/.config/htop
     rm -rf $cfg_dir && ln -s $(realpath htop) $cfg_dir
 }
 
-config_git()  {
+config_git() {
     prompt $(func_name)
 
     set -x
@@ -320,13 +320,13 @@ config_git()  {
     set +x
 }
 
-config_firefox()  {
+config_firefox() {
     prompt $(func_name)
 
     cd firefox && python patch.py && cd -
 }
 
-config_cinnamon()  {
+config_cinnamon() {
     prompt $(func_name)
 
     js_dir="/usr/share/cinnamon/js/ui"
@@ -337,7 +337,7 @@ config_cinnamon()  {
     sudo vim ${js_dir}/windowManager.js
 }
 
-config_gestures()  {
+config_gestures() {
     prompt $(func_name)
 
     conf="libinput-gestures.conf"
@@ -346,7 +346,7 @@ config_gestures()  {
     ln -s $(realpath gestures/${conf}.home) ~/.config/${conf}
 }
 
-config_symlinks()  {
+config_symlinks() {
     prompt $(func_name)
 
     mkdir -p ~/.local/bin
@@ -361,24 +361,26 @@ config_symlinks()  {
     xbindkeys --poll-rc
 }
 
-get_configs()  {
+get_configs() {
     grep -oE "^config_[a-z0-9_]+" $0 | sed 's/config_//g' | sort
 }
 
-help()  {
+help() {
     echo -e "Usage: $0 <foo>\n"
     echo "Can configure the following:" && get_configs
 }
 
 case "$1" in
-    "" | --help | -h)
-        help
-        ;;
-    --list | -l)
-        get_configs
-        ;;
-    *)
-        echo $(get_configs) | grep -qw $1
-        [ $? -eq 0 ] && config_$1 ${@:2} || red_prompt "No config for $1"
-        ;;
+"" | --help | -h)
+    help
+    ;;
+--list | -l)
+    get_configs
+    ;;
+*)
+    for item in "$@"; do
+        echo $(get_configs) | grep -qw $item
+        if [ $? -eq 0 ]; then config_$item; else red_prompt "No config for $item"; fi
+    done
+    ;;
 esac
