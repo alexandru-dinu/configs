@@ -76,17 +76,28 @@ config_vim()  {
         ln -s $(realpath $d) ~/.vim/
     done
 
-    git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    vim +PlugInstall +qall
 }
 
 config_nvim() {
     prompt $(func_name)
 
     cfg_dir=~/.config/nvim
-    rm -rf $cfg_dir
+    data_dir=~/.local/share/nvim
 
-    ln -s `realpath nvim` $cfg_dir
+    rm -rf $cfg_dir $data_dir
+    mkdir -p $cfg_dir $data_dir
+
+    ln -s `realpath vim/.vimrc` ~/.config/nvim/init.vim
+    ln -s `realpath vim/colors` $cfg_dir/
+
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    nvim +PlugInstall +qall
 }
 
 config_ghci()  {

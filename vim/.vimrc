@@ -1,59 +1,64 @@
-set nocompatible
-set encoding=utf-8
-set fileformats=unix,dos
-set history=10000
+if !has('nvim')
+    set nocompatible
+    set encoding=utf-8
+    set fileformats=unix,dos
+    set history=10000
+    set laststatus=2
+
+    set autoread
+    set autoindent
+    set smarttab
+    set wildmenu
+
+    set hlsearch
+    set incsearch
+
+    set virtualedit=all
+
+    set t_Co=256
+    set background=dark
+    syntax enable
+
+    filetype plugin indent on
+
+    runtime! ftplugin/man.vim
+endif
 
 set shortmess+=I
 set shortmess-=S
+set noshowmode
 
 set number
 set relativenumber
 set scrolloff=10
 
-set laststatus=2
-
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set smarttab
-
-set autoread
 
 set ignorecase
 set smartcase
-set autoindent
 set smartindent
-
-set hlsearch
-set incsearch
 
 set hidden
 set lazyredraw
 set ttimeoutlen=0
 set updatetime=500
 
-set noshowmode
-set virtualedit=all
-
-" better searching
-set path+=**
-set wildmenu
-set wildignore=*.o,*~,*.pyc
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-
+set cursorline
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
-filetype plugin indent on
-
-autocmd BufWrite * :call DeleteTrailingWS()
 
 " return to last edit position when opening files
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-set t_Co=256
-set background=dark
-set cursorline
-syntax enable
+autocmd BufWrite * :call DeleteTrailingWS()
+func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+endfunc
+
 
 try
     colorscheme sierra
@@ -61,26 +66,28 @@ catch
     colorscheme elflord
 endtry
 
-runtime! ftplugin/man.vim
 
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+""" PLUGINS
+if has('nvim')
+    call plug#begin(stdpath('data') . '/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+endif
 
-" Plugins
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'fcpg/vim-osc52'
-Plugin 'itchyny/lightline.vim'
-Plugin 'deponian/vim-lightline-whitespace'
-Plugin 'scrooloose/nerdtree'
-Plugin 'lervag/vimtex'
-Plugin 'sirver/ultisnips'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'junegunn/fzf.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
+Plug 'itchyny/lightline.vim'
+Plug 'deponian/vim-lightline-whitespace'
+Plug 'fcpg/vim-osc52'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'sirver/ultisnips'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+" Plug 'lervag/vimtex'
 
-call vundle#end()
+call plug#end()
+
 
 " nerdtree
 let NERDTreeShowHidden = 1
@@ -112,8 +119,8 @@ let g:lightline = {
     \              [ 'filetype', 'fileformat', 'fileencoding'  ] ],
     \ },
     \ 'component_function': {
-    \   'fileencoding': "SimpleFileencoding",
-    \   'lineinfo': "SimpleLineinfo",
+    \   'fileencoding': "LL_fileencoding",
+    \   'lineinfo': "LL_lineinfo",
     \ },
     \ 'component_expand': {
     \   'whitespace': 'lightline#whitespace#check',
@@ -136,69 +143,35 @@ let g:lightline = {
     \   },
     \ }
 
-function! SimpleFileencoding() abort
+
+function! LL_fileencoding() abort
     let l:enc = (&fenc !=# '' ? &fenc : &enc)
     return (enc == 'utf-8' ? '' : enc)
 endfunction
 
-function! SimpleLineinfo() abort
+
+function! LL_lineinfo() abort
     let l:li = line('.') . ':' . col('.') . '/' . line('$')
     let l:pc = string(100 * line('.') / line('$'))
     return li . ' (' . pc . '%)'
 endfunction
-func! DeleteTrailingWS()
-    exe "normal mz"
-    %s/\s\+$//ge
-    exe "normal `z"
-endfunc
-
-function! VisualSelection() range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
 
 
-" don't close window when deleting a buffer
-command! Bclose call <SID>BufcloseCloseIt()
-
-function! <SID>BufcloseCloseIt()
-    let l:currentBufNum = bufnr("%")
-    let l:alternateBufNum = bufnr("#")
-
-    if buflisted(l:alternateBufNum)
-        buffer #
-    else
-        bnext
-    endif
-
-    if bufnr("%") == l:currentBufNum
-        new
-    endif
-
-    if buflisted(l:currentBufNum)
-        execute("bdelete! ".l:currentBufNum)
-    endif
-endfunction
-
-
-" escape special characters in a string for exact matching.
-" based on http://peterodding.com/code/vim/profile/autoload/xolox/escape.vim
 function! EscapeString (string)
+    " escape special characters in a string for exact matching.
+    " based on http://peterodding.com/code/vim/profile/autoload/xolox/escape.vim
+
     let string=a:string
     let string = escape(string, '^$.*\/~[]')
     let string = substitute(string, '\n', '\\n', 'g')
     return string
 endfunction
 
-" get the current visual block for search and replaces
-" based on https://stackoverflow.com/questions/676600/vim-replace-selected-text/677918#677918
+
 function! GetVisual() range
+    " get the current visual block for search and replaces
+    " based on https://stackoverflow.com/a/677918
+
     " save the current register and clipboard
     let reg_save = getreg('"')
     let regtype_save = getregtype('"')
@@ -220,14 +193,21 @@ function! GetVisual() range
 endfunction
 
 
+function! VisualSelection() range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+
 """ KEY-BINDINGS
-
 nnoremap <Space> <Nop>
-let mapleader   = " "
 let g:mapleader = " "
-
-" remap vim 0 to first non-blank character
-map 0 ^
 
 " start interactive EasyAlign in visual mode (e.g. vipea)
 xmap ea <Plug>(EasyAlign)
@@ -238,31 +218,23 @@ set pastetoggle=<F1>
 " toggle NERDTree
 map <silent> <F2> :NERDTreeToggle<CR>
 
-" run make
-map <F3> :!make<CR>
-
 " toggle whitespace listing
-noremap  <silent> <F4> :set list!<CR>
-inoremap <silent> <F4> <C-o>:set list!<CR>
-cnoremap <silent> <F4> <C-c>:set list!<CR>
-
-" select line from first to last non-ws
-vnoremap <silent> il :<C-U>normal ^vg_<CR>
-omap     <silent> il :normal      vil<CR>
+noremap  <silent> <F3> :set list!<CR>
+inoremap <silent> <F3> <C-o>:set list!<CR>
+cnoremap <silent> <F3> <C-c>:set list!<CR>
 
 " copy last yanked text to clipboard
 "nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
 vmap <C-c> y:Oscyank<CR>
 
 " substitute all occurrences of the word under the cursor
-nnoremap <leader>s :%s/\<<C-r><C-w>\>/
-vnoremap <leader>s <Esc>:%s/<c-r>=GetVisual()<CR>/
+nnoremap <leader>r :%s/\<<C-r><C-w>\>/
+vnoremap <leader>r <Esc>:%s/<c-r>=GetVisual()<CR>/
 
 " disable highlight
 map <silent> <leader><CR> :noh<CR>
 
 " visual mode pressing * or # searches for the current selection
-" from Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
@@ -270,7 +242,7 @@ vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 map <leader>f  :Files<CR>
 map <leader>b  :Buffers<CR>
 map <leader>bl :ls<CR>
-map <leader>bk :Bclose<CR>
+map <leader>bk :bd<CR>
 map <leader>bn :bnext<CR>
 map <leader>bp :bprevious<CR>
 
@@ -280,8 +252,6 @@ map <silent> <leader>to :tabonly<CR>
 map <silent> <leader>tk :tabclose<CR>
 map <silent> <leader>tm :tabmove<CR>
 map <silent> <leader>t<leader> :tabnext<CR>
-
-" opens a new tab with the current buffer's path
 map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
 
 " toggle between this and the last accessed tab
