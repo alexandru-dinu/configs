@@ -80,6 +80,15 @@ config_vim()  {
     vim +PluginInstall +qall
 }
 
+config_nvim() {
+    prompt $(func_name)
+
+    cfg_dir=~/.config/nvim
+    rm -rf $cfg_dir
+
+    ln -s `realpath nvim` $cfg_dir
+}
+
 config_ghci()  {
     prompt $(func_name)
 
