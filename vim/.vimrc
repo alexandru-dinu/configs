@@ -76,14 +76,19 @@ endif
 
 Plug 'itchyny/lightline.vim'
 Plug 'deponian/vim-lightline-whitespace'
-Plug 'fcpg/vim-osc52'
-Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'
-Plug 'sirver/ultisnips'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+
+if !has('nvim')
+    Plug 'fcpg/vim-osc52'
+endif
+
+" Plug 'sirver/ultisnips' " TODO: slow!
+
 " Plug 'lervag/vimtex'
 
 call plug#end()
@@ -224,8 +229,10 @@ inoremap <silent> <F3> <C-o>:set list!<CR>
 cnoremap <silent> <F3> <C-c>:set list!<CR>
 
 " copy last yanked text to clipboard
-"nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
-vmap <C-c> y:Oscyank<CR>
+if !has('nvim')
+    "nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
+    vmap <C-c> y:Oscyank<CR>
+endif
 
 " substitute all occurrences of the word under the cursor
 nnoremap <leader>r :%s/\<<C-r><C-w>\>/
@@ -274,9 +281,10 @@ map <leader>sc z=
 " GitGutter
 nmap <silent> <leader>gg :GitGutterToggle<CR>
 nmap <silent> <leader>gs <Plug>(GitGutterPreviewHunk)
-nmap <silent> <leader>gk :bdelete gitgutter://hunk-preview<CR>
 nmap <silent> <leader>gu <Plug>(GitGutterUndoHunk)
-
+if !has('nvim')
+    nmap <silent> <leader>gk :bdelete gitgutter://hunk-preview<CR>
+endif
 
 """ LANGUAGE-SPECIFIC
 
