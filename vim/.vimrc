@@ -146,23 +146,23 @@ let g:lightline = {
     \   },
     \ }
 
-function! LL_vimtype() abort
+func! LL_vimtype() abort
     return has('nvim') ? 'nvim' : 'vim'
-endfunction
+endfunc
 
-function! LL_fileencoding() abort
+func! LL_fileencoding() abort
     let l:enc = (&fenc !=# '' ? &fenc : &enc)
     return (enc == 'utf-8' ? '' : enc)
-endfunction
+endfunc
 
-function! LL_lineinfo() abort
+func! LL_lineinfo() abort
     let l:li = line('.') . ':' . col('.') . '/' . line('$')
     let l:pc = string(100 * line('.') / line('$'))
     return li . ' (' . pc . '%)'
-endfunction
+endfunc
 
 
-function! EscapeString (string)
+func! EscapeString (string)
     " escape special characters in a string for exact matching.
     " based on http://peterodding.com/code/vim/profile/autoload/xolox/escape.vim
 
@@ -170,10 +170,10 @@ function! EscapeString (string)
     let string = escape(string, '^$.*\/~[]')
     let string = substitute(string, '\n', '\\n', 'g')
     return string
-endfunction
+endfunc
 
 
-function! GetVisual() range
+func! GetVisual() range
     " get the current visual block for search and replaces
     " based on https://stackoverflow.com/a/677918
 
@@ -195,10 +195,10 @@ function! GetVisual() range
     let escaped_selection = EscapeString(selection)
 
     return escaped_selection
-endfunction
+endfunc
 
 
-function! VisualSelection() range
+func! VisualSelection() range
     let l:saved_reg = @"
     execute "normal! vgvy"
 
@@ -207,7 +207,7 @@ function! VisualSelection() range
 
     let @/ = l:pattern
     let @" = l:saved_reg
-endfunction
+endfunc
 
 
 """ KEY-BINDINGS
