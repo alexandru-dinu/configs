@@ -247,7 +247,7 @@ vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
 " buffers
 map <leader>f  :Files<CR>
-map <leader>b  :Buffers<CR>
+map <leader>bs :Buffers<CR>
 map <leader>bl :ls<CR>
 map <leader>bk :bd<CR>
 map <leader>bn :bnext<CR>
