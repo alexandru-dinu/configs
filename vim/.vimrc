@@ -121,11 +121,12 @@ let g:lightline = {
     \             [ 'readonly', 'filename', 'modified' ] ],
     \   'right': [ [ 'whitespace' ],
     \              [ 'lineinfo' ],
-    \              [ 'filetype', 'fileformat', 'fileencoding'  ] ],
+    \              [ 'filetype', 'fileformat', 'fileencoding', 'vimtype'  ] ],
     \ },
     \ 'component_function': {
-    \   'fileencoding': "LL_fileencoding",
-    \   'lineinfo': "LL_lineinfo",
+    \   'fileencoding': 'LL_fileencoding',
+    \   'lineinfo': 'LL_lineinfo',
+    \   'vimtype': 'LL_vimtype',
     \ },
     \ 'component_expand': {
     \   'whitespace': 'lightline#whitespace#check',
@@ -149,11 +150,14 @@ let g:lightline = {
     \ }
 
 
+function! LL_vimtype() abort
+    return has('nvim') ? 'nvim' : 'vim'
+endfunction
+
 function! LL_fileencoding() abort
     let l:enc = (&fenc !=# '' ? &fenc : &enc)
     return (enc == 'utf-8' ? '' : enc)
 endfunction
-
 
 function! LL_lineinfo() abort
     let l:li = line('.') . ':' . col('.') . '/' . line('$')
