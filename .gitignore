@@ -1,6 +1,7 @@
 .vscode/
 .ipynb_checkpoints/
 
+.netrwhist
 .gdb_history
 
 *.py[cod]
