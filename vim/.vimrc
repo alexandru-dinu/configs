@@ -82,13 +82,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
-
 if !has('nvim')
     Plug 'fcpg/vim-osc52'
 endif
-
 " Plug 'sirver/ultisnips' " TODO: slow!
-
 " Plug 'lervag/vimtex'
 
 call plug#end()
@@ -148,7 +145,6 @@ let g:lightline = {
     \     't': 'T',
     \   },
     \ }
-
 
 function! LL_vimtype() abort
     return has('nvim') ? 'nvim' : 'vim'
