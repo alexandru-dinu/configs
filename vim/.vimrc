@@ -118,7 +118,7 @@ let g:lightline = {
     \             [ 'readonly', 'filename', 'modified' ] ],
     \   'right': [ [ 'whitespace' ],
     \              [ 'lineinfo' ],
-    \              [ 'filetype', 'fileformat', 'fileencoding', 'vimtype'  ] ],
+    \              [ 'filetype', 'fileformat', 'fileencoding' ] ],
     \ },
     \ 'component_function': {
     \   'fileencoding': 'LL_fileencoding',
@@ -146,9 +146,9 @@ let g:lightline = {
     \   },
     \ }
 
-func! LL_vimtype() abort
-    return has('nvim') ? 'nvim' : 'vim'
-endfunc
+if has('nvim')
+    let g:lightline.colorscheme = 'seoul256'
+endif
 
 func! LL_fileencoding() abort
     let l:enc = (&fenc !=# '' ? &fenc : &enc)
