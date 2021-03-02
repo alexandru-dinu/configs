@@ -41,6 +41,9 @@ set smartcase
 set smartindent
 
 set hidden
+set splitbelow
+set splitright
+
 set lazyredraw
 set ttimeoutlen=0
 set updatetime=500
