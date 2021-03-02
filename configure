@@ -34,7 +34,6 @@ config_zsh() {
 
     cp zsh/.zshrc ~/
     cp zsh/.zshenv ~/
-    cp zsh/.profile ~/
 
     prompt "zshmarks"
     git clone --depth=1 https://github.com/jocelynmallon/zshmarks ${plugin_dir}/zshmarks
