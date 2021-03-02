@@ -48,17 +48,11 @@ set updatetime=500
 set cursorline
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
-
 " return to last edit position when opening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-autocmd BufWrite * :call DeleteTrailingWS()
-func! DeleteTrailingWS()
-    exe "normal mz"
-    %s/\s\+$//ge
-    exe "normal `z"
-endfunc
-
+" delete whitespace on save
+autocmd BufWrite * exe "normal mz" | %s/\s\+$//ge | exe "normal `z"
 
 try
     colorscheme sierra
@@ -162,39 +156,15 @@ func! LL_lineinfo() abort
 endfunc
 
 
-func! EscapeString (string)
-    " escape special characters in a string for exact matching.
-    " based on http://peterodding.com/code/vim/profile/autoload/xolox/escape.vim
-
-    let string=a:string
-    let string = escape(string, '^$.*\/~[]')
-    let string = substitute(string, '\n', '\\n', 'g')
-    return string
-endfunc
-
-
 func! GetVisual() range
-    " get the current visual block for search and replaces
-    " based on https://stackoverflow.com/a/677918
-
-    " save the current register and clipboard
-    let reg_save = getreg('"')
-    let regtype_save = getregtype('"')
-    let cb_save = &clipboard
-    set clipboard&
-
-    " put the current visual selection in the " register
+    " get the current visual block for search and replace
     normal! ""gvy
-    let selection = getreg('"')
 
-    " put the saved registers and clipboards back
-    call setreg('"', reg_save, regtype_save)
-    let &clipboard = cb_save
+    let l:sel = getreg('"')
+    let l:sel = escape(sel, '^$.*\/~[]')
+    let l:sel = substitute(sel, '\n', '\\n', 'g')
 
-    " escape any special characters in the selection
-    let escaped_selection = EscapeString(selection)
-
-    return escaped_selection
+    return sel
 endfunc
 
 
