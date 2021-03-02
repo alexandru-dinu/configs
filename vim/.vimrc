@@ -76,9 +76,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
-if !has('nvim')
-    Plug 'fcpg/vim-osc52'
-endif
+Plug 'ojroques/vim-oscyank'
+
 " Plug 'sirver/ultisnips' " TODO: slow!
 " Plug 'lervag/vimtex'
 
@@ -199,10 +198,7 @@ inoremap <silent> <F3> <C-o>:set list!<CR>
 cnoremap <silent> <F3> <C-c>:set list!<CR>
 
 " copy last yanked text to clipboard
-if !has('nvim')
-    "nnoremap <C-c> :call system("xclip -selection clipboard", @")<CR>
-    vmap <C-c> y:Oscyank<CR>
-endif
+vmap <C-c> y:OSCYank<CR>
 
 " substitute all occurrences of the word under the cursor
 nnoremap <leader>r :%s/\<<C-r><C-w>\>/
