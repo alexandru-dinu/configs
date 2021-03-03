@@ -47,7 +47,7 @@ hi StatusLineNC     guifg=#6c6c6c guibg=#1c1c1c gui=NONE      ctermfg=242  cterm
 hi PmenuThumb       guifg=#303030 guibg=#303030 gui=NONE      ctermfg=236  ctermbg=236  cterm=NONE
 hi PmenuSbar        guifg=#303030 guibg=#303030 gui=NONE      ctermfg=236  ctermbg=236  cterm=NONE
 hi ModeMsg          guifg=#dfdfdf guibg=NONE    gui=NONE      ctermfg=188  ctermbg=NONE cterm=NONE
-hi Visual           guifg=#dfdfdf guibg=#875f5f gui=NONE      ctermfg=188  ctermbg=95   cterm=NONE
+hi Visual           guifg=#bcbcbc guibg=#000000 gui=reverse   ctermfg=250  ctermbg=16   cterm=reverse
 hi Underlined       guifg=#dfaf87 guibg=NONE    gui=NONE      ctermfg=180  ctermbg=NONE cterm=NONE
 hi Question         guifg=#dfaf5f guibg=NONE    gui=NONE      ctermfg=179  ctermbg=NONE cterm=NONE
 hi MoreMsg          guifg=#dfaf5f guibg=NONE    gui=NONE      ctermfg=179  ctermbg=NONE cterm=NONE
