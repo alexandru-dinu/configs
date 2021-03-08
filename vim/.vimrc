@@ -144,9 +144,8 @@ else
     call plug#begin('~/.vim/plugged')
 endif
 
-Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-commentary'
-
 
 Plug 'junegunn/fzf.vim' "{{{
     map <leader>f  :Files<CR>
