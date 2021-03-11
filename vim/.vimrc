@@ -1,4 +1,6 @@
-if !has('nvim')
+if has('nvim')
+    set inccommand=nosplit
+else
     set nocompatible
     set encoding=utf-8
     set fileformats=unix,dos
