@@ -149,6 +149,7 @@ endif
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-commentary'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "{{{
     map <leader>f  :Files<CR>
     map <leader>bs :Buffers<CR>
@@ -188,7 +189,8 @@ Plug 'airblade/vim-gitgutter' "{{{
 "}}}
 
 
-Plug 'itchyny/lightline.vim' | Plug 'deponian/vim-lightline-whitespace' "{{{
+Plug 'deponian/vim-lightline-whitespace'
+Plug 'itchyny/lightline.vim' "{{{
     let g:lightline = {
         \ 'colorscheme': 'powerline',
         \ 'active': {
