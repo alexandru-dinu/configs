@@ -29,7 +29,7 @@ config_zsh() {
 
     local plugin_dir=~/.oh-my-zsh/custom/plugins
 
-    rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh
+    rm -rf ~/.zshrc ~/.zshenv ~/.oh-my-zsh ~/.fzf
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
     cp zsh/.zshrc ~/
@@ -40,6 +40,10 @@ config_zsh() {
 
     prompt "zsh-autosuggestions"
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${plugin_dir}/zsh-autosuggestions
+
+    prompt "fzf"
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
 
     prompt "own .oh-my.zsh extras"
     cd ~/.oh-my-zsh
