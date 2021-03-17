@@ -9,7 +9,7 @@ case "$1" in
 --ram)
     echo $(free -mh | awk '(NR==2){print $7}' | tr -d 'i')
     ;;
---ssd)
+--storage)
     echo $(df /dev/nvme0n1p4 /dev/sda1 --output=avail |
         awk '(NR>1){t+=$1} END {printf "%dG", t/1024/1024}')
     ;;
