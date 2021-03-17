@@ -1,9 +1,3 @@
-# zshmarks
-alias g="jump"
-alias s="bookmark"
-alias d="deletemark"
-alias l="showmarks | sort -k1 | sed 's/\t\t/: /g' | column -t -s':'"
-
 alias gdb="gdb -q"
 alias i="ipython"
 alias estab="ss -ta | grep -i estab | grep -v '127.0.0.1' | sort -k4"
@@ -22,7 +16,7 @@ sak () {
 }
 
 # git
-gdm () {
+gdc () {
     local branch=$(git branch --show-current)
     git diff origin/$branch "$1"
 }

@@ -1,6 +1,3 @@
-export LANG=en_US.UTF-8
-export LC_ALL=$LANG
-
 export FZF_DEFAULT_OPS="--extended"
 export npm_config_prefix=$HOME/.node_modules
 

@@ -1,14 +1,16 @@
-export ZSH=$HOME/.oh-my-zsh
+export LANG=en_US.UTF-8
+export LC_ALL=$LANG
 
-ZSH_THEME="own"
+export ZSH=$HOME/.zsh/simple-zsh
+export ZSH_CACHE_DIR=$HOME/.zsh/cache
 
-CASE_SENSITIVE="false"
+ENABLE_CASE_SENSITIVE="false"
 ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
+ENABLE_GIT_INFO="true"
+ENABLE_CONDA_INFO="true"
+ENABLE_VI_MODE="true"
 
-# plugins: ~/.oh-my-zsh/plugins/*
-# custom plugins: ~/.oh-my-zsh/custom/plugins/
 plugins=(zshmarks zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/simple-zsh.zsh
 source $HOME/gizmos.git/zsh/aliases.sh
