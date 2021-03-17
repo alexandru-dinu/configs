@@ -1,16 +1,16 @@
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
 
-export ZSH=$HOME/.zsh/simple-zsh
-export ZSH_CACHE_DIR=$HOME/.zsh/cache
+export ZSH=$HOME/.zsh
+export ZSH_FRAMEWORK=$ZSH/simple-zsh
 
-ENABLE_CASE_SENSITIVE="false"
-ENABLE_CORRECTION="true"
-ENABLE_GIT_INFO="true"
-ENABLE_CONDA_INFO="true"
-ENABLE_VI_MODE="true"
+ZSH_ENABLE_CASE_SENSITIVE="false"
+ZSH_ENABLE_CORRECTION="true"
+ZSH_ENABLE_GIT_INFO="true"
+ZSH_ENABLE_CONDA_INFO="true"
+ZSH_ENABLE_VI_MODE="true"
 
 plugins=(zshmarks zsh-autosuggestions)
 
-source $ZSH/simple-zsh.zsh
+source $ZSH_FRAMEWORK/simple-zsh.zsh
 source $HOME/gizmos.git/zsh/aliases.sh
