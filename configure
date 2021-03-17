@@ -51,7 +51,6 @@ config_zsh() {
 
     cp $z/own.zsh-theme ./themes/
     cp $z/own_extras.zsh ./lib/
-    git apply $z/patches/directories.zsh.patch
     git add . && git commit -m "[own]"
 
     cd -
