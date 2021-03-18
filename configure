@@ -143,23 +143,6 @@ config_vscode() {
     for c in "${configs[@]}"; do
         ln -s $(realpath vscode/$c) $cfg_dir/
     done
-
-    declare -a vscode_exts=(
-        "geeebe.duplicate"
-        "justusadam.language-haskell"
-        "ms-python.python"
-        "ms-vscode.cpptools"
-        "13xforever.language-x86-64-assembly"
-        "torn4dom4n.latex-support"
-        "jeffersonqin.latex-snippets-jeff"
-        "shd101wyy.markdown-preview-enhanced"
-        "github.github-vscode-theme"
-        "ms-vscode-remote.remote-ssh"
-    )
-
-    for ext in "${vscode_exts[@]}"; do
-        code --install-extension $ext
-    done
 }
 
 config_pycharm() {

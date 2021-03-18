@@ -1,10 +1,15 @@
 {
-    "workbench.colorTheme": "GitHub Dark",
-
     "editor.fontFamily": "Fira Code Retina",
     "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
+    "editor.wordWrap": "on",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [{
+            "scope": ["comment"],
+            "settings": {"fontStyle": ""}
+        }]
+    },
 
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": false,
@@ -21,22 +26,14 @@
     "window.titleBarStyle": "native",
     "window.menuBarVisibility": "hidden",
 
-    "telemetry.enableTelemetry": false,
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
 
     "git.autorefresh": true,
 
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [{
-            "scope": ["comment"],
-            "settings": {"fontStyle": ""}
-        }]
-    },
-
     "files.associations": {
         "*.wppl": "javascript"
     },
-    "python.languageServer": "Microsoft",
-    "editor.wordWrap": "on"
+
+    "telemetry.enableTelemetry": false
 }
