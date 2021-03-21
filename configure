@@ -31,12 +31,8 @@ config_zsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/alexandru-dinu/simple-zsh/main/install.sh)"
 
     mkdir -p ~/.zsh/cache
-    cp zsh/.zshenv ~/
     cp zsh/.zshrc ~/
-
-    prompt "fzf"
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install
+    cp zsh/.zshenv ~/
 }
 
 config_bash() {

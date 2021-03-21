@@ -10,7 +10,7 @@ ZSH_ENABLE_GIT_INFO="true"
 ZSH_ENABLE_CONDA_INFO="true"
 ZSH_ENABLE_VI_MODE="true"
 
-plugins=(zshmarks zsh-autosuggestions)
+plugins=(fzf zshmarks zsh-autosuggestions)
 
 source $ZSH_FRAMEWORK/simple-zsh.zsh
 source $HOME/gizmos.git/zsh/aliases.sh

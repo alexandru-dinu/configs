@@ -1,4 +1,3 @@
-export FZF_DEFAULT_OPS="--extended"
 export npm_config_prefix=$HOME/.node_modules
 
 if [[ -z $TMUX ]]; then
