@@ -27,7 +27,7 @@ func_name() {
 config_zsh() {
     prompt $(func_name)
 
-    rm -rf ~/.zshrc ~/.zshenv ~/.zsh/cache ~/.zsh/simple-zsh ~/.fzf
+    rm -rf ~/.zshrc ~/.zshenv ~/.zsh/cache ~/.zsh/simple-zsh ~/.fzf*
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/alexandru-dinu/simple-zsh/main/install.sh)"
 
     mkdir -p ~/.zsh/cache
