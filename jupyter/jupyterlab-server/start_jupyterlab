@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
 
-JUPYTER="$HOME/anaconda3/bin/jupyter"
+JUPYTER="$HOME/miniconda3/bin/jupyter"
 
 $JUPYTER lab $HOME

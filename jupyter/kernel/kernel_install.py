@@ -9,7 +9,7 @@ parser.add_argument("--display_name", type=str, required=True)
 parser.add_argument("--kernel_dir", type=str, required=True)
 args = parser.parse_args()
 
-kernel_dir = Path.home() / "anaconda3/share/jupyter/kernels" / args.kernel_dir
+kernel_dir = Path.home() / "miniconda3/share/jupyter/kernels" / args.kernel_dir
 kernel_dir.mkdir(exist_ok=False)
 
 kernel = json.dumps(
