@@ -3,7 +3,7 @@
 root_dir=$(pwd)
 echo "root dir: ${root_dir}"
 
-to_delete=('__pycache__' '*.ipynb_checkpoints' '*.pyc' '*~' '*DS_Store')
+to_delete=('__pycache__' '*.ipynb_checkpoints' '*.pyc' '*~' '*DS_Store' '.mypy_cache')
 
 do_clean() {
     for f in "${to_delete[@]}"; do
