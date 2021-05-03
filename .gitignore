@@ -1,6 +1,10 @@
 .vscode/
 .ipynb_checkpoints/
 
+emacs/auto-save-list/
+emacs/elpa/
+emacs/transient/
+
 .netrwhist
 .gdb_history
 

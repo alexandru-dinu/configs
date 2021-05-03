@@ -76,6 +76,13 @@ config_nvim() {
     nvim +PlugInstall +qall
 }
 
+config_emacs() {
+    prompt $(func_name)
+
+    rm -rf ~/.emacs.d
+    ln -s $(realpath emacs) ~/.emacs.d
+}
+
 config_ghci() {
     prompt $(func_name)
 
