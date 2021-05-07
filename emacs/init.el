@@ -1,4 +1,8 @@
-(setq inhibit-startup-screen t)
+(setq-default inhibit-startup-screen t
+              make-backup-files nil
+              indent-tabs-mode nil
+              tab-width 4
+              visible-bell t)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -8,8 +12,6 @@
 (line-number-mode 1)
 (show-paren-mode 1)
 (global-display-line-numbers-mode)
-
-(setq visible-bell t)
 
 (load-theme 'tango-dark)
 
@@ -39,6 +41,9 @@
 
 (require 'evil)
 (evil-mode 1)
+
+(when (version<= "9.2" (org-version))
+    (require 'org-tempo))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
