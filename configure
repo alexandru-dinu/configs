@@ -262,7 +262,15 @@ config_ipython() {
 
     cfg_dir=~/.ipython/profile_default
     mkdir -p $cfg_dir
-    ln -sf $(realpath ipython/ipython_config.py) $cfg_dir
+    ln -sf $(realpath python/ipython_config.py) $cfg_dir
+}
+
+config_ptpython() {
+    prompt $(func_name)
+
+    cfg_dir=~/.config/ptpython
+    mkdir -p $cfg_dir
+    ln -sf $(realpath python/ptpython_config.py) $cfg_dir/config.py
 }
 
 config_htop() {
