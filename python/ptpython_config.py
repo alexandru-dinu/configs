@@ -5,6 +5,7 @@ Reference: https://github.com/prompt-toolkit/ptpython/blob/master/examples/ptpyt
 """
 
 import sys
+
 from ptpython.layout import CompletionVisualisation
 
 __all__ = ["configure"]
@@ -20,7 +21,12 @@ def configure(repl):
     repl.vi_mode = True
     repl.prompt_style = "ipython"
     repl.enable_mouse_support = True
+
     repl.complete_while_typing = False
+    # complete while typing must be disabled
+    repl.enable_history_search = True
+    # right arrow will complete the input (history-based)
+    repl.enable_auto_suggest = True
 
     repl.insert_blank_line_after_input = True
     repl.insert_blank_line_after_output = True
