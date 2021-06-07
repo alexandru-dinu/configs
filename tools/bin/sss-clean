@@ -1,0 +1,13 @@
+#!/bin/bash
+
+root_dir=$(pwd)
+echo "Root dir: ${root_dir}"
+
+to_delete=(
+    '__pycache__' '*.ipynb_checkpoints' '*.pyc' '*~' '*DS_Store' '.mypy_cache'
+)
+
+for f in "${to_delete[@]}"; do
+    echo "Cleaning $f"
+    find . -name "$f" | xargs rm -rf
+done
