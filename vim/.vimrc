@@ -53,6 +53,9 @@ set updatetime=500
 set cursorline
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
+" enable mouse in all modes (e.g. for easier selection)
+set mouse=a
+
 " return to last edit position when opening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
