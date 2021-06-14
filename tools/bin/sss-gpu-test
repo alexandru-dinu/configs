@@ -1,0 +1,31 @@
+#!/bin/bash
+
+prompt () {
+    echo -e "\033[0;32m\n\t$@\n\033[0m"
+}
+
+
+prompt 'release'
+cat /etc/lsb-release
+
+prompt 'kernel'
+uname -r
+
+prompt 'driver'
+nvidia-smi
+
+prompt 'cuda'
+pacman -Qi cuda | grep -i version
+nvcc -V
+
+prompt 'cudnn'
+pacman -Qi cudnn | grep -i version
+cat $(whereis cudnn_version.h | awk '{print $2}') | grep CUDNN_MAJOR -C 2
+
+prompt 'pytorch'
+python -c '
+import torch;
+assert torch.cuda.is_available();
+print(f"{torch.__version__=}")
+print(f"{torch.version.cuda=}")
+'
