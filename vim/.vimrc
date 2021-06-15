@@ -198,7 +198,8 @@ Plug 'itchyny/lightline.vim' "{{{
         \ 'colorscheme': 'powerline',
         \ 'active': {
         \ 	'left': [ [ 'mode', 'paste', 'spell' ],
-        \             [ 'readonly', 'filename', 'modified' ] ],
+        \             [ 'readonly', 'filename', 'modified' ],
+        \             [ 'bufinfo' ] ],
         \   'right': [ [ 'whitespace' ],
         \              [ 'lineinfo' ],
         \              [ 'filetype', 'fileformat', 'fileencoding' ] ],
@@ -206,7 +207,7 @@ Plug 'itchyny/lightline.vim' "{{{
         \ 'component_function': {
         \   'fileencoding': 'LL_fileencoding',
         \   'lineinfo': 'LL_lineinfo',
-        \   'vimtype': 'LL_vimtype',
+        \   'bufinfo': 'LL_bufinfo',
         \ },
         \ 'component_expand': {
         \   'whitespace': 'lightline#whitespace#check',
@@ -232,6 +233,11 @@ Plug 'itchyny/lightline.vim' "{{{
     if has('nvim')
         let g:lightline.colorscheme = 'seoul256'
     endif
+
+    func! LL_bufinfo() abort
+        let l:total = len(getbufinfo({'buflisted':1}))
+        return bufnr('%') . '/' . total
+    endfunc
 
     func! LL_fileencoding() abort
         let l:enc = (&fenc !=# '' ? &fenc : &enc)
