@@ -29,7 +29,7 @@ hi ColorColumn      guifg=NONE    guibg=#303030 gui=NONE      ctermfg=NONE cterm
 hi TabLineFill      guifg=NONE    guibg=#1c1c1c gui=NONE      ctermfg=NONE ctermbg=234  cterm=NONE
 hi MatchParen       guifg=#eeeeee guibg=#875f5f gui=NONE      ctermfg=255  ctermbg=95   cterm=NONE
 hi PmenuSel         guifg=#eeeeee guibg=#303030 gui=NONE      ctermfg=255  ctermbg=236  cterm=NONE
-hi Todo             guifg=#eeeeee guibg=#1c1c1c gui=reverse   ctermfg=255  ctermbg=234  cterm=reverse
+hi Todo             guifg=#eeeeee guibg=#1c1c1c gui=reverse   ctermfg=102  ctermbg=NONE cterm=reverse
 hi TabLineSel       guifg=#eeeeee guibg=#1c1c1c gui=NONE      ctermfg=255  ctermbg=234  cterm=NONE
 hi StatusLineTerm   guifg=#eeeeee guibg=#1c1c1c gui=NONE      ctermfg=255  ctermbg=234  cterm=NONE
 hi StatusLine       guifg=#eeeeee guibg=#1c1c1c gui=NONE      ctermfg=255  ctermbg=234  cterm=NONE
