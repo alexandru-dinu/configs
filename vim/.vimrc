@@ -236,7 +236,7 @@ Plug 'itchyny/lightline.vim' "{{{
 
     func! LL_bufinfo() abort
         let l:total = len(getbufinfo({'buflisted':1}))
-        return bufnr('%') . '/' . total
+        return total . ' buf'
     endfunc
 
     func! LL_fileencoding() abort
