@@ -104,14 +104,14 @@ vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
 " buffers
 map <leader>bl :ls<CR>
-map <leader>bk :bd<CR>
+map <leader>bd :bd<CR>
 map <leader>bn :bnext<CR>
 map <leader>bp :bprevious<CR>
 
 " tabs
 map <silent> <leader>tn :tabnew<CR>
 map <silent> <leader>to :tabonly<CR>
-map <silent> <leader>tk :tabclose<CR>
+map <silent> <leader>td :tabclose<CR>
 map <silent> <leader>tm :tabmove<CR>
 map <silent> <leader>t<leader> :tabnext<CR>
 map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
