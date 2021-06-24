@@ -35,5 +35,6 @@
         "*.wppl": "javascript"
     },
 
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "python.languageServer": "Microsoft"
 }
