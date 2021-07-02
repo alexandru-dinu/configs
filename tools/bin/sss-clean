@@ -4,7 +4,8 @@ root_dir=$(pwd)
 echo "Root dir: ${root_dir}"
 
 to_delete=(
-    '__pycache__' '*.ipynb_checkpoints' '*.pyc' '*~' '*DS_Store' '.mypy_cache'
+    '*~' '*DS_Store'
+    '__pycache__' '*.ipynb_checkpoints' '*.pyc' '.mypy_cache' '.pytest_cache'
 )
 
 for f in "${to_delete[@]}"; do
