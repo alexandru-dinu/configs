@@ -151,6 +151,7 @@ endif
 
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "{{{
