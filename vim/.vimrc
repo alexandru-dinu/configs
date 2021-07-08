@@ -149,9 +149,14 @@ else
     call plug#begin('~/.vim/plugged')
 endif
 
+"Plug 'lervag/vimtex' "{{{
+"    let g:tex_flavor = 'latex'
+""}}}
+
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "{{{
@@ -251,10 +256,6 @@ Plug 'itchyny/lightline.vim' "{{{
         return li . ' (' . pc . '%)'
     endfunc
 "}}}
-
-"Plug 'lervag/vimtex' "{{{
-"    let g:tex_flavor = 'latex'
-""}}}
 
 call plug#end()
 
