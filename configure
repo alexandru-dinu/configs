@@ -76,6 +76,15 @@ config_nvim() {
     nvim +PlugInstall +qall
 }
 
+config_vifm() {
+    prompt $(func_name)
+
+    cfg_dir=~/.config/vifm
+
+    rm -rf $cfg_dir
+    ln -s $(realpath vifm) $cfg_dir
+}
+
 config_emacs() {
     prompt $(func_name)
 
