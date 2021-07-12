@@ -166,10 +166,20 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "{{{
     map <leader>f  :Files<CR>
     map <leader>bs :Buffers<CR>
+"}}}
+
+
+Plug 'vifm/vifm.vim' "{{{
+    map <leader>vo :Vifm<CR>
+    map <leader>vv :VsplitVifm<CR>
+    map <leader>vh :SplitVifm<CR>
+    map <leader>vt :TabVifm<CR>
+    map <leader>vd :DiffVifm<CR>
 "}}}
 
 
