@@ -102,8 +102,13 @@ vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
 " open-line maintaining indentation; hacky, but works
-nnoremap <A-j> ox<BS><ESC>
-nnoremap <A-k> Ox<BS><ESC>
+if has('nvim')
+    nnoremap <A-j> ox<BS><ESC>
+    nnoremap <A-k> Ox<BS><ESC>
+else
+    nnoremap j ox<BS><ESC>
+    nnoremap k Ox<BS><ESC>
+endif
 
 " buffers
 map <leader>bl :ls<CR>
