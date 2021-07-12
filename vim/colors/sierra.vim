@@ -35,7 +35,7 @@ hi StatusLineTerm   guifg=#eeeeee guibg=#1c1c1c gui=NONE      ctermfg=255  cterm
 hi StatusLine       guifg=#eeeeee guibg=#1c1c1c gui=NONE      ctermfg=255  ctermbg=234  cterm=NONE
 hi WildMenu         guifg=#c6c6c6 guibg=NONE    gui=reverse   ctermfg=251  ctermbg=NONE cterm=reverse
 hi SpecialKey       guifg=#3a3a3a guibg=NONE    gui=NONE      ctermfg=247  ctermbg=NONE cterm=NONE
-hi NonText          guifg=#3a3a3a guibg=NONE    gui=NONE      ctermfg=247  ctermbg=NONE cterm=NONE
+hi NonText          guifg=#3a3a3a guibg=NONE    gui=NONE      ctermfg=240  ctermbg=NONE cterm=NONE
 hi VimCommentTitle  guifg=#767676 guibg=NONE    gui=reverse   ctermfg=243  ctermbg=NONE cterm=reverse
 hi SpecialComment   guifg=#767676 guibg=NONE    gui=reverse   ctermfg=243  ctermbg=NONE cterm=reverse
 hi Folded           guifg=#6c6c6c guibg=NONE    gui=NONE      ctermfg=242  ctermbg=NONE cterm=NONE
