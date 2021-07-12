@@ -102,6 +102,10 @@ endfunc
 vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
+" open-line maintaining indentation; hacky, but works
+nnoremap <A-j> ox<BS><ESC>
+nnoremap <A-k> Ox<BS><ESC>
+
 " buffers
 map <leader>bl :ls<CR>
 map <leader>bd :bd<CR>
