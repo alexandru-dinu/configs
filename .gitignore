@@ -6,7 +6,8 @@ emacs/elpa/
 emacs/transient/
 
 .netrwhist
-.gdb_history
+vifminfo*
 
+.gdb_history
 *.py[cod]
 *~
