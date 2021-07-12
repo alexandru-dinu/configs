@@ -40,7 +40,6 @@ set shiftwidth=4
 
 set ignorecase
 set smartcase
-set smartindent
 
 set hidden
 set splitbelow
