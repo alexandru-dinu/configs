@@ -1,0 +1,40 @@
+hi clear
+
+hi Win         ctermfg=188     ctermbg=none    cterm=none
+hi OtherWin    ctermfg=242     ctermbg=none    cterm=none
+hi TopLine     ctermfg=242     ctermbg=234     cterm=none
+hi TopLineSel  ctermfg=255     ctermbg=234     cterm=none
+hi TabLine     ctermfg=242     ctermbg=234     cterm=none
+hi TabLineSel  ctermfg=255     ctermbg=234     cterm=none
+hi JobLine     ctermfg=255     ctermbg=234     cterm=none
+hi StatusLine  ctermfg=255     ctermbg=234     cterm=none
+hi Border      ctermfg=242     ctermbg=235     cterm=none
+hi CurrLine    ctermfg=16      ctermbg=231     cterm=none
+hi OtherLine   ctermfg=0       ctermbg=242     cterm=none
+hi LineNr      ctermfg=102     ctermbg=none    cterm=none
+hi Selected    ctermfg=250     ctermbg=16      cterm=reverse
+hi CmpMismatch ctermfg=66      ctermbg=225     cterm=reverse
+hi SuggestBox  ctermfg=188     ctermbg=14      cterm=none
+hi WildMenu    ctermfg=242     ctermbg=236     cterm=none
+hi CmdLine     ctermfg=188     ctermbg=none    cterm=none
+hi ErrorMsg    ctermfg=167     ctermbg=none    cterm=none
+hi Directory   ctermfg=109     ctermbg=none    cterm=none
+hi Executable  ctermfg=167     ctermbg=none    cterm=none
+hi Socket      ctermfg=138     ctermbg=none    cterm=none
+hi Device      ctermfg=138     ctermbg=none    cterm=none
+hi Fifo        ctermfg=181     ctermbg=none    cterm=none
+hi Link        ctermfg=6       ctermbg=default cterm=bold
+hi BrokenLink  ctermfg=red     ctermbg=default cterm=bold
+hi HardLink    ctermfg=yellow  ctermbg=default cterm=none
+hi AuxWin      ctermfg=default ctermbg=default
+hi OddLine     ctermfg=default ctermbg=default
+
+hi User1 ctermfg=default ctermbg=default
+hi User2 ctermfg=default ctermbg=default
+hi User3 ctermfg=default ctermbg=default
+hi User4 ctermfg=default ctermbg=default
+hi User5 ctermfg=default ctermbg=default
+hi User6 ctermfg=default ctermbg=default
+hi User7 ctermfg=default ctermbg=default
+hi User8 ctermfg=default ctermbg=default
+hi User9 ctermfg=default ctermbg=default
